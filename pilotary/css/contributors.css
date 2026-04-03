@@ -1,0 +1,22 @@
+.contributor img {
+  width: 120px;
+  height: 120px;
+  object-fit: cover;
+  border-radius: 50%;
+  display: inline-block;
+}
+
+
+.video-wrapper {
+  position: relative;
+  width: 100%;
+  height: auto;
+  overflow: hidden;
+}
+
+.fade-video {
+  width: 100%;
+  height: auto;
+  display: block;
+  object-fit: cover;
+}

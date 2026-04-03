@@ -1,0 +1,52 @@
+services:
+  web-kopi:
+    build:
+      context: ./kopi
+    environment:
+      MESSAGE_API_KEY: ${MESSAGE_API_KEY:-changeme}
+    labels:
+      caddy: "kopi.paluv.de"
+      caddy.reverse_proxy: "{{upstreams 80}}"
+      homepage.group: "Deployments"
+      homepage.name: "Kopi"
+      homepage.icon: "globe"
+      homepage.href: "https://kopi.paluv.de"
+      homepage.description: "Kopi landing page"
+    networks:
+      - public
+
+  web-pilotary:
+    build:
+      context: ./pilotary
+    environment:
+      MESSAGE_API_KEY: ${MESSAGE_API_KEY:-changeme}
+    labels:
+      caddy: "pilotary.com, pilotary.de, pilotary.paluv.de"
+      caddy.reverse_proxy: "{{upstreams 80}}"
+      homepage.group: "Deployments"
+      homepage.name: "Pilotary"
+      homepage.icon: "airplane"
+      homepage.href: "https://pilotary.com"
+      homepage.description: "Pilotary landing page"
+    networks:
+      - public
+
+  web-paluv:
+    build:
+      context: ./paluv
+    environment:
+      MESSAGE_API_KEY: ${MESSAGE_API_KEY:-changeme}
+    labels:
+      caddy: "paluv.de, www.paluv.de"
+      caddy.reverse_proxy: "{{upstreams 80}}"
+      homepage.group: "Deployments"
+      homepage.name: "Paluv"
+      homepage.icon: "airplane"
+      homepage.href: "https://paluv.de"
+      homepage.description: "Paluv landing page"
+    networks:
+      - public
+
+networks:
+  public:
+    external: true

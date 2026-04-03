@@ -1,0 +1,87 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Kopi | German Portable ADS-B & ADS-L Avionics Copilot</title>
+  <meta name="description" content="Kopi is a German-built portable avionics copilot with ADS-B, ADS-L, GPS, barometer, eCompass, and a lab-calibrated CO sensor. Affordable, flight-ready hardware and software in one box.">
+  <meta name="keywords" content="Kopi, portable avionics, ADS-B, ADS-L, GPS, barometer, eCompass, CO sensor, flight safety, German avionics">
+  <meta name="robots" content="noindex, nofollow">
+  <meta name="theme-color" content="#05070a">
+  <link rel="canonical" href="https://kopi.paluv.de/en/">
+  <link rel="alternate" hreflang="en" href="https://kopi.paluv.de/en/">
+  <link rel="alternate" hreflang="de" href="https://kopi.paluv.de/de/">
+  <link rel="alternate" hreflang="x-default" href="https://kopi.paluv.de/en/">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Kopi">
+  <meta property="og:title" content="Kopi | German Portable ADS-B & ADS-L Avionics Copilot">
+  <meta property="og:description" content="Portable ADS-B and ADS-L avionics with GPS, barometer, eCompass, and lab-calibrated CO sensor. Built in Germany for safer flying without subscriptions.">
+  <meta property="og:url" content="https://kopi.paluv.de/">
+  <meta property="og:image" content="https://kopi.paluv.de/assets/together/heroSection.png">
+  <meta property="og:image:secure_url" content="https://kopi.paluv.de/assets/together/heroSection.png">
+  <meta property="og:image:width" content="1248">
+  <meta property="og:image:height" content="832">
+  <meta property="og:image:alt" content="Kopi portable avionics device floating with soft light">
+  <meta property="og:locale" content="en_US">
+  <meta property="og:locale:alternate" content="de_DE">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Kopi | German Portable ADS-B & ADS-L Avionics Copilot">
+  <meta name="twitter:description" content="German-built portable avionics with ADS-B, ADS-L, GPS, barometer, eCompass, and lab-calibrated CO sensor. Affordable, subscription-free safety.">
+  <meta name="twitter:image" content="https://kopi.paluv.de/assets/together/heroSection.png">
+  <link rel="icon" type="image/x-icon" href="/assets/kopi.ico">
+  <link rel="alternate icon" type="image/x-icon" href="/favicon.ico">
+  <link rel="shortcut icon" href="/favicon.ico">
+  <script defer src="https://analytics.misei.dev/script.js"></script>
+  <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Product",
+      "name": "Kopi",
+      "description": "Portable German avionics with ADS-B, ADS-L, GPS, barometer, eCompass, and a lab-calibrated CO sensor for safer flying without subscriptions.",
+      "brand": {
+        "@type": "Brand",
+        "name": "Kopi"
+      },
+      "manufacturer": {
+        "@type": "Organization",
+        "name": "Paluv"
+      },
+      "url": "https://kopi.paluv.de/en/",
+      "image": "https://kopi.paluv.de/assets/together/heroSection.png",
+      "inProductGroupWithID": "kopi-family"
+    }
+  </script>
+  <script>
+    (function () {
+      const params = new URLSearchParams(window.location.search);
+      const qsLang = params.get("lang");
+      const stored = localStorage.getItem("langChoice");
+      const browser = (navigator.languages && navigator.languages[0]) || navigator.language || "";
+      const browserLang = (browser || "").toLowerCase().startsWith("de") ? "de" : "en";
+      const lang = (qsLang === "de" || qsLang === "en") ? qsLang
+        : (stored === "de" || stored === "en") ? stored
+          : browserLang;
+
+      if (qsLang === "de" || qsLang === "en") {
+        localStorage.setItem("langChoice", qsLang);
+      }
+
+      const path = window.location.pathname;
+      const withoutFile = path.endsWith("/") ? path : path.replace(/[^/]*$/, "");
+      const withoutLang = withoutFile.replace(/\/(en|de)\/$/, "/");
+      const base = withoutLang.endsWith("/") ? withoutLang : withoutLang + "/";
+      const targetPath = base + lang + "/";
+
+      if (!path.startsWith(targetPath)) {
+        const targetURL = new URL(targetPath, window.location.origin);
+        window.location.replace(targetURL.toString());
+      }
+    })();
+  </script>
+</head>
+<body>
+  <p style="color:#fff;font-family:Arial, sans-serif; background:#05070a; min-height:100vh; display:flex; align-items:center; justify-content:center;">
+    Redirecting…
+  </p>
+</body>
+</html>
