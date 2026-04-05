@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 96 96" role="img" aria-labelledby="title">
+  <title>Flightline Plaza</title>
+  <defs>
+    <linearGradient id="bg" x1="0%" x2="100%" y1="0%" y2="100%">
+      <stop offset="0%" stop-color="#c4ecff" />
+      <stop offset="100%" stop-color="#61bfff" />
+    </linearGradient>
+  </defs>
+  <rect width="96" height="96" rx="24" fill="url(#bg)" />
+  <path d="M22 58 48 30l26 28" fill="none" stroke="#fff" stroke-linecap="round" stroke-linejoin="round" stroke-width="8" />
+  <circle cx="48" cy="58" r="8" fill="#fff" />
+</svg>

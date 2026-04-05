@@ -1,0 +1,121 @@
+export const airfieldOverlays = [
+  {
+    id: "oldtimer-segler-area",
+    kind: "polygon",
+    label: {
+      de: "Oldtimer- & Segler-Abstellflaeche",
+      en: "Vintage aircraft & glider parking area",
+    },
+    points: [
+      [49.30918296713603, 8.449215228104565],
+      [49.309257439367265, 8.449677568793401],
+      [49.30986030566616, 8.449449118100093],
+      [49.3098035656231, 8.448970459504592],
+    ],
+    tone: "cyan",
+    fillOpacity: 0.11,
+  },
+  {
+    id: "rundflug-positionen-area",
+    kind: "polygon",
+    label: {
+      de: "Rundfluege Positionen",
+      en: "Sightseeing flight positions",
+    },
+    points: [
+      [49.30771088973841, 8.4494618571695],
+      [49.307667738782186, 8.449985804229067],
+      [49.30887235545099, 8.449522524714563],
+      [49.30877526803519, 8.44901512335161],
+    ],
+    tone: "parking",
+    fillOpacity: 0.13,
+  },
+  {
+    id: "guest-parking-area",
+    kind: "polygon",
+    label: {
+      de: "Gaeste-Parkflaeche",
+      en: "Guest parking area",
+    },
+    points: [
+      [49.30672919611934, 8.449875499603806],
+      [49.30675436799456, 8.450642116880438],
+      [49.30780078744248, 8.450239504910542],
+      [49.307667738782186, 8.44948391809832],
+    ],
+    tone: "parking",
+    fillOpacity: 0.13,
+  },
+  {
+    id: "escape-route-2",
+    kind: "route",
+    label: {
+      de: "Ausgang Drehkreuz / Fluchtweg 2",
+      en: "Turnstile exit / escape route 2",
+    },
+    points: [
+      [49.30863360577038, 8.448487466201273],
+      [49.30857576053976, 8.448225200717452],
+    ],
+    tone: "alert",
+    arrowFractions: [0.68],
+    weight: 3,
+  },
+  {
+    id: "escape-route-1",
+    kind: "route",
+    label: {
+      de: "Fluchtweg 1",
+      en: "Escape route 1",
+    },
+    points: [
+      [49.30911626809201, 8.44826368774925],
+      [49.3090902181688, 8.448030615627797],
+    ],
+    tone: "alert",
+    arrowFractions: [0.68],
+    weight: 3,
+  },
+  {
+    id: "barrier-line",
+    kind: "route",
+    label: {
+      de: "Absperrung",
+      en: "Barrier line",
+    },
+    points: [
+      [49.30984356070751, 8.448941871001399],
+      [49.309465581398655, 8.449077457450622],
+      [49.30939852025065, 8.448951221791],
+      [49.30912722649297, 8.44906810666102],
+      [49.309029682304846, 8.448792258367773],
+      [49.30891994486235, 8.448787582972972],
+      [49.308694372685146, 8.448796933762575],
+      [49.30814791374569, 8.448996903767384],
+      [49.3080104919791, 8.448336104042676],
+    ],
+    tone: "alert",
+    weight: 4,
+    opacity: 0.98,
+  },
+  {
+    id: "taxi-flow",
+    kind: "route",
+    label: {
+      de: "Taxi Flow",
+      en: "Taxi flow",
+    },
+    points: [
+      [49.30891910117555, 8.448860696849843],
+      [49.309041359014685, 8.449053729977054],
+      [49.309124062675, 8.449456341928089],
+      [49.3083006156927, 8.449792771092655],
+      [49.30825386938132, 8.449081306138083],
+      [49.30891910117555, 8.448860696849843],
+    ],
+    tone: "light",
+    arrowFractions: [0.08, 0.28, 0.5, 0.72, 0.9],
+    weight: 5,
+  },
+];

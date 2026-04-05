@@ -47,6 +47,20 @@ services:
     networks:
       - public
 
+  web-fest-map:
+    build:
+      context: ./fest-map
+    labels:
+      caddy: "festmap.paluv.de"
+      caddy.reverse_proxy: "{{upstreams 80}}"
+      homepage.group: "Deployments"
+      homepage.name: "Fest Map"
+      homepage.icon: "airplane"
+      homepage.href: "https://festmap.paluv.de"
+      homepage.description: "Fest Platz Map"
+    networks:
+      - public
+
 networks:
   public:
     external: true

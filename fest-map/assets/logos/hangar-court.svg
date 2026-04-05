@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 96 96" role="img" aria-labelledby="title">
+  <title>Hangar Court</title>
+  <defs>
+    <linearGradient id="bg" x1="0%" x2="100%" y1="0%" y2="100%">
+      <stop offset="0%" stop-color="#d4f2ff" />
+      <stop offset="100%" stop-color="#7dcfff" />
+    </linearGradient>
+  </defs>
+  <rect width="96" height="96" rx="24" fill="url(#bg)" />
+  <path d="M24 66V42l24-16 24 16v24" fill="none" stroke="#fff" stroke-linecap="round" stroke-linejoin="round" stroke-width="8" />
+  <path d="M40 66V50h16v16" fill="none" stroke="#fff" stroke-linecap="round" stroke-linejoin="round" stroke-width="8" />
+</svg>
