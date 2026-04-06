@@ -332,10 +332,9 @@ a {
 }
 
 .section-title {
-  display: flex;
-  align-items: baseline;
-  justify-content: space-between;
-  gap: 1rem;
+  display: grid;
+  justify-items: start;
+  gap: 0.45rem;
   margin-bottom: 2.5rem;
 }
 
@@ -346,7 +345,8 @@ a {
 
 .section-title p {
   color: var(--muted);
-  max-width: 24rem;
+  max-width: 34rem;
+  margin: 0;
 }
 
 .grid {
@@ -469,6 +469,11 @@ a {
   display: grid;
   grid-template-columns: repeat(2, minmax(0, 1fr));
   gap: 1.5rem;
+}
+
+.studio--single {
+  grid-template-columns: minmax(0, 1fr);
+  max-width: 42rem;
 }
 
 .studio-panel {
@@ -743,9 +748,8 @@ a {
     grid-template-columns: 1fr;
   }
 
-  .section-title {
-    flex-direction: column;
-    align-items: flex-start;
+  .services-grid {
+    grid-template-columns: 1fr;
   }
 
   .contact-grid {
