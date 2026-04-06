@@ -54,19 +54,11 @@ server {
   }
 
   location = /de/impressum {
-    return 302 /en/imprint/;
-  }
-
-  location = /de/impressum/ {
-    return 302 /en/imprint/;
+    return 302 /de/impressum/;
   }
 
   location = /de/datenschutz {
-    return 302 /en/privacy/;
-  }
-
-  location = /de/datenschutz/ {
-    return 302 /en/privacy/;
+    return 302 /de/datenschutz/;
   }
 
   location ^~ /en/ {
