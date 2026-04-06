@@ -1,3 +1,9 @@
+x-deploy-agent:
+  enabled: true
+  force_redeploy: true
+  clean_deploy: false
+  descriptor: public-web
+
 services:
   web-kopi:
     build:
