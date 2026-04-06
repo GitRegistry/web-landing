@@ -1,7 +1,7 @@
 # web-landing
 
 Monorepo for the Kopi, Pilotary, and Paluv landing pages.
-Also includes the Fest Map site.
+It includes the Fest Map site.
 
 ## Structure
 
