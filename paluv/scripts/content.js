@@ -287,17 +287,17 @@ const LEGAL_CONTENT = {
         metaDescription: "Imprint and provider information for Paluv UG.",
         path: "/en/imprint/",
         alternatePath: "/de/impressum/",
-        updatedLabel: "Last updated: April 6, 2026",
+        updatedLabel: "Last updated: April 9, 2026",
         heading: "Imprint",
         note:
-          "The mandatory company register and address details still need to be inserted before this imprint is legally complete.",
+          "The managing director or authorized representative, the commercial register number, the VAT ID if assigned, and the responsible person under Section 18 para. 2 MStV still need to be inserted before this imprint is legally complete.",
         sections: [
           {
             title: "Provider",
             paragraphs: [
               "Paluv UG",
-              "[Street and number]",
-              "[Postal code, city], Germany",
+              "Bergstraße 1",
+              "75236 Kämpfelbach, Germany",
             ],
           },
           {
@@ -314,8 +314,8 @@ const LEGAL_CONTENT = {
           {
             title: "Commercial register",
             paragraphs: [
-              "Register court: [Court]",
-              "Registration number: [HRB number]",
+              "Register court: Amtsgericht Mannheim",
+              "Registration number: pending",
             ],
           },
           {
@@ -342,7 +342,7 @@ const LEGAL_CONTENT = {
           "Shared privacy notice for Paluv UG and the Paluv, Kopi, and Pilotary marketing sites.",
         path: "/en/privacy/",
         alternatePath: "/de/datenschutz/",
-        updatedLabel: "Last updated: April 6, 2026",
+        updatedLabel: "Last updated: April 9, 2026",
         heading: "Privacy Notice (GDPR)",
         note: "",
         sections: [
@@ -350,7 +350,9 @@ const LEGAL_CONTENT = {
             title: "Controller",
             paragraphs: [
               "Paluv UG",
-              'General privacy inquiries: <a href="mailto:hello@paluv.de">hello@paluv.de</a>',
+              "Bergstraße 1",
+              "75236 Kämpfelbach, Germany",
+              'General privacy inquiries and data protection contact: <a href="mailto:hello@paluv.de">hello@paluv.de</a>',
               'The full provider details are listed in the <a href="/en/imprint/">imprint</a>.',
             ],
           },
@@ -438,17 +440,17 @@ const LEGAL_CONTENT = {
         metaDescription: "Impressum und Anbieterkennzeichnung der Paluv UG.",
         path: "/de/impressum/",
         alternatePath: "/en/imprint/",
-        updatedLabel: "Stand: 6. April 2026",
+        updatedLabel: "Stand: 9. April 2026",
         heading: "Impressum",
         note:
-          "Die verpflichtenden Register- und Adressdaten müssen noch ergänzt werden, bevor dieses Impressum rechtlich vollständig ist.",
+          "Geschäftsführung bzw. vertretungsberechtigte Person, Handelsregisternummer, Umsatzsteuer-ID falls vorhanden sowie die verantwortliche Person nach § 18 Abs. 2 MStV müssen noch ergänzt werden, bevor dieses Impressum rechtlich vollständig ist.",
         sections: [
           {
             title: "Anbieter",
             paragraphs: [
               "Paluv UG",
-              "[Straße und Hausnummer]",
-              "[PLZ Ort], Deutschland",
+              "Bergstraße 1",
+              "75236 Kämpfelbach, Deutschland",
             ],
           },
           {
@@ -465,8 +467,8 @@ const LEGAL_CONTENT = {
           {
             title: "Handelsregister",
             paragraphs: [
-              "Registergericht: [Gericht]",
-              "Registernummer: [HRB-Nummer]",
+              "Registergericht: Amtsgericht Mannheim",
+              "Registernummer: wird nach Eintragung ergänzt",
             ],
           },
           {
@@ -493,7 +495,7 @@ const LEGAL_CONTENT = {
           "Gemeinsame Datenschutzhinweise für Paluv UG sowie die Websites von Paluv, Kopi und Pilotary.",
         path: "/de/datenschutz/",
         alternatePath: "/en/privacy/",
-        updatedLabel: "Stand: 6. April 2026",
+        updatedLabel: "Stand: 9. April 2026",
         heading: "Datenschutzhinweis",
         note: "",
         sections: [
@@ -501,7 +503,9 @@ const LEGAL_CONTENT = {
             title: "Verantwortlicher",
             paragraphs: [
               "Paluv UG",
-              'Allgemeine Datenschutzanfragen: <a href="mailto:hello@paluv.de">hello@paluv.de</a>',
+              "Bergstraße 1",
+              "75236 Kämpfelbach, Deutschland",
+              'Allgemeine Datenschutzanfragen und Datenschutzkontakt: <a href="mailto:hello@paluv.de">hello@paluv.de</a>',
               'Die vollständigen Anbieterangaben finden sich im <a href="/de/impressum/">Impressum</a>.',
             ],
           },
