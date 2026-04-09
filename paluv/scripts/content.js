@@ -290,7 +290,7 @@ const LEGAL_CONTENT = {
         updatedLabel: "Last updated: April 9, 2026",
         heading: "Imprint",
         note:
-          "The managing director or authorized representative, the commercial register number, the VAT ID if assigned, and the responsible person under Section 18 para. 2 MStV still need to be inserted before this imprint is legally complete.",
+          "The commercial register number and the VAT ID, if assigned, will be added once available.",
         sections: [
           {
             title: "Provider",
@@ -302,7 +302,7 @@ const LEGAL_CONTENT = {
           },
           {
             title: "Represented by",
-            paragraphs: ["[Managing director / authorized representative]"],
+            paragraphs: ["Managing directors: Maik Vögele, David Fernández Esteban"],
           },
           {
             title: "Contact",
@@ -321,12 +321,8 @@ const LEGAL_CONTENT = {
           {
             title: "VAT ID",
             paragraphs: [
-              "VAT identification number pursuant to Section 27 a German VAT Act: [VAT ID]",
+              "VAT identification number pursuant to Section 27 a German VAT Act: not yet assigned",
             ],
-          },
-          {
-            title: "Responsible for content (Section 18 para. 2 MStV)",
-            paragraphs: ["[Name, address]"],
           },
           {
             title: "Consumer dispute resolution",
@@ -443,7 +439,7 @@ const LEGAL_CONTENT = {
         updatedLabel: "Stand: 9. April 2026",
         heading: "Impressum",
         note:
-          "Geschäftsführung bzw. vertretungsberechtigte Person, Handelsregisternummer, Umsatzsteuer-ID falls vorhanden sowie die verantwortliche Person nach § 18 Abs. 2 MStV müssen noch ergänzt werden, bevor dieses Impressum rechtlich vollständig ist.",
+          "Die Handelsregisternummer und die Umsatzsteuer-ID werden ergänzt, sobald sie vorliegen.",
         sections: [
           {
             title: "Anbieter",
@@ -455,7 +451,7 @@ const LEGAL_CONTENT = {
           },
           {
             title: "Vertreten durch",
-            paragraphs: ["[Geschäftsführer / vertretungsberechtigte Person]"],
+            paragraphs: ["Geschäftsführer: Maik Vögele, David Fernández Esteban"],
           },
           {
             title: "Kontakt",
@@ -474,12 +470,8 @@ const LEGAL_CONTENT = {
           {
             title: "Umsatzsteuer-ID",
             paragraphs: [
-              "Umsatzsteuer-Identifikationsnummer gemäß § 27a UStG: [USt-IdNr.]",
+              "Umsatzsteuer-Identifikationsnummer gemäß § 27a UStG: noch nicht erteilt",
             ],
-          },
-          {
-            title: "Verantwortlich für den Inhalt nach § 18 Abs. 2 MStV",
-            paragraphs: ["[Name, Anschrift]"],
           },
           {
             title: "Verbraucherstreitbeilegung",
