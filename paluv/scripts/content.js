@@ -289,8 +289,7 @@ const LEGAL_CONTENT = {
         alternatePath: "/de/impressum/",
         updatedLabel: "Last updated: April 9, 2026",
         heading: "Imprint",
-        note:
-          "The commercial register number and the VAT ID, if assigned, will be added once available.",
+        note: "The VAT ID, if assigned, will be added once available.",
         sections: [
           {
             title: "Provider",
@@ -315,7 +314,7 @@ const LEGAL_CONTENT = {
             title: "Commercial register",
             paragraphs: [
               "Register court: Amtsgericht Mannheim",
-              "Registration number: pending",
+              "Registration number: HRB 758033",
             ],
           },
           {
@@ -438,8 +437,7 @@ const LEGAL_CONTENT = {
         alternatePath: "/en/imprint/",
         updatedLabel: "Stand: 9. April 2026",
         heading: "Impressum",
-        note:
-          "Die Handelsregisternummer und die Umsatzsteuer-ID werden ergänzt, sobald sie vorliegen.",
+        note: "Die Umsatzsteuer-ID wird ergänzt, sobald sie vorliegt.",
         sections: [
           {
             title: "Anbieter",
@@ -464,7 +462,7 @@ const LEGAL_CONTENT = {
             title: "Handelsregister",
             paragraphs: [
               "Registergericht: Amtsgericht Mannheim",
-              "Registernummer: wird nach Eintragung ergänzt",
+              "Registernummer: HRB 758033",
             ],
           },
           {
