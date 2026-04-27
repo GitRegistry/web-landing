@@ -18,20 +18,33 @@ const map = L.map("map", {
   attributionControl: true,
   scrollWheelZoom: false,
   dragging: true,
+  fadeAnimation: false,
+  markerZoomAnimation: false,
+  zoomAnimation: false,
 }).setView([49.302, 8.451], 11);
 
-L.control.zoom({ position: "bottomright" }).addTo(map);
-
-L.tileLayer("https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/{z}/{y}/{x}", {
+const imageryLayer = L.tileLayer("https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/{z}/{y}/{x}", {
   attribution: "Tiles &copy; Esri",
+  fadeAnimation: false,
+  keepBuffer: 4,
   maxZoom: 19,
 }).addTo(map);
 
 let routeLayer = null;
 let markerLayer = null;
+let routeBounds = null;
+let tilesLoading = false;
 
 const fallbackCustomer = "Name des Kunden";
 const fallbackPilot = "Name des Piloten";
+
+imageryLayer.on("loading", () => {
+  tilesLoading = true;
+});
+
+imageryLayer.on("load", () => {
+  tilesLoading = false;
+});
 
 function syncNames() {
   customerOutput.textContent = customerInput.value.trim() || fallbackCustomer;
@@ -113,6 +126,8 @@ function clearRoute() {
     map.removeLayer(markerLayer);
     markerLayer = null;
   }
+
+  routeBounds = null;
 }
 
 function distanceBetween(a, b) {
@@ -185,52 +200,96 @@ function updateStats(stats) {
   flightTimeOutput.textContent = formatDuration(stats.flightTimeMs);
 }
 
+function fitRoute() {
+  map.invalidateSize();
+
+  if (!routeBounds) {
+    return;
+  }
+
+  map.fitBounds(routeBounds, {
+    padding: [28, 28],
+    maxZoom: 16,
+  });
+}
+
+function waitForTiles(timeout = 1800) {
+  if (!tilesLoading) {
+    return Promise.resolve();
+  }
+
+  return new Promise((resolve) => {
+    const timer = window.setTimeout(done, timeout);
+
+    function done() {
+      window.clearTimeout(timer);
+      imageryLayer.off("load", done);
+      resolve();
+    }
+
+    imageryLayer.once("load", done);
+  });
+}
+
 function drawRoute(points) {
   clearRoute();
   const latLngs = points.map((point) => [point.lat, point.lon]);
+  routeBounds = L.latLngBounds(latLngs);
 
   const routeOutline = L.polyline(latLngs, {
-    color: "#ffef5f",
-    weight: 7,
-    opacity: 0.95,
+    color: "#07131f",
+    weight: 16,
+    opacity: 0.82,
+    lineCap: "round",
+    lineJoin: "round",
+  });
+
+  const routeGlow = L.polyline(latLngs, {
+    color: "#ffffff",
+    weight: 10,
+    opacity: 1,
+    lineCap: "round",
     lineJoin: "round",
   });
 
   const routeLine = L.polyline(latLngs, {
-    color: "#12334d",
-    weight: 3,
-    opacity: 0.95,
+    color: "#ff2b6d",
+    weight: 6,
+    opacity: 1,
+    lineCap: "round",
     lineJoin: "round",
   });
 
-  routeLayer = L.layerGroup([routeOutline, routeLine]).addTo(map);
+  routeLayer = L.layerGroup([routeOutline, routeGlow, routeLine]).addTo(map);
 
   const start = latLngs[0];
   const end = latLngs[latLngs.length - 1];
 
   markerLayer = L.layerGroup([
     L.circleMarker(start, {
-      radius: 7,
+      radius: 10,
       color: "#ffffff",
-      weight: 3,
+      weight: 4,
       fillColor: "#1e8a78",
       fillOpacity: 1,
     }).bindTooltip("Start"),
     L.circleMarker(end, {
-      radius: 7,
+      radius: 10,
       color: "#ffffff",
-      weight: 3,
-      fillColor: "#c99a35",
+      weight: 4,
+      fillColor: "#ff2b6d",
       fillOpacity: 1,
     }).bindTooltip("Ziel"),
   ]).addTo(map);
 
-  map.fitBounds(routeLine.getBounds(), {
-    padding: [34, 34],
-    maxZoom: 13,
-  });
+  routeOutline.bringToFront();
+  routeGlow.bringToFront();
+  routeLine.bringToFront();
+  markerLayer.eachLayer((layer) => layer.bringToFront());
 
   emptyMap.classList.add("is-hidden");
+  fitRoute();
+  window.setTimeout(fitRoute, 250);
 }
 
 async function handleGpxUpload(file) {
@@ -249,6 +308,7 @@ async function handleGpxUpload(file) {
     const stats = routeStats(points);
     updateStats(stats);
     routeInfo.textContent = `${formatNumber(kilometers)} km Flugroute · ${formatNumber(points.length, 0)} GPX-Punkte`;
+    await waitForTiles();
     statusText.textContent = `Route geladen: ${formatNumber(kilometers)} km aus ${formatNumber(points.length, 0)} Punkten.`;
   } catch (error) {
     clearRoute();
@@ -280,16 +340,23 @@ form.addEventListener("reset", () => {
   }, 0);
 });
 
-printButton.addEventListener("click", () => {
-  map.invalidateSize();
-  window.setTimeout(() => window.print(), 160);
+printButton.addEventListener("click", async () => {
+  printButton.disabled = true;
+  statusText.textContent = routeBounds ? "Karte wird fuer den Druck vorbereitet..." : statusText.textContent;
+
+  fitRoute();
+  window.setTimeout(fitRoute, 80);
+  await waitForTiles(2200);
+
+  printButton.disabled = false;
+  window.print();
 });
 
 window.addEventListener("beforeprint", () => {
-  map.invalidateSize();
+  fitRoute();
 });
 
 window.addEventListener("load", () => {
   syncNames();
-  map.invalidateSize();
+  fitRoute();
 });

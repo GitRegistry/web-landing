@@ -268,6 +268,44 @@ button.primary:hover {
   background: #dbe7ee;
 }
 
+.leaflet-pane,
+.leaflet-tile,
+.leaflet-marker-icon,
+.leaflet-marker-shadow,
+.leaflet-tile-container,
+.leaflet-pane > svg,
+.leaflet-pane > canvas,
+.leaflet-zoom-box,
+.leaflet-image-layer,
+.leaflet-layer {
+  position: absolute;
+  left: 0;
+  top: 0;
+}
+
+.leaflet-tile-pane {
+  z-index: 200;
+}
+
+.leaflet-overlay-pane {
+  z-index: 450;
+}
+
+.leaflet-marker-pane {
+  z-index: 500;
+}
+
+.leaflet-tooltip-pane,
+.leaflet-popup-pane,
+.leaflet-control-container {
+  position: relative;
+  z-index: 650;
+}
+
+.leaflet-control-zoom {
+  display: none;
+}
+
 .empty-map {
   position: absolute;
   inset: 0;
@@ -288,6 +326,11 @@ button.primary:hover {
 }
 
 .leaflet-control-attribution {
+  position: absolute;
+  right: 4px;
+  bottom: 2px;
+  padding: 2px 4px;
+  background: rgba(255, 255, 255, 0.78);
   font-size: 8px;
 }
 
