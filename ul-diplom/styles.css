@@ -185,6 +185,11 @@ button.primary:hover {
   background: var(--accent-dark);
 }
 
+button:disabled {
+  cursor: not-allowed;
+  opacity: 0.55;
+}
+
 .preview {
   display: grid;
   place-items: start center;
