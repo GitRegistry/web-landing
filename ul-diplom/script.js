@@ -34,6 +34,7 @@ let routeLayer = null;
 let markerLayer = null;
 let routeBounds = null;
 let tilesLoading = false;
+let originalTitle = document.title;
 
 const fallbackCustomer = "Name des Kunden";
 const fallbackPilot = "Name des Piloten";
@@ -213,6 +214,12 @@ function fitRoute() {
   });
 }
 
+function scheduleFitRoute() {
+  fitRoute();
+  window.setTimeout(fitRoute, 80);
+  window.setTimeout(fitRoute, 260);
+}
+
 function waitForTiles(timeout = 1800) {
   if (!tilesLoading) {
     return Promise.resolve();
@@ -288,8 +295,7 @@ function drawRoute(points) {
   markerLayer.eachLayer((layer) => layer.bringToFront());
 
   emptyMap.classList.add("is-hidden");
-  fitRoute();
-  window.setTimeout(fitRoute, 250);
+  scheduleFitRoute();
 }
 
 async function handleGpxUpload(file) {
@@ -343,9 +349,10 @@ form.addEventListener("reset", () => {
 printButton.addEventListener("click", async () => {
   printButton.disabled = true;
   statusText.textContent = routeBounds ? "Karte wird fuer den Druck vorbereitet..." : statusText.textContent;
+  originalTitle = document.title;
+  document.title = " ";
 
-  fitRoute();
-  window.setTimeout(fitRoute, 80);
+  scheduleFitRoute();
   await waitForTiles(2200);
 
   printButton.disabled = false;
@@ -353,10 +360,34 @@ printButton.addEventListener("click", async () => {
 });
 
 window.addEventListener("beforeprint", () => {
-  fitRoute();
+  scheduleFitRoute();
+});
+
+window.addEventListener("afterprint", () => {
+  document.title = originalTitle;
+  scheduleFitRoute();
+});
+
+window.addEventListener("resize", () => {
+  scheduleFitRoute();
 });
 
 window.addEventListener("load", () => {
   syncNames();
-  fitRoute();
+  scheduleFitRoute();
 });
+
+if (window.matchMedia) {
+  const printMedia = window.matchMedia("print");
+  const handlePrintMedia = (event) => {
+    if (event.matches) {
+      scheduleFitRoute();
+    }
+  };
+
+  if (printMedia.addEventListener) {
+    printMedia.addEventListener("change", handlePrintMedia);
+  } else {
+    printMedia.addListener(handlePrintMedia);
+  }
+}

@@ -16,6 +16,12 @@
   box-sizing: border-box;
 }
 
+html,
+body {
+  max-width: 100%;
+  overflow-x: hidden;
+}
+
 body {
   margin: 0;
   min-height: 100vh;
@@ -29,6 +35,7 @@ body {
   gap: 32px;
   align-items: start;
   width: min(1320px, calc(100vw - 40px));
+  max-width: 100%;
   margin: 0 auto;
   padding: 32px 0;
 }
@@ -43,6 +50,9 @@ body {
   border: 1px solid rgba(23, 32, 42, 0.12);
   border-radius: 8px;
   box-shadow: 0 18px 50px rgba(33, 55, 75, 0.14);
+  min-width: 0;
+  width: 100%;
+  max-width: 100%;
 }
 
 .eyebrow {
@@ -70,12 +80,14 @@ h1 {
   margin-bottom: 0;
   color: var(--muted);
   line-height: 1.5;
+  overflow-wrap: anywhere;
 }
 
 label {
   display: grid;
   gap: 8px;
   font-weight: 750;
+  min-width: 0;
 }
 
 label span {
@@ -84,6 +96,7 @@ label span {
 
 input[type="text"] {
   width: 100%;
+  min-width: 0;
   min-height: 46px;
   border: 1px solid #b8c5d1;
   border-radius: 6px;
@@ -147,6 +160,7 @@ input[type="text"]:focus,
 }
 
 button {
+  min-width: 0;
   min-height: 46px;
   border: 1px solid #b8c5d1;
   border-radius: 6px;
@@ -175,6 +189,7 @@ button.primary:hover {
   display: grid;
   place-items: start center;
   min-width: 0;
+  max-width: 100%;
   overflow: auto;
   padding-bottom: 24px;
 }
@@ -182,6 +197,7 @@ button.primary:hover {
 .diploma-page {
   position: relative;
   width: min(794px, 100%);
+  max-width: 100%;
   aspect-ratio: 210 / 297;
   overflow: hidden;
   background:
@@ -430,24 +446,134 @@ footer {
     position: static;
   }
 
+  .diploma-page::before {
+    inset: 4%;
+  }
+
+  .logo {
+    top: 3.8%;
+  }
+
+  .logo-paluv {
+    left: 6%;
+    width: 18%;
+    height: 6%;
+  }
+
+  .logo-fas {
+    right: 6%;
+    width: 10%;
+    height: 7%;
+  }
+
+  .certificate-header {
+    top: 8%;
+    left: 12%;
+    right: 12%;
+  }
+
+  .certificate-header p {
+    margin-bottom: 1.5%;
+    font-size: clamp(0.78rem, 3vw, 1rem);
+  }
+
+  .certificate-header h2 {
+    font-size: clamp(2rem, 12vw, 4rem);
+    line-height: 0.92;
+  }
+
+  .certificate-header span {
+    margin-top: 2%;
+    font-size: clamp(0.72rem, 2.6vw, 0.95rem);
+  }
+
   .map-frame {
-    top: 29%;
-    left: 9%;
-    right: 9%;
-    height: 34%;
+    top: 30%;
+    left: 7%;
+    right: 7%;
+    height: 33%;
+    border-width: clamp(4px, 1.4vw, 8px);
   }
 
   .names {
-    top: 76%;
-    left: 10%;
-    right: 10%;
-    gap: 9%;
+    top: 77%;
+    left: 9%;
+    right: 9%;
+    gap: 8%;
   }
 
   .flight-stats {
     top: 68%;
-    left: 10%;
-    right: 10%;
+    left: 8%;
+    right: 8%;
+    gap: 6px;
+  }
+
+  .flight-stats div {
+    padding: 8px 5px 7px;
+  }
+
+  .flight-stats span {
+    font-size: clamp(0.48rem, 1.9vw, 0.66rem);
+  }
+
+  .flight-stats strong {
+    font-size: clamp(0.7rem, 2.6vw, 0.98rem);
+  }
+
+  .names span {
+    font-size: clamp(0.54rem, 2vw, 0.72rem);
+  }
+
+  .names strong {
+    min-height: 0;
+    font-size: clamp(1rem, 5.4vw, 1.8rem);
+  }
+
+  footer {
+    left: 9%;
+    right: 9%;
+    bottom: 4%;
+    font-size: clamp(0.68rem, 2.3vw, 0.9rem);
+  }
+}
+
+@media (max-width: 520px) {
+  .workspace {
+    width: 100%;
+    padding: 0;
+    gap: 0;
+  }
+
+  .controls {
+    border-width: 0 0 1px;
+    border-radius: 0;
+    padding: 18px 16px;
+    box-shadow: none;
+    overflow: hidden;
+  }
+
+  .controls > *,
+  .file-drop,
+  .status,
+  .actions {
+    max-width: calc(100vw - 32px);
+  }
+
+  .preview {
+    width: 100%;
+    padding: 14px 10px 22px;
+    overflow: hidden;
+  }
+
+  .diploma-page {
+    width: min(100%, 420px);
+    max-width: calc(100vw - 20px);
+    box-shadow: 0 10px 36px rgba(34, 48, 66, 0.16);
+  }
+
+  .actions {
+    grid-template-columns: 1fr;
   }
 }
 
@@ -461,39 +587,58 @@ footer {
   body {
     width: 210mm;
     height: 297mm;
+    margin: 0;
+    padding: 0;
     background: #fff;
+    overflow: hidden;
   }
 
   body {
-    margin: 0;
+    min-height: 0;
     -webkit-print-color-adjust: exact;
     print-color-adjust: exact;
   }
 
   .controls {
-    display: none;
+    display: none !important;
   }
 
   .workspace,
   .preview {
     display: block;
+    position: fixed;
+    inset: 0;
     width: 210mm;
     height: 297mm;
     margin: 0;
     padding: 0;
-    overflow: visible;
+    overflow: hidden;
+  }
+
+  .preview {
+    min-width: 0;
   }
 
   .diploma-page {
+    position: absolute;
+    inset: 0;
     width: 210mm;
     height: 297mm;
     aspect-ratio: auto;
     border: 0;
+    margin: 0;
+    overflow: hidden;
     box-shadow: none;
+    break-before: avoid;
+    break-after: avoid;
+    break-inside: avoid;
+    page-break-before: avoid;
+    page-break-after: avoid;
+    page-break-inside: avoid;
   }
 
   .diploma-page::before {
-    inset: 9mm;
+    inset: 7mm;
   }
 
   .logo {
@@ -523,7 +668,7 @@ footer {
   }
 
   .certificate-header h2 {
-    font-size: 50pt;
+    font-size: 48pt;
   }
 
   .certificate-header span {
@@ -531,10 +676,10 @@ footer {
   }
 
   .map-frame {
-    left: 19mm;
-    right: 19mm;
-    top: 86mm;
-    height: 107mm;
+    left: 13mm;
+    right: 13mm;
+    top: 82mm;
+    height: 119mm;
     border-width: 3mm;
     box-shadow: none;
   }
@@ -542,7 +687,7 @@ footer {
   .flight-stats {
     left: 23mm;
     right: 23mm;
-    top: 201mm;
+    top: 208mm;
     gap: 3mm;
   }
 
@@ -561,7 +706,7 @@ footer {
   .names {
     left: 23mm;
     right: 23mm;
-    top: 226mm;
+    top: 232mm;
     gap: 18mm;
   }
 
@@ -577,7 +722,11 @@ footer {
   footer {
     left: 20mm;
     right: 20mm;
-    bottom: 14mm;
+    bottom: 10mm;
     font-size: 10pt;
+  }
+
+  .leaflet-control-attribution {
+    display: none;
   }
 }
