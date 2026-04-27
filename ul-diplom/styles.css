@@ -291,11 +291,46 @@ button.primary:hover {
   font-size: 8px;
 }
 
+.flight-stats {
+  position: absolute;
+  left: 88px;
+  right: 88px;
+  top: 772px;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 12px;
+}
+
+.flight-stats div {
+  min-width: 0;
+  padding: 12px 10px 10px;
+  border: 1px solid rgba(201, 154, 53, 0.44);
+  background: rgba(255, 253, 245, 0.86);
+  text-align: center;
+}
+
+.flight-stats span {
+  display: block;
+  margin-bottom: 5px;
+  color: #6d747c;
+  font-size: 0.7rem;
+  font-weight: 850;
+  text-transform: uppercase;
+}
+
+.flight-stats strong {
+  display: block;
+  color: #24303c;
+  font-size: 1.1rem;
+  line-height: 1.1;
+  overflow-wrap: anywhere;
+}
+
 .names {
   position: absolute;
   left: 88px;
   right: 88px;
-  top: 805px;
+  top: 860px;
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 72px;
@@ -360,10 +395,16 @@ footer {
   }
 
   .names {
-    top: 72%;
+    top: 76%;
     left: 10%;
     right: 10%;
     gap: 9%;
+  }
+
+  .flight-stats {
+    top: 68%;
+    left: 10%;
+    right: 10%;
   }
 }
 
@@ -450,15 +491,34 @@ footer {
     left: 19mm;
     right: 19mm;
     top: 86mm;
-    height: 113mm;
+    height: 107mm;
     border-width: 3mm;
     box-shadow: none;
+  }
+
+  .flight-stats {
+    left: 23mm;
+    right: 23mm;
+    top: 201mm;
+    gap: 3mm;
+  }
+
+  .flight-stats div {
+    padding: 3mm 2mm 2.6mm;
+  }
+
+  .flight-stats span {
+    font-size: 7pt;
+  }
+
+  .flight-stats strong {
+    font-size: 12pt;
   }
 
   .names {
     left: 23mm;
     right: 23mm;
-    top: 213mm;
+    top: 226mm;
     gap: 18mm;
   }
 

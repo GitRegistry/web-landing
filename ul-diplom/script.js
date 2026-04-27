@@ -4,6 +4,9 @@ const fileInput = document.querySelector("#gpxFile");
 const fileLabel = document.querySelector("#fileLabel");
 const customerOutput = document.querySelector("#customerOutput");
 const pilotOutput = document.querySelector("#pilotOutput");
+const maxSpeedOutput = document.querySelector("#maxSpeedOutput");
+const maxAltitudeOutput = document.querySelector("#maxAltitudeOutput");
+const flightTimeOutput = document.querySelector("#flightTimeOutput");
 const routeInfo = document.querySelector("#routeInfo");
 const statusText = document.querySelector("#statusText");
 const emptyMap = document.querySelector("#emptyMap");
@@ -39,10 +42,26 @@ function formatNumber(value, maximumFractionDigits = 1) {
   return new Intl.NumberFormat("de-DE", { maximumFractionDigits }).format(value);
 }
 
+function formatDuration(milliseconds) {
+  if (!Number.isFinite(milliseconds) || milliseconds <= 0) {
+    return "--:--";
+  }
+
+  const totalMinutes = Math.max(1, Math.round(milliseconds / 60000));
+  const hours = Math.floor(totalMinutes / 60);
+  const minutes = totalMinutes % 60;
+
+  return `${String(hours).padStart(2, "0")}:${String(minutes).padStart(2, "0")}`;
+}
+
 function getGpxElements(xml, localName) {
   const plain = Array.from(xml.getElementsByTagName(localName));
   const namespaced = Array.from(xml.getElementsByTagNameNS("*", localName));
   return [...new Set([...plain, ...namespaced])];
+}
+
+function getChildText(element, localName) {
+  return Array.from(element.children).find((child) => child.localName === localName)?.textContent?.trim() || "";
 }
 
 function readPoint(element) {
@@ -53,7 +72,15 @@ function readPoint(element) {
     return null;
   }
 
-  return [lat, lon];
+  const elevationMeters = Number.parseFloat(getChildText(element, "ele"));
+  const timeValue = Date.parse(getChildText(element, "time"));
+
+  return {
+    lat,
+    lon,
+    elevationMeters: Number.isFinite(elevationMeters) ? elevationMeters : null,
+    timeMs: Number.isFinite(timeValue) ? timeValue : null,
+  };
 }
 
 function parseGpx(text) {
@@ -91,10 +118,10 @@ function clearRoute() {
 function distanceBetween(a, b) {
   const earthRadiusKm = 6371;
   const toRad = (degrees) => (degrees * Math.PI) / 180;
-  const deltaLat = toRad(b[0] - a[0]);
-  const deltaLon = toRad(b[1] - a[1]);
-  const lat1 = toRad(a[0]);
-  const lat2 = toRad(b[0]);
+  const deltaLat = toRad(b.lat - a.lat);
+  const deltaLon = toRad(b.lon - a.lon);
+  const lat1 = toRad(a.lat);
+  const lat2 = toRad(b.lat);
   const h =
     Math.sin(deltaLat / 2) ** 2 +
     Math.cos(lat1) * Math.cos(lat2) * Math.sin(deltaLon / 2) ** 2;
@@ -106,17 +133,70 @@ function routeDistance(points) {
   return points.slice(1).reduce((total, point, index) => total + distanceBetween(points[index], point), 0);
 }
 
+function routeStats(points) {
+  const elevations = points
+    .map((point) => point.elevationMeters)
+    .filter((elevation) => Number.isFinite(elevation));
+  const timestamps = points
+    .map((point) => point.timeMs)
+    .filter((timeMs) => Number.isFinite(timeMs));
+
+  const maxAltitudeFt = elevations.length ? Math.max(...elevations) * 3.28084 : null;
+  const flightTimeMs = timestamps.length >= 2 ? timestamps[timestamps.length - 1] - timestamps[0] : null;
+  let maxSpeedKmh = null;
+
+  points.slice(1).forEach((point, index) => {
+    const previous = points[index];
+
+    if (!Number.isFinite(previous.timeMs) || !Number.isFinite(point.timeMs)) {
+      return;
+    }
+
+    const hours = (point.timeMs - previous.timeMs) / 3600000;
+
+    if (hours <= 0) {
+      return;
+    }
+
+    const speed = distanceBetween(previous, point) / hours;
+    maxSpeedKmh = maxSpeedKmh === null ? speed : Math.max(maxSpeedKmh, speed);
+  });
+
+  return {
+    maxAltitudeFt,
+    maxSpeedKmh,
+    flightTimeMs: Number.isFinite(flightTimeMs) && flightTimeMs > 0 ? flightTimeMs : null,
+  };
+}
+
+function resetStats() {
+  maxSpeedOutput.textContent = "- km/h";
+  maxAltitudeOutput.textContent = "- ft";
+  flightTimeOutput.textContent = "--:--";
+}
+
+function updateStats(stats) {
+  maxSpeedOutput.textContent = Number.isFinite(stats.maxSpeedKmh)
+    ? `${formatNumber(stats.maxSpeedKmh, 0)} km/h`
+    : "- km/h";
+  maxAltitudeOutput.textContent = Number.isFinite(stats.maxAltitudeFt)
+    ? `${formatNumber(stats.maxAltitudeFt, 0)} ft`
+    : "- ft";
+  flightTimeOutput.textContent = formatDuration(stats.flightTimeMs);
+}
+
 function drawRoute(points) {
   clearRoute();
+  const latLngs = points.map((point) => [point.lat, point.lon]);
 
-  const routeOutline = L.polyline(points, {
+  const routeOutline = L.polyline(latLngs, {
     color: "#ffef5f",
     weight: 7,
     opacity: 0.95,
     lineJoin: "round",
   });
 
-  const routeLine = L.polyline(points, {
+  const routeLine = L.polyline(latLngs, {
     color: "#12334d",
     weight: 3,
     opacity: 0.95,
@@ -125,8 +205,8 @@ function drawRoute(points) {
 
   routeLayer = L.layerGroup([routeOutline, routeLine]).addTo(map);
 
-  const start = points[0];
-  const end = points[points.length - 1];
+  const start = latLngs[0];
+  const end = latLngs[latLngs.length - 1];
 
   markerLayer = L.layerGroup([
     L.circleMarker(start, {
@@ -166,10 +246,13 @@ async function handleGpxUpload(file) {
     drawRoute(points);
 
     const kilometers = routeDistance(points);
+    const stats = routeStats(points);
+    updateStats(stats);
     routeInfo.textContent = `${formatNumber(kilometers)} km Flugroute · ${formatNumber(points.length, 0)} GPX-Punkte`;
     statusText.textContent = `Route geladen: ${formatNumber(kilometers)} km aus ${formatNumber(points.length, 0)} Punkten.`;
   } catch (error) {
     clearRoute();
+    resetStats();
     emptyMap.classList.remove("is-hidden");
     statusText.textContent = error.message;
     routeInfo.textContent = "Bitte eine GPX-Datei mit Track- oder Routenpunkten hochladen.";
@@ -189,6 +272,7 @@ form.addEventListener("reset", () => {
     fileLabel.textContent = "Datei auswählen";
     statusText.textContent = "Noch kein GPX geladen.";
     routeInfo.textContent = "Route wird nach dem Upload berechnet.";
+    resetStats();
     emptyMap.classList.remove("is-hidden");
 
     clearRoute();
