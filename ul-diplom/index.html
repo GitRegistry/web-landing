@@ -1,0 +1,93 @@
+<!doctype html>
+<html lang="de">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="robots" content="noindex,nofollow,noarchive,nosnippet,noimageindex">
+    <meta name="googlebot" content="noindex,nofollow,noarchive,nosnippet,noimageindex">
+    <title>UL Diplom Generator</title>
+    <link rel="icon" href="assets/paluvlogo.png">
+    <link
+      rel="stylesheet"
+      href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
+      integrity="sha256-p4NxAoJBhIINfQd9tHIw4Yd9XXHfW3h8jOm2wU5jQn4="
+      crossorigin=""
+    >
+    <link rel="stylesheet" href="styles.css">
+  </head>
+  <body>
+    <main class="workspace">
+      <form class="controls" id="diplomaForm">
+        <div>
+          <p class="eyebrow">Paluv x Flight Academy Speyer</p>
+          <h1>UL Diplom</h1>
+          <p class="intro">SkyDemon GPX hochladen, Namen eintragen, drucken. Der GPX-Track bleibt lokal in diesem Browser.</p>
+        </div>
+
+        <label>
+          <span>Name des Kunden</span>
+          <input id="customerName" name="customerName" type="text" placeholder="z. B. Max Mustermann" autocomplete="name">
+        </label>
+
+        <label>
+          <span>Name des Piloten</span>
+          <input id="pilotName" name="pilotName" type="text" placeholder="z. B. Captain Paluv" autocomplete="name">
+        </label>
+
+        <label class="file-drop" for="gpxFile">
+          <span>SkyDemon GPX</span>
+          <strong id="fileLabel">Datei auswählen</strong>
+          <small>Track, Route oder Wegpunkte im GPX-Format</small>
+          <input id="gpxFile" name="gpxFile" type="file" accept=".gpx,application/gpx+xml,text/xml,application/xml">
+        </label>
+
+        <p class="status" id="statusText" role="status">Noch kein GPX geladen.</p>
+
+        <div class="actions">
+          <button class="primary" type="button" id="printButton">Drucken</button>
+          <button type="reset">Zurücksetzen</button>
+        </div>
+      </form>
+
+      <section class="preview" aria-label="Druckvorschau">
+        <article class="diploma-page" id="diplomaPage">
+          <img class="logo logo-paluv" src="assets/paluvlogo.png" alt="Paluv">
+          <img class="logo logo-fas" src="assets/FASLogo.png" alt="Flight Academy Speyer">
+
+          <header class="certificate-header">
+            <p>Flight Academy Speyer</p>
+            <h2>UL Flug-Diplom</h2>
+            <span>Einmal Himmel und zurück</span>
+          </header>
+
+          <div class="map-frame">
+            <div id="map" aria-label="Satellitenkarte mit GPX-Route"></div>
+            <div class="empty-map" id="emptyMap">GPX hochladen, dann erscheint hier die Route.</div>
+          </div>
+
+          <div class="names">
+            <div>
+              <span>Kunde</span>
+              <strong id="customerOutput">Name des Kunden</strong>
+            </div>
+            <div>
+              <span>Pilot</span>
+              <strong id="pilotOutput">Name des Piloten</strong>
+            </div>
+          </div>
+
+          <footer>
+            <span id="routeInfo">Route wird nach dem Upload berechnet.</span>
+          </footer>
+        </article>
+      </section>
+    </main>
+
+    <script
+      src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
+      integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo="
+      crossorigin=""
+    ></script>
+    <script src="script.js"></script>
+  </body>
+</html>

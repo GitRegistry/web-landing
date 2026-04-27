@@ -67,6 +67,20 @@ services:
     networks:
       - public
 
+  web-ul-diplom:
+    build:
+      context: ./ul-diplom
+    labels:
+      caddy: "diplom.paluv.de"
+      caddy.reverse_proxy: "{{upstreams 80}}"
+      homepage.group: "Deployments"
+      homepage.name: "UL Diplom"
+      homepage.icon: "certificate"
+      homepage.href: "https://diplom.paluv.de"
+      homepage.description: "UL diploma GPX print generator"
+    networks:
+      - public
+
 networks:
   public:
     external: true

@@ -1,7 +1,7 @@
 # web-landing
 
 Monorepo for the Kopi, Pilotary, and Paluv landing pages.
-It includes the Fest Map site.
+It includes the Fest Map site and the UL Diplom print generator.
 
 ## Structure
 
@@ -9,6 +9,7 @@ It includes the Fest Map site.
 - `pilotary/`
 - `paluv/`
 - `fest-map/`
+- `ul-diplom/`
 
 ## Run
 
