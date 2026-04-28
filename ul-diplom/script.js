@@ -498,29 +498,14 @@ async function createDiplomaPdf() {
     const pilotName = pilotInput.value.trim() || fallbackPilot;
     const routeSummary = `${formatNumber(currentDistanceKm)} km Flugroute · ${formatNumber(currentPoints.length, 0)} GPX-Punkte`;
 
-    pdf.setFillColor(255, 251, 242);
-    pdf.rect(0, 0, 210, 297, "F");
     pdf.setFillColor(246, 238, 218);
-    pdf.setGState(new pdf.GState({ opacity: 0.55 }));
-    pdf.roundedRect(-8, 28, 226, 120, 42, 42, "F");
-    pdf.setFillColor(253, 246, 231);
-    pdf.roundedRect(-12, 178, 232, 104, 34, 34, "F");
-    pdf.setFillColor(232, 240, 231);
-    pdf.roundedRect(122, 70, 112, 188, 26, 26, "F");
-    pdf.setGState(new pdf.GState({ opacity: 1 }));
-
-    pdf.setDrawColor(228, 214, 183);
-    pdf.setLineWidth(0.45);
-    for (let lineIndex = 0; lineIndex < 6; lineIndex += 1) {
-      const y = 102 + lineIndex * 24;
-      pdf.line(12, y, 198, y - 7);
-    }
+    pdf.rect(0, 0, 210, 297, "F");
 
     pdf.setDrawColor(201, 154, 53);
     pdf.setLineWidth(0.35);
     pdf.rect(7, 7, 196, 283);
 
-    pdf.addImage(paluvLogo, "PNG", 16, 14, 33, 18);
+    pdf.addImage(paluvLogo, "PNG", 16, 14, 33, 15.4);
     pdf.addImage(fasLogo, "PNG", 171, 14, 18, 18);
 
     pdf.setFont("times", "normal");
