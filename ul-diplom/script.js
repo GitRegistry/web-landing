@@ -171,6 +171,7 @@ function routeStats(points) {
   const maxAltitudeFt = elevations.length ? Math.max(...elevations) * 3.28084 : null;
   const flightTimeMs = timestamps.length >= 2 ? timestamps[timestamps.length - 1] - timestamps[0] : null;
   let maxSpeedKmh = null;
+  const samples = [];
 
   points.slice(1).forEach((point, index) => {
     const previous = points[index];
@@ -179,15 +180,47 @@ function routeStats(points) {
       return;
     }
 
-    const hours = (point.timeMs - previous.timeMs) / 3600000;
+    const durationMs = point.timeMs - previous.timeMs;
 
-    if (hours <= 0) {
+    if (durationMs <= 0) {
       return;
     }
 
-    const speed = distanceBetween(previous, point) / hours;
-    maxSpeedKmh = maxSpeedKmh === null ? speed : Math.max(maxSpeedKmh, speed);
+    samples.push({
+      distanceKm: distanceBetween(previous, point),
+      durationMs,
+    });
   });
+
+  // Use a rolling two-minute window instead of raw segment peaks.
+  // GPX points can be dense or uneven, and per-segment maxima tend to overstate speed.
+  for (let startIndex = 0; startIndex < samples.length; startIndex += 1) {
+    let windowDistanceKm = 0;
+    let windowDurationMs = 0;
+
+    for (let sampleIndex = startIndex; sampleIndex < samples.length; sampleIndex += 1) {
+      windowDistanceKm += samples[sampleIndex].distanceKm;
+      windowDurationMs += samples[sampleIndex].durationMs;
+
+      if (windowDurationMs < 90000) {
+        continue;
+      }
+
+      if (windowDurationMs > 300000) {
+        break;
+      }
+
+      const speed = windowDistanceKm / (windowDurationMs / 3600000);
+      maxSpeedKmh = maxSpeedKmh === null ? speed : Math.max(maxSpeedKmh, speed);
+      break;
+    }
+  }
+
+  if (maxSpeedKmh === null && samples.length) {
+    const totalDistanceKm = samples.reduce((sum, sample) => sum + sample.distanceKm, 0);
+    const totalDurationMs = samples.reduce((sum, sample) => sum + sample.durationMs, 0);
+    maxSpeedKmh = totalDurationMs > 0 ? totalDistanceKm / (totalDurationMs / 3600000) : null;
+  }
 
   return {
     maxAltitudeFt,
@@ -415,6 +448,13 @@ function drawCenteredText(pdf, text, x, y, maxWidth, lineHeight) {
   });
 }
 
+function drawLeftText(pdf, text, x, y, maxWidth, lineHeight) {
+  const lines = pdf.splitTextToSize(text, maxWidth);
+  lines.forEach((line, index) => {
+    pdf.text(line, x, y + index * lineHeight);
+  });
+}
+
 function drawRightText(pdf, text, x, y, maxWidth, lineHeight) {
   const lines = pdf.splitTextToSize(text, maxWidth);
   lines.forEach((line, index) => {
@@ -458,41 +498,54 @@ async function createDiplomaPdf() {
     const pilotName = pilotInput.value.trim() || fallbackPilot;
     const routeSummary = `${formatNumber(currentDistanceKm)} km Flugroute · ${formatNumber(currentPoints.length, 0)} GPX-Punkte`;
 
-    pdf.setFillColor(255, 250, 240);
+    pdf.setFillColor(255, 251, 242);
     pdf.rect(0, 0, 210, 297, "F");
     pdf.setFillColor(246, 238, 218);
-    pdf.rect(0, 0, 210, 297, "F");
+    pdf.setGState(new pdf.GState({ opacity: 0.55 }));
+    pdf.roundedRect(-8, 28, 226, 120, 42, 42, "F");
+    pdf.setFillColor(253, 246, 231);
+    pdf.roundedRect(-12, 178, 232, 104, 34, 34, "F");
+    pdf.setFillColor(232, 240, 231);
+    pdf.roundedRect(122, 70, 112, 188, 26, 26, "F");
+    pdf.setGState(new pdf.GState({ opacity: 1 }));
+
+    pdf.setDrawColor(228, 214, 183);
+    pdf.setLineWidth(0.45);
+    for (let lineIndex = 0; lineIndex < 6; lineIndex += 1) {
+      const y = 102 + lineIndex * 24;
+      pdf.line(12, y, 198, y - 7);
+    }
+
     pdf.setDrawColor(201, 154, 53);
     pdf.setLineWidth(0.35);
     pdf.rect(7, 7, 196, 283);
 
-    pdf.addImage(paluvLogo, "PNG", 16, 14, 33, 15);
-    pdf.addImage(fasLogo, "PNG", 170, 14, 23, 23);
+    pdf.addImage(paluvLogo, "PNG", 16, 14, 33, 18);
+    pdf.addImage(fasLogo, "PNG", 171, 14, 18, 18);
 
     pdf.setFont("times", "normal");
     pdf.setTextColor(17, 98, 84);
     pdf.setFontSize(13);
-    pdf.text("Flight Academy Speyer", 105, 38, { align: "center" });
+    pdf.text("Flight Academy Speyer", 105, 37, { align: "center" });
 
     pdf.setTextColor(36, 48, 60);
     pdf.setFont("times", "bold");
-    pdf.setFontSize(48);
-    pdf.text("UL Flug-", 105, 59, { align: "center" });
-    pdf.text("Diplom", 105, 78, { align: "center" });
+    pdf.setFontSize(42);
+    pdf.text("UL Flug Diplom", 105, 64, { align: "center" });
 
     pdf.setFont("helvetica", "bold");
-    pdf.setFontSize(12);
+    pdf.setFontSize(11.5);
     pdf.setTextColor(122, 95, 32);
-    pdf.text("Einmal Himmel und zurueck", 105, 88, { align: "center" });
+    pdf.text("Roundflight and airwork achieved successfully", 105, 79.5, { align: "center" });
 
     pdf.setFillColor(255, 255, 255);
-    pdf.rect(10, 94, 190, 126, "F");
-    pdf.addImage(mapImage, "JPEG", 13, 97, 184, 119);
+    pdf.rect(10, 90, 190, 126, "F");
+    pdf.addImage(mapImage, "JPEG", 13, 93, 184, 119);
     pdf.setDrawColor(190, 190, 190);
     pdf.setLineWidth(0.25);
-    pdf.rect(10, 94, 190, 126);
+    pdf.rect(10, 90, 190, 126);
 
-    const statY = 226;
+    const statY = 222;
     const statWidth = 50;
     const statGap = 6;
     const statX = [23, 23 + statWidth + statGap, 23 + (statWidth + statGap) * 2];
@@ -517,20 +570,20 @@ async function createDiplomaPdf() {
 
     pdf.setDrawColor(52, 65, 83);
     pdf.setLineWidth(0.6);
-    pdf.line(23, 250, 87, 250);
-    pdf.line(123, 250, 187, 250);
+    pdf.line(23, 247, 87, 247);
+    pdf.line(123, 247, 187, 247);
 
     pdf.setFont("helvetica", "bold");
     pdf.setFontSize(8.5);
     pdf.setTextColor(109, 116, 124);
-    pdf.text("KUNDE", 23, 257);
-    pdf.text("PILOT", 187, 257, { align: "right" });
+    pdf.text("KUNDE", 23, 254);
+    pdf.text("PILOT", 187, 254, { align: "right" });
 
     pdf.setFont("times", "bold");
     pdf.setFontSize(23);
     pdf.setTextColor(23, 32, 42);
-    drawCenteredText(pdf, customerName, 55, 267, 66, 9);
-    drawRightText(pdf, pilotName, 187, 267, 66, 9);
+    drawLeftText(pdf, customerName, 23, 264, 66, 9);
+    drawRightText(pdf, pilotName, 187, 264, 66, 9);
 
     pdf.setFont("helvetica", "bold");
     pdf.setFontSize(10);
