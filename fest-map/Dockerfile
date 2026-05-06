@@ -9,4 +9,5 @@ COPY en /usr/share/nginx/html/en
 COPY de /usr/share/nginx/html/de
 COPY css /usr/share/nginx/html/css
 COPY js /usr/share/nginx/html/js
+COPY data /usr/share/nginx/html/data
 COPY assets /usr/share/nginx/html/assets

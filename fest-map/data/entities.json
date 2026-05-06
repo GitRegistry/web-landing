@@ -1,0 +1,756 @@
+[
+  {
+    "id": "gastro-building",
+    "type": "building",
+    "markerKind": "building",
+    "coordinates": [
+      49.30963026749851,
+      8.448736682123599
+    ],
+    "name": {
+      "de": "Gastro",
+      "en": "Gastro"
+    },
+    "location": {
+      "de": "Restaurant- und Gastrobereich",
+      "en": "Restaurant and food area"
+    },
+    "summary": {
+      "de": "Hier ist der zentrale Gastrobereich des Flugplatzfests vorgesehen.",
+      "en": "This is the main food-service building of the festival."
+    },
+    "description": {
+      "de": "Im Gastrobereich soll nach aktuellem Plan die Bordkueche wiedereroeffnen. Falls das bis Dienstag, 1. April 2026, nicht umgesetzt werden kann, ist ein externer Anbieter vorgesehen.",
+      "en": "The current plan is to reopen the Bordkueche restaurant here. If that cannot be confirmed by Tuesday, April 1, 2026, an external food vendor is planned instead."
+    },
+    "website": "",
+    "phone": "",
+    "email": "",
+    "image": "/assets/logos/museum-terrace.svg"
+  },
+  {
+    "id": "fsv-speyer",
+    "type": "building",
+    "markerKind": "building",
+    "coordinates": [
+      49.30957676417005,
+      8.448457419576826
+    ],
+    "name": {
+      "de": "FSV Flugsportverein Speyer e.V.",
+      "en": "FSV Flugsportverein Speyer e.V."
+    },
+    "location": {
+      "de": "FSV Vorfeld",
+      "en": "FSV apron"
+    },
+    "summary": {
+      "de": "Vereinsbereich des FSV und organisatorischer Kernpunkt des Festes.",
+      "en": "FSV club area and one of the operational hubs of the festival."
+    },
+    "description": {
+      "de": "Der FSV organisiert den Rundflugstand und richtet auf dem eigenen Vorfeld Sitzgelegenheiten und Sonnenschirme fuer Gaeste ein. Auch der Toilettenwagen steht direkt in diesem Bereich.",
+      "en": "The FSV organizes the sightseeing-flight stand and plans seating plus parasols for visitors on its apron. The toilet trailer is also placed directly in this area."
+    },
+    "website": "",
+    "phone": "",
+    "email": "",
+    "image": "/assets/logos/hangar-court.svg"
+  },
+  {
+    "id": "sport-huber",
+    "type": "building",
+    "markerKind": "building",
+    "coordinates": [
+      49.30898281543477,
+      8.448150888672089
+    ],
+    "name": {
+      "de": "Sport Huber",
+      "en": "Sport Huber"
+    },
+    "location": {
+      "de": "Westliche Gebaeudezeile",
+      "en": "Western building row"
+    },
+    "summary": {
+      "de": "Standort in der westlichen Reihe der Gebaeude und Aussteller.",
+      "en": "Location within the western line of buildings and exhibitors."
+    },
+    "description": {
+      "de": "Sport Huber liegt direkt an der westlichen Gebaeudezeile, die den Besucherweg entlang des Veranstaltungsgelaendes begleitet.",
+      "en": "Sport Huber sits on the western building row that frames the visitor route along the event grounds."
+    },
+    "website": "",
+    "phone": "",
+    "email": "",
+    "image": "/assets/logos/hangar-court.svg"
+  },
+  {
+    "id": "flight-academy-hangar-1",
+    "type": "building",
+    "markerKind": "building",
+    "coordinates": [
+      49.3087588944158,
+      8.448403874348912
+    ],
+    "name": {
+      "de": "Flight Academy Speyer Hangar 1",
+      "en": "Flight Academy Speyer Hangar 1"
+    },
+    "location": {
+      "de": "Flight Academy Speyer",
+      "en": "Flight Academy Speyer"
+    },
+    "summary": {
+      "de": "Erster Hangar der Flight Academy im zentralen Besucherbereich.",
+      "en": "First Flight Academy hangar in the central visitor area."
+    },
+    "description": {
+      "de": "Der Bereich der Flight Academy ist Teil der kompakten Veranstaltungsflaeche. In direkter Naehe liegt auch der geplante Getraenkestand der Flight Academy.",
+      "en": "The Flight Academy zone is part of the compact festival layout. The planned Flight Academy drinks stand is also located close by."
+    },
+    "website": "",
+    "phone": "",
+    "email": "",
+    "image": "/assets/logos/hangar-court.svg"
+  },
+  {
+    "id": "paluv",
+    "type": "building",
+    "markerKind": "building",
+    "coordinates": [
+      49.30872443648363,
+      8.448426847913288
+    ],
+    "name": {
+      "de": "Paluv",
+      "en": "Paluv"
+    },
+    "location": {
+      "de": "Engineering Partner am Flugplatz",
+      "en": "Engineering partner at the aerodrome"
+    },
+    "summary": {
+      "de": "Engineering passion applied to aviation.",
+      "en": "Engineering passion applied to aviation."
+    },
+    "description": {
+      "de": "Engineering passion applied to aviation. Software Engineering and Operations Company.",
+      "en": "Engineering passion applied to aviation. Software Engineering and Operations Company."
+    },
+    "website": "",
+    "phone": "",
+    "email": "",
+    "image": "/assets/logos/visitor-info.svg"
+  },
+  {
+    "id": "flight-academy-hangar-2",
+    "type": "building",
+    "markerKind": "building",
+    "coordinates": [
+      49.30838708418543,
+      8.448472419267215
+    ],
+    "name": {
+      "de": "Flight Academy Speyer Hangar 2",
+      "en": "Flight Academy Speyer Hangar 2"
+    },
+    "location": {
+      "de": "Flight Academy Speyer",
+      "en": "Flight Academy Speyer"
+    },
+    "summary": {
+      "de": "Zweiter Hangar der Flight Academy an der kompakten Eventgrenze.",
+      "en": "Second Flight Academy hangar along the compact event boundary."
+    },
+    "description": {
+      "de": "Die Absperrung des Veranstaltungsgelaendes soll suedlich des neuen Flight-Academy-Hangars verlaufen, damit die Flaeche insgesamt kompakt bleibt.",
+      "en": "The event barrier is planned to run south of the new Flight Academy hangar so the overall event footprint remains compact."
+    },
+    "website": "",
+    "phone": "",
+    "email": "",
+    "image": "/assets/logos/hangar-court.svg"
+  },
+  {
+    "id": "otto-funk",
+    "type": "building",
+    "markerKind": "building",
+    "coordinates": [
+      49.30799720814443,
+      8.448609993004567
+    ],
+    "name": {
+      "de": "Otto Funk",
+      "en": "Otto Funk"
+    },
+    "location": {
+      "de": "UL-Flugschule Otto Funk",
+      "en": "UL flight school Otto Funk"
+    },
+    "summary": {
+      "de": "Standort der UL-Flugschule Otto Funk im suedlichen Hallenband.",
+      "en": "Home position of the Otto Funk UL flight school in the southern hangar line."
+    },
+    "description": {
+      "de": "Im Rahmen der kompakten Veranstaltungsplanung koennte die UL-Flugschule ihre Flugzeuge auf dem Vorfeld der Flight Academy abstellen.",
+      "en": "As part of the compact event layout, the UL flight school may park its aircraft on the Flight Academy apron."
+    },
+    "website": "",
+    "phone": "",
+    "email": "",
+    "image": "/assets/logos/hangar-court.svg"
+  },
+  {
+    "id": "flugschule-loeffler",
+    "type": "building",
+    "markerKind": "building",
+    "coordinates": [
+      49.30769694538147,
+      8.448660849027364
+    ],
+    "name": {
+      "de": "Flugschule Loeffler",
+      "en": "Loeffler Flight School"
+    },
+    "location": {
+      "de": "Flugschulbereich",
+      "en": "Flight school area"
+    },
+    "summary": {
+      "de": "Ansaessige Flugschule am suedlichen Ende der westlichen Gebaeudezeile.",
+      "en": "Resident flight school at the southern end of the western building row."
+    },
+    "description": {
+      "de": "Die Flugschule Loeffler gehoert zu den ansaessigen Flugschulen am Platz und schliesst die westliche Gebaeudezeile nach Sueden ab.",
+      "en": "Loeffler Flight School is one of the resident flight schools on the airfield and marks the southern end of the western building row."
+    },
+    "website": "",
+    "phone": "",
+    "email": "",
+    "image": "/assets/logos/hangar-court.svg"
+  },
+  {
+    "id": "toilettenwagen",
+    "type": "service",
+    "markerKind": "toilet",
+    "coordinates": [
+      49.30954874787347,
+      8.448062080648286
+    ],
+    "name": {
+      "de": "Toilettenwagen",
+      "en": "Toilet Trailer"
+    },
+    "location": {
+      "de": "Beim FSV neben dem kleinen Hangar",
+      "en": "By the FSV area next to the small hangar"
+    },
+    "summary": {
+      "de": "Zentraler Sanitaerpunkt fuer Besucher.",
+      "en": "Main sanitary point for visitors."
+    },
+    "description": {
+      "de": "Der Toilettenwagen wird vom Technik Museum bereitgestellt und beim FSV neben dem kleinen Hangar aufgestellt.",
+      "en": "The toilet trailer is provided by the Technik Museum and placed by the FSV next to the small hangar."
+    },
+    "website": "",
+    "phone": "",
+    "email": "",
+    "image": "/assets/logos/first-aid.svg"
+  },
+  {
+    "id": "crepes-essen",
+    "type": "service",
+    "markerKind": "food",
+    "coordinates": [
+      49.309296323934404,
+      8.448300261881036
+    ],
+    "name": {
+      "de": "Crepes / Essen",
+      "en": "Crepes / Food"
+    },
+    "location": {
+      "de": "Food Point am Besucherweg",
+      "en": "Food point on the visitor route"
+    },
+    "summary": {
+      "de": "Essens- und Crepes-Stand im noerdlichen Besucherbereich.",
+      "en": "Food and crepes stand in the northern visitor area."
+    },
+    "description": {
+      "de": "Hier koennen Besucher Essen und Crepes finden. Parallel wird geprueft, ob die Bordkueche wiedereroeffnet; falls nicht, wird ein externer Anbieter benoetigt.",
+      "en": "Visitors can find food and crepes here. At the same time, the organizers are checking whether the Bordkueche restaurant can reopen; otherwise an external vendor is needed."
+    },
+    "website": "",
+    "phone": "",
+    "email": "",
+    "image": "/assets/logos/museum-terrace.svg"
+  },
+  {
+    "id": "green-aviation-hub",
+    "type": "service",
+    "markerKind": "hub",
+    "coordinates": [
+      49.30920379483544,
+      8.448595457596857
+    ],
+    "name": {
+      "de": "Green Aviation Hub",
+      "en": "Green Aviation Hub"
+    },
+    "location": {
+      "de": "Externer Teilnehmerbereich",
+      "en": "External participant zone"
+    },
+    "summary": {
+      "de": "Informationspunkt des Green Aviation Hub Mannheim.",
+      "en": "Information point of Green Aviation Hub Mannheim."
+    },
+    "description": {
+      "de": "Der Green Aviation Hub Mannheim ist als externer Teilnehmer Teil des Flugplatzfests und praesentiert sich hier im zentralen Besucherbereich.",
+      "en": "Green Aviation Hub Mannheim is attending as an external participant and presents its work here in the central visitor area."
+    },
+    "website": "",
+    "phone": "",
+    "email": "",
+    "image": "/assets/logos/visitor-info.svg"
+  },
+  {
+    "id": "infostand-flugschulen-und-vereine",
+    "type": "service",
+    "markerKind": "info",
+    "coordinates": [
+      49.30906685145007,
+      8.448672094946158
+    ],
+    "name": {
+      "de": "Infostand Flugschulen und Vereine",
+      "en": "Info Stand for Flight Schools and Clubs"
+    },
+    "location": {
+      "de": "Direkt neben dem Rundflugstand",
+      "en": "Directly next to the sightseeing flight stand"
+    },
+    "summary": {
+      "de": "Gemeinsamer Anlaufpunkt fuer Vereine und Flugschulen am Platz.",
+      "en": "Shared contact point for clubs and flight schools on the airfield."
+    },
+    "description": {
+      "de": "Der Infostand der Flugschulen und Vereine ist bewusst direkt neben dem Rundflugstand eingeplant, damit Besucher beide Angebote schnell finden.",
+      "en": "The information stand for clubs and flight schools is deliberately placed right next to the sightseeing-flight stand so visitors can find both quickly."
+    },
+    "website": "",
+    "phone": "",
+    "email": "",
+    "image": "/assets/logos/visitor-info.svg"
+  },
+  {
+    "id": "rundflugstand",
+    "type": "service",
+    "markerKind": "flight",
+    "coordinates": [
+      49.30902798906865,
+      8.448814015963379
+    ],
+    "name": {
+      "de": "Rundflugstand",
+      "en": "Sightseeing Flight Stand"
+    },
+    "location": {
+      "de": "FSV organisiert",
+      "en": "Operated by the FSV"
+    },
+    "summary": {
+      "de": "Check-in fuer Rundfluege: 50 Euro fuer 20 Minuten, bar oder mit Karte.",
+      "en": "Sightseeing-flight check-in: 50 euros for 20 minutes, cash or card."
+    },
+    "description": {
+      "de": "Am Rundflugstand werden alle Rundfluege der am Platz ansaessigen Anbieter abgewickelt. Der einheitliche Preis liegt bei 50 Euro fuer 20 Minuten Flugzeit; bezahlt werden kann bar oder mit Karte.",
+      "en": "All sightseeing flights from operators based at the airfield are handled at this stand. The uniform price is 50 euros for 20 minutes of flight time, payable in cash or by card."
+    },
+    "website": "",
+    "phone": "",
+    "email": "",
+    "image": "/assets/logos/runway-view.svg"
+  },
+  {
+    "id": "modellflugverein-oberhausen",
+    "type": "service",
+    "markerKind": "club",
+    "coordinates": [
+      49.30896136777204,
+      8.448541527610313
+    ],
+    "name": {
+      "de": "Modellflugverein Oberhausen",
+      "en": "Oberhausen Model Flight Club"
+    },
+    "location": {
+      "de": "Externer Teilnehmer",
+      "en": "External participant"
+    },
+    "summary": {
+      "de": "Praesenz des Modellflugvereins im Besucherbereich.",
+      "en": "Model flight club presence in the visitor zone."
+    },
+    "description": {
+      "de": "Der Modellflugverein Oberhausen nimmt als externer Teilnehmer teil. Besondere Programmpunkte oder Flugvorfuehrungen sollen anmoderiert werden und stehen unter den geltenden Vorschriften.",
+      "en": "Model Flight Club Oberhausen attends as an external participant. Special program items or flight demonstrations are meant to be announced and remain subject to the applicable regulations."
+    },
+    "website": "",
+    "phone": "",
+    "email": "",
+    "image": "/assets/logos/visitor-info.svg"
+  },
+  {
+    "id": "ul-heli",
+    "type": "service",
+    "markerKind": "heli",
+    "coordinates": [
+      49.30885817055096,
+      8.448552161849005
+    ],
+    "name": {
+      "de": "UL-Heli",
+      "en": "UL-Heli"
+    },
+    "location": {
+      "de": "Zentraler Teilnehmerbereich",
+      "en": "Central participant area"
+    },
+    "summary": {
+      "de": "Teilnehmerpunkt fuer UL-Heli im zentralen Ausstellerbereich.",
+      "en": "UL-Heli participant point in the central exhibitor area."
+    },
+    "description": {
+      "de": "UL-Heli praesentiert sich hier im zentralen Veranstaltungsbereich zwischen Flight Academy, Rundflugorganisation und Besucherangeboten.",
+      "en": "UL-Heli is represented here in the central event area between the Flight Academy, sightseeing-flight operations and visitor services."
+    },
+    "website": "",
+    "phone": "",
+    "email": "",
+    "image": "/assets/logos/visitor-info.svg"
+  },
+  {
+    "id": "getraenke",
+    "type": "service",
+    "markerKind": "drink",
+    "coordinates": [
+      49.30877034591164,
+      8.448525806692883
+    ],
+    "name": {
+      "de": "Getraenke",
+      "en": "Drinks"
+    },
+    "location": {
+      "de": "Getraenkestand der Flight Academy",
+      "en": "Flight Academy drinks stand"
+    },
+    "summary": {
+      "de": "Getraenkestand fuer Besucher im Bereich der Flight Academy.",
+      "en": "Visitor drinks stand in the Flight Academy area."
+    },
+    "description": {
+      "de": "Der Getraenkestand wird laut Besprechung von der Flight Academy betrieben und versorgt den zentralen Besucherbereich.",
+      "en": "According to the meeting, the drinks stand is operated by the Flight Academy and serves the central visitor zone."
+    },
+    "website": "",
+    "phone": "",
+    "email": "",
+    "image": "/assets/logos/museum-terrace.svg"
+  },
+  {
+    "id": "berufsschule-fh-worms",
+    "type": "service",
+    "markerKind": "school",
+    "coordinates": [
+      49.30916110575782,
+      8.448998175764093
+    ],
+    "name": {
+      "de": "Evtl. Berufsschule SP & FH Worms",
+      "en": "Possible Berufsschule SP & FH Worms"
+    },
+    "location": {
+      "de": "Moeglicher Bildungsstand",
+      "en": "Potential education stand"
+    },
+    "summary": {
+      "de": "Optional geplanter Teilnehmerbereich fuer Schule und Hochschule.",
+      "en": "Optionally planned participant area for school and university partners."
+    },
+    "description": {
+      "de": "Hier ist ein moeglicher Auftritt der Berufsschule Speyer und der FH Worms vorgesehen, falls die Teilnahme final bestaetigt wird.",
+      "en": "This area is reserved for a possible appearance by Berufsschule Speyer and FH Worms if their participation is confirmed."
+    },
+    "website": "",
+    "phone": "",
+    "email": "",
+    "image": "/assets/logos/visitor-info.svg"
+  },
+  {
+    "id": "infostand-zoll-bundespolizei",
+    "type": "service",
+    "markerKind": "authority",
+    "coordinates": [
+      49.30936004585215,
+      8.448961922203493
+    ],
+    "name": {
+      "de": "Infostand & Zoll und Bundespolizei",
+      "en": "Info Stand, Customs and Federal Police"
+    },
+    "location": {
+      "de": "Behoerden- und Infobereich",
+      "en": "Authority and information area"
+    },
+    "summary": {
+      "de": "Gemeinsamer Informationspunkt mit Zoll und Bundespolizei.",
+      "en": "Shared information point with customs and federal police."
+    },
+    "description": {
+      "de": "Zoll und Bundespolizei sind als externe Teilnehmer eingeplant und werden gemeinsam mit einem Infostand im noerdlichen Besucherbereich praesentiert.",
+      "en": "Customs and federal police are planned as external participants and appear here together with an information stand in the northern visitor area."
+    },
+    "website": "",
+    "phone": "",
+    "email": "",
+    "image": "/assets/logos/visitor-info.svg"
+  },
+  {
+    "id": "oldtimer-segler-abstellflaeche",
+    "type": "area",
+    "markerKind": "area",
+    "coordinates": [
+      49.30952606944814,
+      8.449328093625663
+    ],
+    "name": {
+      "de": "Oldtimer- & Segler-Abstellflaeche",
+      "en": "Vintage Aircraft & Glider Parking Area"
+    },
+    "location": {
+      "de": "Wiese hinter der Absperrung",
+      "en": "Meadow behind the barrier"
+    },
+    "summary": {
+      "de": "Abstell- und Ausstellungsflaeche fuer Oldtimer und Segler.",
+      "en": "Parking and display area for vintage aircraft and gliders."
+    },
+    "description": {
+      "de": "Die Flugzeugausstellung auf der Wiese liegt hinter der Absperrung und ist nicht direkt fuer Besucher zugaenglich. Hier stehen Oldtimer und Segler in der vorgesehenen Abstellflaeche.",
+      "en": "The aircraft display on the meadow is located behind the barrier and is not directly accessible to visitors. Vintage aircraft and gliders are staged in this designated area."
+    },
+    "website": "",
+    "phone": "",
+    "email": "",
+    "image": "/assets/logos/flightline-plaza.svg"
+  },
+  {
+    "id": "rundflug-positionen",
+    "type": "area",
+    "markerKind": "parking",
+    "coordinates": [
+      49.30825656300169,
+      8.449496327366184
+    ],
+    "name": {
+      "de": "Rundflug-Positionen",
+      "en": "Sightseeing Flight Positions"
+    },
+    "location": {
+      "de": "Boarding- und Bereitstellungsflaeche",
+      "en": "Boarding and staging area"
+    },
+    "summary": {
+      "de": "Bereitstellungsflaeche fuer Rundflugmaschinen und Boarding.",
+      "en": "Staging area for sightseeing aircraft and boarding."
+    },
+    "description": {
+      "de": "Diese Flaeche ist fuer die Rundflugmaschinen vorgesehen. Rundfluggaste melden sich zuerst am Rundflugstand an und werden anschliessend in diesen Bereich begleitet.",
+      "en": "This area is reserved for sightseeing-flight aircraft. Passengers should first check in at the sightseeing-flight stand and are then guided into this zone."
+    },
+    "website": "",
+    "phone": "",
+    "email": "",
+    "image": "/assets/logos/flightline-plaza.svg"
+  },
+  {
+    "id": "guest-area-parking",
+    "type": "area",
+    "markerKind": "parking",
+    "coordinates": [
+      49.30723802258464,
+      8.450060259873275
+    ],
+    "name": {
+      "de": "Gaeste-Parkflaeche",
+      "en": "Guest Parking Area"
+    },
+    "location": {
+      "de": "Abstellflaeche fuer Gastpiloten",
+      "en": "Parking area for guest pilots"
+    },
+    "summary": {
+      "de": "Parkflaeche fuer ankommende Gastmaschinen.",
+      "en": "Parking area for arriving guest aircraft."
+    },
+    "description": {
+      "de": "Die Gaeste-Parkflaeche ist fuer parkende Gastpiloten vorgesehen. Laut Planung werden hier Einweiser benoetigt, damit abgestellte Maschinen geordnet eingewiesen werden koennen.",
+      "en": "The guest parking area is intended for arriving guest pilots. According to the planning notes, marshals are needed here so parked aircraft can be guided into position in an orderly way."
+    },
+    "website": "",
+    "phone": "",
+    "email": "",
+    "image": "/assets/logos/flightline-plaza.svg"
+  },
+  {
+    "id": "main-entrance",
+    "type": "entry",
+    "markerKind": "gate",
+    "coordinates": [
+      49.309881583165435,
+      8.448839916251274
+    ],
+    "name": {
+      "de": "Eingang Flugplatzfest",
+      "en": "Festival Entrance"
+    },
+    "location": {
+      "de": "Zugangstor zwischen Brazzeltag und Flugplatzfest",
+      "en": "Access gate between Brazzeltag and Flugplatzfest"
+    },
+    "summary": {
+      "de": "Haupteingang mit geplanter besserer Beschilderung.",
+      "en": "Main entrance with improved signage planned."
+    },
+    "description": {
+      "de": "Am Zugangstor soll die Beschilderung zum Flugplatzfest verbessert werden, unter anderem mit Beach Flags des FSV. Besucher koennen zwischen Brazzeltag und Flugplatzfest hin und her wechseln.",
+      "en": "Signage at this access gate is planned to be improved, including FSV beach flags. Visitors can move back and forth between Brazzeltag and Flugplatzfest from here."
+    },
+    "website": "",
+    "phone": "",
+    "email": "",
+    "image": "/assets/logos/runway-view.svg"
+  },
+  {
+    "id": "ausgang-drehkreuz-fluchtweg-2",
+    "type": "entry",
+    "markerKind": "exit",
+    "coordinates": [
+      49.30860468315507,
+      8.448356333459362
+    ],
+    "name": {
+      "de": "Ausgang Drehkreuz / Fluchtweg 2",
+      "en": "Turnstile Exit / Escape Route 2"
+    },
+    "location": {
+      "de": "Ausgang am Drehkreuz",
+      "en": "Turnstile exit"
+    },
+    "summary": {
+      "de": "Markierter Ausgang und Sicherheitsweg im westlichen Bereich.",
+      "en": "Marked exit and safety route in the western area."
+    },
+    "description": {
+      "de": "Dieser Punkt markiert den Ausgang am Drehkreuz sowie die Richtung von Fluchtweg 2 fuer den noerdlich-westlichen Veranstaltungsbereich.",
+      "en": "This point marks the turnstile exit and the direction of escape route 2 for the north-western event area."
+    },
+    "website": "",
+    "phone": "",
+    "email": "",
+    "image": "/assets/logos/runway-view.svg"
+  },
+  {
+    "id": "fluchtweg-1",
+    "type": "entry",
+    "markerKind": "exit",
+    "coordinates": [
+      49.30910324313041,
+      8.448147151688524
+    ],
+    "name": {
+      "de": "Fluchtweg 1",
+      "en": "Escape Route 1"
+    },
+    "location": {
+      "de": "Sicherheitsausgang noerdlicher Bereich",
+      "en": "Safety exit for the northern area"
+    },
+    "summary": {
+      "de": "Markierter Fluchtweg fuer den noerdlichen Besucherbereich.",
+      "en": "Marked escape route for the northern visitor area."
+    },
+    "description": {
+      "de": "Der Pfeil zeigt die Richtung des ersten Fluchtwegs aus dem noerdlichen Veranstaltungsbereich.",
+      "en": "The arrow indicates the direction of the first escape route from the northern event area."
+    },
+    "website": "",
+    "phone": "",
+    "email": "",
+    "image": "/assets/logos/runway-view.svg"
+  },
+  {
+    "id": "rundflug-entry",
+    "type": "entry",
+    "markerKind": "gate",
+    "coordinates": [
+      49.30904397275565,
+      8.448963916975256
+    ],
+    "name": {
+      "de": "Rundflug-Zugang 1",
+      "en": "Sightseeing Flight Access 1"
+    },
+    "location": {
+      "de": "Zugang zur Rundflugzone",
+      "en": "Access to the sightseeing-flight zone"
+    },
+    "summary": {
+      "de": "Zugang in den abgesperrten Rundflugbereich.",
+      "en": "Access point into the restricted sightseeing-flight area."
+    },
+    "description": {
+      "de": "Dieser Zugang liegt direkt auf der Absperrung und fuehrt in den Rundflugbereich. Bitte zuerst am Rundflugstand anmelden und dann den Anweisungen des Personals folgen.",
+      "en": "This access point sits directly on the barrier line and leads into the sightseeing-flight zone. Please check in at the sightseeing-flight stand first and then follow staff instructions."
+    },
+    "website": "",
+    "phone": "",
+    "email": "",
+    "image": "/assets/logos/runway-view.svg"
+  },
+  {
+    "id": "rundflug-entry-2",
+    "type": "entry",
+    "markerKind": "gate",
+    "coordinates": [
+      49.30881810285377,
+      8.448746606661548
+    ],
+    "name": {
+      "de": "Rundflug-Zugang 2",
+      "en": "Sightseeing Flight Access 2"
+    },
+    "location": {
+      "de": "Zweiter Zugang zur Rundflugzone",
+      "en": "Second access to the sightseeing-flight zone"
+    },
+    "summary": {
+      "de": "Zweiter Zugang in den abgesperrten Rundflugbereich.",
+      "en": "Second access point into the restricted sightseeing-flight area."
+    },
+    "description": {
+      "de": "Dieser zweite Zugang ergaenzt die Wegefuehrung in den Rundflugbereich entlang der Absperrung und erleichtert die Trennung von Besuchern und Betriebsflaechen.",
+      "en": "This second access point complements the routing into the sightseeing-flight area along the barrier and helps separate visitors from operational areas."
+    },
+    "website": "",
+    "phone": "",
+    "email": "",
+    "image": "/assets/logos/runway-view.svg"
+  }
+]

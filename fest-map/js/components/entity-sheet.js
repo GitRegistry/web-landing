@@ -14,6 +14,7 @@ const defaultLabels = {
   collapse: "Schliessen",
   call: "Anrufen",
   email: "E-Mail",
+  website: "Website",
   emptyState: "Noch keine Eintraege in dieser Kategorie.",
 };
 
@@ -37,7 +38,11 @@ function cardMarkup(entity, labels, categories) {
   }
 
   const categoryLabel = categories[entity.type]?.label ?? entity.type;
+  const imagePath = entity.image || "/assets/logos/visitor-info.svg";
   const actions = [
+    entity.website
+      ? `<a class="entity-card__action" href="${escapeHtml(entity.website)}" target="_blank" rel="noreferrer">${escapeHtml(labels.website)}</a>`
+      : "",
     entity.phone
       ? `<a class="entity-card__action" href="tel:${escapeHtml(entity.phone)}">${escapeHtml(labels.call)}</a>`
       : "",
@@ -51,7 +56,7 @@ function cardMarkup(entity, labels, categories) {
   return `
     <article class="entity-card">
       <div class="entity-card__logo">
-        <img src="${escapeHtml(entity.logo)}" alt="${escapeHtml(entity.name)} logo">
+        <img src="${escapeHtml(imagePath)}" alt="${escapeHtml(entity.name)} logo">
       </div>
       <div>
         <div class="entity-card__meta">
@@ -69,11 +74,12 @@ function cardMarkup(entity, labels, categories) {
 function listItemMarkup(entity, selectedId, categories) {
   const isActive = entity.id === selectedId;
   const categoryLabel = categories[entity.type]?.label ?? entity.type;
+  const imagePath = entity.image || "/assets/logos/visitor-info.svg";
 
   return `
     <button class="entity-list__item ${isActive ? "is-active" : ""}" type="button" data-entity-id="${escapeHtml(entity.id)}">
       <span class="entity-list__logo">
-        <img src="${escapeHtml(entity.logo)}" alt="">
+        <img src="${escapeHtml(imagePath)}" alt="">
       </span>
       <span class="entity-list__content">
         <strong>${escapeHtml(entity.name)}</strong>

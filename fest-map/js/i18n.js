@@ -34,7 +34,12 @@ export const uiStrings = {
       collapse: "Schliessen",
       call: "Anrufen",
       email: "E-Mail",
+      website: "Website",
       emptyState: "Noch keine Eintraege in dieser Kategorie.",
+    },
+    status: {
+      loading: "Karte wird geladen ...",
+      error: "Die Fest-Map-Daten konnten nicht geladen werden.",
     },
   },
   en: {
@@ -60,7 +65,12 @@ export const uiStrings = {
       collapse: "Collapse",
       call: "Call",
       email: "Email",
+      website: "Website",
       emptyState: "No entries in this category yet.",
+    },
+    status: {
+      loading: "Loading map ...",
+      error: "The Fest Map data could not be loaded.",
     },
   },
 };
@@ -73,9 +83,10 @@ export function localizeEntities(entities, locale) {
     type: entity.type,
     markerKind: entity.markerKind,
     coordinates: entity.coordinates,
+    website: entity.website,
     phone: entity.phone,
     email: entity.email,
-    logo: entity.logo,
+    image: entity.image ?? entity.logo,
     name: localizeText(entity.name, normalizedLocale),
     location: localizeText(entity.location, normalizedLocale),
     summary: localizeText(entity.summary, normalizedLocale),

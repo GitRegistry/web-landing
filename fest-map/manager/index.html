@@ -1,0 +1,312 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+    <title>Fest Map Manager</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    >
+    <link
+      rel="stylesheet"
+      href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
+      crossorigin=""
+    >
+    <link rel="stylesheet" href="/css/styles.css">
+    <link rel="stylesheet" href="/manager/css/styles.css">
+  </head>
+  <body class="manager-page">
+    <div class="manager-shell">
+      <header class="manager-header">
+        <div>
+          <p class="manager-eyebrow">Local Fest Map Manager</p>
+          <h1>Fest Map Editor</h1>
+          <p class="manager-subtitle">
+            Edit entries, areas, arrows, fences, and images locally. Save to the repo when the map looks right.
+          </p>
+        </div>
+        <div class="manager-actions">
+          <button type="button" class="manager-button" data-action="reload-data">Reload</button>
+          <button type="button" class="manager-button manager-button--primary" data-action="save-all">Save All</button>
+        </div>
+      </header>
+
+      <section class="manager-toolbar glass-panel">
+        <div class="manager-toolbar__group">
+          <button type="button" class="manager-button" data-action="start-entry">Place Entry</button>
+          <button type="button" class="manager-button" data-action="start-polygon">Draw Polygon</button>
+          <button type="button" class="manager-button" data-action="start-route">Draw Route</button>
+        </div>
+        <div class="manager-toolbar__group">
+          <button type="button" class="manager-button" data-action="finish-drawing">Finish Drawing</button>
+          <button type="button" class="manager-button" data-action="cancel-drawing">Cancel Drawing</button>
+          <button type="button" class="manager-button" data-action="reload-preview">Reload Preview</button>
+        </div>
+        <div class="manager-toolbar__status">
+          <strong data-role="mode-label">Mode: Browse</strong>
+          <span data-role="message">Select an item or start drawing on the map.</span>
+        </div>
+      </section>
+
+      <main class="manager-main">
+        <section class="manager-map-section glass-panel">
+          <div class="manager-map" id="manager-map"></div>
+        </section>
+
+        <aside class="manager-sidebar glass-panel">
+          <div class="manager-tabs" role="tablist" aria-label="Manager sections">
+            <button type="button" class="manager-tab is-active" data-tab="entries">Entries</button>
+            <button type="button" class="manager-tab" data-tab="overlays">Overlays</button>
+            <button type="button" class="manager-tab" data-tab="assets">Assets</button>
+          </div>
+
+          <section class="manager-panel is-active" data-panel="entries">
+            <div class="manager-list-block">
+              <div class="manager-list-block__header">
+                <h2>Entries</h2>
+                <span data-role="entry-count"></span>
+              </div>
+              <div class="manager-list" data-role="entry-list"></div>
+            </div>
+
+            <form class="manager-form" data-form="entry">
+              <h3>Selected Entry</h3>
+              <label class="manager-field">
+                <span>ID</span>
+                <input type="text" name="id" autocomplete="off">
+              </label>
+              <div class="manager-field-grid">
+                <label class="manager-field">
+                  <span>Type</span>
+                  <select name="type">
+                    <option value="building">Building</option>
+                    <option value="area">Area</option>
+                    <option value="service">Service</option>
+                    <option value="entry">Entry</option>
+                  </select>
+                </label>
+                <label class="manager-field">
+                  <span>Marker</span>
+                  <select name="markerKind">
+                    <option value="area">Area</option>
+                    <option value="authority">Authority</option>
+                    <option value="building">Building</option>
+                    <option value="club">Club</option>
+                    <option value="drink">Drink</option>
+                    <option value="exit">Exit</option>
+                    <option value="flight">Flight</option>
+                    <option value="food">Food</option>
+                    <option value="gate">Gate</option>
+                    <option value="heli">Heli</option>
+                    <option value="hub">Hub</option>
+                    <option value="info">Info</option>
+                    <option value="parking">Parking</option>
+                    <option value="school">School</option>
+                    <option value="toilet">Toilet</option>
+                  </select>
+                </label>
+              </div>
+              <label class="manager-field">
+                <span>Image path</span>
+                <input type="text" name="image" autocomplete="off" placeholder="/assets/uploads/example.png">
+              </label>
+              <div class="manager-field-grid">
+                <label class="manager-field">
+                  <span>Latitude</span>
+                  <input type="number" name="latitude" step="0.0000000001">
+                </label>
+                <label class="manager-field">
+                  <span>Longitude</span>
+                  <input type="number" name="longitude" step="0.0000000001">
+                </label>
+              </div>
+              <div class="manager-field-grid">
+                <label class="manager-field">
+                  <span>Website</span>
+                  <input type="url" name="website" autocomplete="off">
+                </label>
+                <label class="manager-field">
+                  <span>Phone</span>
+                  <input type="text" name="phone" autocomplete="off">
+                </label>
+              </div>
+              <label class="manager-field">
+                <span>Email</span>
+                <input type="email" name="email" autocomplete="off">
+              </label>
+              <div class="manager-field-grid manager-field-grid--locale">
+                <label class="manager-field">
+                  <span>Name (DE)</span>
+                  <input type="text" name="nameDe" autocomplete="off">
+                </label>
+                <label class="manager-field">
+                  <span>Name (EN)</span>
+                  <input type="text" name="nameEn" autocomplete="off">
+                </label>
+                <label class="manager-field">
+                  <span>Location (DE)</span>
+                  <input type="text" name="locationDe" autocomplete="off">
+                </label>
+                <label class="manager-field">
+                  <span>Location (EN)</span>
+                  <input type="text" name="locationEn" autocomplete="off">
+                </label>
+                <label class="manager-field">
+                  <span>Summary (DE)</span>
+                  <textarea name="summaryDe" rows="3"></textarea>
+                </label>
+                <label class="manager-field">
+                  <span>Summary (EN)</span>
+                  <textarea name="summaryEn" rows="3"></textarea>
+                </label>
+                <label class="manager-field">
+                  <span>Description (DE)</span>
+                  <textarea name="descriptionDe" rows="5"></textarea>
+                </label>
+                <label class="manager-field">
+                  <span>Description (EN)</span>
+                  <textarea name="descriptionEn" rows="5"></textarea>
+                </label>
+              </div>
+              <button type="button" class="manager-button manager-button--danger" data-action="delete-entry">
+                Delete Entry
+              </button>
+            </form>
+          </section>
+
+          <section class="manager-panel" data-panel="overlays">
+            <div class="manager-list-block">
+              <div class="manager-list-block__header">
+                <h2>Overlays</h2>
+                <span data-role="overlay-count"></span>
+              </div>
+              <div class="manager-list" data-role="overlay-list"></div>
+            </div>
+
+            <form class="manager-form" data-form="overlay">
+              <h3>Selected Overlay</h3>
+              <label class="manager-field">
+                <span>ID</span>
+                <input type="text" name="id" autocomplete="off">
+              </label>
+              <div class="manager-field-grid">
+                <label class="manager-field">
+                  <span>Kind</span>
+                  <select name="kind">
+                    <option value="polygon">Polygon</option>
+                    <option value="route">Route</option>
+                  </select>
+                </label>
+                <label class="manager-field">
+                  <span>Category</span>
+                  <select name="category">
+                    <option value="parking">Parking</option>
+                    <option value="exit">Exit</option>
+                    <option value="fence">Fence</option>
+                    <option value="route">Route</option>
+                    <option value="area">Area</option>
+                  </select>
+                </label>
+              </div>
+              <div class="manager-field-grid">
+                <label class="manager-field">
+                  <span>Tone</span>
+                  <select name="tone">
+                    <option value="cyan">Cyan</option>
+                    <option value="light">Light</option>
+                    <option value="parking">Parking</option>
+                    <option value="alert">Alert</option>
+                  </select>
+                </label>
+                <label class="manager-field">
+                  <span>Dash array</span>
+                  <input type="text" name="dashArray" autocomplete="off" placeholder="8 6">
+                </label>
+              </div>
+              <div class="manager-field-grid manager-field-grid--locale">
+                <label class="manager-field">
+                  <span>Label (DE)</span>
+                  <input type="text" name="labelDe" autocomplete="off">
+                </label>
+                <label class="manager-field">
+                  <span>Label (EN)</span>
+                  <input type="text" name="labelEn" autocomplete="off">
+                </label>
+              </div>
+              <div class="manager-field-grid manager-field-grid--numbers">
+                <label class="manager-field">
+                  <span>Weight</span>
+                  <input type="number" name="weight" step="0.1" min="0">
+                </label>
+                <label class="manager-field">
+                  <span>Opacity</span>
+                  <input type="number" name="opacity" step="0.01" min="0" max="1">
+                </label>
+                <label class="manager-field">
+                  <span>Fill opacity</span>
+                  <input type="number" name="fillOpacity" step="0.01" min="0" max="1">
+                </label>
+              </div>
+              <label class="manager-field">
+                <span>Arrow fractions</span>
+                <input type="text" name="arrowFractions" autocomplete="off" placeholder="0.2, 0.5, 0.8">
+              </label>
+              <div class="manager-inline-actions">
+                <button type="button" class="manager-button" data-action="remove-vertex">Remove Selected Vertex</button>
+                <button type="button" class="manager-button manager-button--danger" data-action="delete-overlay">
+                  Delete Overlay
+                </button>
+              </div>
+              <p class="manager-note">
+                Drag vertex handles on the map to reshape. Click midpoint handles to insert a new vertex.
+              </p>
+            </form>
+          </section>
+
+          <section class="manager-panel" data-panel="assets">
+            <div class="manager-list-block">
+              <div class="manager-list-block__header">
+                <h2>Assets</h2>
+                <span data-role="asset-count"></span>
+              </div>
+              <form class="manager-upload" data-form="upload">
+                <input type="file" name="asset" accept="image/*">
+                <button type="submit" class="manager-button manager-button--primary">Upload</button>
+              </form>
+              <div class="manager-asset-grid" data-role="asset-list"></div>
+            </div>
+
+            <div class="manager-form">
+              <h3>Asset Preview</h3>
+              <div class="manager-asset-preview" data-role="asset-preview"></div>
+              <p class="manager-note" data-role="asset-meta">Select an asset to preview it here.</p>
+              <div class="manager-inline-actions">
+                <button type="button" class="manager-button" data-action="assign-asset">Assign To Selected Entry</button>
+                <button type="button" class="manager-button manager-button--danger" data-action="delete-asset">
+                  Delete Asset
+                </button>
+              </div>
+            </div>
+          </section>
+
+          <section class="manager-preview">
+            <div class="manager-preview__header">
+              <h2>Public Preview</h2>
+            </div>
+            <iframe title="Fest Map preview" data-role="preview-frame" src="/index.html"></iframe>
+          </section>
+        </aside>
+      </main>
+    </div>
+
+    <script
+      src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
+      crossorigin=""
+    ></script>
+    <script type="module" src="/manager/js/app.js"></script>
+  </body>
+</html>
+

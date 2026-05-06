@@ -1,5 +1,4 @@
-import { defaultMapView, sampleEntities } from "../data/entities.js";
-import { airfieldOverlays } from "../data/airfield-overlays.js";
+import { dataEndpoints, defaultMapView } from "../config.js";
 import { localizeEntities, localizeText, normalizeLocale, uiStrings } from "../i18n.js";
 import { MapController } from "../map-controller.js";
 import "./entity-sheet.js";
@@ -7,19 +6,20 @@ import "./entity-sheet.js";
 export class FestMapApp extends HTMLElement {
   constructor() {
     super();
-    this.rawEntities = sampleEntities;
-    this.rawOverlays = airfieldOverlays;
+    this.rawEntities = [];
+    this.rawOverlays = [];
     this.entities = [];
     this.overlays = [];
     this.locale = "de";
-    this.selectedEntityId = this.rawEntities[0]?.id ?? null;
+    this.selectedEntityId = null;
     this.selectedEntity = null;
+    this.status = "idle";
     this.handleEntitySelect = this.handleEntitySelect.bind(this);
     this.handleClick = this.handleClick.bind(this);
     this.handleViewportResize = this.handleViewportResize.bind(this);
   }
 
-  connectedCallback() {
+  async connectedCallback() {
     if (this.isReady) {
       return;
     }
@@ -34,6 +34,7 @@ export class FestMapApp extends HTMLElement {
     this.languageGroupNode = this.querySelector('[data-role="language-group"]');
     this.languageButtonNodes = this.querySelectorAll("[data-locale]");
     this.footerCreditNode = this.querySelector('[data-role="footer-credit"]');
+    this.statusNode = this.querySelector('[data-role="app-status"]');
 
     this.mapController = new MapController(this.mapElement, {
       center: defaultMapView.center,
@@ -52,7 +53,16 @@ export class FestMapApp extends HTMLElement {
     window.visualViewport?.addEventListener("resize", this.handleViewportResize);
     window.visualViewport?.addEventListener("scroll", this.handleViewportResize);
 
-    this.applyLocale(this.locale, { fitMap: true });
+    this.setStatus("loading");
+
+    try {
+      await this.loadData();
+      this.applyLocale(this.locale, { fitMap: true });
+      this.setStatus("ready");
+    } catch (error) {
+      console.error(error);
+      this.setStatus("error");
+    }
 
     this.mapController.invalidateSize();
     requestAnimationFrame(() => {
@@ -110,6 +120,49 @@ export class FestMapApp extends HTMLElement {
     this.selectEntity(entityId, { flyTo: true });
   }
 
+  async loadData() {
+    const [entitiesResponse, overlaysResponse] = await Promise.all([
+      fetch(dataEndpoints.entities, { cache: "no-store" }),
+      fetch(dataEndpoints.overlays, { cache: "no-store" }),
+    ]);
+
+    if (!entitiesResponse.ok || !overlaysResponse.ok) {
+      throw new Error(`Failed to load Fest Map data (${entitiesResponse.status}/${overlaysResponse.status})`);
+    }
+
+    const [entities, overlays] = await Promise.all([entitiesResponse.json(), overlaysResponse.json()]);
+
+    this.rawEntities = Array.isArray(entities) ? entities : [];
+    this.rawOverlays = Array.isArray(overlays) ? overlays : [];
+    this.selectedEntityId = this.rawEntities[0]?.id ?? null;
+  }
+
+  setStatus(nextStatus) {
+    this.status = nextStatus;
+    const strings = uiStrings[this.locale];
+
+    this.dataset.status = nextStatus;
+
+    if (!this.statusNode) {
+      return;
+    }
+
+    if (nextStatus === "loading") {
+      this.statusNode.textContent = strings.status.loading;
+      this.statusNode.hidden = false;
+      return;
+    }
+
+    if (nextStatus === "error") {
+      this.statusNode.textContent = strings.status.error;
+      this.statusNode.hidden = false;
+      return;
+    }
+
+    this.statusNode.hidden = true;
+    this.statusNode.textContent = "";
+  }
+
   applyLocale(nextLocale, { fitMap = false } = {}) {
     this.locale = normalizeLocale(nextLocale);
     const strings = uiStrings[this.locale];
@@ -136,6 +189,7 @@ export class FestMapApp extends HTMLElement {
     this.languageGroupNode.setAttribute("aria-label", strings.languageSwitchLabel);
     this.footerCreditNode.firstChild.textContent = `${strings.footerCredit} `;
     this.updateLanguageButtons();
+    this.setStatus(this.status);
 
     this.mapController.setOverlays(this.overlays);
     this.sheetElement.categories = strings.categories;
@@ -193,6 +247,7 @@ export class FestMapApp extends HTMLElement {
         <footer class="app-footer glass-panel">
           <span data-role="footer-credit">Powered by </span><a href="https://paluv.de" target="_blank" rel="noreferrer">Paluv.de</a>
         </footer>
+        <div class="app-status glass-panel" data-role="app-status" hidden></div>
         <entity-sheet></entity-sheet>
       </div>
     `;
