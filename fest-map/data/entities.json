@@ -34,8 +34,8 @@
     "type": "building",
     "markerKind": "building",
     "coordinates": [
-      49.30963026749851,
-      8.448736682123599
+      49.30962725075599,
+      8.448778688907625
     ],
     "name": {
       "de": "Gastro",
@@ -64,8 +64,8 @@
     "type": "building",
     "markerKind": "building",
     "coordinates": [
-      49.30957676417005,
-      8.448457419576826
+      49.30942614536403,
+      8.44851315021515
     ],
     "name": {
       "de": "FSV Flugsportverein Speyer e.V.",
@@ -90,42 +90,12 @@
     "useLogoMarker": false
   },
   {
-    "id": "sport-huber",
-    "type": "building",
-    "markerKind": "building",
-    "coordinates": [
-      49.30898281543477,
-      8.448150888672089
-    ],
-    "name": {
-      "de": "Sport Huber",
-      "en": "Sport Huber"
-    },
-    "location": {
-      "de": "Westliche Gebaeudezeile",
-      "en": "Western building row"
-    },
-    "summary": {
-      "de": "Standort in der westlichen Reihe der Gebaeude und Aussteller.",
-      "en": "Location within the western line of buildings and exhibitors."
-    },
-    "description": {
-      "de": "Sport Huber liegt direkt an der westlichen Gebaeudezeile, die den Besucherweg entlang des Veranstaltungsgelaendes begleitet.",
-      "en": "Sport Huber sits on the western building row that frames the visitor route along the event grounds."
-    },
-    "website": "",
-    "phone": "",
-    "email": "",
-    "image": "/assets/logos/hangar-court.svg",
-    "useLogoMarker": false
-  },
-  {
     "id": "flight-academy-hangar-1",
     "type": "building",
     "markerKind": "building",
     "coordinates": [
-      49.3087588944158,
-      8.448403874348912
+      49.308765121751826,
+      8.448389768600466
     ],
     "name": {
       "de": "Flight Academy Speyer Hangar 1",
@@ -184,8 +154,8 @@
     "type": "building",
     "markerKind": "building",
     "coordinates": [
-      49.30838708418543,
-      8.448472419267215
+      49.308387389630866,
+      8.44840854406357
     ],
     "name": {
       "de": "Flight Academy Speyer Hangar 2",
@@ -214,8 +184,8 @@
     "type": "building",
     "markerKind": "building",
     "coordinates": [
-      49.30799720814443,
-      8.448609993004567
+      49.30796594645105,
+      8.448628485202791
     ],
     "name": {
       "de": "Otto Funk",
@@ -244,8 +214,8 @@
     "type": "building",
     "markerKind": "building",
     "coordinates": [
-      49.30769694538147,
-      8.448660849027364
+      49.30770361465208,
+      8.448727726936342
     ],
     "name": {
       "de": "Flugschule Loeffler",
@@ -274,8 +244,8 @@
     "type": "service",
     "markerKind": "toilet",
     "coordinates": [
-      49.30954874787347,
-      8.448062080648286
+      49.309504854536556,
+      8.448137640953066
     ],
     "name": {
       "de": "Toilettenwagen",
@@ -304,12 +274,12 @@
     "type": "service",
     "markerKind": "food",
     "coordinates": [
-      49.309296323934404,
-      8.448300261881036
+      49.30928625120895,
+      8.4482878446579
     ],
     "name": {
-      "de": "Crepes / Essen",
-      "en": "Crepes / Food"
+      "de": "Imbiss",
+      "en": "Imbiss"
     },
     "location": {
       "de": "Food Point am Besucherweg",
@@ -334,8 +304,8 @@
     "type": "service",
     "markerKind": "hub",
     "coordinates": [
-      49.30920379483544,
-      8.448595457596857
+      49.30903267331299,
+      8.448416590690615
     ],
     "name": {
       "de": "Green Aviation Hub",
@@ -364,8 +334,8 @@
     "type": "service",
     "markerKind": "info",
     "coordinates": [
-      49.30906685145007,
-      8.448672094946158
+      49.309093878670815,
+      8.448652625083925
     ],
     "name": {
       "de": "Infostand Flugschulen und Vereine",
@@ -394,8 +364,8 @@
     "type": "service",
     "markerKind": "flight",
     "coordinates": [
-      49.30902798906865,
-      8.448814015963379
+      49.30902218968158,
+      8.448778688907625
     ],
     "name": {
       "de": "Rundflugstand",
@@ -424,8 +394,8 @@
     "type": "service",
     "markerKind": "club",
     "coordinates": [
-      49.30896136777204,
-      8.448541527610313
+      49.30895224113392,
+      8.448553383350374
     ],
     "name": {
       "de": "Modellflugverein Oberhausen",
@@ -454,8 +424,8 @@
     "type": "service",
     "markerKind": "heli",
     "coordinates": [
-      49.30885817055096,
-      8.448552161849005
+      49.30894699930992,
+      8.448714315891268
     ],
     "name": {
       "de": "UL-Heli",
@@ -484,12 +454,12 @@
     "type": "service",
     "markerKind": "drink",
     "coordinates": [
-      49.30877034591164,
-      8.448525806692883
+      49.30875113866392,
+      8.4485399723053
     ],
     "name": {
-      "de": "Getraenke",
-      "en": "Drinks"
+      "de": "Getraenke bei Krone",
+      "en": "Drinks by Krone"
     },
     "location": {
       "de": "Getraenkestand der Flight Academy",
@@ -514,8 +484,8 @@
     "type": "service",
     "markerKind": "school",
     "coordinates": [
-      49.30916110575782,
-      8.448998175764093
+      49.30915858836996,
+      8.448558747768404
     ],
     "name": {
       "de": "Evtl. Berufsschule SP & FH Worms",
@@ -544,8 +514,8 @@
     "type": "service",
     "markerKind": "authority",
     "coordinates": [
-      49.30936004585215,
-      8.448961922203493
+      49.309357946122056,
+      8.448894023895265
     ],
     "name": {
       "de": "Infostand & Zoll und Bundespolizei",
@@ -604,8 +574,8 @@
     "type": "area",
     "markerKind": "parking",
     "coordinates": [
-      49.30825656300169,
-      8.449496327366184
+      49.30849048221763,
+      8.449382185935976
     ],
     "name": {
       "de": "Rundflug-Positionen",
@@ -634,8 +604,8 @@
     "type": "area",
     "markerKind": "parking",
     "coordinates": [
-      49.30723802258464,
-      8.450060259873275
+      49.30720347308646,
+      8.449870347976686
     ],
     "name": {
       "de": "Gaeste-Parkflaeche",
@@ -664,8 +634,8 @@
     "type": "entry",
     "markerKind": "gate",
     "coordinates": [
-      49.30971468554248,
-      8.449001312255861
+      49.30985108357521,
+      8.448845744132997
     ],
     "name": {
       "de": "Eingang Flugplatzfest",
@@ -694,8 +664,8 @@
     "type": "entry",
     "markerKind": "exit",
     "coordinates": [
-      49.30860468315507,
-      8.448356333459362
+      49.308590251176504,
+      8.448314666748049
     ],
     "name": {
       "de": "Ausgang Drehkreuz / Fluchtweg 2",
@@ -724,8 +694,8 @@
     "type": "entry",
     "markerKind": "exit",
     "coordinates": [
-      49.30910324313041,
-      8.448147151688524
+      49.30911137049786,
+      8.448102772235872
     ],
     "name": {
       "de": "Fluchtweg 1",
@@ -754,8 +724,8 @@
     "type": "entry",
     "markerKind": "gate",
     "coordinates": [
-      49.30904397275565,
-      8.448963916975256
+      49.30905541328294,
+      8.448926210403444
     ],
     "name": {
       "de": "Rundflug-Zugang 1",
@@ -784,8 +754,8 @@
     "type": "entry",
     "markerKind": "gate",
     "coordinates": [
-      49.30881810285377,
-      8.448746606661548
+      49.30880534558034,
+      8.448794782161714
     ],
     "name": {
       "de": "Rundflug-Zugang 2",
@@ -810,15 +780,45 @@
     "useLogoMarker": false
   },
   {
-    "id": "entry-movjk9o6",
+    "id": "entry-mow1mgkp",
     "type": "service",
     "markerKind": "info",
     "coordinates": [
-      49.31002955286679,
-      8.45029950141907
+      49.3091516003518,
+      8.448963761329653
     ],
     "name": {
-      "de": "Neuer Eintrag",
+      "de": "Justiz - JVA Mannheim",
+      "en": "New entry"
+    },
+    "location": {
+      "de": "",
+      "en": "Worms Academy"
+    },
+    "summary": {
+      "de": "",
+      "en": ""
+    },
+    "description": {
+      "de": "",
+      "en": ""
+    },
+    "website": "",
+    "phone": "",
+    "email": "",
+    "image": "/assets/logos/visitor-info.svg",
+    "useLogoMarker": false
+  },
+  {
+    "id": "entry-mow1pqwh",
+    "type": "service",
+    "markerKind": "authority",
+    "coordinates": [
+      49.30926526954313,
+      8.448899388313295
+    ],
+    "name": {
+      "de": "Einsatztraining Budespolizei",
       "en": "New entry"
     },
     "location": {
@@ -836,7 +836,247 @@
     "website": "",
     "phone": "",
     "email": "",
-    "image": "/assets/uploads/paluvlogowhite-1778161709842-6f6e25cb.png",
-    "useLogoMarker": true
+    "image": "/assets/logos/visitor-info.svg",
+    "useLogoMarker": false
+  },
+  {
+    "id": "entry-mow20fvb",
+    "type": "service",
+    "markerKind": "parking",
+    "coordinates": [
+      49.30655585566636,
+      8.449446558952333
+    ],
+    "name": {
+      "de": "HeliFlight Landeplatz",
+      "en": "New entry"
+    },
+    "location": {
+      "de": "",
+      "en": ""
+    },
+    "summary": {
+      "de": "",
+      "en": ""
+    },
+    "description": {
+      "de": "",
+      "en": ""
+    },
+    "website": "",
+    "phone": "",
+    "email": "",
+    "image": "/assets/logos/visitor-info.svg",
+    "useLogoMarker": false
+  },
+  {
+    "id": "entry-mow2b1ae",
+    "type": "entry",
+    "markerKind": "authority",
+    "coordinates": [
+      49.31023574944499,
+      8.450605273246767
+    ],
+    "name": {
+      "de": "Feuewert",
+      "en": "New entry"
+    },
+    "location": {
+      "de": "",
+      "en": ""
+    },
+    "summary": {
+      "de": "",
+      "en": ""
+    },
+    "description": {
+      "de": "",
+      "en": ""
+    },
+    "website": "",
+    "phone": "",
+    "email": "",
+    "image": "/assets/logos/visitor-info.svg",
+    "useLogoMarker": false
+  },
+  {
+    "id": "entry-mow2om2r",
+    "type": "service",
+    "markerKind": "info",
+    "coordinates": [
+      49.30878260927988,
+      8.448328077793123
+    ],
+    "name": {
+      "de": "AeroShinex",
+      "en": "AeroShinex"
+    },
+    "location": {
+      "de": "",
+      "en": ""
+    },
+    "summary": {
+      "de": "",
+      "en": ""
+    },
+    "description": {
+      "de": "",
+      "en": ""
+    },
+    "website": "",
+    "phone": "",
+    "email": "",
+    "image": "/assets/logos/visitor-info.svg",
+    "useLogoMarker": false
+  },
+  {
+    "id": "entry-mow2ybxb",
+    "type": "building",
+    "markerKind": "airplane",
+    "coordinates": [
+      49.31047018456869,
+      8.445643186569216
+    ],
+    "name": {
+      "de": "Boeing 747",
+      "en": "New entry"
+    },
+    "location": {
+      "de": "",
+      "en": ""
+    },
+    "summary": {
+      "de": "",
+      "en": ""
+    },
+    "description": {
+      "de": "",
+      "en": ""
+    },
+    "website": "",
+    "phone": "",
+    "email": "",
+    "image": "/assets/logos/visitor-info.svg",
+    "useLogoMarker": false
+  },
+  {
+    "id": "entry-mow2zagb",
+    "type": "building",
+    "markerKind": "airplane",
+    "coordinates": [
+      49.31144938717868,
+      8.446469306945803
+    ],
+    "name": {
+      "de": "Another Airplane",
+      "en": "New entry"
+    },
+    "location": {
+      "de": "",
+      "en": ""
+    },
+    "summary": {
+      "de": "",
+      "en": ""
+    },
+    "description": {
+      "de": "",
+      "en": ""
+    },
+    "website": "",
+    "phone": "",
+    "email": "",
+    "image": "/assets/logos/visitor-info.svg",
+    "useLogoMarker": false
+  },
+  {
+    "id": "entry-mow304k2",
+    "type": "service",
+    "markerKind": "submarine",
+    "coordinates": [
+      49.311687204070104,
+      8.447316884994509
+    ],
+    "name": {
+      "de": "Submarine",
+      "en": "Submarine"
+    },
+    "location": {
+      "de": "",
+      "en": ""
+    },
+    "summary": {
+      "de": "",
+      "en": ""
+    },
+    "description": {
+      "de": "",
+      "en": ""
+    },
+    "website": "",
+    "phone": "",
+    "email": "",
+    "image": "/assets/logos/visitor-info.svg",
+    "useLogoMarker": false
+  },
+  {
+    "id": "entry-mow30tzc",
+    "type": "service",
+    "markerKind": "boat",
+    "coordinates": [
+      49.31152636338714,
+      8.446973562240602
+    ],
+    "name": {
+      "de": "Boat",
+      "en": "Boat"
+    },
+    "location": {
+      "de": "",
+      "en": ""
+    },
+    "summary": {
+      "de": "",
+      "en": ""
+    },
+    "description": {
+      "de": "",
+      "en": ""
+    },
+    "website": "",
+    "phone": "",
+    "email": "",
+    "image": "/assets/logos/visitor-info.svg",
+    "useLogoMarker": false
+  },
+  {
+    "id": "entry-mow31g00",
+    "type": "building",
+    "markerKind": "airplane",
+    "coordinates": [
+      49.31134451553655,
+      8.44951629638672
+    ],
+    "name": {
+      "de": "Transall C160",
+      "en": "Transall C160"
+    },
+    "location": {
+      "de": "",
+      "en": ""
+    },
+    "summary": {
+      "de": "",
+      "en": ""
+    },
+    "description": {
+      "de": "",
+      "en": ""
+    },
+    "website": "",
+    "phone": "",
+    "email": "",
+    "image": "/assets/logos/visitor-info.svg",
+    "useLogoMarker": false
   }
 ]
