@@ -339,7 +339,7 @@ export class EntitySheet extends HTMLElement {
       }),
     );
     this._view = "places";
-    this.setExpanded(false);
+    this.update();
   }
 
   handleEventItemClick(event) {
@@ -358,7 +358,7 @@ export class EntitySheet extends HTMLElement {
       }),
     );
     this._view = "places";
-    this.setExpanded(false);
+    this.update();
   }
 
   update() {
