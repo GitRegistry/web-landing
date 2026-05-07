@@ -10,8 +10,10 @@ const defaultLabels = {
   browseTitle: "Eintraege entdecken",
   collapsedHint: "Nach oben wischen oder tippen, um alle Eintraege zu sehen.",
   expandedHint: "Tippe auf einen Eintrag, um ihn zu fokussieren und das Menue wieder zu schliessen.",
-  openList: "Liste",
+  openList: "Oeffnen",
   collapse: "Schliessen",
+  events: "Events",
+  places: "Places",
   call: "Anrufen",
   email: "E-Mail",
   website: "Website",
@@ -100,16 +102,20 @@ function eventMarkup(event, entities, labels) {
   const locationLine = linkedEntity
     ? `<small>${escapeHtml(labels.eventLocation)}: ${escapeHtml(linkedEntity.name)}</small>`
     : "";
+  const tagName = linkedEntity ? "button" : "article";
+  const actionAttributes = linkedEntity
+    ? `type="button" data-event-entity-id="${escapeHtml(linkedEntity.id)}"`
+    : "";
 
   return `
-    <article class="event-list__item">
+    <${tagName} class="event-list__item" ${actionAttributes}>
       <time>${escapeHtml(event.time)}</time>
       <div>
         <strong>${escapeHtml(event.title)}</strong>
         ${event.description ? `<p>${escapeHtml(event.description)}</p>` : ""}
         ${locationLine}
       </div>
-    </article>
+    </${tagName}>
   `;
 }
 
@@ -121,7 +127,7 @@ export class EntitySheet extends HTMLElement {
     this._events = [];
     this._filter = "all";
     this._expanded = false;
-    this._view = "details";
+    this._view = "places";
     this._categories = defaultCategories;
     this._labels = defaultLabels;
     this.dragStartY = null;
@@ -190,8 +196,11 @@ export class EntitySheet extends HTMLElement {
             <span data-role="status-copy">${escapeHtml(this._labels.collapsedHint)}</span>
           </button>
           <div class="sheet-grabber__actions">
-            <button class="sheet-grabber__button sheet-grabber__button--secondary" type="button" data-action="toggle-events">
-              ${escapeHtml(this._labels.program)}
+            <button class="sheet-grabber__button sheet-grabber__button--secondary" type="button" data-view="events">
+              ${escapeHtml(this._labels.events)}
+            </button>
+            <button class="sheet-grabber__button sheet-grabber__button--secondary" type="button" data-view="places">
+              ${escapeHtml(this._labels.places)}
             </button>
             <button class="sheet-grabber__button" type="button" data-action="toggle-sheet" aria-expanded="false">
               ${escapeHtml(this._labels.openList)}
@@ -224,7 +233,7 @@ export class EntitySheet extends HTMLElement {
     this.listNode = this.querySelector('[data-role="list"]');
     this.browseTitleNode = this.querySelector('[data-role="browse-title"]');
     this.statusCopyNode = this.querySelector('[data-role="status-copy"]');
-    this.toggleButtonNode = this.querySelector(".sheet-grabber__button");
+    this.toggleButtonNode = this.querySelector('[data-action="toggle-sheet"].sheet-grabber__button');
     this.grabberNode = this.querySelector(".sheet-grabber");
   }
 
@@ -242,11 +251,10 @@ export class EntitySheet extends HTMLElement {
         return;
       }
 
-      const eventsTrigger = event.target.closest('[data-action="toggle-events"]');
+      const viewTrigger = event.target.closest("[data-view]");
 
-      if (eventsTrigger) {
-        this._view = this._view === "events" ? "details" : "events";
-        this.setExpanded(false);
+      if (viewTrigger) {
+        this._view = viewTrigger.dataset.view === "events" ? "events" : "places";
         this.update();
         return;
       }
@@ -269,6 +277,22 @@ export class EntitySheet extends HTMLElement {
             detail: { entityId },
           }),
         );
+        this.setExpanded(false);
+        this._view = "places";
+        return;
+      }
+
+      const eventEntityTrigger = event.target.closest("[data-event-entity-id]");
+
+      if (eventEntityTrigger) {
+        const entityId = eventEntityTrigger.dataset.eventEntityId;
+        this.dispatchEvent(
+          new CustomEvent("entity-select", {
+            bubbles: true,
+            detail: { entityId },
+          }),
+        );
+        this._view = "places";
         this.setExpanded(false);
       }
     });
@@ -319,7 +343,7 @@ export class EntitySheet extends HTMLElement {
       return;
     }
 
-    this.browseTitleNode.textContent = this._labels.browseTitle;
+    this.browseTitleNode.textContent = this._view === "events" ? this._labels.events : this._labels.places;
     this.statusCopyNode.textContent = this._expanded ? this._labels.expandedHint : this._labels.collapsedHint;
     this.toggleButtonNode.textContent = this._expanded ? this._labels.collapse : this._labels.openList;
     this.toggleButtonNode.setAttribute("aria-expanded", String(this._expanded));
@@ -334,11 +358,13 @@ export class EntitySheet extends HTMLElement {
 
     this.dataset.view = this._view;
     this.previewNode.innerHTML = cardMarkup(entityForCard, this._labels, this._categories);
-    this.detailsViewNode.hidden = this._view !== "details";
+    this.detailsViewNode.hidden = this._view !== "places";
     this.eventsViewNode.hidden = this._view !== "events";
-    this.querySelector('[data-action="toggle-events"]').textContent =
-      this._view === "events" ? this._labels.backToDetails : this._labels.program;
     this.querySelector(".sheet-events__header h2").textContent = this._labels.program;
+    this.querySelector('[data-view="events"]').textContent = this._labels.events;
+    this.querySelector('[data-view="places"]').textContent = this._labels.places;
+    this.querySelector('[data-view="events"]').classList.toggle("is-active", this._view === "events");
+    this.querySelector('[data-view="places"]').classList.toggle("is-active", this._view === "places");
 
     this.eventsNode.innerHTML = this._events.length
       ? this._events.map((event) => eventMarkup(event, this._entities, this._labels)).join("")

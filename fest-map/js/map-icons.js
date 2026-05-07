@@ -11,6 +11,11 @@ const iconMarkup = {
       <path d="M18 18v-4"></path>
     </svg>
   `,
+  airplane: `
+    <svg viewBox="0 0 24 24" aria-hidden="true">
+      <path d="m3 13 8-2 3-7 2 1-1 6 6 1v2l-6 1 1 6-2 1-3-7-8-2Z"></path>
+    </svg>
+  `,
   authority: `
     <svg viewBox="0 0 24 24" aria-hidden="true">
       <path d="M12 3 6 5v6c0 4 2.5 7 6 10 3.5-3 6-6 6-10V5l-6-2Z"></path>
@@ -35,6 +40,13 @@ const iconMarkup = {
       <path d="M8 4h6"></path>
     </svg>
   `,
+  drinks: `
+    <svg viewBox="0 0 24 24" aria-hidden="true">
+      <path d="M7 5h10l-1.2 14H8.2L7 5Z"></path>
+      <path d="M8 9h8"></path>
+      <path d="M10 3h4"></path>
+    </svg>
+  `,
   exit: `
     <svg viewBox="0 0 24 24" aria-hidden="true">
       <path d="M4 4h8v16H4z"></path>
@@ -55,6 +67,13 @@ const iconMarkup = {
       <path d="M7 11v10"></path>
       <path d="M16 3c1.5 2 1.5 6 0 8"></path>
       <path d="M16 11v10"></path>
+    </svg>
+  `,
+  "ice-cream": `
+    <svg viewBox="0 0 24 24" aria-hidden="true">
+      <path d="M8 10a4 4 0 0 1 8 0"></path>
+      <path d="M7 10h10l-5 11-5-11Z"></path>
+      <path d="M10 13h4"></path>
     </svg>
   `,
   gate: `
@@ -106,41 +125,92 @@ const iconMarkup = {
       <path d="M18 11v5"></path>
     </svg>
   `,
+  boat: `
+    <svg viewBox="0 0 24 24" aria-hidden="true">
+      <path d="M5 13h14l-2 5H7l-2-5Z"></path>
+      <path d="M8 13V7l6 3-6 3Z"></path>
+      <path d="M4 19c2 1 4 1 6 0 2 1 4 1 6 0 1 .5 2 .7 4 .4"></path>
+    </svg>
+  `,
+  restaurant: `
+    <svg viewBox="0 0 24 24" aria-hidden="true">
+      <path d="M7 3v8"></path>
+      <path d="M5 3v5"></path>
+      <path d="M9 3v5"></path>
+      <path d="M7 11v10"></path>
+      <path d="M16 3v18"></path>
+      <path d="M16 3c2 1.5 3 4.5 2 8h-2"></path>
+    </svg>
+  `,
+  submarine: `
+    <svg viewBox="0 0 24 24" aria-hidden="true">
+      <path d="M4 14c2-4 12-4 16 0-2 4-12 4-16 0Z"></path>
+      <path d="M10 10V7h4v3"></path>
+      <circle cx="9" cy="14" r="1"></circle>
+      <circle cx="13" cy="14" r="1"></circle>
+      <path d="M20 14h2"></path>
+    </svg>
+  `,
   toilet: `
     <svg viewBox="0 0 24 24" aria-hidden="true">
       <text x="12" y="15" text-anchor="middle" font-size="8" font-family="Arial, sans-serif" font-weight="700">WC</text>
+    </svg>
+  `,
+  wc: `
+    <svg viewBox="0 0 24 24" aria-hidden="true">
+      <text x="12" y="15" text-anchor="middle" font-size="8" font-family="Arial, sans-serif" font-weight="700">WC</text>
+    </svg>
+  `,
+  "wc-disabled": `
+    <svg viewBox="0 0 24 24" aria-hidden="true">
+      <circle cx="10" cy="5" r="2"></circle>
+      <path d="M10 8v5h5l3 5"></path>
+      <path d="M9 12a5 5 0 1 0 5 5"></path>
     </svg>
   `,
 };
 
 const iconClassByKind = {
   area: "area",
+  airplane: "airplane",
   authority: "authority",
+  boat: "boat",
   building: "building",
   club: "club",
   drink: "drink",
+  drinks: "drinks",
   exit: "exit",
   flight: "flight",
   food: "food",
   gate: "gate",
   heli: "heli",
   hub: "hub",
+  "ice-cream": "ice-cream",
   info: "info",
   parking: "parking",
   "parking-direction-t": "parking-direction-t",
+  restaurant: "restaurant",
   school: "school",
+  submarine: "submarine",
   toilet: "toilet",
+  wc: "wc",
+  "wc-disabled": "wc-disabled",
 };
 
 const operationalMarkerKinds = new Set([
   "area",
+  "airplane",
   "authority",
+  "boat",
   "exit",
   "flight",
   "gate",
   "parking",
   "parking-direction-t",
+  "submarine",
   "toilet",
+  "wc",
+  "wc-disabled",
 ]);
 
 function escapeAttribute(value) {

@@ -84,6 +84,9 @@ export class MapController {
     }).addTo(this.map);
 
     this.updateMarkerScale();
+    this.map.on("zoom", () => {
+      this.updateMarkerScale();
+    });
     this.map.on("zoomend", () => {
       this.updateMarkerScale();
     });
@@ -144,7 +147,7 @@ export class MapController {
     }
 
     const zoom = this.map.getZoom();
-    const scale = Math.max(0.68, Math.min(1.08, 0.68 + (zoom - 15) * 0.1));
+    const scale = Math.max(0.42, Math.min(1.08, 0.42 + (zoom - 13) * 0.11));
     this.container.style.setProperty("--marker-scale", scale.toFixed(2));
   }
 

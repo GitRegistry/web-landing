@@ -27,7 +27,7 @@
         </div>
         <div class="manager-actions">
           <button type="button" class="manager-button" data-action="reload-data">Reload</button>
-          <button type="button" class="manager-button manager-button--primary" data-action="save-all">Save All</button>
+          <button type="button" class="manager-button manager-button--primary" data-action="save-all">Save</button>
         </div>
       </header>
 
@@ -90,21 +90,29 @@
                   <span>Marker</span>
                   <select name="markerKind">
                     <option value="area">Area</option>
+                    <option value="airplane">Airplane</option>
                     <option value="authority">Authority</option>
+                    <option value="boat">Boat</option>
                     <option value="building">Building</option>
                     <option value="club">Club</option>
                     <option value="drink">Drink</option>
+                    <option value="drinks">Drinks</option>
                     <option value="exit">Exit</option>
                     <option value="flight">Flight</option>
                     <option value="food">Food</option>
                     <option value="gate">Gate</option>
                     <option value="heli">Heli</option>
                     <option value="hub">Hub</option>
+                    <option value="ice-cream">Ice Cream</option>
                     <option value="info">Info</option>
                     <option value="parking">Parking</option>
                     <option value="parking-direction-t">Parking T</option>
+                    <option value="restaurant">Restaurant</option>
                     <option value="school">School</option>
+                    <option value="submarine">Submarine</option>
                     <option value="toilet">Toilet</option>
+                    <option value="wc">WC</option>
+                    <option value="wc-disabled">WC Disabled</option>
                   </select>
                 </label>
               </div>
@@ -349,9 +357,12 @@
 
           <section class="manager-preview">
             <div class="manager-preview__header">
-              <h2>Public Preview</h2>
+              <h2>Mobile Preview</h2>
             </div>
-            <iframe title="Fest Map preview" data-role="preview-frame" src="/index.html"></iframe>
+            <div class="manager-phone-frame">
+              <div class="manager-phone-frame__speaker" aria-hidden="true"></div>
+              <iframe title="Fest Map phone preview" data-role="preview-frame" src="/index.html"></iframe>
+            </div>
           </section>
         </aside>
       </main>

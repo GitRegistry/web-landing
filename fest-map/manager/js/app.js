@@ -351,6 +351,9 @@ class ManagerApp {
     this.map.on("zoomend", () => {
       this.updateMarkerScale();
     });
+    this.map.on("zoom", () => {
+      this.updateMarkerScale();
+    });
     this.updateMarkerScale();
   }
 
@@ -411,7 +414,7 @@ class ManagerApp {
 
   updateMarkerScale() {
     const zoom = this.map.getZoom();
-    const scale = Math.max(0.68, Math.min(1.08, 0.68 + (zoom - 15) * 0.1));
+    const scale = Math.max(0.42, Math.min(1.08, 0.42 + (zoom - 13) * 0.11));
     this.map.getContainer().style.setProperty("--marker-scale", scale.toFixed(2));
   }
 

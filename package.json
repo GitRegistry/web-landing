@@ -3,7 +3,6 @@
   "private": true,
   "type": "module",
   "scripts": {
-    "fest-map:export-data": "node fest-map/scripts/export-json.mjs",
     "fest-map:manager": "node fest-map/manager/server.js"
   },
   "dependencies": {
