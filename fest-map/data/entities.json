@@ -120,8 +120,8 @@
     "type": "building",
     "markerKind": "building",
     "coordinates": [
-      49.30872443648363,
-      8.448426847913288
+      49.3086759348306,
+      8.448435366153719
     ],
     "name": {
       "de": "Paluv",
@@ -526,8 +526,8 @@
     "type": "area",
     "markerKind": "area",
     "coordinates": [
-      49.30952606944814,
-      8.449328093625663
+      49.30947686517113,
+      8.449333906173708
     ],
     "name": {
       "de": "Oldtimer- & Segler-Abstellflaeche",
@@ -752,5 +752,34 @@
     "phone": "",
     "email": "",
     "image": "/assets/logos/runway-view.svg"
+  },
+  {
+    "id": "entry-movjk9o6",
+    "type": "service",
+    "markerKind": "info",
+    "coordinates": [
+      49.31002955286679,
+      8.45029950141907
+    ],
+    "name": {
+      "de": "Neuer Eintrag",
+      "en": "New entry"
+    },
+    "location": {
+      "de": "",
+      "en": ""
+    },
+    "summary": {
+      "de": "",
+      "en": ""
+    },
+    "description": {
+      "de": "",
+      "en": ""
+    },
+    "website": "",
+    "phone": "",
+    "email": "",
+    "image": "/assets/uploads/paluvlogowhite-1778161709842-6f6e25cb.png"
   }
 ]
