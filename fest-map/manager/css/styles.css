@@ -20,6 +20,7 @@
 
 .manager-shell {
   min-height: 100vh;
+  min-height: 100dvh;
   padding: 18px;
   color: var(--manager-text);
   font-family: "Manrope", "Avenir Next", "Segoe UI", sans-serif;
@@ -124,9 +125,12 @@
 
 .manager-main {
   display: grid;
-  grid-template-columns: minmax(0, 1.5fr) minmax(360px, 520px);
+  grid-template-columns: minmax(0, 1.5fr) minmax(390px, 520px);
   gap: 12px;
-  align-items: start;
+  align-items: stretch;
+  min-height: 720px;
+  height: calc(100vh - 148px);
+  height: calc(100dvh - 148px);
 }
 
 .manager-map-section,
@@ -137,19 +141,22 @@
 }
 
 .manager-map-section {
+  display: grid;
   padding: 12px;
   border-radius: 18px;
 }
 
 .manager-map {
-  min-height: 76vh;
+  min-height: 0;
+  height: 100%;
   border-radius: 12px;
   overflow: hidden;
 }
 
 .manager-sidebar {
-  display: grid;
-  grid-template-rows: auto 1fr auto;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
   border-radius: 18px;
   overflow: hidden;
 }
@@ -180,6 +187,9 @@
 }
 
 .manager-panel {
+  order: 3;
+  flex: 1 1 0;
+  min-height: 220px;
   display: none;
   gap: 16px;
   padding: 12px;
@@ -348,6 +358,10 @@
 }
 
 .manager-preview {
+  --preview-max-height: min(48vh, 560px);
+  --preview-max-height: min(48dvh, 560px);
+  order: 2;
+  flex: 0 0 auto;
   display: grid;
   justify-items: center;
   gap: 12px;
@@ -368,9 +382,9 @@
   --phone-width: 393px;
   --phone-height: 852px;
   position: relative;
-  width: min(100%, var(--phone-width));
-  aspect-ratio: var(--phone-width) / var(--phone-height);
-  max-height: 54vh;
+  box-sizing: border-box;
+  width: min(100%, var(--phone-width), calc(var(--preview-max-height) * var(--phone-width) / var(--phone-height)));
+  aspect-ratio: 393 / 852;
   padding: 11px;
   border-radius: 36px;
   background: linear-gradient(145deg, #1d2c35, #5c6e79);
@@ -445,10 +459,24 @@
 @media (max-width: 1200px) {
   .manager-main {
     grid-template-columns: 1fr;
+    height: auto;
+    min-height: 0;
   }
 
   .manager-map {
-    min-height: 54vh;
+    height: min(52vh, 460px);
+    height: min(52dvh, 460px);
+    min-height: 340px;
+  }
+
+  .manager-sidebar {
+    height: auto;
+    min-height: 760px;
+  }
+
+  .manager-preview {
+    --preview-max-height: min(56vh, 620px);
+    --preview-max-height: min(56dvh, 620px);
   }
 }
 
