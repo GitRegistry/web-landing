@@ -31,8 +31,6 @@ export class FestMapApp extends HTMLElement {
 
     this.sheetElement = this.querySelector("entity-sheet");
     this.mapElement = this.querySelector("[data-map]");
-    this.eyebrowNode = this.querySelector('[data-role="header-eyebrow"]');
-    this.descriptionNode = this.querySelector('[data-role="header-description"]');
     this.languageGroupNode = this.querySelector('[data-role="language-group"]');
     this.languageButtonNodes = this.querySelectorAll("[data-locale]");
     this.footerCreditNode = this.querySelector('[data-role="footer-credit"]');
@@ -94,7 +92,7 @@ export class FestMapApp extends HTMLElement {
   }
 
   syncViewportHeight() {
-    const nextHeight = window.visualViewport?.height ?? window.innerHeight;
+    const nextHeight = Math.max(window.innerHeight || 0, window.visualViewport?.height ?? 0);
 
     if (!nextHeight) {
       return;
@@ -195,8 +193,6 @@ export class FestMapApp extends HTMLElement {
       this.entities.find(({ id }) => id === this.selectedEntityId) ?? this.entities[0] ?? null;
     this.selectedEntityId = this.selectedEntity?.id ?? null;
 
-    this.eyebrowNode.textContent = strings.headerEyebrow;
-    this.descriptionNode.textContent = strings.headerDescription;
     this.languageGroupNode.setAttribute("aria-label", strings.languageSwitchLabel);
     this.footerCreditNode.firstChild.textContent = `${strings.footerCredit} `;
     this.updateLanguageButtons();
@@ -243,19 +239,10 @@ export class FestMapApp extends HTMLElement {
       <div class="app-shell">
         <div class="map-canvas" data-map></div>
         <div class="map-overlay"></div>
-        <header class="app-header glass-panel">
-          <div class="app-header__top">
-            <div>
-              <p class="app-header__eyebrow" data-role="header-eyebrow"></p>
-              <h1>Flugplatz Fest &amp; Brazzeltag</h1>
-            </div>
-            <div class="language-switch" data-role="language-group" role="group" aria-label="Sprache wechseln">
-              <button class="language-switch__button" type="button" data-locale="de" aria-pressed="false">DE</button>
-              <button class="language-switch__button" type="button" data-locale="en" aria-pressed="false">EN</button>
-            </div>
-          </div>
-          <p class="app-header__description" data-role="header-description" hidden></p>
-        </header>
+        <div class="app-language-float language-switch glass-panel" data-role="language-group" role="group" aria-label="Sprache wechseln">
+          <button class="language-switch__button" type="button" data-locale="de" aria-pressed="false">DE</button>
+          <button class="language-switch__button" type="button" data-locale="en" aria-pressed="false">EN</button>
+        </div>
         <footer class="app-footer glass-panel">
           <span data-role="footer-credit">Powered by </span><a href="https://paluv.de" target="_blank" rel="noreferrer">Paluv.de</a>
         </footer>

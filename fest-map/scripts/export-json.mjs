@@ -31,6 +31,36 @@ function normalizeEntity(entity) {
   };
 }
 
+function createFestivalHomeEntity() {
+  return {
+    id: "festival-home",
+    type: "service",
+    markerKind: "info",
+    coordinates: [49.3088, 8.44895],
+    name: {
+      de: "Flugplatz Fest & Brazzeltag",
+      en: "Flugplatz Fest & Brazzeltag",
+    },
+    location: {
+      de: "Festzentrum",
+      en: "Festival center",
+    },
+    summary: {
+      de: "Zentraler Einstiegspunkt fuer Programm, Lageplan und Orientierung.",
+      en: "Central starting point for the timetable, map and orientation.",
+    },
+    description: {
+      de: "Hier findest du den zentralen Einstiegspunkt fuer das Flugplatz Fest und den Brazzeltag. Von hier aus kannst du Programm, Wege, Parkflaechen und Aussteller schnell ueberblicken.",
+      en: "This is the central starting point for Flugplatz Fest and Brazzeltag. From here you can quickly orient yourself around the timetable, routes, parking areas and exhibitors.",
+    },
+    website: "",
+    phone: "",
+    email: "",
+    image: "/assets/logos/visitor-info.svg",
+    useLogoMarker: false,
+  };
+}
+
 function normalizeOverlay(overlay) {
   const categoryByTone = {
     parking: "parking",
@@ -60,7 +90,7 @@ async function writeJson(filename, value) {
 }
 
 await ensureDir(dataDir);
-await writeJson("entities.json", sampleEntities.map(normalizeEntity));
+await writeJson("entities.json", [createFestivalHomeEntity(), ...sampleEntities.map(normalizeEntity)]);
 await writeJson("overlays.json", airfieldOverlays.map(normalizeOverlay));
 
 console.log(`Exported Fest Map data to ${dataDir}`);

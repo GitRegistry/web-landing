@@ -183,30 +183,27 @@ export class EntitySheet extends HTMLElement {
     this.dataset.state = "collapsed";
     this.innerHTML = `
       <section class="bottom-sheet glass-panel">
-        <div class="sheet-grabber" data-action="toggle-sheet">
+        <div class="sheet-grabber">
           <span class="sheet-grabber__bar" aria-hidden="true"></span>
-          <div class="sheet-grabber__copy">
+          <button class="sheet-grabber__copy" type="button" data-action="toggle-sheet">
             <strong data-role="browse-title">${escapeHtml(this._labels.browseTitle)}</strong>
             <span data-role="status-copy">${escapeHtml(this._labels.collapsedHint)}</span>
-          </div>
-          <button class="sheet-grabber__button" type="button" data-action="toggle-sheet" aria-expanded="false">
-            ${escapeHtml(this._labels.openList)}
           </button>
+          <div class="sheet-grabber__actions">
+            <button class="sheet-grabber__button sheet-grabber__button--secondary" type="button" data-action="toggle-events">
+              ${escapeHtml(this._labels.program)}
+            </button>
+            <button class="sheet-grabber__button" type="button" data-action="toggle-sheet" aria-expanded="false">
+              ${escapeHtml(this._labels.openList)}
+            </button>
+          </div>
         </div>
         <div class="sheet-view sheet-view--details" data-role="details-view">
           <div class="sheet-preview" data-role="preview"></div>
-          <div class="sheet-quick-actions">
-            <button class="entity-card__action" type="button" data-action="show-events">
-              ${escapeHtml(this._labels.program)}
-            </button>
-          </div>
         </div>
         <div class="sheet-view sheet-view--events" data-role="events-view" hidden>
           <div class="sheet-events__header">
             <h2>${escapeHtml(this._labels.program)}</h2>
-            <button class="entity-card__action" type="button" data-action="show-details">
-              ${escapeHtml(this._labels.backToDetails)}
-            </button>
           </div>
           <div class="event-list" data-role="events"></div>
         </div>
@@ -245,19 +242,11 @@ export class EntitySheet extends HTMLElement {
         return;
       }
 
-      const eventsTrigger = event.target.closest('[data-action="show-events"]');
+      const eventsTrigger = event.target.closest('[data-action="toggle-events"]');
 
       if (eventsTrigger) {
-        this._view = "events";
+        this._view = this._view === "events" ? "details" : "events";
         this.setExpanded(false);
-        this.update();
-        return;
-      }
-
-      const detailsTrigger = event.target.closest('[data-action="show-details"]');
-
-      if (detailsTrigger) {
-        this._view = "details";
         this.update();
         return;
       }
@@ -347,8 +336,8 @@ export class EntitySheet extends HTMLElement {
     this.previewNode.innerHTML = cardMarkup(entityForCard, this._labels, this._categories);
     this.detailsViewNode.hidden = this._view !== "details";
     this.eventsViewNode.hidden = this._view !== "events";
-    this.querySelector('[data-action="show-events"]').textContent = this._labels.program;
-    this.querySelector('[data-action="show-details"]').textContent = this._labels.backToDetails;
+    this.querySelector('[data-action="toggle-events"]').textContent =
+      this._view === "events" ? this._labels.backToDetails : this._labels.program;
     this.querySelector(".sheet-events__header h2").textContent = this._labels.program;
 
     this.eventsNode.innerHTML = this._events.length

@@ -81,45 +81,13 @@ fest-map-app,
   -webkit-backdrop-filter: blur(22px) saturate(155%);
 }
 
-.app-header {
+.app-language-float {
   position: absolute;
   z-index: 900;
-  top: 0;
-  left: 50%;
-  transform: translateX(-50%);
-  width: min(560px, calc(100vw - 24px));
-  padding: calc(12px + env(safe-area-inset-top)) 16px 12px;
-  border-radius: 0 0 24px 24px;
-}
-
-.app-header__top {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 14px;
-}
-
-.app-header__eyebrow {
-  margin: 0 0 4px;
-  font-size: 0.72rem;
-  font-weight: 700;
-  letter-spacing: 0.14em;
-  text-transform: uppercase;
-  color: var(--muted-color);
-}
-
-.app-header h1 {
-  margin: 0;
-  font-size: clamp(1.28rem, 1.1rem + 0.7vw, 1.82rem);
-  line-height: 1.08;
-}
-
-.app-header__description {
-  margin: 10px 0 0;
-  max-width: 54ch;
-  font-size: 0.95rem;
-  line-height: 1.5;
-  color: var(--muted-color);
+  top: calc(12px + env(safe-area-inset-top));
+  right: 12px;
+  left: auto;
+  transform: none;
 }
 
 .app-footer {
@@ -152,7 +120,7 @@ fest-map-app,
 .app-status {
   position: absolute;
   z-index: 970;
-  top: calc(82px + env(safe-area-inset-top));
+  top: calc(18px + env(safe-area-inset-top));
   left: 50%;
   transform: translateX(-50%);
   width: min(420px, calc(100vw - 32px));
@@ -223,7 +191,6 @@ entity-sheet[data-state="expanded"] .bottom-sheet {
   align-items: center;
   gap: 14px;
   padding: 6px 8px 14px;
-  cursor: pointer;
   user-select: none;
 }
 
@@ -235,12 +202,25 @@ entity-sheet[data-state="expanded"] .bottom-sheet {
 }
 
 .sheet-grabber__copy {
+  appearance: none;
+  border: 0;
+  padding: 0;
+  margin: 0;
+  background: transparent;
+  text-align: left;
   min-width: 0;
+  cursor: pointer;
 }
 
 .sheet-grabber__copy strong,
 .sheet-grabber__copy span {
   display: block;
+}
+
+.sheet-grabber__actions {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
 }
 
 .sheet-grabber__copy strong {
@@ -262,20 +242,15 @@ entity-sheet[data-state="expanded"] .bottom-sheet {
   color: var(--text-color);
   background: rgba(255, 255, 255, 0.78);
   box-shadow: 0 10px 24px rgba(19, 50, 71, 0.08);
+  cursor: pointer;
+}
+
+.sheet-grabber__button--secondary {
+  min-width: 98px;
 }
 
 .sheet-preview {
   padding: 0 4px 4px;
-}
-
-.sheet-view[hidden] {
-  display: none;
-}
-
-.sheet-quick-actions {
-  display: flex;
-  justify-content: flex-end;
-  padding: 6px 4px 4px;
 }
 
 .sheet-events__header {
@@ -837,42 +812,12 @@ entity-sheet[data-view="events"] .sheet-directory {
 
 @media (max-width: 768px) {
   .app-footer {
-    left: 0;
-    right: auto;
-    bottom: 0;
-    transform: none;
-    font-size: 0.75rem;
-    white-space: nowrap;
-  }
-
-  .app-header {
-    top: 0;
-    left: 0;
-    width: 100%;
-    transform: none;
-    padding: calc(9px + env(safe-area-inset-top)) 12px 10px;
-    border-radius: 0 0 24px 24px;
-    border-left: 0;
-    border-right: 0;
-  }
-
-  .app-header__top {
-    align-items: center;
-    gap: 12px;
-  }
-
-  .app-header__eyebrow {
-    margin-bottom: 4px;
-    font-size: 0.72rem;
-    letter-spacing: 0.11em;
-  }
-
-  .app-header h1 {
-    font-size: 1.22rem;
-  }
-
-  .app-header__description {
     display: none;
+  }
+
+  .app-language-float {
+    top: calc(10px + env(safe-area-inset-top));
+    right: 10px;
   }
 
   .language-switch {
@@ -890,7 +835,7 @@ entity-sheet[data-view="events"] .sheet-directory {
     width: 100%;
     bottom: 0;
     transform: none;
-    padding-inline: 7px;
+    padding-inline: 6px;
   }
 
   .sheet-grabber {
@@ -918,6 +863,14 @@ entity-sheet[data-view="events"] .sheet-directory {
     font-size: 0.8rem;
   }
 
+  .sheet-grabber__actions {
+    gap: 6px;
+  }
+
+  .sheet-grabber__button--secondary {
+    min-width: 92px;
+  }
+
   .bottom-sheet {
     padding: 8px;
     padding-bottom: calc(8px + env(safe-area-inset-bottom));
@@ -932,14 +885,14 @@ entity-sheet[data-view="events"] .sheet-directory {
   }
 
   .app-status {
-    top: calc(70px + env(safe-area-inset-top));
+    top: calc(64px + env(safe-area-inset-top));
     width: min(360px, calc(100vw - 24px));
     padding: 10px 14px;
     font-size: 0.9rem;
   }
 
   .leaflet-control-zoom {
-    margin-top: 82px;
+    margin-top: 74px;
     margin-right: 12px;
   }
 
@@ -1032,10 +985,6 @@ entity-sheet[data-view="events"] .sheet-directory {
 }
 
 @media (max-width: 560px) {
-  .app-header h1 {
-    max-width: 16ch;
-  }
-
   .language-switch {
     margin-left: auto;
   }
@@ -1071,18 +1020,9 @@ entity-sheet[data-view="events"] .sheet-directory {
 }
 
 @media (max-width: 420px) {
-  .app-header {
-    width: 100%;
-    padding: calc(12px + env(safe-area-inset-top)) 12px 10px;
-  }
-
-  .app-header__top {
-    align-items: flex-start;
-  }
-
-  .app-header__description {
-    -webkit-line-clamp: 1;
-    font-size: 0.8rem;
+  .app-language-float {
+    top: calc(8px + env(safe-area-inset-top));
+    right: 8px;
   }
 
   .bottom-sheet {
