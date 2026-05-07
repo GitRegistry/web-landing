@@ -24,9 +24,6 @@
         <div>
           <p class="manager-eyebrow">Local Fest Map Manager</p>
           <h1>Fest Map Editor</h1>
-          <p class="manager-subtitle">
-            Edit entries, areas, arrows, fences, and images locally. Save to the repo when the map looks right.
-          </p>
         </div>
         <div class="manager-actions">
           <button type="button" class="manager-button" data-action="reload-data">Reload</button>
@@ -36,14 +33,14 @@
 
       <section class="manager-toolbar glass-panel">
         <div class="manager-toolbar__group">
-          <button type="button" class="manager-button" data-action="start-entry">Place Entry</button>
-          <button type="button" class="manager-button" data-action="start-polygon">Draw Polygon</button>
-          <button type="button" class="manager-button" data-action="start-route">Draw Route</button>
+          <button type="button" class="manager-button" data-action="start-entry" title="Place entry">Point</button>
+          <button type="button" class="manager-button" data-action="start-polygon" title="Draw polygon">Polygon</button>
+          <button type="button" class="manager-button" data-action="start-route" title="Draw route">Route</button>
         </div>
         <div class="manager-toolbar__group">
-          <button type="button" class="manager-button" data-action="finish-drawing">Finish Drawing</button>
-          <button type="button" class="manager-button" data-action="cancel-drawing">Cancel Drawing</button>
-          <button type="button" class="manager-button" data-action="reload-preview">Reload Preview</button>
+          <button type="button" class="manager-button" data-action="finish-drawing" title="Finish drawing">Done</button>
+          <button type="button" class="manager-button" data-action="cancel-drawing" title="Cancel drawing">Cancel</button>
+          <button type="button" class="manager-button" data-action="reload-preview" title="Reload preview">Preview</button>
         </div>
         <div class="manager-toolbar__status">
           <strong data-role="mode-label">Mode: Browse</strong>
@@ -60,6 +57,7 @@
           <div class="manager-tabs" role="tablist" aria-label="Manager sections">
             <button type="button" class="manager-tab is-active" data-tab="entries">Entries</button>
             <button type="button" class="manager-tab" data-tab="overlays">Overlays</button>
+            <button type="button" class="manager-tab" data-tab="events">Events</button>
             <button type="button" class="manager-tab" data-tab="assets">Assets</button>
           </div>
 
@@ -104,11 +102,16 @@
                     <option value="hub">Hub</option>
                     <option value="info">Info</option>
                     <option value="parking">Parking</option>
+                    <option value="parking-direction-t">Parking T</option>
                     <option value="school">School</option>
                     <option value="toilet">Toilet</option>
                   </select>
                 </label>
               </div>
+              <label class="manager-check">
+                <input type="checkbox" name="useLogoMarker">
+                <span>Use image in map marker</span>
+              </label>
               <label class="manager-field">
                 <span>Image path</span>
                 <input type="text" name="image" autocomplete="off" placeholder="/assets/uploads/example.png">
@@ -208,6 +211,7 @@
                     <option value="fence">Fence</option>
                     <option value="route">Route</option>
                     <option value="area">Area</option>
+                    <option value="event">Event</option>
                   </select>
                 </label>
               </div>
@@ -219,6 +223,7 @@
                     <option value="light">Light</option>
                     <option value="parking">Parking</option>
                     <option value="alert">Alert</option>
+                    <option value="eventBlue">Event Blue</option>
                   </select>
                 </label>
                 <label class="manager-field">
@@ -266,6 +271,56 @@
             </form>
           </section>
 
+          <section class="manager-panel" data-panel="events">
+            <div class="manager-list-block">
+              <div class="manager-list-block__header">
+                <h2>Events</h2>
+                <span data-role="event-count"></span>
+              </div>
+              <button type="button" class="manager-button manager-button--primary" data-action="add-event">Add Event</button>
+              <div class="manager-list" data-role="event-list"></div>
+            </div>
+
+            <form class="manager-form" data-form="event">
+              <h3>Selected Event</h3>
+              <div class="manager-field-grid">
+                <label class="manager-field">
+                  <span>ID</span>
+                  <input type="text" name="id" autocomplete="off">
+                </label>
+                <label class="manager-field">
+                  <span>Time</span>
+                  <input type="time" name="time">
+                </label>
+              </div>
+              <label class="manager-field">
+                <span>Location entry</span>
+                <select name="locationEntryId"></select>
+              </label>
+              <div class="manager-field-grid manager-field-grid--locale">
+                <label class="manager-field">
+                  <span>Title (DE)</span>
+                  <input type="text" name="titleDe" autocomplete="off">
+                </label>
+                <label class="manager-field">
+                  <span>Title (EN)</span>
+                  <input type="text" name="titleEn" autocomplete="off">
+                </label>
+                <label class="manager-field">
+                  <span>Description (DE)</span>
+                  <textarea name="descriptionDe" rows="4"></textarea>
+                </label>
+                <label class="manager-field">
+                  <span>Description (EN)</span>
+                  <textarea name="descriptionEn" rows="4"></textarea>
+                </label>
+              </div>
+              <button type="button" class="manager-button manager-button--danger" data-action="delete-event">
+                Delete Event
+              </button>
+            </form>
+          </section>
+
           <section class="manager-panel" data-panel="assets">
             <div class="manager-list-block">
               <div class="manager-list-block__header">
@@ -309,4 +364,3 @@
     <script type="module" src="/manager/js/app.js"></script>
   </body>
 </html>
-

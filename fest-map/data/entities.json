@@ -26,7 +26,8 @@
     "website": "",
     "phone": "",
     "email": "",
-    "image": "/assets/logos/museum-terrace.svg"
+    "image": "/assets/logos/museum-terrace.svg",
+    "useLogoMarker": false
   },
   {
     "id": "fsv-speyer",
@@ -55,7 +56,8 @@
     "website": "",
     "phone": "",
     "email": "",
-    "image": "/assets/logos/hangar-court.svg"
+    "image": "/assets/logos/hangar-court.svg",
+    "useLogoMarker": false
   },
   {
     "id": "sport-huber",
@@ -84,7 +86,8 @@
     "website": "",
     "phone": "",
     "email": "",
-    "image": "/assets/logos/hangar-court.svg"
+    "image": "/assets/logos/hangar-court.svg",
+    "useLogoMarker": false
   },
   {
     "id": "flight-academy-hangar-1",
@@ -113,7 +116,8 @@
     "website": "",
     "phone": "",
     "email": "",
-    "image": "/assets/logos/hangar-court.svg"
+    "image": "/assets/logos/hangar-court.svg",
+    "useLogoMarker": false
   },
   {
     "id": "paluv",
@@ -142,7 +146,8 @@
     "website": "",
     "phone": "",
     "email": "",
-    "image": "/assets/logos/visitor-info.svg"
+    "image": "/assets/logos/visitor-info.svg",
+    "useLogoMarker": false
   },
   {
     "id": "flight-academy-hangar-2",
@@ -171,7 +176,8 @@
     "website": "",
     "phone": "",
     "email": "",
-    "image": "/assets/logos/hangar-court.svg"
+    "image": "/assets/logos/hangar-court.svg",
+    "useLogoMarker": false
   },
   {
     "id": "otto-funk",
@@ -200,7 +206,8 @@
     "website": "",
     "phone": "",
     "email": "",
-    "image": "/assets/logos/hangar-court.svg"
+    "image": "/assets/logos/hangar-court.svg",
+    "useLogoMarker": false
   },
   {
     "id": "flugschule-loeffler",
@@ -229,7 +236,8 @@
     "website": "",
     "phone": "",
     "email": "",
-    "image": "/assets/logos/hangar-court.svg"
+    "image": "/assets/logos/hangar-court.svg",
+    "useLogoMarker": false
   },
   {
     "id": "toilettenwagen",
@@ -258,7 +266,8 @@
     "website": "",
     "phone": "",
     "email": "",
-    "image": "/assets/logos/first-aid.svg"
+    "image": "/assets/logos/first-aid.svg",
+    "useLogoMarker": false
   },
   {
     "id": "crepes-essen",
@@ -287,7 +296,8 @@
     "website": "",
     "phone": "",
     "email": "",
-    "image": "/assets/logos/museum-terrace.svg"
+    "image": "/assets/logos/museum-terrace.svg",
+    "useLogoMarker": false
   },
   {
     "id": "green-aviation-hub",
@@ -316,7 +326,8 @@
     "website": "",
     "phone": "",
     "email": "",
-    "image": "/assets/logos/visitor-info.svg"
+    "image": "/assets/logos/visitor-info.svg",
+    "useLogoMarker": false
   },
   {
     "id": "infostand-flugschulen-und-vereine",
@@ -345,7 +356,8 @@
     "website": "",
     "phone": "",
     "email": "",
-    "image": "/assets/logos/visitor-info.svg"
+    "image": "/assets/logos/visitor-info.svg",
+    "useLogoMarker": false
   },
   {
     "id": "rundflugstand",
@@ -374,7 +386,8 @@
     "website": "",
     "phone": "",
     "email": "",
-    "image": "/assets/logos/runway-view.svg"
+    "image": "/assets/logos/runway-view.svg",
+    "useLogoMarker": false
   },
   {
     "id": "modellflugverein-oberhausen",
@@ -403,7 +416,8 @@
     "website": "",
     "phone": "",
     "email": "",
-    "image": "/assets/logos/visitor-info.svg"
+    "image": "/assets/logos/visitor-info.svg",
+    "useLogoMarker": false
   },
   {
     "id": "ul-heli",
@@ -432,7 +446,8 @@
     "website": "",
     "phone": "",
     "email": "",
-    "image": "/assets/logos/visitor-info.svg"
+    "image": "/assets/logos/visitor-info.svg",
+    "useLogoMarker": false
   },
   {
     "id": "getraenke",
@@ -461,7 +476,8 @@
     "website": "",
     "phone": "",
     "email": "",
-    "image": "/assets/logos/museum-terrace.svg"
+    "image": "/assets/logos/museum-terrace.svg",
+    "useLogoMarker": false
   },
   {
     "id": "berufsschule-fh-worms",
@@ -490,7 +506,8 @@
     "website": "",
     "phone": "",
     "email": "",
-    "image": "/assets/logos/visitor-info.svg"
+    "image": "/assets/logos/visitor-info.svg",
+    "useLogoMarker": false
   },
   {
     "id": "infostand-zoll-bundespolizei",
@@ -519,7 +536,8 @@
     "website": "",
     "phone": "",
     "email": "",
-    "image": "/assets/logos/visitor-info.svg"
+    "image": "/assets/logos/visitor-info.svg",
+    "useLogoMarker": false
   },
   {
     "id": "oldtimer-segler-abstellflaeche",
@@ -548,7 +566,8 @@
     "website": "",
     "phone": "",
     "email": "",
-    "image": "/assets/logos/flightline-plaza.svg"
+    "image": "/assets/logos/flightline-plaza.svg",
+    "useLogoMarker": false
   },
   {
     "id": "rundflug-positionen",
@@ -577,7 +596,8 @@
     "website": "",
     "phone": "",
     "email": "",
-    "image": "/assets/logos/flightline-plaza.svg"
+    "image": "/assets/logos/flightline-plaza.svg",
+    "useLogoMarker": false
   },
   {
     "id": "guest-area-parking",
@@ -606,7 +626,8 @@
     "website": "",
     "phone": "",
     "email": "",
-    "image": "/assets/logos/flightline-plaza.svg"
+    "image": "/assets/logos/flightline-plaza.svg",
+    "useLogoMarker": false
   },
   {
     "id": "main-entrance",
@@ -635,7 +656,8 @@
     "website": "",
     "phone": "",
     "email": "",
-    "image": "/assets/logos/runway-view.svg"
+    "image": "/assets/logos/runway-view.svg",
+    "useLogoMarker": false
   },
   {
     "id": "ausgang-drehkreuz-fluchtweg-2",
@@ -664,7 +686,8 @@
     "website": "",
     "phone": "",
     "email": "",
-    "image": "/assets/logos/runway-view.svg"
+    "image": "/assets/logos/runway-view.svg",
+    "useLogoMarker": false
   },
   {
     "id": "fluchtweg-1",
@@ -693,7 +716,8 @@
     "website": "",
     "phone": "",
     "email": "",
-    "image": "/assets/logos/runway-view.svg"
+    "image": "/assets/logos/runway-view.svg",
+    "useLogoMarker": false
   },
   {
     "id": "rundflug-entry",
@@ -722,7 +746,8 @@
     "website": "",
     "phone": "",
     "email": "",
-    "image": "/assets/logos/runway-view.svg"
+    "image": "/assets/logos/runway-view.svg",
+    "useLogoMarker": false
   },
   {
     "id": "rundflug-entry-2",
@@ -751,7 +776,8 @@
     "website": "",
     "phone": "",
     "email": "",
-    "image": "/assets/logos/runway-view.svg"
+    "image": "/assets/logos/runway-view.svg",
+    "useLogoMarker": false
   },
   {
     "id": "entry-movjk9o6",
@@ -780,6 +806,7 @@
     "website": "",
     "phone": "",
     "email": "",
-    "image": "/assets/uploads/paluvlogowhite-1778161709842-6f6e25cb.png"
+    "image": "/assets/uploads/paluvlogowhite-1778161709842-6f6e25cb.png",
+    "useLogoMarker": false
   }
 ]

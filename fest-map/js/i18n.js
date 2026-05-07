@@ -35,6 +35,10 @@ export const uiStrings = {
       call: "Anrufen",
       email: "E-Mail",
       website: "Website",
+      program: "Programm",
+      backToDetails: "Details",
+      eventLocation: "Ort",
+      emptyEvents: "Noch keine Programmpunkte eingetragen.",
       emptyState: "Noch keine Eintraege in dieser Kategorie.",
     },
     status: {
@@ -66,6 +70,10 @@ export const uiStrings = {
       call: "Call",
       email: "Email",
       website: "Website",
+      program: "Timetable",
+      backToDetails: "Details",
+      eventLocation: "Location",
+      emptyEvents: "No timetable entries yet.",
       emptyState: "No entries in this category yet.",
     },
     status: {
@@ -87,9 +95,24 @@ export function localizeEntities(entities, locale) {
     phone: entity.phone,
     email: entity.email,
     image: entity.image ?? entity.logo,
+    useLogoMarker: Boolean(entity.useLogoMarker),
     name: localizeText(entity.name, normalizedLocale),
     location: localizeText(entity.location, normalizedLocale),
     summary: localizeText(entity.summary, normalizedLocale),
     description: localizeText(entity.description, normalizedLocale),
   }));
+}
+
+export function localizeEvents(events, locale) {
+  const normalizedLocale = normalizeLocale(locale);
+
+  return events
+    .map((event) => ({
+      id: event.id,
+      time: event.time,
+      locationEntryId: event.locationEntryId,
+      title: localizeText(event.title, normalizedLocale),
+      description: localizeText(event.description, normalizedLocale),
+    }))
+    .sort((left, right) => String(left.time ?? "").localeCompare(String(right.time ?? "")));
 }

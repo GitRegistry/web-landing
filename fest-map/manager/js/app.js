@@ -26,6 +26,12 @@ const overlayPalette = {
     routeColor: "#ff6247",
     arrowClass: "taxi-arrow-icon taxi-arrow-icon--alert",
   },
+  eventBlue: {
+    color: "#2388ff",
+    fillColor: "#2388ff",
+    routeColor: "#2388ff",
+    arrowClass: "taxi-arrow-icon taxi-arrow-icon--event",
+  },
 };
 
 const overlayCategoryDefaults = {
@@ -34,6 +40,7 @@ const overlayCategoryDefaults = {
   exit: { tone: "alert", kind: "route" },
   fence: { tone: "alert", kind: "route" },
   route: { tone: "light", kind: "route" },
+  event: { tone: "eventBlue", kind: "route" },
 };
 
 function escapeHtml(value) {
@@ -119,6 +126,19 @@ function createDefaultEntry(coordinates) {
     phone: "",
     email: "",
     image: "/assets/logos/visitor-info.svg",
+    useLogoMarker: false,
+  };
+}
+
+function createDefaultEvent() {
+  const idSeed = Date.now().toString(36);
+
+  return {
+    id: `event-${idSeed}`,
+    time: "10:00",
+    title: { de: "Neuer Programmpunkt", en: "New timetable entry" },
+    description: { de: "", en: "" },
+    locationEntryId: "",
   };
 }
 
@@ -147,9 +167,11 @@ class ManagerApp {
     this.state = {
       entities: [],
       overlays: [],
+      events: [],
       assets: [],
       selectedEntryId: null,
       selectedOverlayId: null,
+      selectedEventId: null,
       selectedAssetPath: null,
       selectedVertexIndex: null,
       activeTab: "entries",
@@ -175,12 +197,15 @@ class ManagerApp {
     this.assetListNode = document.querySelector('[data-role="asset-list"]');
     this.entryCountNode = document.querySelector('[data-role="entry-count"]');
     this.overlayCountNode = document.querySelector('[data-role="overlay-count"]');
+    this.eventCountNode = document.querySelector('[data-role="event-count"]');
     this.assetCountNode = document.querySelector('[data-role="asset-count"]');
+    this.eventListNode = document.querySelector('[data-role="event-list"]');
     this.assetPreviewNode = document.querySelector('[data-role="asset-preview"]');
     this.assetMetaNode = document.querySelector('[data-role="asset-meta"]');
     this.previewFrame = document.querySelector('[data-role="preview-frame"]');
     this.entryForm = document.querySelector('[data-form="entry"]');
     this.overlayForm = document.querySelector('[data-form="overlay"]');
+    this.eventForm = document.querySelector('[data-form="event"]');
     this.uploadForm = document.querySelector('[data-form="upload"]');
     this.tabButtons = Array.from(document.querySelectorAll("[data-tab]"));
     this.panelNodes = Array.from(document.querySelectorAll("[data-panel]"));
@@ -244,6 +269,14 @@ class ManagerApp {
       this.removeSelectedVertex();
     });
 
+    document.querySelector('[data-action="add-event"]').addEventListener("click", () => {
+      this.addEvent();
+    });
+
+    document.querySelector('[data-action="delete-event"]').addEventListener("click", () => {
+      this.deleteSelectedEvent();
+    });
+
     document.querySelector('[data-action="assign-asset"]').addEventListener("click", () => {
       this.assignSelectedAsset();
     });
@@ -264,6 +297,13 @@ class ManagerApp {
     });
     this.overlayForm.addEventListener("change", () => {
       this.applyOverlayForm();
+    });
+
+    this.eventForm.addEventListener("input", () => {
+      this.applyEventForm();
+    });
+    this.eventForm.addEventListener("change", () => {
+      this.applyEventForm();
     });
 
     this.uploadForm.addEventListener("submit", async (event) => {
@@ -307,21 +347,29 @@ class ManagerApp {
         this.finishDrawing();
       }
     });
+
+    this.map.on("zoomend", () => {
+      this.updateMarkerScale();
+    });
+    this.updateMarkerScale();
   }
 
   async reloadAll({ fitMap = false } = {}) {
     const previousEntryId = this.state.selectedEntryId;
     const previousOverlayId = this.state.selectedOverlayId;
+    const previousEventId = this.state.selectedEventId;
     const previousAssetPath = this.state.selectedAssetPath;
 
-    const [entities, overlays, assets] = await Promise.all([
+    const [entities, overlays, events, assets] = await Promise.all([
       fetch("/api/entities", { cache: "no-store" }).then((response) => response.json()),
       fetch("/api/overlays", { cache: "no-store" }).then((response) => response.json()),
+      fetch("/api/events", { cache: "no-store" }).then((response) => response.json()),
       fetch("/api/assets", { cache: "no-store" }).then((response) => response.json()),
     ]);
 
     this.state.entities = entities;
     this.state.overlays = overlays;
+    this.state.events = events;
     this.state.assets = assets;
     this.state.selectedEntryId = entities.some((entity) => entity.id === previousEntryId)
       ? previousEntryId
@@ -329,6 +377,9 @@ class ManagerApp {
     this.state.selectedOverlayId = overlays.some((overlay) => overlay.id === previousOverlayId)
       ? previousOverlayId
       : null;
+    this.state.selectedEventId = events.some((event) => event.id === previousEventId)
+      ? previousEventId
+      : events[0]?.id ?? null;
     this.state.selectedAssetPath = assets.some((asset) => asset.path === previousAssetPath)
       ? previousAssetPath
       : null;
@@ -356,6 +407,12 @@ class ManagerApp {
       padding: [32, 32],
       maxZoom: 18,
     });
+  }
+
+  updateMarkerScale() {
+    const zoom = this.map.getZoom();
+    const scale = Math.max(0.68, Math.min(1.08, 0.68 + (zoom - 15) * 0.1));
+    this.map.getContainer().style.setProperty("--marker-scale", scale.toFixed(2));
   }
 
   setMessage(message) {
@@ -445,9 +502,11 @@ class ManagerApp {
     this.renderToolbar();
     this.renderEntryList();
     this.renderOverlayList();
+    this.renderEventList();
     this.renderAssetList();
     this.renderEntryForm();
     this.renderOverlayForm();
+    this.renderEventForm();
     this.renderAssetPreview();
     this.renderMap();
   }
@@ -493,6 +552,10 @@ class ManagerApp {
 
   get selectedAsset() {
     return this.state.assets.find((asset) => asset.path === this.state.selectedAssetPath) ?? null;
+  }
+
+  get selectedEvent() {
+    return this.state.events.find((event) => event.id === this.state.selectedEventId) ?? null;
   }
 
   renderEntryList() {
@@ -601,6 +664,7 @@ class ManagerApp {
     elements.id.value = entry.id;
     elements.type.value = entry.type;
     elements.markerKind.value = entry.markerKind;
+    elements.useLogoMarker.checked = Boolean(entry.useLogoMarker);
     elements.image.value = entry.image ?? "";
     elements.latitude.value = entry.coordinates[0];
     elements.longitude.value = entry.coordinates[1];
@@ -641,6 +705,68 @@ class ManagerApp {
     elements.arrowFractions.value = formatArrowFractions(overlay.arrowFractions);
   }
 
+  renderEventList() {
+    this.eventCountNode.textContent = `${this.state.events.length} total`;
+    this.eventListNode.innerHTML = [...this.state.events]
+      .sort((left, right) => left.time.localeCompare(right.time))
+      .map((event) => {
+        const isActive = event.id === this.state.selectedEventId;
+        const linkedEntry = this.state.entities.find((entry) => entry.id === event.locationEntryId);
+
+        return `
+          <button type="button" class="manager-list-item ${isActive ? "is-active" : ""}" data-event-id="${escapeHtml(event.id)}">
+            <strong>${escapeHtml(event.time || "--:--")} · ${escapeHtml(localizedText(event.title) || event.id)}</strong>
+            <span>${escapeHtml(linkedEntry ? localizedText(linkedEntry.name) : "")}</span>
+            <small>${escapeHtml(localizedText(event.description))}</small>
+          </button>
+        `;
+      })
+      .join("");
+
+    this.eventListNode.querySelectorAll("[data-event-id]").forEach((button) => {
+      button.addEventListener("click", () => {
+        this.state.selectedEventId = button.dataset.eventId;
+        this.state.activeTab = "events";
+        this.render();
+      });
+    });
+  }
+
+  renderEventForm() {
+    const event = this.selectedEvent;
+
+    this.setFormDisabled(this.eventForm, !event);
+    this.renderEventLocationOptions();
+
+    if (!event) {
+      this.eventForm.reset();
+      return;
+    }
+
+    const { elements } = this.eventForm;
+    elements.id.value = event.id;
+    elements.time.value = event.time ?? "";
+    elements.locationEntryId.value = event.locationEntryId ?? "";
+    elements.titleDe.value = event.title?.de ?? "";
+    elements.titleEn.value = event.title?.en ?? "";
+    elements.descriptionDe.value = event.description?.de ?? "";
+    elements.descriptionEn.value = event.description?.en ?? "";
+  }
+
+  renderEventLocationOptions() {
+    const select = this.eventForm.elements.locationEntryId;
+    const currentValue = select.value;
+
+    select.innerHTML = [
+      '<option value="">No linked entry</option>',
+      ...this.state.entities.map(
+        (entry) => `<option value="${escapeHtml(entry.id)}">${escapeHtml(localizedText(entry.name) || entry.id)}</option>`,
+      ),
+    ].join("");
+
+    select.value = currentValue;
+  }
+
   renderAssetPreview() {
     const asset = this.selectedAsset;
 
@@ -665,6 +791,7 @@ class ManagerApp {
     entry.id = slugify(elements.id.value, entry.id);
     entry.type = elements.type.value;
     entry.markerKind = elements.markerKind.value;
+    entry.useLogoMarker = elements.useLogoMarker.checked;
     entry.image = elements.image.value.trim();
     entry.coordinates = [
       parseNumber(elements.latitude.value, entry.coordinates[0]),
@@ -683,6 +810,24 @@ class ManagerApp {
     this.renderMap();
   }
 
+  applyEventForm() {
+    const event = this.selectedEvent;
+
+    if (!event) {
+      return;
+    }
+
+    const { elements } = this.eventForm;
+    event.id = slugify(elements.id.value, event.id);
+    event.time = elements.time.value;
+    event.locationEntryId = elements.locationEntryId.value;
+    event.title = { de: elements.titleDe.value, en: elements.titleEn.value };
+    event.description = { de: elements.descriptionDe.value, en: elements.descriptionEn.value };
+    this.state.selectedEventId = event.id;
+    this.state.dirty = true;
+    this.renderEventList();
+  }
+
   applyOverlayForm() {
     const overlay = this.selectedOverlay;
 
@@ -697,7 +842,8 @@ class ManagerApp {
 
     const defaults = overlayCategoryDefaults[overlay.category] ?? overlayCategoryDefaults.area;
 
-    overlay.tone = elements.tone.value || defaults.tone;
+    overlay.tone = overlay.category === "event" ? "eventBlue" : elements.tone.value || defaults.tone;
+    elements.tone.value = overlay.tone;
     overlay.label = { de: elements.labelDe.value, en: elements.labelEn.value };
     overlay.weight = parseNumber(elements.weight.value, null);
     overlay.opacity = parseNumber(elements.opacity.value, null);
@@ -750,6 +896,30 @@ class ManagerApp {
     this.state.selectedOverlayId = null;
     this.state.selectedVertexIndex = null;
     this.markDirty("Deleted overlay.");
+  }
+
+  addEvent() {
+    const event = createDefaultEvent();
+    this.state.events.push(event);
+    this.state.selectedEventId = event.id;
+    this.state.activeTab = "events";
+    this.markDirty("Added timetable entry.");
+  }
+
+  deleteSelectedEvent() {
+    const event = this.selectedEvent;
+
+    if (!event) {
+      return;
+    }
+
+    if (!window.confirm(`Delete event "${localizedText(event.title) || event.id}"?`)) {
+      return;
+    }
+
+    this.state.events = this.state.events.filter((item) => item.id !== event.id);
+    this.state.selectedEventId = this.state.events[0]?.id ?? null;
+    this.markDirty("Deleted timetable entry.");
   }
 
   removeSelectedVertex() {
@@ -891,6 +1061,20 @@ class ManagerApp {
       return;
     }
 
+    const eventsResponse = await fetch("/api/events", {
+      method: "PUT",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(this.state.events),
+    });
+
+    if (!eventsResponse.ok) {
+      const payload = await eventsResponse.json();
+      this.setMessage(payload.error || "Failed to save events.");
+      return;
+    }
+
     await this.reloadAll({ fitMap: false });
     this.reloadPreview();
     this.setMessage("Saved Fest Map data to the repo.");
@@ -909,7 +1093,7 @@ class ManagerApp {
     this.state.entities.forEach((entity) => {
       const marker = window.L.marker(entity.coordinates, {
         draggable: true,
-        icon: createEntityMarkerIcon(entity.markerKind, {
+        icon: createEntityMarkerIcon(entity, {
           selected: entity.id === this.state.selectedEntryId,
         }),
       });

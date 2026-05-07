@@ -92,6 +92,13 @@ const iconMarkup = {
       <path d="M10 16V8h4a2.5 2.5 0 1 1 0 5h-4"></path>
     </svg>
   `,
+  "parking-direction-t": `
+    <svg viewBox="0 0 24 24" aria-hidden="true">
+      <path d="M5 6h14"></path>
+      <path d="M12 6v13"></path>
+      <path d="M8 19h8"></path>
+    </svg>
+  `,
   school: `
     <svg viewBox="0 0 24 24" aria-hidden="true">
       <path d="m3 10 9-4 9 4-9 4-9-4Z"></path>
@@ -120,18 +127,67 @@ const iconClassByKind = {
   hub: "hub",
   info: "info",
   parking: "parking",
+  "parking-direction-t": "parking-direction-t",
   school: "school",
   toilet: "toilet",
 };
 
-export function createEntityMarkerIcon(kind, { selected = false } = {}) {
+const operationalMarkerKinds = new Set([
+  "area",
+  "authority",
+  "exit",
+  "flight",
+  "gate",
+  "parking",
+  "parking-direction-t",
+  "toilet",
+]);
+
+function escapeAttribute(value) {
+  return String(value ?? "").replace(/[&<>"']/g, (character) => {
+    const entities = {
+      "&": "&amp;",
+      "<": "&lt;",
+      ">": "&gt;",
+      '"': "&quot;",
+      "'": "&#39;",
+    };
+
+    return entities[character];
+  });
+}
+
+function normalizeMarkerInput(input) {
+  if (input && typeof input === "object") {
+    return {
+      kind: input.markerKind ?? input.type ?? "info",
+      image: input.image,
+      useLogoMarker: Boolean(input.useLogoMarker),
+      name: input.name,
+    };
+  }
+
+  return {
+    kind: input ?? "info",
+    image: "",
+    useLogoMarker: false,
+    name: "",
+  };
+}
+
+export function createEntityMarkerIcon(input, { selected = false } = {}) {
+  const entity = normalizeMarkerInput(input);
+  const kind = entity.kind;
   const iconKind = iconClassByKind[kind] ?? "info";
-  const markup = iconMarkup[kind] ?? iconMarkup.info;
+  const shouldUseLogo = entity.useLogoMarker && entity.image && !operationalMarkerKinds.has(iconKind);
+  const markup = shouldUseLogo
+    ? `<img class="entity-pin__logo" src="${escapeAttribute(entity.image)}" alt="${escapeAttribute(entity.name ?? "")}">`
+    : iconMarkup[kind] ?? iconMarkup.info;
 
   return window.L.divIcon({
     className: "entity-pin-wrapper",
     html: `
-      <span class="entity-pin entity-pin--${iconKind}${selected ? " is-selected" : ""}" aria-hidden="true">
+      <span class="entity-pin entity-pin--${iconKind}${shouldUseLogo ? " entity-pin--logo" : ""}${selected ? " is-selected" : ""}" aria-hidden="true">
         <span class="entity-pin__inner">${markup}</span>
       </span>
     `,

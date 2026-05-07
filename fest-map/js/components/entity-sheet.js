@@ -15,6 +15,10 @@ const defaultLabels = {
   call: "Anrufen",
   email: "E-Mail",
   website: "Website",
+  program: "Programm",
+  backToDetails: "Details",
+  eventLocation: "Ort",
+  emptyEvents: "Noch keine Programmpunkte eingetragen.",
   emptyState: "Noch keine Eintraege in dieser Kategorie.",
 };
 
@@ -91,13 +95,33 @@ function listItemMarkup(entity, selectedId, categories) {
   `;
 }
 
+function eventMarkup(event, entities, labels) {
+  const linkedEntity = entities.find(({ id }) => id === event.locationEntryId);
+  const locationLine = linkedEntity
+    ? `<small>${escapeHtml(labels.eventLocation)}: ${escapeHtml(linkedEntity.name)}</small>`
+    : "";
+
+  return `
+    <article class="event-list__item">
+      <time>${escapeHtml(event.time)}</time>
+      <div>
+        <strong>${escapeHtml(event.title)}</strong>
+        ${event.description ? `<p>${escapeHtml(event.description)}</p>` : ""}
+        ${locationLine}
+      </div>
+    </article>
+  `;
+}
+
 export class EntitySheet extends HTMLElement {
   constructor() {
     super();
     this._entities = [];
     this._selectedEntity = null;
+    this._events = [];
     this._filter = "all";
     this._expanded = false;
+    this._view = "details";
     this._categories = defaultCategories;
     this._labels = defaultLabels;
     this.dragStartY = null;
@@ -121,6 +145,11 @@ export class EntitySheet extends HTMLElement {
 
   set selectedEntity(value) {
     this._selectedEntity = value ?? null;
+    this.update();
+  }
+
+  set events(value) {
+    this._events = Array.isArray(value) ? value : [];
     this.update();
   }
 
@@ -164,7 +193,23 @@ export class EntitySheet extends HTMLElement {
             ${escapeHtml(this._labels.openList)}
           </button>
         </div>
-        <div class="sheet-preview" data-role="preview"></div>
+        <div class="sheet-view sheet-view--details" data-role="details-view">
+          <div class="sheet-preview" data-role="preview"></div>
+          <div class="sheet-quick-actions">
+            <button class="entity-card__action" type="button" data-action="show-events">
+              ${escapeHtml(this._labels.program)}
+            </button>
+          </div>
+        </div>
+        <div class="sheet-view sheet-view--events" data-role="events-view" hidden>
+          <div class="sheet-events__header">
+            <h2>${escapeHtml(this._labels.program)}</h2>
+            <button class="entity-card__action" type="button" data-action="show-details">
+              ${escapeHtml(this._labels.backToDetails)}
+            </button>
+          </div>
+          <div class="event-list" data-role="events"></div>
+        </div>
         <div class="sheet-directory">
           <div class="sheet-directory__inner">
             <div class="sheet-filters" data-role="filters"></div>
@@ -175,6 +220,9 @@ export class EntitySheet extends HTMLElement {
     `;
 
     this.previewNode = this.querySelector('[data-role="preview"]');
+    this.detailsViewNode = this.querySelector('[data-role="details-view"]');
+    this.eventsViewNode = this.querySelector('[data-role="events-view"]');
+    this.eventsNode = this.querySelector('[data-role="events"]');
     this.filtersNode = this.querySelector('[data-role="filters"]');
     this.listNode = this.querySelector('[data-role="list"]');
     this.browseTitleNode = this.querySelector('[data-role="browse-title"]');
@@ -194,6 +242,23 @@ export class EntitySheet extends HTMLElement {
         }
 
         this.setExpanded(!this._expanded);
+        return;
+      }
+
+      const eventsTrigger = event.target.closest('[data-action="show-events"]');
+
+      if (eventsTrigger) {
+        this._view = "events";
+        this.setExpanded(false);
+        this.update();
+        return;
+      }
+
+      const detailsTrigger = event.target.closest('[data-action="show-details"]');
+
+      if (detailsTrigger) {
+        this._view = "details";
+        this.update();
         return;
       }
 
@@ -278,7 +343,18 @@ export class EntitySheet extends HTMLElement {
 
     const entityForCard = this._selectedEntity ?? this.filteredEntities[0] ?? this._entities[0] ?? null;
 
+    this.dataset.view = this._view;
     this.previewNode.innerHTML = cardMarkup(entityForCard, this._labels, this._categories);
+    this.detailsViewNode.hidden = this._view !== "details";
+    this.eventsViewNode.hidden = this._view !== "events";
+    this.querySelector('[data-action="show-events"]').textContent = this._labels.program;
+    this.querySelector('[data-action="show-details"]').textContent = this._labels.backToDetails;
+    this.querySelector(".sheet-events__header h2").textContent = this._labels.program;
+
+    this.eventsNode.innerHTML = this._events.length
+      ? this._events.map((event) => eventMarkup(event, this._entities, this._labels)).join("")
+      : `<div class="event-list__empty">${escapeHtml(this._labels.emptyEvents)}</div>`;
+
     this.filtersNode.innerHTML = Object.entries(this._categories)
       .map(([categoryKey, definition]) => {
         const isActive = this._filter === categoryKey;

@@ -25,6 +25,12 @@ const overlayPalette = {
     routeColor: "#ff6247",
     arrowClass: "taxi-arrow-icon taxi-arrow-icon--alert",
   },
+  eventBlue: {
+    color: "#2388ff",
+    fillColor: "#2388ff",
+    routeColor: "#2388ff",
+    arrowClass: "taxi-arrow-icon taxi-arrow-icon--event",
+  },
 };
 
 function escapeHtml(value) {
@@ -76,6 +82,11 @@ export class MapController {
       maxZoom: 19,
       attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a>',
     }).addTo(this.map);
+
+    this.updateMarkerScale();
+    this.map.on("zoomend", () => {
+      this.updateMarkerScale();
+    });
   }
 
   setOverlays(overlays) {
@@ -124,7 +135,17 @@ export class MapController {
   }
 
   getMarkerIcon(entity, isSelected) {
-    return createEntityMarkerIcon(entity.markerKind ?? entity.type, { selected: isSelected });
+    return createEntityMarkerIcon(entity, { selected: isSelected });
+  }
+
+  updateMarkerScale() {
+    if (!this.map) {
+      return;
+    }
+
+    const zoom = this.map.getZoom();
+    const scale = Math.max(0.68, Math.min(1.08, 0.68 + (zoom - 15) * 0.1));
+    this.container.style.setProperty("--marker-scale", scale.toFixed(2));
   }
 
   fitToEntities() {

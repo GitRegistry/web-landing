@@ -16,6 +16,7 @@ const uploadsDir = path.join(assetsDir, "uploads");
 const dataDir = path.join(festMapDir, "data");
 const entitiesPath = path.join(dataDir, "entities.json");
 const overlaysPath = path.join(dataDir, "overlays.json");
+const eventsPath = path.join(dataDir, "events.json");
 const upload = multer({
   storage: multer.memoryStorage(),
   limits: {
@@ -23,8 +24,8 @@ const upload = multer({
   },
 });
 
-const tones = new Set(["cyan", "light", "parking", "alert"]);
-const overlayCategories = new Set(["parking", "exit", "fence", "route", "area"]);
+const tones = new Set(["cyan", "light", "parking", "alert", "eventBlue"]);
+const overlayCategories = new Set(["parking", "exit", "fence", "route", "area", "event"]);
 const entityTypes = new Set(["building", "area", "service", "entry"]);
 const markerKinds = new Set([
   "area",
@@ -40,6 +41,7 @@ const markerKinds = new Set([
   "hub",
   "info",
   "parking",
+  "parking-direction-t",
   "school",
   "toilet",
 ]);
@@ -125,6 +127,7 @@ function normalizeEntity(entity, index) {
     phone: String(entity.phone ?? "").trim(),
     email: String(entity.email ?? "").trim(),
     image,
+    useLogoMarker: Boolean(entity.useLogoMarker),
   };
 }
 
@@ -169,6 +172,16 @@ function normalizeOverlay(overlay, index) {
     dashArray: String(overlay.dashArray ?? "").trim(),
     arrowFractions: normalizeArrowFractions(overlay.arrowFractions),
     category,
+  };
+}
+
+function normalizeEvent(event, index) {
+  return {
+    id: slugify(event.id, `event-${index + 1}`),
+    time: String(event.time ?? "").trim(),
+    title: normalizeLocalizedText(event.title),
+    description: normalizeLocalizedText(event.description),
+    locationEntryId: String(event.locationEntryId ?? "").trim(),
   };
 }
 
@@ -274,6 +287,31 @@ app.put("/api/overlays", async (request, response, next) => {
   }
 });
 
+app.get("/api/events", async (_request, response, next) => {
+  try {
+    okJson(response, await readJson(eventsPath));
+  } catch (error) {
+    next(error);
+  }
+});
+
+app.put("/api/events", async (request, response, next) => {
+  try {
+    const input = Array.isArray(request.body) ? request.body : request.body?.events;
+
+    if (!Array.isArray(input)) {
+      response.status(400).json({ error: "Expected an array of events." });
+      return;
+    }
+
+    const normalized = input.map(normalizeEvent).sort((left, right) => left.time.localeCompare(right.time));
+    await writeJson(eventsPath, normalized);
+    okJson(response, { ok: true, count: normalized.length });
+  } catch (error) {
+    next(error);
+  }
+});
+
 app.get("/api/assets", async (_request, response, next) => {
   try {
     const [entities, assets] = await Promise.all([readJson(entitiesPath), listAssets()]);
@@ -362,4 +400,3 @@ app.use((error, _request, response, _next) => {
 app.listen(port, () => {
   console.log(`Fest Map manager running at http://localhost:${port}/manager/`);
 });
-

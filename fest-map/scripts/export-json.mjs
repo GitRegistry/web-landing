@@ -27,6 +27,7 @@ function normalizeEntity(entity) {
     phone: entity.phone ?? "",
     email: entity.email ?? "",
     image: entity.logo ?? entity.image ?? "",
+    useLogoMarker: false,
   };
 }
 

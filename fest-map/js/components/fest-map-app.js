@@ -1,5 +1,5 @@
 import { dataEndpoints, defaultMapView } from "../config.js";
-import { localizeEntities, localizeText, normalizeLocale, uiStrings } from "../i18n.js";
+import { localizeEntities, localizeEvents, localizeText, normalizeLocale, uiStrings } from "../i18n.js";
 import { MapController } from "../map-controller.js";
 import "./entity-sheet.js";
 
@@ -8,8 +8,10 @@ export class FestMapApp extends HTMLElement {
     super();
     this.rawEntities = [];
     this.rawOverlays = [];
+    this.rawEvents = [];
     this.entities = [];
     this.overlays = [];
+    this.events = [];
     this.locale = "de";
     this.selectedEntityId = null;
     this.selectedEntity = null;
@@ -121,19 +123,27 @@ export class FestMapApp extends HTMLElement {
   }
 
   async loadData() {
-    const [entitiesResponse, overlaysResponse] = await Promise.all([
+    const [entitiesResponse, overlaysResponse, eventsResponse] = await Promise.all([
       fetch(dataEndpoints.entities, { cache: "no-store" }),
       fetch(dataEndpoints.overlays, { cache: "no-store" }),
+      fetch(dataEndpoints.events, { cache: "no-store" }),
     ]);
 
-    if (!entitiesResponse.ok || !overlaysResponse.ok) {
-      throw new Error(`Failed to load Fest Map data (${entitiesResponse.status}/${overlaysResponse.status})`);
+    if (!entitiesResponse.ok || !overlaysResponse.ok || !eventsResponse.ok) {
+      throw new Error(
+        `Failed to load Fest Map data (${entitiesResponse.status}/${overlaysResponse.status}/${eventsResponse.status})`,
+      );
     }
 
-    const [entities, overlays] = await Promise.all([entitiesResponse.json(), overlaysResponse.json()]);
+    const [entities, overlays, events] = await Promise.all([
+      entitiesResponse.json(),
+      overlaysResponse.json(),
+      eventsResponse.json(),
+    ]);
 
     this.rawEntities = Array.isArray(entities) ? entities : [];
     this.rawOverlays = Array.isArray(overlays) ? overlays : [];
+    this.rawEvents = Array.isArray(events) ? events : [];
     this.selectedEntityId = this.rawEntities[0]?.id ?? null;
   }
 
@@ -180,6 +190,7 @@ export class FestMapApp extends HTMLElement {
       ...overlay,
       label: overlay.label ? localizeText(overlay.label, this.locale) : null,
     }));
+    this.events = localizeEvents(this.rawEvents, this.locale);
     this.selectedEntity =
       this.entities.find(({ id }) => id === this.selectedEntityId) ?? this.entities[0] ?? null;
     this.selectedEntityId = this.selectedEntity?.id ?? null;
@@ -195,6 +206,7 @@ export class FestMapApp extends HTMLElement {
     this.sheetElement.categories = strings.categories;
     this.sheetElement.labels = strings.sheet;
     this.sheetElement.entities = this.entities;
+    this.sheetElement.events = this.events;
     this.sheetElement.selectedEntity = this.selectedEntity;
 
     this.mapController.setEntities(this.entities, { fit: fitMap });
@@ -242,7 +254,7 @@ export class FestMapApp extends HTMLElement {
               <button class="language-switch__button" type="button" data-locale="en" aria-pressed="false">EN</button>
             </div>
           </div>
-          <p class="app-header__description" data-role="header-description"></p>
+          <p class="app-header__description" data-role="header-description" hidden></p>
         </header>
         <footer class="app-footer glass-panel">
           <span data-role="footer-credit">Powered by </span><a href="https://paluv.de" target="_blank" rel="noreferrer">Paluv.de</a>

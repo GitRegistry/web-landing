@@ -6,5 +6,5 @@ export const defaultMapView = {
 export const dataEndpoints = {
   entities: "/data/entities.json",
   overlays: "/data/overlays.json",
+  events: "/data/events.json",
 };
-
