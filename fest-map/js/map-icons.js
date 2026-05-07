@@ -258,10 +258,6 @@ export function createEntityMarkerIcon(input, { selected = false } = {}) {
     className: "entity-pin-wrapper",
     html: `
       <span class="entity-pin entity-pin--${iconKind}${shouldUseLogo ? " entity-pin--logo" : ""}${selected ? " is-selected" : ""}" aria-hidden="true">
-        <svg class="entity-pin__shell" viewBox="0 0 40 50" aria-hidden="true">
-          <path class="entity-pin__shell-outline" d="M20 49C17.1 45.6 14.3 42 11.6 38.1C8.2 33.2 4.5 27 4.5 21.1C4.5 10.6 11.7 2.5 20 2.5C28.3 2.5 35.5 10.6 35.5 21.1C35.5 27 31.8 33.2 28.4 38.1C25.7 42 22.9 45.6 20 49Z"></path>
-          <path class="entity-pin__shell-fill" d="M20 46.5C17.5 43.5 15.1 40.3 12.7 36.9C9.6 32.3 6.5 26.8 6.5 21.4C6.5 11.8 12.8 4.5 20 4.5C27.2 4.5 33.5 11.8 33.5 21.4C33.5 26.8 30.4 32.3 27.3 36.9C24.9 40.3 22.5 43.5 20 46.5Z"></path>
-        </svg>
         <span class="entity-pin__inner">${markup}</span>
       </span>
     `,

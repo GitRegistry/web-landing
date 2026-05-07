@@ -47,6 +47,18 @@ function escapeHtml(value) {
   });
 }
 
+function searchTokens(value) {
+  return String(value ?? "")
+    .normalize("NFD")
+    .replace(/[\u0300-\u036f]/g, "")
+    .toLowerCase()
+    .replace(/ae/g, "a")
+    .replace(/oe/g, "o")
+    .replace(/ue/g, "u")
+    .split(/[^a-z0-9]+/)
+    .filter((token) => token.length > 2 && !["area", "flaeche", "flache", "parking"].includes(token));
+}
+
 export class MapController {
   constructor(container, { center, zoom, onSelect }) {
     this.container = container;
@@ -56,9 +68,11 @@ export class MapController {
     this.entities = [];
     this.markers = new Map();
     this.overlayDefinitions = [];
+    this.overlayEntries = [];
     this.overlayLayers = [];
     this.overlayBounds = [];
     this.selectedId = null;
+    this.selectedOverlayId = null;
     this.map = null;
   }
 
@@ -94,13 +108,17 @@ export class MapController {
 
   setOverlays(overlays) {
     this.overlayDefinitions = Array.isArray(overlays) ? overlays : [];
+    this.overlayEntries = [];
     this.overlayBounds = [];
+    this.selectedOverlayId = null;
 
     this.overlayLayers.forEach((layer) => layer.remove());
     this.overlayLayers = [];
 
     this.overlayDefinitions.forEach((overlay) => {
       const layers = this.createOverlayLayers(overlay);
+      const bounds = window.L.latLngBounds(overlay.points);
+      this.overlayEntries.push({ overlay, layers, bounds });
       this.overlayLayers.push(...layers);
     });
   }
@@ -147,8 +165,66 @@ export class MapController {
     }
 
     const zoom = this.map.getZoom();
-    const scale = Math.max(0.22, Math.min(1, 0.22 + (zoom - 10) * 0.08));
+    const scale = Math.max(0.28, Math.min(1, 0.28 + (zoom - 10) * 0.09));
     this.container.style.setProperty("--marker-scale", scale.toFixed(2));
+  }
+
+  findOverlayForEntity(entity) {
+    if (!entity) {
+      return null;
+    }
+
+    const normalizedName = String(entity.name ?? "").trim().toLowerCase();
+    const entityTokenSet = new Set(searchTokens(`${entity.id} ${entity.name ?? ""}`));
+
+    if (!normalizedName) {
+      return null;
+    }
+
+    const exactMatch = this.overlayEntries.find(
+      ({ overlay }) => String(overlay.label ?? "").trim().toLowerCase() === normalizedName,
+    );
+
+    if (exactMatch) {
+      return exactMatch;
+    }
+
+    let bestMatch = null;
+    let bestScore = 0;
+
+    this.overlayEntries.forEach((entry) => {
+      const overlayTokenSet = new Set(searchTokens(`${entry.overlay.id} ${entry.overlay.label ?? ""}`));
+      const score = [...overlayTokenSet].filter((token) => entityTokenSet.has(token)).length;
+
+      if (score > bestScore) {
+        bestScore = score;
+        bestMatch = entry;
+      }
+    });
+
+    return bestScore >= 2 ? bestMatch : null;
+  }
+
+  findEntityForOverlay(overlay) {
+    const overlayTokenSet = new Set(searchTokens(`${overlay.id} ${overlay.label ?? ""}`));
+    let bestMatch = null;
+    let bestScore = 0;
+
+    this.entities.forEach((entity) => {
+      if (!["area", "service", "entry"].includes(entity.type)) {
+        return;
+      }
+
+      const entityTokenSet = new Set(searchTokens(`${entity.id} ${entity.name ?? ""}`));
+      const score = [...overlayTokenSet].filter((token) => entityTokenSet.has(token)).length;
+
+      if (score > bestScore) {
+        bestScore = score;
+        bestMatch = entity;
+      }
+    });
+
+    return bestScore >= 2 ? bestMatch : null;
   }
 
   fitToEntities() {
@@ -165,6 +241,80 @@ export class MapController {
       paddingTopLeft: [28, 140],
       paddingBottomRight: [28, 240],
       maxZoom: 18,
+    });
+  }
+
+  getPolygonStyle(overlay, { selected = false } = {}) {
+    const palette = overlayPalette[overlay.tone] ?? overlayPalette.cyan;
+    const baseWeight = overlay.weight ?? 2.5;
+    const baseFillOpacity = overlay.fillOpacity ?? 0.08;
+    const baseOpacity = overlay.opacity ?? (baseWeight > 0 ? 0.92 : 0);
+
+    return {
+      pane: "airfield-zone-pane",
+      color: palette.color,
+      weight: selected ? Math.max(2.5, baseWeight || 0) : baseWeight,
+      opacity: selected ? 0.96 : baseOpacity,
+      fillColor: palette.fillColor,
+      fillOpacity: selected ? Math.max(0.26, baseFillOpacity) : baseFillOpacity,
+      dashArray: overlay.dashArray ?? "8 6",
+    };
+  }
+
+  getRouteStyle(overlay, { selected = false } = {}) {
+    const palette = overlayPalette[overlay.tone] ?? overlayPalette.light;
+    const baseWeight = overlay.weight ?? (overlay.tone === "alert" ? 4 : 5);
+    const baseOpacity = overlay.opacity ?? 0.92;
+
+    return {
+      pane: "airfield-route-pane",
+      color: palette.routeColor,
+      weight: selected ? Math.max(baseWeight + 1, 5) : baseWeight,
+      opacity: selected ? 1 : baseOpacity,
+      dashArray: overlay.dashArray ?? null,
+      lineCap: "round",
+      lineJoin: "round",
+    };
+  }
+
+  applyOverlaySelection(overlayEntry) {
+    if (this.selectedOverlayId) {
+      const previousEntry = this.overlayEntries.find(({ overlay }) => overlay.id === this.selectedOverlayId);
+
+      if (previousEntry) {
+        previousEntry.layers.forEach((layer) => {
+          if (typeof layer.setStyle !== "function") {
+            return;
+          }
+
+          if (previousEntry.overlay.kind === "polygon") {
+            layer.setStyle(this.getPolygonStyle(previousEntry.overlay));
+            return;
+          }
+
+          layer.setStyle(this.getRouteStyle(previousEntry.overlay));
+        });
+      }
+    }
+
+    this.selectedOverlayId = overlayEntry?.overlay?.id ?? null;
+
+    if (!overlayEntry) {
+      return;
+    }
+
+    overlayEntry.layers.forEach((layer) => {
+      if (typeof layer.setStyle !== "function") {
+        return;
+      }
+
+      if (overlayEntry.overlay.kind === "polygon") {
+        layer.setStyle(this.getPolygonStyle(overlayEntry.overlay, { selected: true }));
+      } else {
+        layer.setStyle(this.getRouteStyle(overlayEntry.overlay, { selected: true }));
+      }
+
+      layer.bringToFront?.();
     });
   }
 
@@ -191,7 +341,20 @@ export class MapController {
     marker.openPopup();
     this.selectedId = entity.id;
 
+    const overlayEntry = this.findOverlayForEntity(entity);
+    this.applyOverlaySelection(overlayEntry);
+
     if (flyTo) {
+      if (overlayEntry) {
+        this.map.flyToBounds(overlayEntry.bounds, {
+          paddingTopLeft: [28, 140],
+          paddingBottomRight: [28, 240],
+          maxZoom: 17,
+          duration: 0.9,
+        });
+        return;
+      }
+
       const nextZoom = Math.max(this.map.getZoom(), 18);
       this.map.flyTo(entity.coordinates, nextZoom, { duration: 0.9 });
     }
@@ -221,14 +384,18 @@ export class MapController {
   }
 
   createPolygonOverlay(overlay) {
-    const palette = overlayPalette[overlay.tone] ?? overlayPalette.cyan;
-    const layer = window.L.polygon(overlay.points, {
-      pane: "airfield-zone-pane",
-      color: palette.color,
-      weight: overlay.weight ?? 2.5,
-      fillColor: palette.fillColor,
-      fillOpacity: overlay.fillOpacity ?? 0.08,
-      dashArray: overlay.dashArray ?? "8 6",
+    const layer = window.L.polygon(overlay.points, this.getPolygonStyle(overlay));
+
+    layer.on("click", () => {
+      const entity = this.findEntityForOverlay(overlay);
+
+      if (entity) {
+        this.onSelect?.(entity.id);
+        return;
+      }
+
+      const overlayEntry = this.overlayEntries.find(({ overlay: item }) => item.id === overlay.id);
+      this.applyOverlaySelection(overlayEntry);
     });
 
     if (overlay.label) {
@@ -246,15 +413,7 @@ export class MapController {
 
   createRouteOverlay(overlay) {
     const palette = overlayPalette[overlay.tone] ?? overlayPalette.light;
-    const routeLayer = window.L.polyline(overlay.points, {
-      pane: "airfield-route-pane",
-      color: palette.routeColor,
-      weight: overlay.weight ?? (overlay.tone === "alert" ? 4 : 5),
-      opacity: overlay.opacity ?? 0.92,
-      dashArray: overlay.dashArray ?? null,
-      lineCap: "round",
-      lineJoin: "round",
-    });
+    const routeLayer = window.L.polyline(overlay.points, this.getRouteStyle(overlay));
 
     if (overlay.label) {
       routeLayer.bindTooltip(overlay.label, {
