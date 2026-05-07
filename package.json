@@ -1,12 +1,5 @@
 {
   "name": "web-landing",
   "private": true,
-  "type": "module",
-  "scripts": {
-    "fest-map:manager": "node fest-map/manager/server.js"
-  },
-  "dependencies": {
-    "express": "^4.21.2",
-    "multer": "^2.0.0"
-  }
+  "type": "module"
 }

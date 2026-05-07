@@ -202,7 +202,6 @@ class ManagerApp {
     this.eventListNode = document.querySelector('[data-role="event-list"]');
     this.assetPreviewNode = document.querySelector('[data-role="asset-preview"]');
     this.assetMetaNode = document.querySelector('[data-role="asset-meta"]');
-    this.previewFrame = document.querySelector('[data-role="preview-frame"]');
     this.entryForm = document.querySelector('[data-form="entry"]');
     this.overlayForm = document.querySelector('[data-form="overlay"]');
     this.eventForm = document.querySelector('[data-form="event"]');
@@ -251,10 +250,6 @@ class ManagerApp {
 
     document.querySelector('[data-action="cancel-drawing"]').addEventListener("click", () => {
       this.cancelDrawing();
-    });
-
-    document.querySelector('[data-action="reload-preview"]').addEventListener("click", () => {
-      this.reloadPreview();
     });
 
     document.querySelector('[data-action="delete-entry"]').addEventListener("click", () => {
@@ -1079,12 +1074,7 @@ class ManagerApp {
     }
 
     await this.reloadAll({ fitMap: false });
-    this.reloadPreview();
     this.setMessage("Saved Fest Map data to the repo.");
-  }
-
-  reloadPreview() {
-    this.previewFrame.src = `/index.html?preview=${Date.now()}`;
   }
 
   renderMap() {
