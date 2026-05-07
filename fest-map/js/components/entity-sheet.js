@@ -132,6 +132,8 @@ export class EntitySheet extends HTMLElement {
     this._labels = defaultLabels;
     this.dragStartY = null;
     this.dragHandled = false;
+    this.handleEntityItemClick = this.handleEntityItemClick.bind(this);
+    this.handleEventItemClick = this.handleEventItemClick.bind(this);
   }
 
   connectedCallback() {
@@ -267,34 +269,6 @@ export class EntitySheet extends HTMLElement {
         return;
       }
 
-      const entityTrigger = event.target.closest("[data-entity-id]");
-
-      if (entityTrigger) {
-        const entityId = entityTrigger.dataset.entityId;
-        this.dispatchEvent(
-          new CustomEvent("entity-select", {
-            bubbles: true,
-            detail: { entityId },
-          }),
-        );
-        this.setExpanded(false);
-        this._view = "places";
-        return;
-      }
-
-      const eventEntityTrigger = event.target.closest("[data-event-entity-id]");
-
-      if (eventEntityTrigger) {
-        const entityId = eventEntityTrigger.dataset.eventEntityId;
-        this.dispatchEvent(
-          new CustomEvent("entity-select", {
-            bubbles: true,
-            detail: { entityId },
-          }),
-        );
-        this._view = "places";
-        this.setExpanded(false);
-      }
     });
 
     this.grabberNode.addEventListener("pointerdown", (event) => {
@@ -349,6 +323,44 @@ export class EntitySheet extends HTMLElement {
     this.toggleButtonNode.setAttribute("aria-expanded", String(this._expanded));
   }
 
+  handleEntityItemClick(event) {
+    const entityId = event.currentTarget?.dataset.entityId;
+
+    if (!entityId) {
+      return;
+    }
+
+    event.preventDefault();
+    event.stopPropagation();
+    this.dispatchEvent(
+      new CustomEvent("entity-select", {
+        bubbles: true,
+        detail: { entityId },
+      }),
+    );
+    this._view = "places";
+    this.setExpanded(false);
+  }
+
+  handleEventItemClick(event) {
+    const entityId = event.currentTarget?.dataset.eventEntityId;
+
+    if (!entityId) {
+      return;
+    }
+
+    event.preventDefault();
+    event.stopPropagation();
+    this.dispatchEvent(
+      new CustomEvent("entity-select", {
+        bubbles: true,
+        detail: { entityId },
+      }),
+    );
+    this._view = "places";
+    this.setExpanded(false);
+  }
+
   update() {
     if (!this.isReady) {
       return;
@@ -369,6 +381,9 @@ export class EntitySheet extends HTMLElement {
     this.eventsNode.innerHTML = this._events.length
       ? this._events.map((event) => eventMarkup(event, this._entities, this._labels)).join("")
       : `<div class="event-list__empty">${escapeHtml(this._labels.emptyEvents)}</div>`;
+    this.eventsNode
+      .querySelectorAll("[data-event-entity-id]")
+      .forEach((button) => button.addEventListener("click", this.handleEventItemClick));
 
     this.filtersNode.innerHTML = Object.entries(this._categories)
       .map(([categoryKey, definition]) => {
@@ -392,6 +407,9 @@ export class EntitySheet extends HTMLElement {
       this.listNode.innerHTML = this.filteredEntities
         .map((entity) => listItemMarkup(entity, this._selectedEntity?.id, this._categories))
         .join("");
+      this.listNode
+        .querySelectorAll("[data-entity-id]")
+        .forEach((button) => button.addEventListener("click", this.handleEntityItemClick));
     }
 
     this.updateStatusCopy();

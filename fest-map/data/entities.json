@@ -4,8 +4,8 @@
     "type": "service",
     "markerKind": "info",
     "coordinates": [
-      49.3088,
-      8.44895
+      49.31005043852506,
+      8.44930171966553
     ],
     "name": {
       "de": "Flugplatz Fest & Brazzeltag",
@@ -664,8 +664,8 @@
     "type": "entry",
     "markerKind": "gate",
     "coordinates": [
-      49.309881583165435,
-      8.448839916251274
+      49.30971468554248,
+      8.449001312255861
     ],
     "name": {
       "de": "Eingang Flugplatzfest",
@@ -837,6 +837,6 @@
     "phone": "",
     "email": "",
     "image": "/assets/uploads/paluvlogowhite-1778161709842-6f6e25cb.png",
-    "useLogoMarker": false
+    "useLogoMarker": true
   }
 ]

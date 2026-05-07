@@ -409,7 +409,7 @@ class ManagerApp {
 
   updateMarkerScale() {
     const zoom = this.map.getZoom();
-    const scale = Math.max(0.42, Math.min(1.08, 0.42 + (zoom - 13) * 0.11));
+    const scale = Math.max(0.22, Math.min(1, 0.22 + (zoom - 10) * 0.08));
     this.map.getContainer().style.setProperty("--marker-scale", scale.toFixed(2));
   }
 
