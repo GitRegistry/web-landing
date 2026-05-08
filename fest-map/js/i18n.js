@@ -36,6 +36,7 @@ export const uiStrings = {
     footerCredit: "Powered by",
     categories: {
       company: { label: "Firmen" },
+      point: { label: "Punkte" },
       service: { label: "Service" },
       entry: { label: "Ein- / Ausgaenge" },
       roundflight: { label: "Rundfluege" },
@@ -69,6 +70,7 @@ export const uiStrings = {
     footerCredit: "Powered by",
     categories: {
       company: { label: "Company" },
+      point: { label: "Points" },
       service: { label: "Service" },
       entry: { label: "Entry / Exit" },
       roundflight: { label: "Roundflights" },

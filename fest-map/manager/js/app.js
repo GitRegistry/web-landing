@@ -163,7 +163,7 @@ function createDefaultEntry(coordinates) {
 
   return {
     id: `entry-${idSeed}`,
-    type: "service",
+    type: "point",
     markerKind: "info",
     markerLabel: "",
     markerTone: "",

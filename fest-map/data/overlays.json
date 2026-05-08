@@ -16,8 +16,8 @@
         8.449677568793401
       ],
       [
-        49.30986030566616,
-        8.449449118100093
+        49.30988605974659,
+        8.449435830116274
       ],
       [
         49.3098035656231,
@@ -25,11 +25,13 @@
       ]
     ],
     "tone": "cyan",
-    "weight": 0,
-    "opacity": 0,
-    "fillOpacity": 0.11,
+    "weight": 1,
+    "opacity": 1,
+    "fillOpacity": 0.3,
     "dashArray": "",
-    "arrowFractions": [],
+    "arrowFractions": [
+      0
+    ],
     "category": "area"
   },
   {
@@ -58,7 +60,7 @@
       ]
     ],
     "tone": "parking",
-    "weight": 1,
+    "weight": 2,
     "opacity": 1,
     "fillOpacity": 0.43,
     "dashArray": "",
@@ -93,7 +95,7 @@
       ]
     ],
     "tone": "parking",
-    "weight": 1,
+    "weight": 2,
     "opacity": 1,
     "fillOpacity": 0.4,
     "dashArray": "",

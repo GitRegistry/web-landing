@@ -1,7 +1,7 @@
 [
   {
     "id": "festival-home",
-    "type": "company",
+    "type": "point",
     "markerKind": "info",
     "coordinates": [
       49.31007666913047,
@@ -31,7 +31,7 @@
   },
   {
     "id": "gastro-building",
-    "type": "company",
+    "type": "service",
     "markerKind": "building",
     "coordinates": [
       49.30962725075599,
@@ -541,7 +541,7 @@
   },
   {
     "id": "oldtimer-segler-abstellflaeche",
-    "type": "company",
+    "type": "point",
     "markerKind": "area",
     "coordinates": [
       49.30947686517113,
@@ -601,7 +601,7 @@
   },
   {
     "id": "guest-area-parking",
-    "type": "company",
+    "type": "service",
     "markerKind": "parking",
     "coordinates": [
       49.30720347308646,
@@ -781,7 +781,7 @@
   },
   {
     "id": "brazzelparcours",
-    "type": "company",
+    "type": "point",
     "markerKind": "numbered",
     "coordinates": [
       49.31115910659984,
@@ -813,7 +813,7 @@
   },
   {
     "id": "brazzelarena",
-    "type": "company",
+    "type": "point",
     "markerKind": "numbered",
     "coordinates": [
       49.31223277713628,
@@ -845,7 +845,7 @@
   },
   {
     "id": "brazzel-wasteland",
-    "type": "company",
+    "type": "point",
     "markerKind": "numbered",
     "coordinates": [
       49.30997699275564,
@@ -877,7 +877,7 @@
   },
   {
     "id": "transall-c160",
-    "type": "company",
+    "type": "point",
     "markerKind": "numbered",
     "coordinates": [
       49.31134451553655,
@@ -909,7 +909,7 @@
   },
   {
     "id": "seenotrettungskreuzer",
-    "type": "company",
+    "type": "point",
     "markerKind": "numbered",
     "coordinates": [
       49.31171517992932,
@@ -941,7 +941,7 @@
   },
   {
     "id": "u9",
-    "type": "company",
+    "type": "point",
     "markerKind": "numbered",
     "coordinates": [
       49.3119075308777,
@@ -973,7 +973,7 @@
   },
   {
     "id": "flugplatz",
-    "type": "company",
+    "type": "point",
     "markerKind": "numbered",
     "coordinates": [
       49.309933274983784,
@@ -1005,7 +1005,7 @@
   },
   {
     "id": "boeing-747",
-    "type": "company",
+    "type": "point",
     "markerKind": "numbered",
     "coordinates": [
       49.310672974458825,
@@ -1037,7 +1037,7 @@
   },
   {
     "id": "burnout-crew",
-    "type": "company",
+    "type": "point",
     "markerKind": "numbered",
     "coordinates": [
       49.310435152671154,
@@ -1069,7 +1069,7 @@
   },
   {
     "id": "start-jet-schoolbus",
-    "type": "company",
+    "type": "point",
     "markerKind": "numbered",
     "coordinates": [
       49.310508597757526,
@@ -1341,7 +1341,7 @@
   },
   {
     "id": "entry-mow2om2r",
-    "type": "service",
+    "type": "company",
     "markerKind": "info",
     "coordinates": [
       49.30878260927988,
@@ -1371,7 +1371,7 @@
   },
   {
     "id": "museum-airplane-north",
-    "type": "company",
+    "type": "point",
     "markerKind": "airplane",
     "coordinates": [
       49.311494849738274,

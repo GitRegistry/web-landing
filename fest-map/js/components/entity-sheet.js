@@ -1,5 +1,6 @@
 const defaultCategories = {
   company: { label: "Firmen" },
+  point: { label: "Punkte" },
   service: { label: "Service" },
   entry: { label: "Ein- / Ausgaenge" },
   roundflight: { label: "Rundfluege" },

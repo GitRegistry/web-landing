@@ -51,7 +51,7 @@ const markerTones = new Set([
   "eventTeal",
 ]);
 const overlayCategories = new Set(["parking", "exit", "fence", "route", "area", "event"]);
-const entityTypes = new Set(["company", "service", "entry", "roundflight"]);
+const entityTypes = new Set(["company", "point", "service", "entry", "roundflight"]);
 const legacyEntityTypes = new Map([
   ["building", "company"],
   ["area", "company"],

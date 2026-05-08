@@ -96,8 +96,10 @@ export class FestMapApp extends HTMLElement {
   }
 
   syncViewportHeight() {
-    const nextHeight =
-      window.visualViewport?.height || window.innerHeight || document.documentElement.clientHeight || 0;
+    const viewport = window.visualViewport;
+    const visualBottom = viewport ? viewport.height + viewport.offsetTop : 0;
+    const layoutHeight = window.innerHeight || document.documentElement.clientHeight || 0;
+    const nextHeight = Math.max(visualBottom, layoutHeight);
 
     if (!nextHeight) {
       return;

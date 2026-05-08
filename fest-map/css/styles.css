@@ -1,5 +1,5 @@
 :root {
-  --app-height: 100dvh;
+  --app-height: 100lvh;
   color-scheme: light;
   --page-bg: #d8e6ef;
   --page-bg-strong: #eff5f8;
@@ -34,11 +34,19 @@ body {
   overflow: hidden;
 }
 
+@supports (height: 100dvh) {
+  :root {
+    --app-height: 100dvh;
+  }
+}
+
 html {
   height: -webkit-fill-available;
 }
 
 body {
+  position: fixed;
+  inset: 0;
   overflow: hidden;
   color: var(--text-color);
   height: var(--app-height);
@@ -66,6 +74,10 @@ fest-map-app,
 .map-overlay {
   position: absolute;
   inset: 0;
+}
+
+.map-canvas {
+  inset: calc(-1 * env(safe-area-inset-top)) 0 calc(-1 * env(safe-area-inset-bottom)) 0;
 }
 
 .map-overlay {
@@ -408,6 +420,10 @@ entity-sheet[data-state="expanded"] .bottom-sheet {
 
 .pill[data-type="company"] {
   color: #1c7fc8;
+}
+
+.pill[data-type="point"] {
+  color: #7c58c7;
 }
 
 .pill[data-type="service"] {
