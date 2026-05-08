@@ -33,7 +33,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;600;700&family=Sora:wght@300;400;500;600&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="/css/styles.css" />
+  <link rel="stylesheet" href="/css/styles.css?v=20260508-paluv-refresh" />
   <script defer src="https://analytics.misei.dev/script.js"></script>
   <script type="application/ld+json">
     {
@@ -93,9 +93,9 @@
       </a>
       <nav class="site-nav" id="site-nav">
         <a href="#top">Home</a>
+        <a href="#partners">Partners & Clients</a>
         <a href="#products">Products</a>
         <a href="#services">Services</a>
-        <a href="#partners">Partners</a>
         <a href="#contact">Contact</a>
       </nav>
       <div class="header-actions">
@@ -115,7 +115,7 @@
         <div class="hero-frame" aria-hidden="true">
           <div class="hero-model" id="hero-model"></div>
         </div>
-        <div class="hero-copy">
+        <div class="hero-copy no-blend">
           <p class="eyebrow">Software. Operations. Innovation</p>
           <h1 class="hero-title contrast-split">Engineering passion applied to aviation</h1>
           <p class="hero-subtitle">
@@ -123,7 +123,7 @@
           </p>
           <div class="hero-actions">
             <a class="button no-blend" href="#contact" style="color: white;">Contact</a>
-            <a class="button ghost" href="#products">Portfolio</a>
+            <a class="button ghost" href="#partners">View portfolio</a>
           </div>
           <dl class="hero-meta">
             <div>
@@ -139,6 +139,129 @@
               <dd>Germany · Europe</dd>
             </div>
           </dl>
+        </div>
+      </section>
+
+      <section class="section partners-section no-blend" id="partners" aria-labelledby="partners-title">
+        <div class="partners-header">
+          <div class="section-title section-title--wide">
+            <p class="eyebrow">Portfolio runway</p>
+            <h2 id="partners-title">Partners & Clients</h2>
+            <p>A curated flightline for collaborators, clients, and ecosystem partners. Logo slots and service profiles are ready to replace with confirmed public partners.</p>
+          </div>
+          <div class="partners-note">
+            <span>Hover, focus, or tap a logo to preview the services behind each collaboration slot.</span>
+          </div>
+        </div>
+        <div class="partners-grid">
+          <article class="partner-card reveal" data-partner-card>
+            <button class="partner-card__button no-blend" type="button" aria-expanded="false" aria-controls="partner-detail-training">
+              <span class="partner-card__status">Logo placeholder</span>
+              <span class="partner-card__identity">
+                <span class="partner-logo" aria-hidden="true">TR</span>
+                <span class="partner-card__copy">
+                  <span class="partner-card__name">Training Partner</span>
+                  <span class="partner-card__category">Flight schools</span>
+                </span>
+              </span>
+              <span class="partner-card__hint">View services</span>
+            </button>
+            <div class="partner-detail" id="partner-detail-training" role="region" aria-label="Training Partner Provided services">
+              <span>Provided services</span>
+              <p>Pilot onboarding journeys, training workflow software, student communication, and academy-facing digital services.</p>
+              <small>Replace this slot with a confirmed training partner logo and service summary.</small>
+            </div>
+          </article>
+          <article class="partner-card reveal" data-partner-card>
+            <button class="partner-card__button no-blend" type="button" aria-expanded="false" aria-controls="partner-detail-operations">
+              <span class="partner-card__status">Client placeholder</span>
+              <span class="partner-card__identity">
+                <span class="partner-logo" aria-hidden="true">OPS</span>
+                <span class="partner-card__copy">
+                  <span class="partner-card__name">Operations Client</span>
+                  <span class="partner-card__category">Aerodrome & operator workflows</span>
+                </span>
+              </span>
+              <span class="partner-card__hint">View services</span>
+            </button>
+            <div class="partner-detail" id="partner-detail-operations" role="region" aria-label="Operations Client Provided services">
+              <span>Provided services</span>
+              <p>Operational tools, process automation, lightweight portals, and aviation-specific service design for daily workflows.</p>
+              <small>Prepared for a public client profile once approval and logo assets are available.</small>
+            </div>
+          </article>
+          <article class="partner-card reveal" data-partner-card>
+            <button class="partner-card__button no-blend" type="button" aria-expanded="false" aria-controls="partner-detail-supply">
+              <span class="partner-card__status">Partner placeholder</span>
+              <span class="partner-card__identity">
+                <span class="partner-logo" aria-hidden="true">SUP</span>
+                <span class="partner-card__copy">
+                  <span class="partner-card__name">Supply Partner</span>
+                  <span class="partner-card__category">Shop & distribution</span>
+                </span>
+              </span>
+              <span class="partner-card__hint">View services</span>
+            </button>
+            <div class="partner-detail" id="partner-detail-supply" role="region" aria-label="Supply Partner Provided services">
+              <span>Provided services</span>
+              <p>B2B distribution, aviation oils and parts supply, webshop integration, and procurement support.</p>
+              <small>Use this slot for a supplier or distribution partner.</small>
+            </div>
+          </article>
+          <article class="partner-card reveal" data-partner-card>
+            <button class="partner-card__button no-blend" type="button" aria-expanded="false" aria-controls="partner-detail-pilot-services">
+              <span class="partner-card__status">Service placeholder</span>
+              <span class="partner-card__identity">
+                <span class="partner-logo" aria-hidden="true">PIL</span>
+                <span class="partner-card__copy">
+                  <span class="partner-card__name">Pilot Services</span>
+                  <span class="partner-card__category">Insurance & assistance</span>
+                </span>
+              </span>
+              <span class="partner-card__hint">View services</span>
+            </button>
+            <div class="partner-detail" id="partner-detail-pilot-services" role="region" aria-label="Pilot Services Provided services">
+              <span>Provided services</span>
+              <p>Pilot-first services such as insurance, assistance, support pathways, and member-facing service bundles.</p>
+              <small>Ready for a service partner profile or Paluv-powered offering.</small>
+            </div>
+          </article>
+          <article class="partner-card reveal" data-partner-card>
+            <button class="partner-card__button no-blend" type="button" aria-expanded="false" aria-controls="partner-detail-brand">
+              <span class="partner-card__status">Brand placeholder</span>
+              <span class="partner-card__identity">
+                <span class="partner-logo" aria-hidden="true">BRD</span>
+                <span class="partner-card__copy">
+                  <span class="partner-card__name">Aviation Brand</span>
+                  <span class="partner-card__category">Merch & customization</span>
+                </span>
+              </span>
+              <span class="partner-card__hint">View services</span>
+            </button>
+            <div class="partner-detail" id="partner-detail-brand" role="region" aria-label="Aviation Brand Provided services">
+              <span>Provided services</span>
+              <p>Custom merchandise, event material, brand execution, and aviation community activation.</p>
+              <small>Replace with a club, school, event, or commercial aviation brand.</small>
+            </div>
+          </article>
+          <article class="partner-card reveal" data-partner-card>
+            <button class="partner-card__button no-blend" type="button" aria-expanded="false" aria-controls="partner-detail-events">
+              <span class="partner-card__status">Ecosystem placeholder</span>
+              <span class="partner-card__identity">
+                <span class="partner-logo" aria-hidden="true">EVT</span>
+                <span class="partner-card__copy">
+                  <span class="partner-card__name">Event Partner</span>
+                  <span class="partner-card__category">Festivals & community</span>
+                </span>
+              </span>
+              <span class="partner-card__hint">View services</span>
+            </button>
+            <div class="partner-detail" id="partner-detail-events" role="region" aria-label="Event Partner Provided services">
+              <span>Provided services</span>
+              <p>Event landing pages, visitor maps, sponsor visibility, contributor tooling, and on-site digital support.</p>
+              <small>Prepared for aviation event and ecosystem collaborations.</small>
+            </div>
+          </article>
         </div>
       </section>
 
@@ -200,22 +323,6 @@
           </article>
         </div>
       </section>
-
-      <section class="section" id="partners">
-        <div class="section-title">
-          <h2>Partners</h2>
-          <p>Selected collaborations and ecosystem partners will be published here as they go live.</p>
-        </div>
-        <div class="studio studio--single">
-          <article class="studio-panel reveal">
-            <h3>Coming soon</h3>
-            <ul>
-              <li>We are preparing a public partner showcase for training, operations, supply, and pilot services.</li>
-              <li>Initial collaborations are already in motion and more profiles will be added here soon.</li>
-            </ul>
-          </article>
-        </div>
-      </section>
     </main>
 
     <footer class="site-footer" id="contact">
@@ -269,7 +376,7 @@
       }
     </script>
   <script type="module" src="/js/hero-main.js"></script>
-  <script src="/js/scripts.js" defer></script>
+  <script src="/js/scripts.js?v=20260508-paluv-refresh" defer></script>
 </body>
 
 </html>

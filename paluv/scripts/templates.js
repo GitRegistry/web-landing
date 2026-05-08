@@ -59,7 +59,7 @@ function renderMetaTags({
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="${SHARED.fontsHref}" rel="stylesheet" />
-  <link rel="stylesheet" href="/css/styles.css" />
+  <link rel="stylesheet" href="/css/styles.css?v=${SHARED.assetVersion}" />
   <script defer src="${SHARED.analyticsScript}"></script>`;
 }
 
@@ -128,7 +128,7 @@ function renderLegalHead(localeKey, localeContent, pageContent) {
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="${SHARED.fontsHref}" rel="stylesheet" />
-  <link rel="stylesheet" href="/css/styles.css" />`;
+  <link rel="stylesheet" href="/css/styles.css?v=${SHARED.assetVersion}" />`;
 }
 
 function renderHeader(localeKey, localeContent) {
@@ -141,9 +141,9 @@ function renderHeader(localeKey, localeContent) {
       </a>
       <nav class="site-nav" id="site-nav">
         <a href="#top">${localeContent.nav.home}</a>
+        <a href="#partners">${localeContent.nav.partners}</a>
         <a href="#products">${localeContent.nav.products}</a>
         <a href="#services">${localeContent.nav.services}</a>
-        <a href="#partners">${localeContent.nav.partners}</a>
         <a href="#contact">${localeContent.nav.contact}</a>
       </nav>
       <div class="header-actions">
@@ -173,7 +173,7 @@ function renderHero(localeContent) {
         <div class="hero-frame" aria-hidden="true">
           <div class="hero-model" id="hero-model"></div>
         </div>
-        <div class="hero-copy">
+        <div class="hero-copy no-blend">
           <p class="eyebrow">${localeContent.hero.eyebrow}</p>
           <h1 class="hero-title contrast-split">${localeContent.hero.title}</h1>
           <p class="hero-subtitle">
@@ -181,7 +181,7 @@ function renderHero(localeContent) {
           </p>
           <div class="hero-actions">
             <a class="button no-blend" href="#contact" style="color: white;">${localeContent.hero.primaryCta}</a>
-            <a class="button ghost" href="#products">${localeContent.hero.secondaryCta}</a>
+            <a class="button ghost" href="#partners">${localeContent.hero.secondaryCta}</a>
           </div>
           <dl class="hero-meta">
 ${metaMarkup}
@@ -219,23 +219,81 @@ function renderServiceCards(items) {
     .join("\n");
 }
 
+function renderPartnerLogo(item) {
+  if (item.logo) {
+    return `<span class="partner-logo partner-logo--image">
+                    <img src="${item.logo}" alt="${item.logoAlt || item.name}" />
+                  </span>`;
+  }
+
+  return `<span class="partner-logo" aria-hidden="true">${item.logoText}</span>`;
+}
+
 function renderPartnersSection(localeContent) {
   const items = localeContent.partners.items
-    .map((item) => `              <li>${item}</li>`)
+    .map((item) => {
+      const detailId = `partner-detail-${item.id}`;
+      const optionalLink = item.href
+        ? `              <a class="partner-detail__link" href="${item.href}">${item.cta || item.href}</a>\n`
+        : "";
+
+      return `          <article class="partner-card reveal" data-partner-card>
+            <button class="partner-card__button no-blend" type="button" aria-expanded="false" aria-controls="${detailId}">
+              <span class="partner-card__status">${item.status}</span>
+              <span class="partner-card__identity">
+                ${renderPartnerLogo(item)}
+                <span class="partner-card__copy">
+                  <span class="partner-card__name">${item.name}</span>
+                  <span class="partner-card__category">${item.category}</span>
+                </span>
+              </span>
+              <span class="partner-card__hint">${localeContent.partners.interactionHint}</span>
+            </button>
+            <div class="partner-detail" id="${detailId}" role="region" aria-label="${item.name} ${localeContent.partners.detailLabel}">
+              <span>${localeContent.partners.detailLabel}</span>
+              <p>${item.services}</p>
+              <small>${item.note}</small>
+${optionalLink}            </div>
+          </article>`;
+    })
     .join("\n");
 
-  return `      <section class="section" id="partners">
-        <div class="section-title">
-          <h2>${localeContent.sections.partners.title}</h2>
-          <p>${localeContent.sections.partners.subtitle}</p>
+  return `      <section class="section partners-section no-blend" id="partners" aria-labelledby="partners-title">
+        <div class="partners-header">
+          <div class="section-title section-title--wide">
+            <p class="eyebrow">${localeContent.partners.kicker}</p>
+            <h2 id="partners-title">${localeContent.sections.partners.title}</h2>
+            <p>${localeContent.sections.partners.subtitle}</p>
+          </div>
+          <div class="partners-note">
+            <span>${localeContent.partners.summary}</span>
+          </div>
         </div>
-        <div class="studio studio--single">
-          <article class="studio-panel reveal">
-            <h3>${localeContent.partners.cardTitle}</h3>
-            <ul>
+        <div class="partners-grid">
 ${items}
-            </ul>
-          </article>
+        </div>
+      </section>`;
+}
+
+function renderProductsSection(localeContent) {
+  return `      <section class="section" id="products">
+        <div class="section-title">
+          <h2>${localeContent.sections.products.title}</h2>
+        </div>
+        <div class="grid products-grid">
+${renderProductCards(localeContent.products)}
+        </div>
+      </section>`;
+}
+
+function renderServicesSection(localeContent) {
+  return `      <section class="section" id="services">
+        <div class="section-title">
+          <h2>${localeContent.sections.services.title}</h2>
+          <p>${localeContent.sections.services.subtitle}</p>
+        </div>
+        <div class="grid services-grid">
+${renderServiceCards(localeContent.services)}
         </div>
       </section>`;
 }
@@ -255,26 +313,11 @@ ${renderHeader(localeKey, localeContent)}
     <main>
 ${renderHero(localeContent)}
 
-      <section class="section" id="products">
-        <div class="section-title">
-          <h2>${localeContent.sections.products.title}</h2>
-        </div>
-        <div class="grid products-grid">
-${renderProductCards(localeContent.products)}
-        </div>
-      </section>
-
-      <section class="section" id="services">
-        <div class="section-title">
-          <h2>${localeContent.sections.services.title}</h2>
-          <p>${localeContent.sections.services.subtitle}</p>
-        </div>
-        <div class="grid services-grid">
-${renderServiceCards(localeContent.services)}
-        </div>
-      </section>
-
 ${renderPartnersSection(localeContent)}
+
+${renderProductsSection(localeContent)}
+
+${renderServicesSection(localeContent)}
     </main>
 
     <footer class="site-footer" id="contact">
@@ -328,7 +371,7 @@ ${renderPartnersSection(localeContent)}
       }
     </script>
   <script type="module" src="/js/hero-main.js"></script>
-  <script src="/js/scripts.js" defer></script>`;
+  <script src="/js/scripts.js?v=${SHARED.assetVersion}" defer></script>`;
 }
 
 function renderLegalHeader(localeKey, nav, pageType) {

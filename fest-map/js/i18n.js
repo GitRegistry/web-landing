@@ -35,11 +35,10 @@ export const uiStrings = {
     languageSwitchLabel: "Sprache wechseln",
     footerCredit: "Powered by",
     categories: {
-      all: { label: "Alle" },
-      building: { label: "Gebaeude" },
-      area: { label: "Bereiche" },
-      service: { label: "Services" },
+      company: { label: "Firmen" },
+      service: { label: "Service" },
       entry: { label: "Ein- / Ausgaenge" },
+      roundflight: { label: "Rundfluege" },
     },
     sheet: {
       browseTitle: "Eintraege entdecken",
@@ -69,11 +68,10 @@ export const uiStrings = {
     languageSwitchLabel: "Change language",
     footerCredit: "Powered by",
     categories: {
-      all: { label: "All" },
-      building: { label: "Buildings" },
-      area: { label: "Areas" },
-      service: { label: "Services" },
-      entry: { label: "Entries" },
+      company: { label: "Company" },
+      service: { label: "Service" },
+      entry: { label: "Entry / Exit" },
+      roundflight: { label: "Roundflights" },
     },
     sheet: {
       browseTitle: "Browse entries",

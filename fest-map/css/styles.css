@@ -406,12 +406,8 @@ entity-sheet[data-state="expanded"] .bottom-sheet {
   background: rgba(255, 255, 255, 0.7);
 }
 
-.pill[data-type="area"] {
+.pill[data-type="company"] {
   color: #1c7fc8;
-}
-
-.pill[data-type="building"] {
-  color: #1d4672;
 }
 
 .pill[data-type="service"] {
@@ -420,6 +416,10 @@ entity-sheet[data-state="expanded"] .bottom-sheet {
 
 .pill[data-type="entry"] {
   color: #c45a24;
+}
+
+.pill[data-type="roundflight"] {
+  color: #7462d8;
 }
 
 .entity-card__location {

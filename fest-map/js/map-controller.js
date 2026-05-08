@@ -213,8 +213,10 @@ export class MapController {
     }
 
     const zoom = this.map.getZoom();
-    const scale = Math.max(0.28, Math.min(1, 0.28 + (zoom - 10) * 0.09));
-    this.container.style.setProperty("--marker-scale", scale.toFixed(2));
+    const scale = Math.max(0.2, Math.min(1, (zoom - 8.5) / 14));
+    const value = scale.toFixed(2);
+    this.container.style.setProperty("--marker-scale", value);
+    this.map.getPane("markerPane")?.style.setProperty("--marker-scale", value);
   }
 
   findOverlayForEntity(entity) {
@@ -259,10 +261,6 @@ export class MapController {
     let bestScore = 0;
 
     this.entities.forEach((entity) => {
-      if (!["area", "service", "entry"].includes(entity.type)) {
-        return;
-      }
-
       const entityTokenSet = new Set(searchTokens(`${entity.id} ${entity.name ?? ""}`));
       const score = [...overlayTokenSet].filter((token) => entityTokenSet.has(token)).length;
 

@@ -11,6 +11,7 @@ const SHARED = {
     "https://www.openstreetmap.org/export/embed.html?bbox=8.44167%2C49.29472%2C8.46167%2C49.31472&amp;layer=mapnik&amp;marker=49.30472%2C8.45167",
   fontsHref:
     "https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;600;700&family=Sora:wght@300;400;500;600&display=swap",
+  assetVersion: "20260508-paluv-refresh",
   year: "2026",
 };
 
@@ -28,9 +29,9 @@ const HOME_CONTENT = {
     loadingAriaLabel: "Loading 3D model",
     nav: {
       home: "Home",
+      partners: "Partners & Clients",
       products: "Products",
       services: "Services",
-      partners: "Partners",
       contact: "Contact",
       menu: "Menu",
       languageSwitch: "Language selector",
@@ -41,7 +42,7 @@ const HOME_CONTENT = {
       subtitle:
         "We innovate aviation through software excellence, operational services, and pilot-first products. We build the ecosystem operators need.",
       primaryCta: "Contact",
-      secondaryCta: "Portfolio",
+      secondaryCta: "View portfolio",
       meta: [
         { label: "Focus", value: "Pilots · GA Operators · Flight Schools" },
         { label: "Domains", value: "IT-Software · Ops · Supply Chain" },
@@ -58,9 +59,9 @@ const HOME_CONTENT = {
           "Four commercial lanes built for pilots, operators, schools, and aviation-facing brands.",
       },
       partners: {
-        title: "Partners",
+        title: "Partners & Clients",
         subtitle:
-          "Selected collaborations and ecosystem partners will be published here as they go live.",
+          "A curated flightline for collaborators, clients, and ecosystem partners. Logo slots and service profiles are ready to replace with confirmed public partners.",
       },
     },
     products: [
@@ -114,10 +115,71 @@ const HOME_CONTENT = {
       },
     ],
     partners: {
-      cardTitle: "Coming soon",
+      kicker: "Portfolio runway",
+      summary: "Hover, focus, or tap a logo to preview the services behind each collaboration slot.",
+      detailLabel: "Provided services",
+      interactionHint: "View services",
       items: [
-        "We are preparing a public partner showcase for training, operations, supply, and pilot services.",
-        "Initial collaborations are already in motion and more profiles will be added here soon.",
+        {
+          id: "training",
+          name: "Training Partner",
+          logoText: "TR",
+          category: "Flight schools",
+          status: "Logo placeholder",
+          services:
+            "Pilot onboarding journeys, training workflow software, student communication, and academy-facing digital services.",
+          note: "Replace this slot with a confirmed training partner logo and service summary.",
+        },
+        {
+          id: "operations",
+          name: "Operations Client",
+          logoText: "OPS",
+          category: "Aerodrome & operator workflows",
+          status: "Client placeholder",
+          services:
+            "Operational tools, process automation, lightweight portals, and aviation-specific service design for daily workflows.",
+          note: "Prepared for a public client profile once approval and logo assets are available.",
+        },
+        {
+          id: "supply",
+          name: "Supply Partner",
+          logoText: "SUP",
+          category: "Shop & distribution",
+          status: "Partner placeholder",
+          services:
+            "B2B distribution, aviation oils and parts supply, webshop integration, and procurement support.",
+          note: "Use this slot for a supplier or distribution partner.",
+        },
+        {
+          id: "pilot-services",
+          name: "Pilot Services",
+          logoText: "PIL",
+          category: "Insurance & assistance",
+          status: "Service placeholder",
+          services:
+            "Pilot-first services such as insurance, assistance, support pathways, and member-facing service bundles.",
+          note: "Ready for a service partner profile or Paluv-powered offering.",
+        },
+        {
+          id: "brand",
+          name: "Aviation Brand",
+          logoText: "BRD",
+          category: "Merch & customization",
+          status: "Brand placeholder",
+          services:
+            "Custom merchandise, event material, brand execution, and aviation community activation.",
+          note: "Replace with a club, school, event, or commercial aviation brand.",
+        },
+        {
+          id: "events",
+          name: "Event Partner",
+          logoText: "EVT",
+          category: "Festivals & community",
+          status: "Ecosystem placeholder",
+          services:
+            "Event landing pages, visitor maps, sponsor visibility, contributor tooling, and on-site digital support.",
+          note: "Prepared for aviation event and ecosystem collaborations.",
+        },
       ],
     },
     contact: {
@@ -156,9 +218,9 @@ const HOME_CONTENT = {
     loadingAriaLabel: "3D Modell wird geladen",
     nav: {
       home: "Start",
+      partners: "Partner & Kunden",
       products: "Produkte",
       services: "Services",
-      partners: "Partner",
       contact: "Kontakt",
       menu: "Menu",
       languageSwitch: "Sprachauswahl",
@@ -169,7 +231,7 @@ const HOME_CONTENT = {
       subtitle:
         "Wir optimieren die Luftfahrt durch Software operative Services und Produkte für Piloten. Wir schaffen Mehrwert für jeden Piloten und Avionik-Begeisterten.",
       primaryCta: "Kontakt",
-      secondaryCta: "Portfolio",
+      secondaryCta: "Portfolio ansehen",
       meta: [
         { label: "Fokus", value: "Piloten · GA-Betreiber · Flugschulen" },
         { label: "Bereiche", value: "IT-Software · Betrieb · Lieferkette" },
@@ -186,9 +248,9 @@ const HOME_CONTENT = {
           "Vier kommerzielle Bereiche für Piloten, Betreiber, Flugschulen und luftfahrtaffine Marken.",
       },
       partners: {
-        title: "Partner",
+        title: "Partner & Kunden",
         subtitle:
-          "Ausgewählte Kooperationen und Ecosystem-Partner werden hier veröffentlicht, sobald sie live sind.",
+          "Eine kuratierte Flightline für Kooperationspartner, Kunden und Ökosystem-Partner. Logo-Slots und Leistungsprofile sind vorbereitet und können später durch bestätigte Partner ersetzt werden.",
       },
     },
     products: [
@@ -242,10 +304,71 @@ const HOME_CONTENT = {
       },
     ],
     partners: {
-      cardTitle: "Coming soon",
+      kicker: "Portfolio-Runway",
+      summary: "Hover, Fokus oder Tap auf ein Logo zeigt die Leistungen hinter dem jeweiligen Kooperations-Slot.",
+      detailLabel: "Leistungen",
+      interactionHint: "Leistungen anzeigen",
       items: [
-        "Wir bereiten aktuell einen öffentlichen Partnerbereich für Training, Operations, Supply und Pilot Services vor.",
-        "Erste Kooperationen laufen bereits, weitere Profile werden hier zeitnah ergänzt.",
+        {
+          id: "training",
+          name: "Training Partner",
+          logoText: "TR",
+          category: "Flugschulen",
+          status: "Logo-Platzhalter",
+          services:
+            "Pilot-Onboarding, Trainings-Workflows, Kommunikation mit Flugschülern und digitale Services für Flugschulen.",
+          note: "Diesen Slot später mit bestätigtem Logo und Leistungsprofil ersetzen.",
+        },
+        {
+          id: "operations",
+          name: "Operations Client",
+          logoText: "OPS",
+          category: "Flugplatz- & Betreiberprozesse",
+          status: "Kunden-Platzhalter",
+          services:
+            "Operative Tools, Prozessautomatisierung, schlanke Portale und luftfahrtspezifisches Service Design für den Tagesbetrieb.",
+          note: "Vorbereitet für ein öffentlich freigegebenes Kundenprofil.",
+        },
+        {
+          id: "supply",
+          name: "Supply Partner",
+          logoText: "SUP",
+          category: "Shop & Distribution",
+          status: "Partner-Platzhalter",
+          services:
+            "B2B-Distribution, Luftfahrtöle und Teile, Webshop-Anbindung und Beschaffungsunterstützung.",
+          note: "Dieser Slot passt für Lieferanten oder Distributionspartner.",
+        },
+        {
+          id: "pilot-services",
+          name: "Pilot Services",
+          logoText: "PIL",
+          category: "Versicherung & Assistance",
+          status: "Service-Platzhalter",
+          services:
+            "Pilotennahe Services wie Versicherung, Assistance, Support-Strecken und Service-Bundles für Mitglieder.",
+          note: "Bereit für Partnerprofile oder Paluv-betriebene Angebote.",
+        },
+        {
+          id: "brand",
+          name: "Aviation Brand",
+          logoText: "BRD",
+          category: "Merch & Customization",
+          status: "Brand-Platzhalter",
+          services:
+            "Individueller Merch, Eventmaterial, Markenauftritt und Aktivierung von Aviation Communities.",
+          note: "Später mit Club, Flugschule, Event oder Aviation Brand ersetzen.",
+        },
+        {
+          id: "events",
+          name: "Event Partner",
+          logoText: "EVT",
+          category: "Events & Community",
+          status: "Ökosystem-Platzhalter",
+          services:
+            "Event-Landingpages, Besucherkarten, Sponsorensichtbarkeit, Contributor-Tools und digitale Unterstützung vor Ort.",
+          note: "Vorbereitet für Aviation Events und Ökosystem-Kooperationen.",
+        },
       ],
     },
     contact: {

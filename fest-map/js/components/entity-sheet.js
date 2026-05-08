@@ -1,9 +1,8 @@
 const defaultCategories = {
-  all: { label: "Alle" },
-  building: { label: "Gebaeude" },
-  area: { label: "Bereiche" },
-  service: { label: "Services" },
+  company: { label: "Firmen" },
+  service: { label: "Service" },
   entry: { label: "Ein- / Ausgaenge" },
+  roundflight: { label: "Rundfluege" },
 };
 
 const defaultLabels = {
@@ -130,7 +129,7 @@ export class EntitySheet extends HTMLElement {
     this._selectedEntity = null;
     this._events = [];
     this._eventDate = null;
-    this._filter = "all";
+    this._filter = "company";
     this._expanded = false;
     this._view = "places";
     this._categories = defaultCategories;
@@ -174,6 +173,9 @@ export class EntitySheet extends HTMLElement {
 
   set categories(value) {
     this._categories = value ?? defaultCategories;
+    if (this._filter !== "all" && !this._categories[this._filter]) {
+      this._filter = Object.keys(this._categories)[0] ?? "all";
+    }
     this.update();
   }
 
@@ -409,11 +411,7 @@ export class EntitySheet extends HTMLElement {
       return;
     }
 
-    const selectedEntityMatchesFilter =
-      this._selectedEntity && (this._filter === "all" || this._selectedEntity.type === this._filter);
-    const entityForCard = selectedEntityMatchesFilter
-      ? this._selectedEntity
-      : this.filteredEntities[0] ?? this._entities[0] ?? null;
+    const entityForCard = this._selectedEntity ?? this.filteredEntities[0] ?? this._entities[0] ?? null;
 
     this.dataset.view = this._view;
     this.previewNode.innerHTML = cardMarkup(entityForCard, this._labels, this._categories);

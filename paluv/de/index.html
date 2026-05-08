@@ -33,7 +33,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;600;700&family=Sora:wght@300;400;500;600&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="/css/styles.css" />
+  <link rel="stylesheet" href="/css/styles.css?v=20260508-paluv-refresh" />
   <script defer src="https://analytics.misei.dev/script.js"></script>
   <script type="application/ld+json">
     {
@@ -93,9 +93,9 @@
       </a>
       <nav class="site-nav" id="site-nav">
         <a href="#top">Start</a>
+        <a href="#partners">Partner & Kunden</a>
         <a href="#products">Produkte</a>
         <a href="#services">Services</a>
-        <a href="#partners">Partner</a>
         <a href="#contact">Kontakt</a>
       </nav>
       <div class="header-actions">
@@ -115,7 +115,7 @@
         <div class="hero-frame" aria-hidden="true">
           <div class="hero-model" id="hero-model"></div>
         </div>
-        <div class="hero-copy">
+        <div class="hero-copy no-blend">
           <p class="eyebrow">Software. Betrieb. Innovation</p>
           <h1 class="hero-title contrast-split">Engineering-Passion für die Luftfahrt</h1>
           <p class="hero-subtitle">
@@ -123,7 +123,7 @@
           </p>
           <div class="hero-actions">
             <a class="button no-blend" href="#contact" style="color: white;">Kontakt</a>
-            <a class="button ghost" href="#products">Portfolio</a>
+            <a class="button ghost" href="#partners">Portfolio ansehen</a>
           </div>
           <dl class="hero-meta">
             <div>
@@ -139,6 +139,129 @@
               <dd>Deutschland · Europa</dd>
             </div>
           </dl>
+        </div>
+      </section>
+
+      <section class="section partners-section no-blend" id="partners" aria-labelledby="partners-title">
+        <div class="partners-header">
+          <div class="section-title section-title--wide">
+            <p class="eyebrow">Portfolio-Runway</p>
+            <h2 id="partners-title">Partner & Kunden</h2>
+            <p>Eine kuratierte Flightline für Kooperationspartner, Kunden und Ökosystem-Partner. Logo-Slots und Leistungsprofile sind vorbereitet und können später durch bestätigte Partner ersetzt werden.</p>
+          </div>
+          <div class="partners-note">
+            <span>Hover, Fokus oder Tap auf ein Logo zeigt die Leistungen hinter dem jeweiligen Kooperations-Slot.</span>
+          </div>
+        </div>
+        <div class="partners-grid">
+          <article class="partner-card reveal" data-partner-card>
+            <button class="partner-card__button no-blend" type="button" aria-expanded="false" aria-controls="partner-detail-training">
+              <span class="partner-card__status">Logo-Platzhalter</span>
+              <span class="partner-card__identity">
+                <span class="partner-logo" aria-hidden="true">TR</span>
+                <span class="partner-card__copy">
+                  <span class="partner-card__name">Training Partner</span>
+                  <span class="partner-card__category">Flugschulen</span>
+                </span>
+              </span>
+              <span class="partner-card__hint">Leistungen anzeigen</span>
+            </button>
+            <div class="partner-detail" id="partner-detail-training" role="region" aria-label="Training Partner Leistungen">
+              <span>Leistungen</span>
+              <p>Pilot-Onboarding, Trainings-Workflows, Kommunikation mit Flugschülern und digitale Services für Flugschulen.</p>
+              <small>Diesen Slot später mit bestätigtem Logo und Leistungsprofil ersetzen.</small>
+            </div>
+          </article>
+          <article class="partner-card reveal" data-partner-card>
+            <button class="partner-card__button no-blend" type="button" aria-expanded="false" aria-controls="partner-detail-operations">
+              <span class="partner-card__status">Kunden-Platzhalter</span>
+              <span class="partner-card__identity">
+                <span class="partner-logo" aria-hidden="true">OPS</span>
+                <span class="partner-card__copy">
+                  <span class="partner-card__name">Operations Client</span>
+                  <span class="partner-card__category">Flugplatz- & Betreiberprozesse</span>
+                </span>
+              </span>
+              <span class="partner-card__hint">Leistungen anzeigen</span>
+            </button>
+            <div class="partner-detail" id="partner-detail-operations" role="region" aria-label="Operations Client Leistungen">
+              <span>Leistungen</span>
+              <p>Operative Tools, Prozessautomatisierung, schlanke Portale und luftfahrtspezifisches Service Design für den Tagesbetrieb.</p>
+              <small>Vorbereitet für ein öffentlich freigegebenes Kundenprofil.</small>
+            </div>
+          </article>
+          <article class="partner-card reveal" data-partner-card>
+            <button class="partner-card__button no-blend" type="button" aria-expanded="false" aria-controls="partner-detail-supply">
+              <span class="partner-card__status">Partner-Platzhalter</span>
+              <span class="partner-card__identity">
+                <span class="partner-logo" aria-hidden="true">SUP</span>
+                <span class="partner-card__copy">
+                  <span class="partner-card__name">Supply Partner</span>
+                  <span class="partner-card__category">Shop & Distribution</span>
+                </span>
+              </span>
+              <span class="partner-card__hint">Leistungen anzeigen</span>
+            </button>
+            <div class="partner-detail" id="partner-detail-supply" role="region" aria-label="Supply Partner Leistungen">
+              <span>Leistungen</span>
+              <p>B2B-Distribution, Luftfahrtöle und Teile, Webshop-Anbindung und Beschaffungsunterstützung.</p>
+              <small>Dieser Slot passt für Lieferanten oder Distributionspartner.</small>
+            </div>
+          </article>
+          <article class="partner-card reveal" data-partner-card>
+            <button class="partner-card__button no-blend" type="button" aria-expanded="false" aria-controls="partner-detail-pilot-services">
+              <span class="partner-card__status">Service-Platzhalter</span>
+              <span class="partner-card__identity">
+                <span class="partner-logo" aria-hidden="true">PIL</span>
+                <span class="partner-card__copy">
+                  <span class="partner-card__name">Pilot Services</span>
+                  <span class="partner-card__category">Versicherung & Assistance</span>
+                </span>
+              </span>
+              <span class="partner-card__hint">Leistungen anzeigen</span>
+            </button>
+            <div class="partner-detail" id="partner-detail-pilot-services" role="region" aria-label="Pilot Services Leistungen">
+              <span>Leistungen</span>
+              <p>Pilotennahe Services wie Versicherung, Assistance, Support-Strecken und Service-Bundles für Mitglieder.</p>
+              <small>Bereit für Partnerprofile oder Paluv-betriebene Angebote.</small>
+            </div>
+          </article>
+          <article class="partner-card reveal" data-partner-card>
+            <button class="partner-card__button no-blend" type="button" aria-expanded="false" aria-controls="partner-detail-brand">
+              <span class="partner-card__status">Brand-Platzhalter</span>
+              <span class="partner-card__identity">
+                <span class="partner-logo" aria-hidden="true">BRD</span>
+                <span class="partner-card__copy">
+                  <span class="partner-card__name">Aviation Brand</span>
+                  <span class="partner-card__category">Merch & Customization</span>
+                </span>
+              </span>
+              <span class="partner-card__hint">Leistungen anzeigen</span>
+            </button>
+            <div class="partner-detail" id="partner-detail-brand" role="region" aria-label="Aviation Brand Leistungen">
+              <span>Leistungen</span>
+              <p>Individueller Merch, Eventmaterial, Markenauftritt und Aktivierung von Aviation Communities.</p>
+              <small>Später mit Club, Flugschule, Event oder Aviation Brand ersetzen.</small>
+            </div>
+          </article>
+          <article class="partner-card reveal" data-partner-card>
+            <button class="partner-card__button no-blend" type="button" aria-expanded="false" aria-controls="partner-detail-events">
+              <span class="partner-card__status">Ökosystem-Platzhalter</span>
+              <span class="partner-card__identity">
+                <span class="partner-logo" aria-hidden="true">EVT</span>
+                <span class="partner-card__copy">
+                  <span class="partner-card__name">Event Partner</span>
+                  <span class="partner-card__category">Events & Community</span>
+                </span>
+              </span>
+              <span class="partner-card__hint">Leistungen anzeigen</span>
+            </button>
+            <div class="partner-detail" id="partner-detail-events" role="region" aria-label="Event Partner Leistungen">
+              <span>Leistungen</span>
+              <p>Event-Landingpages, Besucherkarten, Sponsorensichtbarkeit, Contributor-Tools und digitale Unterstützung vor Ort.</p>
+              <small>Vorbereitet für Aviation Events und Ökosystem-Kooperationen.</small>
+            </div>
+          </article>
         </div>
       </section>
 
@@ -200,22 +323,6 @@
           </article>
         </div>
       </section>
-
-      <section class="section" id="partners">
-        <div class="section-title">
-          <h2>Partner</h2>
-          <p>Ausgewählte Kooperationen und Ecosystem-Partner werden hier veröffentlicht, sobald sie live sind.</p>
-        </div>
-        <div class="studio studio--single">
-          <article class="studio-panel reveal">
-            <h3>Coming soon</h3>
-            <ul>
-              <li>Wir bereiten aktuell einen öffentlichen Partnerbereich für Training, Operations, Supply und Pilot Services vor.</li>
-              <li>Erste Kooperationen laufen bereits, weitere Profile werden hier zeitnah ergänzt.</li>
-            </ul>
-          </article>
-        </div>
-      </section>
     </main>
 
     <footer class="site-footer" id="contact">
@@ -269,7 +376,7 @@
       }
     </script>
   <script type="module" src="/js/hero-main.js"></script>
-  <script src="/js/scripts.js" defer></script>
+  <script src="/js/scripts.js?v=20260508-paluv-refresh" defer></script>
 </body>
 
 </html>

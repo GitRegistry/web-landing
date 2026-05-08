@@ -460,8 +460,10 @@ class ManagerApp {
 
   updateMarkerScale() {
     const zoom = this.map.getZoom();
-    const scale = Math.max(0.28, Math.min(1, 0.28 + (zoom - 10) * 0.09));
-    this.map.getContainer().style.setProperty("--marker-scale", scale.toFixed(2));
+    const scale = Math.max(0.1, Math.min(1, (zoom - 10) / 8));
+    const value = scale.toFixed(2);
+    this.map.getContainer().style.setProperty("--marker-scale", value);
+    this.map.getPane("markerPane")?.style.setProperty("--marker-scale", value);
   }
 
   setMessage(message) {

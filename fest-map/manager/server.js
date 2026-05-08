@@ -51,7 +51,11 @@ const markerTones = new Set([
   "eventTeal",
 ]);
 const overlayCategories = new Set(["parking", "exit", "fence", "route", "area", "event"]);
-const entityTypes = new Set(["building", "area", "service", "entry"]);
+const entityTypes = new Set(["company", "service", "entry", "roundflight"]);
+const legacyEntityTypes = new Map([
+  ["building", "company"],
+  ["area", "company"],
+]);
 const markerKinds = new Set([
   "area",
   "airplane",
@@ -151,7 +155,9 @@ function normalizeEntity(entity, index) {
   const coordinates = normalizeCoordinates(entity.coordinates) ?? [49.3088, 8.44895];
   const fallbackId = `entry-${index + 1}`;
   const markerKind = markerKinds.has(entity.markerKind) ? entity.markerKind : "info";
-  const type = entityTypes.has(entity.type) ? entity.type : "service";
+  const type = entityTypes.has(entity.type)
+    ? entity.type
+    : legacyEntityTypes.get(entity.type) ?? "service";
   const image = String(entity.image ?? "").trim();
   const markerLabel = String(entity.markerLabel ?? "").trim();
   const markerTone = markerTones.has(entity.markerTone) ? entity.markerTone : "";
