@@ -4,8 +4,8 @@
     "type": "service",
     "markerKind": "info",
     "coordinates": [
-      49.31005043852506,
-      8.44930171966553
+      49.31007666913047,
+      8.449282944202425
     ],
     "name": {
       "de": "Flugplatz Fest & Brazzeltag",
@@ -780,6 +780,446 @@
     "useLogoMarker": false
   },
   {
+    "id": "brazzelparcours",
+    "type": "area",
+    "markerKind": "numbered",
+    "coordinates": [
+      49.31115910659984,
+      8.447939157485964
+    ],
+    "name": {
+      "de": "Brazzelparcours",
+      "en": "Brazzelparcours"
+    },
+    "location": {
+      "de": "Roter Parcours im Technik Museum",
+      "en": "Red course inside the Technik Museum"
+    },
+    "summary": {
+      "de": "Hauptflaeche fuer Shows, Burnout-Crew und Start Jet Schoolbus.",
+      "en": "Main area for shows, the Burnout Crew and Start Jet Schoolbus."
+    },
+    "description": {
+      "de": "Der Brazzelparcours ist die zentrale rote Eventflaeche des Brazzeltags mit mehreren Programmpunkten am Samstag und Sonntag.",
+      "en": "The Brazzelparcours is the central red Brazzeltag event zone with multiple programme items on Saturday and Sunday."
+    },
+    "website": "",
+    "phone": "",
+    "email": "",
+    "image": "/assets/logos/flightline-plaza.svg",
+    "useLogoMarker": false,
+    "markerLabel": "1",
+    "markerTone": "eventRed"
+  },
+  {
+    "id": "brazzelarena",
+    "type": "area",
+    "markerKind": "numbered",
+    "coordinates": [
+      49.31223277713628,
+      8.44928026199341
+    ],
+    "name": {
+      "de": "Brazzelarena",
+      "en": "Brazzelarena"
+    },
+    "location": {
+      "de": "Blaue Arena am Museum Wilhelmsbau",
+      "en": "Blue arena near Museum Wilhelmsbau"
+    },
+    "summary": {
+      "de": "Arena fuer Rundfahrten, Drift Carts, Rennsport und Transall-Programmpunkte.",
+      "en": "Arena for rides, drift carts, racing programme items and Transall activities."
+    },
+    "description": {
+      "de": "Die Brazzelarena ist der blaue Programmbereich mit eigenen Zeitfenstern an beiden Veranstaltungstagen.",
+      "en": "The Brazzelarena is the blue programme area with its own timetable slots on both event days."
+    },
+    "website": "",
+    "phone": "",
+    "email": "",
+    "image": "/assets/logos/flightline-plaza.svg",
+    "useLogoMarker": false,
+    "markerLabel": "2",
+    "markerTone": "eventBlue"
+  },
+  {
+    "id": "brazzel-wasteland",
+    "type": "area",
+    "markerKind": "numbered",
+    "coordinates": [
+      49.30997699275564,
+      8.447939157485964
+    ],
+    "name": {
+      "de": "Brazzel-Wasteland",
+      "en": "Brazzel-Wasteland"
+    },
+    "location": {
+      "de": "Jeep-Trial und Offroad-Bereich",
+      "en": "Jeep trial and off-road area"
+    },
+    "summary": {
+      "de": "Gruene Offroad-Flaeche fuer Trial Taxi und Jeep-Trial.",
+      "en": "Green off-road zone for Trial Taxi and Jeep Trial."
+    },
+    "description": {
+      "de": "Im Brazzel-Wasteland laedt die Offroad-Crew Besucher zu Trial-Taxi-Mitfahrten ein.",
+      "en": "In Brazzel-Wasteland the off-road crew invites visitors to join Trial Taxi rides."
+    },
+    "website": "",
+    "phone": "",
+    "email": "",
+    "image": "/assets/logos/flightline-plaza.svg",
+    "useLogoMarker": false,
+    "markerLabel": "3",
+    "markerTone": "eventGreen"
+  },
+  {
+    "id": "transall-c160",
+    "type": "area",
+    "markerKind": "numbered",
+    "coordinates": [
+      49.31134451553655,
+      8.44951629638672
+    ],
+    "name": {
+      "de": "Transall C160",
+      "en": "Transall C160"
+    },
+    "location": {
+      "de": "Transall-Bereich",
+      "en": "Transall area"
+    },
+    "summary": {
+      "de": "Programmpunkt und Standort der Transall C160.",
+      "en": "Programme point and location of the Transall C160."
+    },
+    "description": {
+      "de": "Die Transall C160 ist als eigener Programmpunkt im Lageplan mit der Nummer 4 markiert.",
+      "en": "The Transall C160 is marked as programme location 4 on the site plan."
+    },
+    "website": "",
+    "phone": "",
+    "email": "",
+    "image": "/assets/logos/flightline-plaza.svg",
+    "useLogoMarker": false,
+    "markerLabel": "4",
+    "markerTone": "eventPurple"
+  },
+  {
+    "id": "seenotrettungskreuzer",
+    "type": "area",
+    "markerKind": "numbered",
+    "coordinates": [
+      49.31171517992932,
+      8.447257876396181
+    ],
+    "name": {
+      "de": "Seenotrettungskreuzer",
+      "en": "Sea Rescue Cruiser"
+    },
+    "location": {
+      "de": "Ausstellungsbereich im Technik Museum",
+      "en": "Exhibition area inside the Technik Museum"
+    },
+    "summary": {
+      "de": "Nummer 5 im Lageplan fuer Fuehrungen und Orientierung.",
+      "en": "Location 5 on the site plan for tours and orientation."
+    },
+    "description": {
+      "de": "Der Seenotrettungskreuzer ist im Lageplan als blau markierter Orientierungspunkt eingetragen.",
+      "en": "The sea rescue cruiser is shown as a blue orientation point on the site plan."
+    },
+    "website": "",
+    "phone": "",
+    "email": "",
+    "image": "/assets/logos/flightline-plaza.svg",
+    "useLogoMarker": false,
+    "markerLabel": "5",
+    "markerTone": "eventCyan"
+  },
+  {
+    "id": "u9",
+    "type": "area",
+    "markerKind": "numbered",
+    "coordinates": [
+      49.3119075308777,
+      8.44779431819916
+    ],
+    "name": {
+      "de": "U9",
+      "en": "U9"
+    },
+    "location": {
+      "de": "U-Boot-Ausstellung",
+      "en": "Submarine exhibition"
+    },
+    "summary": {
+      "de": "Nummer 6 im Lageplan beim U-Boot U9.",
+      "en": "Location 6 on the site plan at submarine U9."
+    },
+    "description": {
+      "de": "Das U-Boot U9 dient als gelber Orientierungspunkt fuer Fuehrungen und den Museumslageplan.",
+      "en": "Submarine U9 acts as a yellow orientation point for tours and the museum site plan."
+    },
+    "website": "",
+    "phone": "",
+    "email": "",
+    "image": "/assets/logos/flightline-plaza.svg",
+    "useLogoMarker": false,
+    "markerLabel": "6",
+    "markerTone": "eventYellow"
+  },
+  {
+    "id": "flugplatz",
+    "type": "area",
+    "markerKind": "numbered",
+    "coordinates": [
+      49.309933274983784,
+      8.449020087718965
+    ],
+    "name": {
+      "de": "Flugplatz",
+      "en": "Airfield"
+    },
+    "location": {
+      "de": "Uebergang zum Flugplatzfest",
+      "en": "Transition to the airfield festival"
+    },
+    "summary": {
+      "de": "Pink markierter Bereich fuer den Uebergang zum Flugplatz.",
+      "en": "Pink marked area for the transition to the airfield."
+    },
+    "description": {
+      "de": "Der Flugplatzbereich ist im Brazzeltag-Lageplan mit Nummer 7 markiert und verbindet den Museumsplan mit dem Flugplatzfest.",
+      "en": "The airfield area is marked as location 7 on the Brazzeltag map and connects the museum plan with the airfield festival."
+    },
+    "website": "",
+    "phone": "",
+    "email": "",
+    "image": "/assets/logos/flightline-plaza.svg",
+    "useLogoMarker": false,
+    "markerLabel": "7",
+    "markerTone": "eventPink"
+  },
+  {
+    "id": "boeing-747",
+    "type": "area",
+    "markerKind": "numbered",
+    "coordinates": [
+      49.310672974458825,
+      8.445637822151186
+    ],
+    "name": {
+      "de": "Boeing 747",
+      "en": "Boeing 747"
+    },
+    "location": {
+      "de": "Boeing-747-Ausstellungsbereich",
+      "en": "Boeing 747 exhibition area"
+    },
+    "summary": {
+      "de": "Nummer 8 im Lageplan an der Boeing 747.",
+      "en": "Location 8 on the site plan at the Boeing 747."
+    },
+    "description": {
+      "de": "Die Boeing 747 ist im Lageplan orange markiert und dient als auffaelliger Orientierungspunkt.",
+      "en": "The Boeing 747 is marked in orange on the site plan and acts as a prominent orientation point."
+    },
+    "website": "",
+    "phone": "",
+    "email": "",
+    "image": "/assets/logos/flightline-plaza.svg",
+    "useLogoMarker": false,
+    "markerLabel": "8",
+    "markerTone": "eventOrange"
+  },
+  {
+    "id": "burnout-crew",
+    "type": "area",
+    "markerKind": "numbered",
+    "coordinates": [
+      49.310435152671154,
+      8.448094725608827
+    ],
+    "name": {
+      "de": "Burnout-Crew",
+      "en": "Burnout Crew"
+    },
+    "location": {
+      "de": "Teal markierte Showflaeche am Brazzelparcours",
+      "en": "Teal show area at the Brazzelparcours"
+    },
+    "summary": {
+      "de": "Showflaeche fuer Streetfighter Burnout-Crew mit Rauch und Flammen.",
+      "en": "Show area for the Streetfighter Burnout Crew with smoke and flames."
+    },
+    "description": {
+      "de": "Die Burnout-Crew ist im Lageplan mit Nummer 9 markiert und hat Programmpunkte an beiden Tagen.",
+      "en": "The Burnout Crew is marked as location 9 and has programme slots on both event days."
+    },
+    "website": "",
+    "phone": "",
+    "email": "",
+    "image": "/assets/logos/flightline-plaza.svg",
+    "useLogoMarker": false,
+    "markerLabel": "9",
+    "markerTone": "eventTeal"
+  },
+  {
+    "id": "start-jet-schoolbus",
+    "type": "area",
+    "markerKind": "numbered",
+    "coordinates": [
+      49.310508597757526,
+      8.448738455772402
+    ],
+    "name": {
+      "de": "Start Jet Schoolbus",
+      "en": "Start Jet Schoolbus"
+    },
+    "location": {
+      "de": "Gruen markierte Showflaeche am Parcours",
+      "en": "Green show area at the course"
+    },
+    "summary": {
+      "de": "Showpunkt fuer den Jet Schoolbus und die Geburtstagsshow der Museen.",
+      "en": "Show point for the Jet Schoolbus and the museums birthday show."
+    },
+    "description": {
+      "de": "Der Start Jet Schoolbus ist im Lageplan mit Nummer 10 markiert und gehoert zu den zentralen Brazzeltag-Shows.",
+      "en": "The Start Jet Schoolbus is marked as location 10 and is one of the central Brazzeltag shows."
+    },
+    "website": "",
+    "phone": "",
+    "email": "",
+    "image": "/assets/logos/flightline-plaza.svg",
+    "useLogoMarker": false,
+    "markerLabel": "10",
+    "markerTone": "eventGreen"
+  },
+  {
+    "id": "museum-main-entrance-kasse",
+    "type": "entry",
+    "markerKind": "ticket",
+    "coordinates": [
+      49.31108566248331,
+      8.446887731552126
+    ],
+    "name": {
+      "de": "Haupteingang / Kasse",
+      "en": "Main Entrance / Tickets"
+    },
+    "location": {
+      "de": "Technik Museum Haupteingang",
+      "en": "Technik Museum main entrance"
+    },
+    "summary": {
+      "de": "Haupteingang und Kassenpunkt des Brazzeltag-Lageplans.",
+      "en": "Main entrance and ticket point on the Brazzeltag site plan."
+    },
+    "description": {
+      "de": "Hier befindet sich der im Lageplan markierte Haupteingang mit Kasse.",
+      "en": "This is the main entrance and ticket point marked on the site plan."
+    },
+    "website": "",
+    "phone": "",
+    "email": "",
+    "image": "/assets/logos/museum-terrace.svg",
+    "useLogoMarker": false
+  },
+  {
+    "id": "museum-disabled-parking",
+    "type": "service",
+    "markerKind": "disabled-parking",
+    "coordinates": [
+      49.31249507094189,
+      8.446356654167177
+    ],
+    "name": {
+      "de": "Behindertenparkplatz",
+      "en": "Accessible Parking"
+    },
+    "location": {
+      "de": "Parkbereich am Museum",
+      "en": "Parking area at the museum"
+    },
+    "summary": {
+      "de": "Behindertenparkplatz laut Lageplan.",
+      "en": "Accessible parking according to the site plan."
+    },
+    "description": {
+      "de": "Behindertenparkplatz laut Lageplan.",
+      "en": "Accessible parking according to the site plan."
+    },
+    "website": "",
+    "phone": "",
+    "email": "",
+    "image": "/assets/logos/museum-terrace.svg",
+    "useLogoMarker": false
+  },
+  {
+    "id": "brazzel-shop",
+    "type": "service",
+    "markerKind": "shop",
+    "coordinates": [
+      49.3107359270928,
+      8.446565866470339
+    ],
+    "name": {
+      "de": "Brazzel Shop",
+      "en": "Brazzel Shop"
+    },
+    "location": {
+      "de": "Beim Haupteingang / Kasse",
+      "en": "Near the main entrance / tickets"
+    },
+    "summary": {
+      "de": "Brazzel-Shop aus der Lageplan-Legende.",
+      "en": "Brazzel shop from the site-plan legend."
+    },
+    "description": {
+      "de": "Shop-Punkt gemaess Brazzeltag-Lageplan.",
+      "en": "Shop point according to the Brazzeltag site plan."
+    },
+    "website": "",
+    "phone": "",
+    "email": "",
+    "image": "/assets/logos/museum-terrace.svg",
+    "useLogoMarker": false
+  },
+  {
+    "id": "museum-first-aid",
+    "type": "service",
+    "markerKind": "first-aid",
+    "coordinates": [
+      49.310529582047806,
+      8.447869420051576
+    ],
+    "name": {
+      "de": "Sanitaeter",
+      "en": "First Aid"
+    },
+    "location": {
+      "de": "Zwischen Brazzelparcours und Brazzelarena",
+      "en": "Between Brazzelparcours and Brazzelarena"
+    },
+    "summary": {
+      "de": "Sanitaetspunkt im zentralen Museumsbereich.",
+      "en": "First-aid point in the central museum area."
+    },
+    "description": {
+      "de": "Sanitaetspunkt im zentralen Museumsbereich.",
+      "en": "First-aid point in the central museum area."
+    },
+    "website": "",
+    "phone": "",
+    "email": "",
+    "image": "/assets/logos/first-aid.svg",
+    "useLogoMarker": false
+  },
+  {
     "id": "entry-mow1mgkp",
     "type": "service",
     "markerKind": "info",
@@ -789,19 +1229,19 @@
     ],
     "name": {
       "de": "Justiz - JVA Mannheim",
-      "en": "New entry"
+      "en": "Justice - JVA Mannheim"
     },
     "location": {
-      "de": "",
-      "en": "Worms Academy"
+      "de": "Behoerdenstand",
+      "en": "Authority stand"
     },
     "summary": {
-      "de": "",
-      "en": ""
+      "de": "Informationspunkt der Justiz / JVA Mannheim.",
+      "en": "Information point for Justice / JVA Mannheim."
     },
     "description": {
-      "de": "",
-      "en": ""
+      "de": "Manuell gesetzter Behoerdenpunkt aus dem aktuellen Managerstand, inhaltlich normalisiert.",
+      "en": "Manually placed authority point from the current manager data, normalized for the public map."
     },
     "website": "",
     "phone": "",
@@ -818,20 +1258,20 @@
       8.448899388313295
     ],
     "name": {
-      "de": "Einsatztraining Budespolizei",
-      "en": "New entry"
+      "de": "Einsatztraining Bundespolizei",
+      "en": "Federal Police Operations Training"
     },
     "location": {
-      "de": "",
-      "en": ""
+      "de": "Bundespolizei-Programmbereich",
+      "en": "Federal Police programme area"
     },
     "summary": {
-      "de": "",
-      "en": ""
+      "de": "Einsatztraining der Bundespolizei.",
+      "en": "Operations training by the Federal Police."
     },
     "description": {
-      "de": "",
-      "en": ""
+      "de": "Manuell gesetzter Bundespolizei-Punkt aus dem aktuellen Managerstand.",
+      "en": "Manually placed Federal Police point from the current manager data."
     },
     "website": "",
     "phone": "",
@@ -849,19 +1289,19 @@
     ],
     "name": {
       "de": "HeliFlight Landeplatz",
-      "en": "New entry"
+      "en": "HeliFlight Landing Area"
     },
     "location": {
-      "de": "",
-      "en": ""
+      "de": "HeliFlight-Bereich",
+      "en": "HeliFlight area"
     },
     "summary": {
-      "de": "",
-      "en": ""
+      "de": "Landeplatz / Betriebsbereich fuer HeliFlight.",
+      "en": "Landing and operations area for HeliFlight."
     },
     "description": {
-      "de": "",
-      "en": ""
+      "de": "Manuell gesetzter HeliFlight-Punkt aus dem aktuellen Managerstand.",
+      "en": "Manually placed HeliFlight point from the current manager data."
     },
     "website": "",
     "phone": "",
@@ -871,32 +1311,32 @@
   },
   {
     "id": "entry-mow2b1ae",
-    "type": "entry",
+    "type": "service",
     "markerKind": "authority",
     "coordinates": [
       49.31023574944499,
       8.450605273246767
     ],
     "name": {
-      "de": "Feuewert",
-      "en": "New entry"
+      "de": "Feuerwehr",
+      "en": "Fire Brigade"
     },
     "location": {
-      "de": "",
-      "en": ""
+      "de": "Sicherheits- und Einsatzbereich",
+      "en": "Safety and operations area"
     },
     "summary": {
-      "de": "",
-      "en": ""
+      "de": "Feuerwehrpunkt im Lageplan.",
+      "en": "Fire brigade point on the map."
     },
     "description": {
-      "de": "",
-      "en": ""
+      "de": "Manuell gesetzter Sicherheits-/Feuerwehrpunkt aus dem aktuellen Managerstand.",
+      "en": "Manually placed safety / fire brigade point from the current manager data."
     },
     "website": "",
     "phone": "",
     "email": "",
-    "image": "/assets/logos/visitor-info.svg",
+    "image": "/assets/logos/first-aid.svg",
     "useLogoMarker": false
   },
   {
@@ -912,16 +1352,16 @@
       "en": "AeroShinex"
     },
     "location": {
-      "de": "",
-      "en": ""
+      "de": "Ausstellerpunkt",
+      "en": "Exhibitor point"
     },
     "summary": {
-      "de": "",
-      "en": ""
+      "de": "Ausstellerpunkt AeroShinex.",
+      "en": "AeroShinex exhibitor point."
     },
     "description": {
-      "de": "",
-      "en": ""
+      "de": "Manuell gesetzter Ausstellerpunkt aus dem aktuellen Managerstand.",
+      "en": "Manually placed exhibitor point from the current manager data."
     },
     "website": "",
     "phone": "",
@@ -930,118 +1370,1048 @@
     "useLogoMarker": false
   },
   {
-    "id": "entry-mow2ybxb",
+    "id": "museum-airplane-north",
     "type": "building",
     "markerKind": "airplane",
     "coordinates": [
-      49.31047018456869,
-      8.445643186569216
+      49.311494849738274,
+      8.446565866470339
     ],
     "name": {
-      "de": "Boeing 747",
-      "en": "New entry"
+      "de": "Museum Flugzeug Nord",
+      "en": "Museum aircraft north"
     },
     "location": {
-      "de": "",
-      "en": ""
+      "de": "Technik Museum Ausstellungsbereich",
+      "en": "Technik Museum exhibition area"
     },
     "summary": {
-      "de": "",
-      "en": ""
+      "de": "Zusaetzliches Flugzeug-Icon aus dem bereits gesetzten Managerstand.",
+      "en": "Additional aircraft icon from the already placed manager data."
     },
     "description": {
-      "de": "",
-      "en": ""
+      "de": "Dieser Punkt erhaelt das vorhandene manuell gesetzte Flugzeug-Icon im Technik-Museum-Bereich.",
+      "en": "This point restores the manually placed aircraft icon in the Technik Museum area."
     },
     "website": "",
     "phone": "",
     "email": "",
-    "image": "/assets/logos/visitor-info.svg",
+    "image": "/assets/logos/flightline-plaza.svg",
     "useLogoMarker": false
   },
   {
-    "id": "entry-mow2zagb",
-    "type": "building",
-    "markerKind": "airplane",
-    "coordinates": [
-      49.31144938717868,
-      8.446469306945803
-    ],
-    "name": {
-      "de": "Another Airplane",
-      "en": "New entry"
-    },
-    "location": {
-      "de": "",
-      "en": ""
-    },
-    "summary": {
-      "de": "",
-      "en": ""
-    },
-    "description": {
-      "de": "",
-      "en": ""
-    },
-    "website": "",
-    "phone": "",
-    "email": "",
-    "image": "/assets/logos/visitor-info.svg",
-    "useLogoMarker": false
-  },
-  {
-    "id": "entry-mow304k2",
+    "id": "wc-liller-halle-nord",
     "type": "service",
-    "markerKind": "submarine",
+    "markerKind": "wc",
     "coordinates": [
-      49.311687204070104,
-      8.447316884994509
+      49.312645452093854,
+      8.445825576782228
     ],
     "name": {
-      "de": "Submarine",
-      "en": "Submarine"
+      "de": "WC Liller Halle Nord",
+      "en": "WC near Liller Hall north"
     },
     "location": {
-      "de": "",
-      "en": ""
+      "de": "Technik Museum Lageplan",
+      "en": "Technik Museum site plan"
     },
     "summary": {
-      "de": "",
-      "en": ""
+      "de": "WC Liller Halle Nord",
+      "en": "WC near Liller Hall north"
     },
     "description": {
-      "de": "",
-      "en": ""
+      "de": "Servicepunkt aus dem Brazzeltag-Lageplan.",
+      "en": "Service point from the Brazzeltag site plan."
     },
     "website": "",
     "phone": "",
     "email": "",
-    "image": "/assets/logos/visitor-info.svg",
+    "image": "/assets/logos/museum-terrace.svg",
     "useLogoMarker": false
   },
   {
-    "id": "entry-mow30tzc",
+    "id": "wc-disabled-liller-halle-nord",
     "type": "service",
-    "markerKind": "boat",
+    "markerKind": "wc-disabled",
     "coordinates": [
-      49.31152636338714,
-      8.446973562240602
+      49.312645452093854,
+      8.4460186958313
     ],
     "name": {
-      "de": "Boat",
-      "en": "Boat"
+      "de": "Behindertengerechtes WC Liller Halle Nord",
+      "en": "Accessible WC near Liller Hall north"
     },
     "location": {
-      "de": "",
-      "en": ""
+      "de": "Technik Museum Lageplan",
+      "en": "Technik Museum site plan"
     },
     "summary": {
-      "de": "",
-      "en": ""
+      "de": "Behindertengerechtes WC Liller Halle Nord",
+      "en": "Accessible WC near Liller Hall north"
     },
     "description": {
-      "de": "",
-      "en": ""
+      "de": "Servicepunkt aus dem Brazzeltag-Lageplan.",
+      "en": "Service point from the Brazzeltag site plan."
+    },
+    "website": "",
+    "phone": "",
+    "email": "",
+    "image": "/assets/logos/museum-terrace.svg",
+    "useLogoMarker": false
+  },
+  {
+    "id": "food-liller-halle-nord",
+    "type": "service",
+    "markerKind": "food",
+    "coordinates": [
+      49.31248108197416,
+      8.445830941200258
+    ],
+    "name": {
+      "de": "Essen Liller Halle Nord",
+      "en": "Food near Liller Hall north"
+    },
+    "location": {
+      "de": "Technik Museum Lageplan",
+      "en": "Technik Museum site plan"
+    },
+    "summary": {
+      "de": "Essen Liller Halle Nord",
+      "en": "Food near Liller Hall north"
+    },
+    "description": {
+      "de": "Servicepunkt aus dem Brazzeltag-Lageplan.",
+      "en": "Service point from the Brazzeltag site plan."
+    },
+    "website": "",
+    "phone": "",
+    "email": "",
+    "image": "/assets/logos/museum-terrace.svg",
+    "useLogoMarker": false
+  },
+  {
+    "id": "drinks-liller-halle-nord",
+    "type": "service",
+    "markerKind": "drinks",
+    "coordinates": [
+      49.31247408748884,
+      8.44602942466736
+    ],
+    "name": {
+      "de": "Getraenke Liller Halle Nord",
+      "en": "Drinks near Liller Hall north"
+    },
+    "location": {
+      "de": "Technik Museum Lageplan",
+      "en": "Technik Museum site plan"
+    },
+    "summary": {
+      "de": "Getraenke Liller Halle Nord",
+      "en": "Drinks near Liller Hall north"
+    },
+    "description": {
+      "de": "Servicepunkt aus dem Brazzeltag-Lageplan.",
+      "en": "Service point from the Brazzeltag site plan."
+    },
+    "website": "",
+    "phone": "",
+    "email": "",
+    "image": "/assets/logos/museum-terrace.svg",
+    "useLogoMarker": false
+  },
+  {
+    "id": "wc-liller-halle-mitte",
+    "type": "service",
+    "markerKind": "wc",
+    "coordinates": [
+      49.31177813123146,
+      8.445460796356203
+    ],
+    "name": {
+      "de": "WC Liller Halle Mitte",
+      "en": "WC near Liller Hall middle"
+    },
+    "location": {
+      "de": "Technik Museum Lageplan",
+      "en": "Technik Museum site plan"
+    },
+    "summary": {
+      "de": "WC Liller Halle Mitte",
+      "en": "WC near Liller Hall middle"
+    },
+    "description": {
+      "de": "Servicepunkt aus dem Brazzeltag-Lageplan.",
+      "en": "Service point from the Brazzeltag site plan."
+    },
+    "website": "",
+    "phone": "",
+    "email": "",
+    "image": "/assets/logos/museum-terrace.svg",
+    "useLogoMarker": false
+  },
+  {
+    "id": "wc-disabled-liller-halle-mitte",
+    "type": "service",
+    "markerKind": "wc-disabled",
+    "coordinates": [
+      49.31176763935337,
+      8.445637822151186
+    ],
+    "name": {
+      "de": "Behindertengerechtes WC Liller Halle Mitte",
+      "en": "Accessible WC near Liller Hall middle"
+    },
+    "location": {
+      "de": "Technik Museum Lageplan",
+      "en": "Technik Museum site plan"
+    },
+    "summary": {
+      "de": "Behindertengerechtes WC Liller Halle Mitte",
+      "en": "Accessible WC near Liller Hall middle"
+    },
+    "description": {
+      "de": "Servicepunkt aus dem Brazzeltag-Lageplan.",
+      "en": "Service point from the Brazzeltag site plan."
+    },
+    "website": "",
+    "phone": "",
+    "email": "",
+    "image": "/assets/logos/museum-terrace.svg",
+    "useLogoMarker": false
+  },
+  {
+    "id": "food-liller-halle-sued",
+    "type": "service",
+    "markerKind": "food",
+    "coordinates": [
+      49.31047362392053,
+      8.445814847946169
+    ],
+    "name": {
+      "de": "Essen Liller Halle Sued",
+      "en": "Food near Liller Hall south"
+    },
+    "location": {
+      "de": "Technik Museum Lageplan",
+      "en": "Technik Museum site plan"
+    },
+    "summary": {
+      "de": "Essen Liller Halle Sued",
+      "en": "Food near Liller Hall south"
+    },
+    "description": {
+      "de": "Servicepunkt aus dem Brazzeltag-Lageplan.",
+      "en": "Service point from the Brazzeltag site plan."
+    },
+    "website": "",
+    "phone": "",
+    "email": "",
+    "image": "/assets/logos/museum-terrace.svg",
+    "useLogoMarker": false
+  },
+  {
+    "id": "drinks-liller-halle-sued",
+    "type": "service",
+    "markerKind": "drinks",
+    "coordinates": [
+      49.31120457195046,
+      8.44676434993744
+    ],
+    "name": {
+      "de": "Getraenke Liller Halle Sued",
+      "en": "Drinks near Liller Hall south"
+    },
+    "location": {
+      "de": "Technik Museum Lageplan",
+      "en": "Technik Museum site plan"
+    },
+    "summary": {
+      "de": "Getraenke Liller Halle Sued",
+      "en": "Drinks near Liller Hall south"
+    },
+    "description": {
+      "de": "Servicepunkt aus dem Brazzeltag-Lageplan.",
+      "en": "Service point from the Brazzeltag site plan."
+    },
+    "website": "",
+    "phone": "",
+    "email": "",
+    "image": "/assets/logos/museum-terrace.svg",
+    "useLogoMarker": false
+  },
+  {
+    "id": "wc-liller-halle-sued",
+    "type": "service",
+    "markerKind": "wc",
+    "coordinates": [
+      49.31092828186482,
+      8.446828722953798
+    ],
+    "name": {
+      "de": "WC Liller Halle Sued",
+      "en": "WC near Liller Hall south"
+    },
+    "location": {
+      "de": "Technik Museum Lageplan",
+      "en": "Technik Museum site plan"
+    },
+    "summary": {
+      "de": "WC Liller Halle Sued",
+      "en": "WC near Liller Hall south"
+    },
+    "description": {
+      "de": "Servicepunkt aus dem Brazzeltag-Lageplan.",
+      "en": "Service point from the Brazzeltag site plan."
+    },
+    "website": "",
+    "phone": "",
+    "email": "",
+    "image": "/assets/logos/museum-terrace.svg",
+    "useLogoMarker": false
+  },
+  {
+    "id": "wc-disabled-liller-halle-sued",
+    "type": "service",
+    "markerKind": "wc-disabled",
+    "coordinates": [
+      49.31092128715899,
+      8.447005748748781
+    ],
+    "name": {
+      "de": "Behindertengerechtes WC Liller Halle Sued",
+      "en": "Accessible WC near Liller Hall south"
+    },
+    "location": {
+      "de": "Technik Museum Lageplan",
+      "en": "Technik Museum site plan"
+    },
+    "summary": {
+      "de": "Behindertengerechtes WC Liller Halle Sued",
+      "en": "Accessible WC near Liller Hall south"
+    },
+    "description": {
+      "de": "Servicepunkt aus dem Brazzeltag-Lageplan.",
+      "en": "Service point from the Brazzeltag site plan."
+    },
+    "website": "",
+    "phone": "",
+    "email": "",
+    "image": "/assets/logos/museum-terrace.svg",
+    "useLogoMarker": false
+  },
+  {
+    "id": "food-eventhalle-west",
+    "type": "service",
+    "markerKind": "food",
+    "coordinates": [
+      49.31133047577933,
+      8.446576595306398
+    ],
+    "name": {
+      "de": "Essen Eventhalle West",
+      "en": "Food at Event Hall west"
+    },
+    "location": {
+      "de": "Technik Museum Lageplan",
+      "en": "Technik Museum site plan"
+    },
+    "summary": {
+      "de": "Essen Eventhalle West",
+      "en": "Food at Event Hall west"
+    },
+    "description": {
+      "de": "Servicepunkt aus dem Brazzeltag-Lageplan.",
+      "en": "Service point from the Brazzeltag site plan."
+    },
+    "website": "",
+    "phone": "",
+    "email": "",
+    "image": "/assets/logos/museum-terrace.svg",
+    "useLogoMarker": false
+  },
+  {
+    "id": "drinks-eventhalle-west",
+    "type": "service",
+    "markerKind": "drinks",
+    "coordinates": [
+      49.31127801588975,
+      8.447434902191164
+    ],
+    "name": {
+      "de": "Getraenke Eventhalle West",
+      "en": "Drinks at Event Hall west"
+    },
+    "location": {
+      "de": "Technik Museum Lageplan",
+      "en": "Technik Museum site plan"
+    },
+    "summary": {
+      "de": "Getraenke Eventhalle West",
+      "en": "Drinks at Event Hall west"
+    },
+    "description": {
+      "de": "Servicepunkt aus dem Brazzeltag-Lageplan.",
+      "en": "Service point from the Brazzeltag site plan."
+    },
+    "website": "",
+    "phone": "",
+    "email": "",
+    "image": "/assets/logos/museum-terrace.svg",
+    "useLogoMarker": false
+  },
+  {
+    "id": "beer-eventhalle-west",
+    "type": "service",
+    "markerKind": "beer",
+    "coordinates": [
+      49.31132697845509,
+      8.446758985519411
+    ],
+    "name": {
+      "de": "Bier Eventhalle West",
+      "en": "Beer at Event Hall west"
+    },
+    "location": {
+      "de": "Technik Museum Lageplan",
+      "en": "Technik Museum site plan"
+    },
+    "summary": {
+      "de": "Bier Eventhalle West",
+      "en": "Beer at Event Hall west"
+    },
+    "description": {
+      "de": "Servicepunkt aus dem Brazzeltag-Lageplan.",
+      "en": "Service point from the Brazzeltag site plan."
+    },
+    "website": "",
+    "phone": "",
+    "email": "",
+    "image": "/assets/logos/museum-terrace.svg",
+    "useLogoMarker": false
+  },
+  {
+    "id": "ice-eventhalle-west",
+    "type": "service",
+    "markerKind": "ice-cream",
+    "coordinates": [
+      49.31072193762555,
+      8.446421027183534
+    ],
+    "name": {
+      "de": "Eis Eventhalle West",
+      "en": "Ice cream at Event Hall west"
+    },
+    "location": {
+      "de": "Technik Museum Lageplan",
+      "en": "Technik Museum site plan"
+    },
+    "summary": {
+      "de": "Eis Eventhalle West",
+      "en": "Ice cream at Event Hall west"
+    },
+    "description": {
+      "de": "Servicepunkt aus dem Brazzeltag-Lageplan.",
+      "en": "Service point from the Brazzeltag site plan."
+    },
+    "website": "",
+    "phone": "",
+    "email": "",
+    "image": "/assets/logos/museum-terrace.svg",
+    "useLogoMarker": false
+  },
+  {
+    "id": "wc-eventhalle-sued",
+    "type": "service",
+    "markerKind": "wc",
+    "coordinates": [
+      49.31079887964633,
+      8.447252511978151
+    ],
+    "name": {
+      "de": "WC Eventhalle Sued",
+      "en": "WC at Event Hall south"
+    },
+    "location": {
+      "de": "Technik Museum Lageplan",
+      "en": "Technik Museum site plan"
+    },
+    "summary": {
+      "de": "WC Eventhalle Sued",
+      "en": "WC at Event Hall south"
+    },
+    "description": {
+      "de": "Servicepunkt aus dem Brazzeltag-Lageplan.",
+      "en": "Service point from the Brazzeltag site plan."
+    },
+    "website": "",
+    "phone": "",
+    "email": "",
+    "image": "/assets/logos/museum-terrace.svg",
+    "useLogoMarker": false
+  },
+  {
+    "id": "wc-disabled-eventhalle-sued",
+    "type": "service",
+    "markerKind": "wc-disabled",
+    "coordinates": [
+      49.310672974458825,
+      8.44726324081421
+    ],
+    "name": {
+      "de": "Behindertengerechtes WC Eventhalle Sued",
+      "en": "Accessible WC at Event Hall south"
+    },
+    "location": {
+      "de": "Technik Museum Lageplan",
+      "en": "Technik Museum site plan"
+    },
+    "summary": {
+      "de": "Behindertengerechtes WC Eventhalle Sued",
+      "en": "Accessible WC at Event Hall south"
+    },
+    "description": {
+      "de": "Servicepunkt aus dem Brazzeltag-Lageplan.",
+      "en": "Service point from the Brazzeltag site plan."
+    },
+    "website": "",
+    "phone": "",
+    "email": "",
+    "image": "/assets/logos/museum-terrace.svg",
+    "useLogoMarker": false
+  },
+  {
+    "id": "coffee-eventhalle-sued",
+    "type": "service",
+    "markerKind": "coffee",
+    "coordinates": [
+      49.31018334011521,
+      8.446560502052309
+    ],
+    "name": {
+      "de": "Kaffee Eventhalle Sued",
+      "en": "Coffee at Event Hall south"
+    },
+    "location": {
+      "de": "Technik Museum Lageplan",
+      "en": "Technik Museum site plan"
+    },
+    "summary": {
+      "de": "Kaffee Eventhalle Sued",
+      "en": "Coffee at Event Hall south"
+    },
+    "description": {
+      "de": "Servicepunkt aus dem Brazzeltag-Lageplan.",
+      "en": "Service point from the Brazzeltag site plan."
+    },
+    "website": "",
+    "phone": "",
+    "email": "",
+    "image": "/assets/logos/museum-terrace.svg",
+    "useLogoMarker": false
+  },
+  {
+    "id": "ice-eventhalle-sued",
+    "type": "service",
+    "markerKind": "ice-cream",
+    "coordinates": [
+      49.311190582616284,
+      8.446571230888368
+    ],
+    "name": {
+      "de": "Eis Eventhalle Sued",
+      "en": "Ice cream at Event Hall south"
+    },
+    "location": {
+      "de": "Technik Museum Lageplan",
+      "en": "Technik Museum site plan"
+    },
+    "summary": {
+      "de": "Eis Eventhalle Sued",
+      "en": "Ice cream at Event Hall south"
+    },
+    "description": {
+      "de": "Servicepunkt aus dem Brazzeltag-Lageplan.",
+      "en": "Service point from the Brazzeltag site plan."
+    },
+    "website": "",
+    "phone": "",
+    "email": "",
+    "image": "/assets/logos/museum-terrace.svg",
+    "useLogoMarker": false
+  },
+  {
+    "id": "food-eventhalle-sued",
+    "type": "service",
+    "markerKind": "food",
+    "coordinates": [
+      49.31066248234535,
+      8.447456359863283
+    ],
+    "name": {
+      "de": "Essen Eventhalle Sued",
+      "en": "Food at Event Hall south"
+    },
+    "location": {
+      "de": "Technik Museum Lageplan",
+      "en": "Technik Museum site plan"
+    },
+    "summary": {
+      "de": "Essen Eventhalle Sued",
+      "en": "Food at Event Hall south"
+    },
+    "description": {
+      "de": "Servicepunkt aus dem Brazzeltag-Lageplan.",
+      "en": "Service point from the Brazzeltag site plan."
+    },
+    "website": "",
+    "phone": "",
+    "email": "",
+    "image": "/assets/logos/museum-terrace.svg",
+    "useLogoMarker": false
+  },
+  {
+    "id": "drinks-eventhalle-sued",
+    "type": "service",
+    "markerKind": "drinks",
+    "coordinates": [
+      49.31079887964633,
+      8.447445631027223
+    ],
+    "name": {
+      "de": "Getraenke Eventhalle Sued",
+      "en": "Drinks at Event Hall south"
+    },
+    "location": {
+      "de": "Technik Museum Lageplan",
+      "en": "Technik Museum site plan"
+    },
+    "summary": {
+      "de": "Getraenke Eventhalle Sued",
+      "en": "Drinks at Event Hall south"
+    },
+    "description": {
+      "de": "Servicepunkt aus dem Brazzeltag-Lageplan.",
+      "en": "Service point from the Brazzeltag site plan."
+    },
+    "website": "",
+    "phone": "",
+    "email": "",
+    "image": "/assets/logos/museum-terrace.svg",
+    "useLogoMarker": false
+  },
+  {
+    "id": "wc-wilhelmsbau-west",
+    "type": "service",
+    "markerKind": "wc",
+    "coordinates": [
+      49.312638457631856,
+      8.448679447174074
+    ],
+    "name": {
+      "de": "WC Museum Wilhelmsbau",
+      "en": "WC at Museum Wilhelmsbau"
+    },
+    "location": {
+      "de": "Technik Museum Lageplan",
+      "en": "Technik Museum site plan"
+    },
+    "summary": {
+      "de": "WC Museum Wilhelmsbau",
+      "en": "WC at Museum Wilhelmsbau"
+    },
+    "description": {
+      "de": "Servicepunkt aus dem Brazzeltag-Lageplan.",
+      "en": "Service point from the Brazzeltag site plan."
+    },
+    "website": "",
+    "phone": "",
+    "email": "",
+    "image": "/assets/logos/museum-terrace.svg",
+    "useLogoMarker": false
+  },
+  {
+    "id": "wc-wilhelmsbau-ost",
+    "type": "service",
+    "markerKind": "wc",
+    "coordinates": [
+      49.312729385560466,
+      8.449183702468874
+    ],
+    "name": {
+      "de": "WC Wilhelmsbau Ost",
+      "en": "WC at Wilhelmsbau east"
+    },
+    "location": {
+      "de": "Technik Museum Lageplan",
+      "en": "Technik Museum site plan"
+    },
+    "summary": {
+      "de": "WC Wilhelmsbau Ost",
+      "en": "WC at Wilhelmsbau east"
+    },
+    "description": {
+      "de": "Servicepunkt aus dem Brazzeltag-Lageplan.",
+      "en": "Service point from the Brazzeltag site plan."
+    },
+    "website": "",
+    "phone": "",
+    "email": "",
+    "image": "/assets/logos/museum-terrace.svg",
+    "useLogoMarker": false
+  },
+  {
+    "id": "wc-disabled-wilhelmsbau",
+    "type": "service",
+    "markerKind": "wc-disabled",
+    "coordinates": [
+      49.3127153966593,
+      8.449360728263857
+    ],
+    "name": {
+      "de": "Behindertengerechtes WC Wilhelmsbau",
+      "en": "Accessible WC at Wilhelmsbau"
+    },
+    "location": {
+      "de": "Technik Museum Lageplan",
+      "en": "Technik Museum site plan"
+    },
+    "summary": {
+      "de": "Behindertengerechtes WC Wilhelmsbau",
+      "en": "Accessible WC at Wilhelmsbau"
+    },
+    "description": {
+      "de": "Servicepunkt aus dem Brazzeltag-Lageplan.",
+      "en": "Service point from the Brazzeltag site plan."
+    },
+    "website": "",
+    "phone": "",
+    "email": "",
+    "image": "/assets/logos/museum-terrace.svg",
+    "useLogoMarker": false
+  },
+  {
+    "id": "food-wilhelmsbau",
+    "type": "service",
+    "markerKind": "food",
+    "coordinates": [
+      49.312442466045,
+      8.449809209598
+    ],
+    "name": {
+      "de": "Essen Wilhelmsbau",
+      "en": "Food at Wilhelmsbau"
+    },
+    "location": {
+      "de": "Technik Museum Lageplan",
+      "en": "Technik Museum site plan"
+    },
+    "summary": {
+      "de": "Essen Wilhelmsbau",
+      "en": "Food at Wilhelmsbau"
+    },
+    "description": {
+      "de": "Servicepunkt aus dem Brazzeltag-Lageplan.",
+      "en": "Service point from the Brazzeltag site plan."
+    },
+    "website": "",
+    "phone": "",
+    "email": "",
+    "image": "/assets/logos/museum-terrace.svg",
+    "useLogoMarker": false
+  },
+  {
+    "id": "drinks-wilhelmsbau",
+    "type": "service",
+    "markerKind": "drinks",
+    "coordinates": [
+      49.312432120555904,
+      8.449988365173342
+    ],
+    "name": {
+      "de": "Getraenke Wilhelmsbau",
+      "en": "Drinks at Wilhelmsbau"
+    },
+    "location": {
+      "de": "Technik Museum Lageplan",
+      "en": "Technik Museum site plan"
+    },
+    "summary": {
+      "de": "Getraenke Wilhelmsbau",
+      "en": "Drinks at Wilhelmsbau"
+    },
+    "description": {
+      "de": "Servicepunkt aus dem Brazzeltag-Lageplan.",
+      "en": "Service point from the Brazzeltag site plan."
+    },
+    "website": "",
+    "phone": "",
+    "email": "",
+    "image": "/assets/logos/museum-terrace.svg",
+    "useLogoMarker": false
+  },
+  {
+    "id": "beer-wilhelmsbau",
+    "type": "service",
+    "markerKind": "beer",
+    "coordinates": [
+      49.31229572777699,
+      8.449822068214418
+    ],
+    "name": {
+      "de": "Bier Wilhelmsbau",
+      "en": "Beer at Wilhelmsbau"
+    },
+    "location": {
+      "de": "Technik Museum Lageplan",
+      "en": "Technik Museum site plan"
+    },
+    "summary": {
+      "de": "Bier Wilhelmsbau",
+      "en": "Beer at Wilhelmsbau"
+    },
+    "description": {
+      "de": "Servicepunkt aus dem Brazzeltag-Lageplan.",
+      "en": "Service point from the Brazzeltag site plan."
+    },
+    "website": "",
+    "phone": "",
+    "email": "",
+    "image": "/assets/logos/museum-terrace.svg",
+    "useLogoMarker": false
+  },
+  {
+    "id": "ice-wilhelmsbau",
+    "type": "service",
+    "markerKind": "ice-cream",
+    "coordinates": [
+      49.31228873326533,
+      8.45002591609955
+    ],
+    "name": {
+      "de": "Eis Wilhelmsbau",
+      "en": "Ice cream at Wilhelmsbau"
+    },
+    "location": {
+      "de": "Technik Museum Lageplan",
+      "en": "Technik Museum site plan"
+    },
+    "summary": {
+      "de": "Eis Wilhelmsbau",
+      "en": "Ice cream at Wilhelmsbau"
+    },
+    "description": {
+      "de": "Servicepunkt aus dem Brazzeltag-Lageplan.",
+      "en": "Service point from the Brazzeltag site plan."
+    },
+    "website": "",
+    "phone": "",
+    "email": "",
+    "image": "/assets/logos/museum-terrace.svg",
+    "useLogoMarker": false
+  },
+  {
+    "id": "food-brazzelparcours-ost",
+    "type": "service",
+    "markerKind": "food",
+    "coordinates": [
+      49.310903800390115,
+      8.44829320907593
+    ],
+    "name": {
+      "de": "Essen Brazzelparcours Ost",
+      "en": "Food at Brazzelparcours east"
+    },
+    "location": {
+      "de": "Technik Museum Lageplan",
+      "en": "Technik Museum site plan"
+    },
+    "summary": {
+      "de": "Essen Brazzelparcours Ost",
+      "en": "Food at Brazzelparcours east"
+    },
+    "description": {
+      "de": "Servicepunkt aus dem Brazzeltag-Lageplan.",
+      "en": "Service point from the Brazzeltag site plan."
+    },
+    "website": "",
+    "phone": "",
+    "email": "",
+    "image": "/assets/logos/museum-terrace.svg",
+    "useLogoMarker": false
+  },
+  {
+    "id": "drinks-brazzelparcours-ost",
+    "type": "service",
+    "markerKind": "drinks",
+    "coordinates": [
+      49.310910795098415,
+      8.448475599288942
+    ],
+    "name": {
+      "de": "Getraenke Brazzelparcours Ost",
+      "en": "Drinks at Brazzelparcours east"
+    },
+    "location": {
+      "de": "Technik Museum Lageplan",
+      "en": "Technik Museum site plan"
+    },
+    "summary": {
+      "de": "Getraenke Brazzelparcours Ost",
+      "en": "Drinks at Brazzelparcours east"
+    },
+    "description": {
+      "de": "Servicepunkt aus dem Brazzeltag-Lageplan.",
+      "en": "Service point from the Brazzeltag site plan."
+    },
+    "website": "",
+    "phone": "",
+    "email": "",
+    "image": "/assets/logos/museum-terrace.svg",
+    "useLogoMarker": false
+  },
+  {
+    "id": "beer-brazzelparcours-ost",
+    "type": "service",
+    "markerKind": "beer",
+    "coordinates": [
+      49.310749916556084,
+      8.44829857349396
+    ],
+    "name": {
+      "de": "Bier Brazzelparcours Ost",
+      "en": "Beer at Brazzelparcours east"
+    },
+    "location": {
+      "de": "Technik Museum Lageplan",
+      "en": "Technik Museum site plan"
+    },
+    "summary": {
+      "de": "Bier Brazzelparcours Ost",
+      "en": "Beer at Brazzelparcours east"
+    },
+    "description": {
+      "de": "Servicepunkt aus dem Brazzeltag-Lageplan.",
+      "en": "Service point from the Brazzeltag site plan."
+    },
+    "website": "",
+    "phone": "",
+    "email": "",
+    "image": "/assets/logos/museum-terrace.svg",
+    "useLogoMarker": false
+  },
+  {
+    "id": "wc-brazzelparcours-ost",
+    "type": "service",
+    "markerKind": "wc",
+    "coordinates": [
+      49.310575780755,
+      8.449095456637
+    ],
+    "name": {
+      "de": "WC Brazzelparcours Ost",
+      "en": "WC at Brazzelparcours east"
+    },
+    "location": {
+      "de": "Technik Museum Lageplan",
+      "en": "Technik Museum site plan"
+    },
+    "summary": {
+      "de": "WC Brazzelparcours Ost",
+      "en": "WC at Brazzelparcours east"
+    },
+    "description": {
+      "de": "Servicepunkt aus dem Brazzeltag-Lageplan.",
+      "en": "Service point from the Brazzeltag site plan."
+    },
+    "website": "",
+    "phone": "",
+    "email": "",
+    "image": "/assets/logos/museum-terrace.svg",
+    "useLogoMarker": false
+  },
+  {
+    "id": "wc-raumfahrthalle",
+    "type": "service",
+    "markerKind": "wc",
+    "coordinates": [
+      49.309777639401,
+      8.446447849273683
+    ],
+    "name": {
+      "de": "WC Raumfahrthalle",
+      "en": "WC at Space Hall"
+    },
+    "location": {
+      "de": "Technik Museum Lageplan",
+      "en": "Technik Museum site plan"
+    },
+    "summary": {
+      "de": "WC Raumfahrthalle",
+      "en": "WC at Space Hall"
+    },
+    "description": {
+      "de": "Servicepunkt aus dem Brazzeltag-Lageplan.",
+      "en": "Service point from the Brazzeltag site plan."
+    },
+    "website": "",
+    "phone": "",
+    "email": "",
+    "image": "/assets/logos/museum-terrace.svg",
+    "useLogoMarker": false
+  },
+  {
+    "id": "wc-disabled-raumfahrthalle",
+    "type": "service",
+    "markerKind": "wc-disabled",
+    "coordinates": [
+      49.309735670170916,
+      8.44678044319153
+    ],
+    "name": {
+      "de": "Behindertengerechtes WC Raumfahrthalle",
+      "en": "Accessible WC at Space Hall"
+    },
+    "location": {
+      "de": "Technik Museum Lageplan",
+      "en": "Technik Museum site plan"
+    },
+    "summary": {
+      "de": "Behindertengerechtes WC Raumfahrthalle",
+      "en": "Accessible WC at Space Hall"
+    },
+    "description": {
+      "de": "Servicepunkt aus dem Brazzeltag-Lageplan.",
+      "en": "Service point from the Brazzeltag site plan."
+    },
+    "website": "",
+    "phone": "",
+    "email": "",
+    "image": "/assets/logos/museum-terrace.svg",
+    "useLogoMarker": false
+  },
+  {
+    "id": "museum-info-point",
+    "type": "service",
+    "markerKind": "info",
+    "coordinates": [
+      49.311416154171,
+      8.446969034106
+    ],
+    "name": {
+      "de": "Infopunkt Besucher",
+      "en": "Visitor Information"
+    },
+    "location": {
+      "de": "Zentraler Museumsbereich",
+      "en": "Central museum area"
+    },
+    "summary": {
+      "de": "Infopunkt fuer Besucher laut Lageplan.",
+      "en": "Visitor information point according to the site plan."
+    },
+    "description": {
+      "de": "Der gruene Infopunkt ist im Lageplan zwischen Seenotrettungskreuzer, U9 und Brazzelparcours markiert.",
+      "en": "The green information point is marked between the sea rescue cruiser, U9 and Brazzelparcours."
     },
     "website": "",
     "phone": "",
@@ -1050,16 +2420,46 @@
     "useLogoMarker": false
   },
   {
-    "id": "entry-mow31g00",
-    "type": "building",
-    "markerKind": "airplane",
+    "id": "museum-first-aid-north",
+    "type": "service",
+    "markerKind": "first-aid",
     "coordinates": [
-      49.31134451553655,
-      8.44951629638672
+      49.31178512581562,
+      8.44827175140381
     ],
     "name": {
-      "de": "Transall C160",
-      "en": "Transall C160"
+      "de": "Sanitaeter Brazzelarena",
+      "en": "First Aid Brazzelarena"
+    },
+    "location": {
+      "de": "Zwischen Brazzelarena und Brazzelparcours",
+      "en": "Between Brazzelarena and Brazzelparcours"
+    },
+    "summary": {
+      "de": "Sanitaetspunkt im noerdlichen zentralen Museumsbereich.",
+      "en": "First-aid point in the northern central museum area."
+    },
+    "description": {
+      "de": "Sanitaetspunkt aus dem Brazzeltag-Lageplan.",
+      "en": "First-aid point from the Brazzeltag site plan."
+    },
+    "website": "",
+    "phone": "",
+    "email": "",
+    "image": "/assets/logos/first-aid.svg",
+    "useLogoMarker": false
+  },
+  {
+    "id": "entry-mow5mlnd",
+    "type": "service",
+    "markerKind": "wc",
+    "coordinates": [
+      49.3106030269934,
+      8.447692394256594
+    ],
+    "name": {
+      "de": "Neuer Eintrag",
+      "en": "New entry"
     },
     "location": {
       "de": "",

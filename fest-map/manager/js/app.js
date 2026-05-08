@@ -32,6 +32,54 @@ const overlayPalette = {
     routeColor: "#2388ff",
     arrowClass: "taxi-arrow-icon taxi-arrow-icon--event",
   },
+  eventRed: {
+    color: "#e33a43",
+    fillColor: "#e33a43",
+    routeColor: "#e33a43",
+    arrowClass: "taxi-arrow-icon taxi-arrow-icon--event",
+  },
+  eventGreen: {
+    color: "#49b34f",
+    fillColor: "#49b34f",
+    routeColor: "#49b34f",
+    arrowClass: "taxi-arrow-icon taxi-arrow-icon--event",
+  },
+  eventPurple: {
+    color: "#7b58b0",
+    fillColor: "#7b58b0",
+    routeColor: "#7b58b0",
+    arrowClass: "taxi-arrow-icon taxi-arrow-icon--event",
+  },
+  eventCyan: {
+    color: "#39a9d2",
+    fillColor: "#39a9d2",
+    routeColor: "#39a9d2",
+    arrowClass: "taxi-arrow-icon taxi-arrow-icon--event",
+  },
+  eventYellow: {
+    color: "#d0c42b",
+    fillColor: "#d0c42b",
+    routeColor: "#d0c42b",
+    arrowClass: "taxi-arrow-icon taxi-arrow-icon--event",
+  },
+  eventPink: {
+    color: "#e51b93",
+    fillColor: "#e51b93",
+    routeColor: "#e51b93",
+    arrowClass: "taxi-arrow-icon taxi-arrow-icon--event",
+  },
+  eventOrange: {
+    color: "#e89734",
+    fillColor: "#e89734",
+    routeColor: "#e89734",
+    arrowClass: "taxi-arrow-icon taxi-arrow-icon--event",
+  },
+  eventTeal: {
+    color: "#00a99d",
+    fillColor: "#00a99d",
+    routeColor: "#00a99d",
+    arrowClass: "taxi-arrow-icon taxi-arrow-icon--event",
+  },
 };
 
 const overlayCategoryDefaults = {
@@ -117,6 +165,8 @@ function createDefaultEntry(coordinates) {
     id: `entry-${idSeed}`,
     type: "service",
     markerKind: "info",
+    markerLabel: "",
+    markerTone: "",
     coordinates: cloneCoordinates(coordinates),
     name: { de: "Neuer Eintrag", en: "New entry" },
     location: { de: "", en: "" },
@@ -135,6 +185,7 @@ function createDefaultEvent() {
 
   return {
     id: `event-${idSeed}`,
+    date: "2026-05-09",
     time: "10:00",
     title: { de: "Neuer Programmpunkt", en: "New timetable entry" },
     description: { de: "", en: "" },
@@ -662,6 +713,8 @@ class ManagerApp {
     elements.id.value = entry.id;
     elements.type.value = entry.type;
     elements.markerKind.value = entry.markerKind;
+    elements.markerLabel.value = entry.markerLabel ?? "";
+    elements.markerTone.value = entry.markerTone ?? "";
     elements.useLogoMarker.checked = Boolean(entry.useLogoMarker);
     elements.image.value = entry.image ?? "";
     elements.latitude.value = entry.coordinates[0];
@@ -706,14 +759,14 @@ class ManagerApp {
   renderEventList() {
     this.eventCountNode.textContent = `${this.state.events.length} total`;
     this.eventListNode.innerHTML = [...this.state.events]
-      .sort((left, right) => left.time.localeCompare(right.time))
+      .sort((left, right) => `${left.date ?? ""} ${left.time ?? ""}`.localeCompare(`${right.date ?? ""} ${right.time ?? ""}`))
       .map((event) => {
         const isActive = event.id === this.state.selectedEventId;
         const linkedEntry = this.state.entities.find((entry) => entry.id === event.locationEntryId);
 
         return `
           <button type="button" class="manager-list-item ${isActive ? "is-active" : ""}" data-event-id="${escapeHtml(event.id)}">
-            <strong>${escapeHtml(event.time || "--:--")} · ${escapeHtml(localizedText(event.title) || event.id)}</strong>
+            <strong>${escapeHtml(event.date || "no date")} ${escapeHtml(event.time || "--:--")} · ${escapeHtml(localizedText(event.title) || event.id)}</strong>
             <span>${escapeHtml(linkedEntry ? localizedText(linkedEntry.name) : "")}</span>
             <small>${escapeHtml(localizedText(event.description))}</small>
           </button>
@@ -743,6 +796,7 @@ class ManagerApp {
 
     const { elements } = this.eventForm;
     elements.id.value = event.id;
+    elements.date.value = event.date ?? "";
     elements.time.value = event.time ?? "";
     elements.locationEntryId.value = event.locationEntryId ?? "";
     elements.titleDe.value = event.title?.de ?? "";
@@ -789,6 +843,17 @@ class ManagerApp {
     entry.id = slugify(elements.id.value, entry.id);
     entry.type = elements.type.value;
     entry.markerKind = elements.markerKind.value;
+    entry.markerLabel = elements.markerLabel.value.trim();
+    entry.markerTone = elements.markerTone.value;
+
+    if (!entry.markerLabel) {
+      delete entry.markerLabel;
+    }
+
+    if (!entry.markerTone) {
+      delete entry.markerTone;
+    }
+
     entry.useLogoMarker = elements.useLogoMarker.checked;
     entry.image = elements.image.value.trim();
     entry.coordinates = [
@@ -817,6 +882,7 @@ class ManagerApp {
 
     const { elements } = this.eventForm;
     event.id = slugify(elements.id.value, event.id);
+    event.date = elements.date.value;
     event.time = elements.time.value;
     event.locationEntryId = elements.locationEntryId.value;
     event.title = { de: elements.titleDe.value, en: elements.titleEn.value };
@@ -840,7 +906,7 @@ class ManagerApp {
 
     const defaults = overlayCategoryDefaults[overlay.category] ?? overlayCategoryDefaults.area;
 
-    overlay.tone = overlay.category === "event" ? "eventBlue" : elements.tone.value || defaults.tone;
+    overlay.tone = elements.tone.value || defaults.tone;
     elements.tone.value = overlay.tone;
     overlay.label = { de: elements.labelDe.value, en: elements.labelEn.value };
     overlay.weight = parseNumber(elements.weight.value, null);

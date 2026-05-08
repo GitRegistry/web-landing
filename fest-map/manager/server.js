@@ -24,19 +24,48 @@ const upload = multer({
   },
 });
 
-const tones = new Set(["cyan", "light", "parking", "alert", "eventBlue"]);
+const tones = new Set([
+  "cyan",
+  "light",
+  "parking",
+  "alert",
+  "eventBlue",
+  "eventRed",
+  "eventGreen",
+  "eventPurple",
+  "eventCyan",
+  "eventYellow",
+  "eventPink",
+  "eventOrange",
+  "eventTeal",
+]);
+const markerTones = new Set([
+  "eventBlue",
+  "eventRed",
+  "eventGreen",
+  "eventPurple",
+  "eventCyan",
+  "eventYellow",
+  "eventPink",
+  "eventOrange",
+  "eventTeal",
+]);
 const overlayCategories = new Set(["parking", "exit", "fence", "route", "area", "event"]);
 const entityTypes = new Set(["building", "area", "service", "entry"]);
 const markerKinds = new Set([
   "area",
   "airplane",
   "authority",
+  "beer",
   "boat",
   "building",
   "club",
+  "coffee",
+  "disabled-parking",
   "drink",
   "drinks",
   "exit",
+  "first-aid",
   "flight",
   "food",
   "gate",
@@ -44,11 +73,14 @@ const markerKinds = new Set([
   "hub",
   "ice-cream",
   "info",
+  "numbered",
   "parking",
   "parking-direction-t",
   "restaurant",
   "school",
+  "shop",
   "submarine",
+  "ticket",
   "toilet",
   "wc",
   "wc-disabled",
@@ -121,8 +153,10 @@ function normalizeEntity(entity, index) {
   const markerKind = markerKinds.has(entity.markerKind) ? entity.markerKind : "info";
   const type = entityTypes.has(entity.type) ? entity.type : "service";
   const image = String(entity.image ?? "").trim();
+  const markerLabel = String(entity.markerLabel ?? "").trim();
+  const markerTone = markerTones.has(entity.markerTone) ? entity.markerTone : "";
 
-  return {
+  const normalized = {
     id: slugify(entity.id, fallbackId),
     type,
     markerKind,
@@ -137,6 +171,16 @@ function normalizeEntity(entity, index) {
     image,
     useLogoMarker: Boolean(entity.useLogoMarker),
   };
+
+  if (markerLabel) {
+    normalized.markerLabel = markerLabel;
+  }
+
+  if (markerTone) {
+    normalized.markerTone = markerTone;
+  }
+
+  return normalized;
 }
 
 function normalizePointList(points) {
@@ -186,6 +230,7 @@ function normalizeOverlay(overlay, index) {
 function normalizeEvent(event, index) {
   return {
     id: slugify(event.id, `event-${index + 1}`),
+    date: String(event.date ?? "").trim(),
     time: String(event.time ?? "").trim(),
     title: normalizeLocalizedText(event.title),
     description: normalizeLocalizedText(event.description),
@@ -312,7 +357,9 @@ app.put("/api/events", async (request, response, next) => {
       return;
     }
 
-    const normalized = input.map(normalizeEvent).sort((left, right) => left.time.localeCompare(right.time));
+    const normalized = input
+      .map(normalizeEvent)
+      .sort((left, right) => `${left.date} ${left.time}`.localeCompare(`${right.date} ${right.time}`));
     await writeJson(eventsPath, normalized);
     okJson(response, { ok: true, count: normalized.length });
   } catch (error) {

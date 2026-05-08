@@ -58,11 +58,13 @@
       ]
     ],
     "tone": "parking",
-    "weight": 0,
-    "opacity": 0,
-    "fillOpacity": 0.13,
+    "weight": 1,
+    "opacity": 1,
+    "fillOpacity": 0.43,
     "dashArray": "",
-    "arrowFractions": [],
+    "arrowFractions": [
+      0
+    ],
     "category": "parking"
   },
   {
@@ -91,11 +93,13 @@
       ]
     ],
     "tone": "parking",
-    "weight": 0,
-    "opacity": 0,
-    "fillOpacity": 0.13,
+    "weight": 1,
+    "opacity": 1,
+    "fillOpacity": 0.4,
     "dashArray": "",
-    "arrowFractions": [],
+    "arrowFractions": [
+      0
+    ],
     "category": "parking"
   },
   {
@@ -341,46 +345,345 @@
     "category": "area"
   },
   {
-    "id": "polygon-mow35ic1",
+    "id": "brazzelparcours-area",
     "kind": "polygon",
     "label": {
       "de": "Brazzelparcours",
-      "en": "Brazzelparcous"
+      "en": "Brazzelparcours"
     },
     "points": [
       [
-        49.311064829819074,
-        8.445986509323122
+        49.31046662915015,
+        8.446603417396547
       ],
       [
-        49.31158923923678,
-        8.448411226272585
+        49.31109615450666,
+        8.4462708234787
       ],
       [
-        49.31069424379756,
-        8.448904752731325
+        49.31161026091361,
+        8.448384404182436
       ],
       [
-        49.31037260083986,
-        8.447424173355104
+        49.31084784268791,
+        8.4487920999527
       ],
       [
-        49.31053342258122,
-        8.44704866409302
+        49.310526084666726,
+        8.447365164756777
       ],
       [
-        49.31037959310041,
-        8.446319103240969
+        49.310557561087606,
+        8.447005748748781
       ]
     ],
-    "tone": "cyan",
-    "weight": 0,
-    "opacity": 0,
+    "tone": "eventRed",
+    "weight": 2.5,
+    "opacity": 0.9,
     "fillOpacity": 0.12,
     "dashArray": "",
-    "arrowFractions": [
-      0
+    "arrowFractions": [],
+    "category": "event"
+  },
+  {
+    "id": "brazzelarena-area",
+    "kind": "polygon",
+    "label": {
+      "de": "Brazzelarena",
+      "en": "Brazzelarena"
+    },
+    "points": [
+      [
+        49.31162075282526,
+        8.448556065559389
+      ],
+      [
+        49.31232370581372,
+        8.448143005371096
+      ],
+      [
+        49.31266643547391,
+        8.449602127075197
+      ],
+      [
+        49.31197397921261,
+        8.449999094009401
+      ]
     ],
-    "category": "area"
+    "tone": "eventBlue",
+    "weight": 2.5,
+    "opacity": 0.9,
+    "fillOpacity": 0.12,
+    "dashArray": "",
+    "arrowFractions": [],
+    "category": "event"
+  },
+  {
+    "id": "brazzel-wasteland-area",
+    "kind": "polygon",
+    "label": {
+      "de": "Brazzel-Wasteland",
+      "en": "Brazzel-Wasteland"
+    },
+    "points": [
+      [
+        49.30985108546762,
+        8.447569012641909
+      ],
+      [
+        49.31012388418498,
+        8.447434902191164
+      ],
+      [
+        49.310326733534026,
+        8.448389768600466
+      ],
+      [
+        49.310302251760355,
+        8.448877930641176
+      ],
+      [
+        49.3101483660473,
+        8.448931574821474
+      ]
+    ],
+    "tone": "eventGreen",
+    "weight": 2.5,
+    "opacity": 0.9,
+    "fillOpacity": 0.12,
+    "dashArray": "",
+    "arrowFractions": [],
+    "category": "event"
+  },
+  {
+    "id": "transall-c160-area",
+    "kind": "polygon",
+    "label": {
+      "de": "Transall C160",
+      "en": "Transall C160"
+    },
+    "points": [
+      [
+        49.310952763327386,
+        8.449237346649172
+      ],
+      [
+        49.31160326630463,
+        8.448872566223146
+      ],
+      [
+        49.31183408787695,
+        8.449881076812746
+      ],
+      [
+        49.311190582616284,
+        8.450213670730593
+      ]
+    ],
+    "tone": "eventPurple",
+    "weight": 2.5,
+    "opacity": 0.9,
+    "fillOpacity": 0.12,
+    "dashArray": "",
+    "arrowFractions": [],
+    "category": "event"
+  },
+  {
+    "id": "seenotrettungskreuzer-area",
+    "kind": "polygon",
+    "label": {
+      "de": "Seenotrettungskreuzer",
+      "en": "Sea Rescue Cruiser"
+    },
+    "points": [
+      [
+        49.311368946329516,
+        8.447086215019228
+      ],
+      [
+        49.31184457974092,
+        8.4467750787735
+      ],
+      [
+        49.31199846015553,
+        8.447450995445253
+      ],
+      [
+        49.311519330919275,
+        8.447746038436891
+      ]
+    ],
+    "tone": "eventCyan",
+    "weight": 2.5,
+    "opacity": 0.9,
+    "fillOpacity": 0.12,
+    "dashArray": "",
+    "arrowFractions": [],
+    "category": "event"
+  },
+  {
+    "id": "u9-area",
+    "kind": "polygon",
+    "label": {
+      "de": "U9",
+      "en": "U9"
+    },
+    "points": [
+      [
+        49.31154031477903,
+        8.44778895378113
+      ],
+      [
+        49.31201244926027,
+        8.447504639625551
+      ],
+      [
+        49.31207889745364,
+        8.447837233543398
+      ],
+      [
+        49.31161026091361,
+        8.448110818862917
+      ]
+    ],
+    "tone": "eventYellow",
+    "weight": 2.5,
+    "opacity": 0.9,
+    "fillOpacity": 0.14,
+    "dashArray": "",
+    "arrowFractions": [],
+    "category": "event"
+  },
+  {
+    "id": "flugplatz-area",
+    "kind": "polygon",
+    "label": {
+      "de": "Flugplatz",
+      "en": "Airfield"
+    },
+    "points": [
+      [
+        49.30988081360631,
+        8.448920845985414
+      ],
+      [
+        49.30995775694081,
+        8.448888659477236
+      ],
+      [
+        49.31000672081838,
+        8.449116647243502
+      ],
+      [
+        49.30992977756034,
+        8.44914346933365
+      ]
+    ],
+    "tone": "eventPink",
+    "weight": 2.5,
+    "opacity": 0.9,
+    "fillOpacity": 0.12,
+    "dashArray": "",
+    "arrowFractions": [],
+    "category": "event"
+  },
+  {
+    "id": "boeing-747-area",
+    "kind": "polygon",
+    "label": {
+      "de": "Boeing 747",
+      "en": "Boeing 747"
+    },
+    "points": [
+      [
+        49.31030574915734,
+        8.445498347282411
+      ],
+      [
+        49.31087582154695,
+        8.445171117782595
+      ],
+      [
+        49.31102620764208,
+        8.445900678634645
+      ],
+      [
+        49.31046313176459,
+        8.446201086044313
+      ]
+    ],
+    "tone": "eventOrange",
+    "weight": 2.5,
+    "opacity": 0.9,
+    "fillOpacity": 0.12,
+    "dashArray": "",
+    "arrowFractions": [],
+    "category": "event"
+  },
+  {
+    "id": "burnout-crew-area",
+    "kind": "polygon",
+    "label": {
+      "de": "Burnout-Crew",
+      "en": "Burnout Crew"
+    },
+    "points": [
+      [
+        49.3102253089639,
+        8.44777286052704
+      ],
+      [
+        49.310470126535456,
+        8.447633385658266
+      ],
+      [
+        49.310634503365144,
+        8.448389768600466
+      ],
+      [
+        49.31039668139176,
+        8.448507785797121
+      ]
+    ],
+    "tone": "eventTeal",
+    "weight": 2.5,
+    "opacity": 0.9,
+    "fillOpacity": 0.14,
+    "dashArray": "",
+    "arrowFractions": [],
+    "category": "event"
+  },
+  {
+    "id": "start-jet-schoolbus-area",
+    "kind": "polygon",
+    "label": {
+      "de": "Start Jet Schoolbus",
+      "en": "Start Jet Schoolbus"
+    },
+    "points": [
+      [
+        49.31034422050775,
+        8.448598980903627
+      ],
+      [
+        49.31064499548457,
+        8.448443412780763
+      ],
+      [
+        49.3107359270928,
+        8.448851108551027
+      ],
+      [
+        49.310421163118484,
+        8.44903349876404
+      ]
+    ],
+    "tone": "eventGreen",
+    "weight": 2.5,
+    "opacity": 0.9,
+    "fillOpacity": 0.12,
+    "dashArray": "",
+    "arrowFractions": [],
+    "category": "event"
   }
 ]

@@ -91,12 +91,16 @@
                     <option value="area">Area</option>
                     <option value="airplane">Airplane</option>
                     <option value="authority">Authority</option>
+                    <option value="beer">Beer</option>
                     <option value="boat">Boat</option>
                     <option value="building">Building</option>
                     <option value="club">Club</option>
+                    <option value="coffee">Coffee</option>
+                    <option value="disabled-parking">Disabled Parking</option>
                     <option value="drink">Drink</option>
                     <option value="drinks">Drinks</option>
                     <option value="exit">Exit</option>
+                    <option value="first-aid">First Aid</option>
                     <option value="flight">Flight</option>
                     <option value="food">Food</option>
                     <option value="gate">Gate</option>
@@ -104,14 +108,38 @@
                     <option value="hub">Hub</option>
                     <option value="ice-cream">Ice Cream</option>
                     <option value="info">Info</option>
+                    <option value="numbered">Numbered</option>
                     <option value="parking">Parking</option>
                     <option value="parking-direction-t">Parking T</option>
                     <option value="restaurant">Restaurant</option>
                     <option value="school">School</option>
+                    <option value="shop">Shop</option>
                     <option value="submarine">Submarine</option>
+                    <option value="ticket">Ticket</option>
                     <option value="toilet">Toilet</option>
                     <option value="wc">WC</option>
                     <option value="wc-disabled">WC Disabled</option>
+                  </select>
+                </label>
+              </div>
+              <div class="manager-field-grid">
+                <label class="manager-field">
+                  <span>Marker label</span>
+                  <input type="text" name="markerLabel" maxlength="3" autocomplete="off" placeholder="1">
+                </label>
+                <label class="manager-field">
+                  <span>Marker tone</span>
+                  <select name="markerTone">
+                    <option value="">Default</option>
+                    <option value="eventRed">Event Red</option>
+                    <option value="eventBlue">Event Blue</option>
+                    <option value="eventGreen">Event Green</option>
+                    <option value="eventPurple">Event Purple</option>
+                    <option value="eventCyan">Event Cyan</option>
+                    <option value="eventYellow">Event Yellow</option>
+                    <option value="eventPink">Event Pink</option>
+                    <option value="eventOrange">Event Orange</option>
+                    <option value="eventTeal">Event Teal</option>
                   </select>
                 </label>
               </div>
@@ -231,6 +259,14 @@
                     <option value="parking">Parking</option>
                     <option value="alert">Alert</option>
                     <option value="eventBlue">Event Blue</option>
+                    <option value="eventRed">Event Red</option>
+                    <option value="eventGreen">Event Green</option>
+                    <option value="eventPurple">Event Purple</option>
+                    <option value="eventCyan">Event Cyan</option>
+                    <option value="eventYellow">Event Yellow</option>
+                    <option value="eventPink">Event Pink</option>
+                    <option value="eventOrange">Event Orange</option>
+                    <option value="eventTeal">Event Teal</option>
                   </select>
                 </label>
                 <label class="manager-field">
@@ -294,6 +330,10 @@
                 <label class="manager-field">
                   <span>ID</span>
                   <input type="text" name="id" autocomplete="off">
+                </label>
+                <label class="manager-field">
+                  <span>Date</span>
+                  <input type="date" name="date">
                 </label>
                 <label class="manager-field">
                   <span>Time</span>

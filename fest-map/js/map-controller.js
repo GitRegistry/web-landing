@@ -31,6 +31,54 @@ const overlayPalette = {
     routeColor: "#2388ff",
     arrowClass: "taxi-arrow-icon taxi-arrow-icon--event",
   },
+  eventRed: {
+    color: "#e33a43",
+    fillColor: "#e33a43",
+    routeColor: "#e33a43",
+    arrowClass: "taxi-arrow-icon taxi-arrow-icon--event",
+  },
+  eventGreen: {
+    color: "#49b34f",
+    fillColor: "#49b34f",
+    routeColor: "#49b34f",
+    arrowClass: "taxi-arrow-icon taxi-arrow-icon--event",
+  },
+  eventPurple: {
+    color: "#7b58b0",
+    fillColor: "#7b58b0",
+    routeColor: "#7b58b0",
+    arrowClass: "taxi-arrow-icon taxi-arrow-icon--event",
+  },
+  eventCyan: {
+    color: "#39a9d2",
+    fillColor: "#39a9d2",
+    routeColor: "#39a9d2",
+    arrowClass: "taxi-arrow-icon taxi-arrow-icon--event",
+  },
+  eventYellow: {
+    color: "#d0c42b",
+    fillColor: "#d0c42b",
+    routeColor: "#d0c42b",
+    arrowClass: "taxi-arrow-icon taxi-arrow-icon--event",
+  },
+  eventPink: {
+    color: "#e51b93",
+    fillColor: "#e51b93",
+    routeColor: "#e51b93",
+    arrowClass: "taxi-arrow-icon taxi-arrow-icon--event",
+  },
+  eventOrange: {
+    color: "#e89734",
+    fillColor: "#e89734",
+    routeColor: "#e89734",
+    arrowClass: "taxi-arrow-icon taxi-arrow-icon--event",
+  },
+  eventTeal: {
+    color: "#00a99d",
+    fillColor: "#00a99d",
+    routeColor: "#00a99d",
+    arrowClass: "taxi-arrow-icon taxi-arrow-icon--event",
+  },
 };
 
 function escapeHtml(value) {

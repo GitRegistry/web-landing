@@ -272,6 +272,31 @@ entity-sheet[data-state="expanded"] .bottom-sheet {
   font-size: 1rem;
 }
 
+.event-day-tabs {
+  display: flex;
+  gap: 6px;
+}
+
+.event-day-tab {
+  appearance: none;
+  min-height: 34px;
+  padding: 7px 10px;
+  border: 1px solid rgba(29, 111, 189, 0.2);
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.62);
+  color: #1d6fbd;
+  font: inherit;
+  font-size: 0.78rem;
+  font-weight: 800;
+}
+
+.event-day-tab.is-active {
+  background: #1d6fbd;
+  color: #ffffff;
+  border-color: transparent;
+  box-shadow: 0 10px 18px rgba(29, 111, 189, 0.18);
+}
+
 .event-list {
   display: grid;
   gap: 10px;
@@ -732,6 +757,18 @@ entity-sheet[data-view="events"][data-state="expanded"] .event-list {
   filter: drop-shadow(0 1px 0 rgba(19, 50, 71, 0.12));
 }
 
+.entity-pin__label {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 1.25em;
+  font-size: 1.12rem;
+  font-weight: 900;
+  line-height: 1;
+  color: #ffffff;
+  letter-spacing: -0.04em;
+}
+
 .entity-pin--area {
   --pin-fill: #35a6d4;
   --pin-fill-strong: #67c7ee;
@@ -740,6 +777,11 @@ entity-sheet[data-view="events"][data-state="expanded"] .event-list {
 .entity-pin--airplane {
   --pin-fill: #517cc6;
   --pin-fill-strong: #7fa5e6;
+}
+
+.entity-pin--beer {
+  --pin-fill: #9c6a2f;
+  --pin-fill-strong: #c58d4d;
 }
 
 .entity-pin--authority {
@@ -762,6 +804,16 @@ entity-sheet[data-view="events"][data-state="expanded"] .event-list {
   --pin-fill-strong: #a7b85f;
 }
 
+.entity-pin--coffee {
+  --pin-fill: #8c6447;
+  --pin-fill-strong: #b88d6e;
+}
+
+.entity-pin--disabled-parking {
+  --pin-fill: #5776b9;
+  --pin-fill-strong: #7f9add;
+}
+
 .entity-pin--drink {
   --pin-fill: #2c9485;
   --pin-fill-strong: #58bbad;
@@ -775,6 +827,11 @@ entity-sheet[data-view="events"][data-state="expanded"] .event-list {
 .entity-pin--exit {
   --pin-fill: #c96a31;
   --pin-fill-strong: #eca164;
+}
+
+.entity-pin--first-aid {
+  --pin-fill: #d0343f;
+  --pin-fill-strong: #f0646d;
 }
 
 .entity-pin--flight {
@@ -812,6 +869,11 @@ entity-sheet[data-view="events"][data-state="expanded"] .event-list {
   --pin-fill-strong: #66acdf;
 }
 
+.entity-pin--numbered {
+  --pin-fill: #235da8;
+  --pin-fill-strong: #4c88d6;
+}
+
 .entity-pin--parking {
   --pin-fill: #7a8794;
   --pin-fill-strong: #a0aeba;
@@ -832,9 +894,19 @@ entity-sheet[data-view="events"][data-state="expanded"] .event-list {
   --pin-fill-strong: #ba9663;
 }
 
+.entity-pin--shop {
+  --pin-fill: #d17026;
+  --pin-fill-strong: #efa557;
+}
+
 .entity-pin--submarine {
   --pin-fill: #596d88;
   --pin-fill-strong: #8ea3b8;
+}
+
+.entity-pin--ticket {
+  --pin-fill: #d38327;
+  --pin-fill-strong: #f0b15f;
 }
 
 .entity-pin--toilet {

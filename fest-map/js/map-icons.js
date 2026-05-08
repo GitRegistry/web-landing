@@ -76,6 +76,21 @@ const iconMarkup = {
       <path d="M10 13h4"></path>
     </svg>
   `,
+  beer: `
+    <svg viewBox="0 0 24 24" aria-hidden="true">
+      <path d="M7 5h9v12a3 3 0 0 1-3 3h-3a3 3 0 0 1-3-3V5Z"></path>
+      <path d="M16 8h2a2 2 0 0 1 0 4h-2"></path>
+      <path d="M9 8h5"></path>
+    </svg>
+  `,
+  coffee: `
+    <svg viewBox="0 0 24 24" aria-hidden="true">
+      <path d="M6 9h10v4a4 4 0 0 1-4 4h-2a4 4 0 0 1-4-4V9Z"></path>
+      <path d="M16 10h2a2 2 0 0 1 0 4h-2"></path>
+      <path d="M8 5v2"></path>
+      <path d="M12 5v2"></path>
+    </svg>
+  `,
   gate: `
     <svg viewBox="0 0 24 24" aria-hidden="true">
       <path d="M4 12h16"></path>
@@ -111,6 +126,14 @@ const iconMarkup = {
       <path d="M10 16V8h4a2.5 2.5 0 1 1 0 5h-4"></path>
     </svg>
   `,
+  "disabled-parking": `
+    <svg viewBox="0 0 24 24" aria-hidden="true">
+      <rect x="4" y="4" width="16" height="16" rx="3"></rect>
+      <circle cx="11" cy="8" r="1.5"></circle>
+      <path d="M11 10v4h4l2 3"></path>
+      <path d="M10 13a4 4 0 1 0 4 4"></path>
+    </svg>
+  `,
   "parking-direction-t": `
     <svg viewBox="0 0 24 24" aria-hidden="true">
       <path d="M5 6h14"></path>
@@ -142,6 +165,14 @@ const iconMarkup = {
       <path d="M16 3c2 1.5 3 4.5 2 8h-2"></path>
     </svg>
   `,
+  "first-aid": `
+    <svg viewBox="0 0 24 24" aria-hidden="true">
+      <rect x="5" y="5" width="14" height="14" rx="3"></rect>
+      <path d="M12 8v8"></path>
+      <path d="M8 12h8"></path>
+    </svg>
+  `,
+  numbered: "",
   submarine: `
     <svg viewBox="0 0 24 24" aria-hidden="true">
       <path d="M4 14c2-4 12-4 16 0-2 4-12 4-16 0Z"></path>
@@ -168,6 +199,58 @@ const iconMarkup = {
       <path d="M9 12a5 5 0 1 0 5 5"></path>
     </svg>
   `,
+  shop: `
+    <svg viewBox="0 0 24 24" aria-hidden="true">
+      <path d="M6 9h12l-1 11H7L6 9Z"></path>
+      <path d="M9 9a3 3 0 0 1 6 0"></path>
+      <path d="M8 13h8"></path>
+    </svg>
+  `,
+  ticket: `
+    <svg viewBox="0 0 24 24" aria-hidden="true">
+      <path d="M5 8h14v3a2 2 0 0 0 0 4v3H5v-3a2 2 0 0 0 0-4V8Z"></path>
+      <path d="M10 9v10"></path>
+    </svg>
+  `,
+};
+
+const markerToneStyles = {
+  eventRed: {
+    fill: "#bd282e",
+    fillStrong: "#ec5157",
+  },
+  eventBlue: {
+    fill: "#235da8",
+    fillStrong: "#4c88d6",
+  },
+  eventGreen: {
+    fill: "#39933f",
+    fillStrong: "#65bf68",
+  },
+  eventPurple: {
+    fill: "#6f4ba4",
+    fillStrong: "#9670d2",
+  },
+  eventCyan: {
+    fill: "#2f8db5",
+    fillStrong: "#61b9dc",
+  },
+  eventYellow: {
+    fill: "#b6a81f",
+    fillStrong: "#dfd34a",
+  },
+  eventPink: {
+    fill: "#d91588",
+    fillStrong: "#f15aaa",
+  },
+  eventOrange: {
+    fill: "#df8b2c",
+    fillStrong: "#f3b25e",
+  },
+  eventTeal: {
+    fill: "#009b8f",
+    fillStrong: "#39c4b8",
+  },
 };
 
 const iconClassByKind = {
@@ -175,11 +258,15 @@ const iconClassByKind = {
   airplane: "airplane",
   authority: "authority",
   boat: "boat",
+  beer: "beer",
   building: "building",
   club: "club",
+  coffee: "coffee",
+  "disabled-parking": "disabled-parking",
   drink: "drink",
   drinks: "drinks",
   exit: "exit",
+  "first-aid": "first-aid",
   flight: "flight",
   food: "food",
   gate: "gate",
@@ -187,11 +274,14 @@ const iconClassByKind = {
   hub: "hub",
   "ice-cream": "ice-cream",
   info: "info",
+  numbered: "numbered",
   parking: "parking",
   "parking-direction-t": "parking-direction-t",
   restaurant: "restaurant",
   school: "school",
+  shop: "shop",
   submarine: "submarine",
+  ticket: "ticket",
   toilet: "toilet",
   wc: "wc",
   "wc-disabled": "wc-disabled",
@@ -201,13 +291,25 @@ const operationalMarkerKinds = new Set([
   "area",
   "airplane",
   "authority",
+  "beer",
   "boat",
+  "coffee",
+  "disabled-parking",
+  "drink",
+  "drinks",
   "exit",
+  "first-aid",
   "flight",
+  "food",
   "gate",
+  "ice-cream",
+  "numbered",
   "parking",
   "parking-direction-t",
+  "restaurant",
+  "shop",
   "submarine",
+  "ticket",
   "toilet",
   "wc",
   "wc-disabled",
@@ -232,6 +334,8 @@ function normalizeMarkerInput(input) {
     return {
       kind: input.markerKind ?? input.type ?? "info",
       image: input.image,
+      markerLabel: input.markerLabel,
+      markerTone: input.markerTone,
       useLogoMarker: Boolean(input.useLogoMarker),
       name: input.name,
     };
@@ -240,6 +344,8 @@ function normalizeMarkerInput(input) {
   return {
     kind: input ?? "info",
     image: "",
+    markerLabel: "",
+    markerTone: "",
     useLogoMarker: false,
     name: "",
   };
@@ -249,15 +355,23 @@ export function createEntityMarkerIcon(input, { selected = false } = {}) {
   const entity = normalizeMarkerInput(input);
   const kind = entity.kind;
   const iconKind = iconClassByKind[kind] ?? "info";
-  const shouldUseLogo = entity.useLogoMarker && entity.image && !operationalMarkerKinds.has(iconKind);
+  const markerLabel = String(entity.markerLabel ?? "").trim();
+  const shouldUseLabel = iconKind === "numbered" || markerLabel;
+  const shouldUseLogo = entity.useLogoMarker && entity.image && !shouldUseLabel && !operationalMarkerKinds.has(iconKind);
+  const toneStyle = markerToneStyles[entity.markerTone];
+  const styleAttribute = toneStyle
+    ? ` style="--pin-fill: ${toneStyle.fill}; --pin-fill-strong: ${toneStyle.fillStrong};"`
+    : "";
   const markup = shouldUseLogo
     ? `<img class="entity-pin__logo" src="${escapeAttribute(entity.image)}" alt="${escapeAttribute(entity.name ?? "")}">`
+    : shouldUseLabel
+      ? `<span class="entity-pin__label">${escapeAttribute(markerLabel || iconKind)}</span>`
     : iconMarkup[kind] ?? iconMarkup.info;
 
   return window.L.divIcon({
     className: "entity-pin-wrapper",
     html: `
-      <span class="entity-pin entity-pin--${iconKind}${shouldUseLogo ? " entity-pin--logo" : ""}${selected ? " is-selected" : ""}" aria-hidden="true">
+      <span class="entity-pin entity-pin--${iconKind}${shouldUseLogo ? " entity-pin--logo" : ""}${shouldUseLabel ? " entity-pin--label" : ""}${selected ? " is-selected" : ""}"${styleAttribute} aria-hidden="true">
         <span class="entity-pin__inner">${markup}</span>
       </span>
     `,

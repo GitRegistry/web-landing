@@ -1,1 +1,940 @@
-[]
+[
+  {
+    "id": "event-2026-05-09-brazzelparcours-1000-opening-brazzle",
+    "date": "2026-05-09",
+    "time": "10:00",
+    "title": {
+      "de": "Anbrazzeln",
+      "en": "Opening Brazzle"
+    },
+    "description": {
+      "de": "BRAZZELTAG-Auftakt 2026: Fuer Fans von Fans!",
+      "en": "BRAZZELTAG opening 2026: by fans, for fans!"
+    },
+    "locationEntryId": "brazzelparcours"
+  },
+  {
+    "id": "event-2026-05-09-brazzelarena-1015-lanz-bulldog-rides",
+    "date": "2026-05-09",
+    "time": "10:15",
+    "title": {
+      "de": "LANZ-Bulldog-Rundfahrten",
+      "en": "LANZ Bulldog Rides"
+    },
+    "description": {
+      "de": "Rundfahrten mit dem LANZ-Bulldog fuer Gross und Klein",
+      "en": "Rides with the LANZ Bulldog for all ages"
+    },
+    "locationEntryId": "brazzelarena"
+  },
+  {
+    "id": "event-2026-05-09-brazzelparcours-1030-streetfighter-burnout-crew",
+    "date": "2026-05-09",
+    "time": "10:30",
+    "title": {
+      "de": "Streetfighter Burnout-Crew",
+      "en": "Streetfighter Burnout Crew"
+    },
+    "description": {
+      "de": "... Rauch und Flammen",
+      "en": "... smoke and flames"
+    },
+    "locationEntryId": "burnout-crew"
+  },
+  {
+    "id": "event-2026-05-09-wasteland-1030-trial-taxi",
+    "date": "2026-05-09",
+    "time": "10:30",
+    "title": {
+      "de": "Trial Taxi",
+      "en": "Trial Taxi"
+    },
+    "description": {
+      "de": "Die Offroad-Crew laedt zum Mitfahren ein",
+      "en": "The off-road crew invites visitors to ride along"
+    },
+    "locationEntryId": "brazzel-wasteland"
+  },
+  {
+    "id": "event-2026-05-09-brazzelarena-1045-movie-vehicles",
+    "date": "2026-05-09",
+    "time": "10:45",
+    "title": {
+      "de": "Filmfahrzeuge",
+      "en": "Movie Vehicles"
+    },
+    "description": {
+      "de": "Hollywood zu Gast in Speyer",
+      "en": "Hollywood visits Speyer"
+    },
+    "locationEntryId": "brazzelarena"
+  },
+  {
+    "id": "event-2026-05-09-brazzelparcours-1100-start-jet-schoolbus",
+    "date": "2026-05-09",
+    "time": "11:00",
+    "title": {
+      "de": "Start Jet Schoolbus",
+      "en": "Start Jet Schoolbus"
+    },
+    "description": {
+      "de": "Gerd Habermann Racing: Geburtstagsshow der Museen",
+      "en": "Gerd Habermann Racing: birthday show for the museums"
+    },
+    "locationEntryId": "start-jet-schoolbus"
+  },
+  {
+    "id": "event-2026-05-09-brazzelarena-1115-historic-rally-icons",
+    "date": "2026-05-09",
+    "time": "11:15",
+    "title": {
+      "de": "Historische Rallye-Ikonen",
+      "en": "Historic Rally Icons"
+    },
+    "description": {
+      "de": "Geschichte des Rallye-Sports von Slowly Sideways",
+      "en": "History of rally sport by Slowly Sideways"
+    },
+    "locationEntryId": "brazzelarena"
+  },
+  {
+    "id": "event-2026-05-09-brazzelparcours-1130-legends-on-wheels",
+    "date": "2026-05-09",
+    "time": "11:30",
+    "title": {
+      "de": "Legenden auf Raedern",
+      "en": "Legends on Wheels"
+    },
+    "description": {
+      "de": "Sonderausstellung in Fahrt",
+      "en": "Special exhibition in motion"
+    },
+    "locationEntryId": "brazzelparcours"
+  },
+  {
+    "id": "event-2026-05-09-brazzelarena-1145-drift-carts",
+    "date": "2026-05-09",
+    "time": "11:45",
+    "title": {
+      "de": "Drift Carts",
+      "en": "Drift Carts"
+    },
+    "description": {
+      "de": "Male Karts praesentiert Drift Carts hautnah",
+      "en": "Male Karts presents drift carts up close"
+    },
+    "locationEntryId": "brazzelarena"
+  },
+  {
+    "id": "event-2026-05-09-brazzelparcours-1200-museum-and-friends",
+    "date": "2026-05-09",
+    "time": "12:00",
+    "title": {
+      "de": "Museum und Friends",
+      "en": "Museum and Friends"
+    },
+    "description": {
+      "de": "45 Jahre Technik-Community: Fans praesentieren ihre Schaetze",
+      "en": "45 years of the Technik community: fans present their treasures"
+    },
+    "locationEntryId": "brazzelparcours"
+  },
+  {
+    "id": "event-2026-05-09-brazzelarena-1215-porsche-cup-racing",
+    "date": "2026-05-09",
+    "time": "12:15",
+    "title": {
+      "de": "Rennsport-Porsche Cup",
+      "en": "Porsche Cup Racing"
+    },
+    "description": {
+      "de": "FOERCH Racing stellt sich vor (Stand Foerch)",
+      "en": "FOERCH Racing introduces itself (Foerch stand)"
+    },
+    "locationEntryId": "brazzelarena"
+  },
+  {
+    "id": "event-2026-05-09-brazzelparcours-1230-brazzel-riders",
+    "date": "2026-05-09",
+    "time": "12:30",
+    "title": {
+      "de": "BRAZZEL-Riders",
+      "en": "BRAZZEL Riders"
+    },
+    "description": {
+      "de": "Zweiradschaetze",
+      "en": "Two-wheel treasures"
+    },
+    "locationEntryId": "brazzelparcours"
+  },
+  {
+    "id": "event-2026-05-09-brazzelarena-1245-1-20-mile-race",
+    "date": "2026-05-09",
+    "time": "12:45",
+    "title": {
+      "de": "1/20 Meilen Rennen",
+      "en": "1/20 Mile Race"
+    },
+    "description": {
+      "de": "50 ccm Mopeds gross in Fahrt",
+      "en": "50 cc mopeds in action"
+    },
+    "locationEntryId": "brazzelarena"
+  },
+  {
+    "id": "event-2026-05-09-brazzelarena-1245-lanz-bulldog-rides",
+    "date": "2026-05-09",
+    "time": "12:45",
+    "title": {
+      "de": "LANZ-Bulldog-Rundfahrten",
+      "en": "LANZ Bulldog Rides"
+    },
+    "description": {
+      "de": "Rundfahrten mit dem LANZ-Bulldog fuer Gross und Klein",
+      "en": "Rides with the LANZ Bulldog for all ages"
+    },
+    "locationEntryId": "brazzelarena"
+  },
+  {
+    "id": "event-2026-05-09-brazzelparcours-1300-sports-cars",
+    "date": "2026-05-09",
+    "time": "13:00",
+    "title": {
+      "de": "Sportwagen",
+      "en": "Sports Cars"
+    },
+    "description": {
+      "de": "Porsche, Lancia, Ford und Co.",
+      "en": "Porsche, Lancia, Ford and Co."
+    },
+    "locationEntryId": "brazzelparcours"
+  },
+  {
+    "id": "event-2026-05-09-brazzelarena-1315-esk-mungo",
+    "date": "2026-05-09",
+    "time": "13:15",
+    "title": {
+      "de": "ESK Mungo",
+      "en": "ESK Mungo"
+    },
+    "description": {
+      "de": "Vorstellung Bundeswehr-Rettung",
+      "en": "Bundeswehr rescue presentation"
+    },
+    "locationEntryId": "brazzelarena"
+  },
+  {
+    "id": "event-2026-05-09-brazzelparcours-1330-tuning-nippon-fascination",
+    "date": "2026-05-09",
+    "time": "13:30",
+    "title": {
+      "de": "Faszination Tuning & Nippon",
+      "en": "Tuning & Nippon Fascination"
+    },
+    "description": {
+      "de": "Die Sonderausstellung lebt",
+      "en": "The special exhibition comes alive"
+    },
+    "locationEntryId": "brazzelparcours"
+  },
+  {
+    "id": "event-2026-05-09-brazzelarena-1345-dragster-kid",
+    "date": "2026-05-09",
+    "time": "13:45",
+    "title": {
+      "de": "Dragster Kid",
+      "en": "Dragster Kid"
+    },
+    "description": {
+      "de": "Junior Drag Bike Racing by Streetwerk Racing",
+      "en": "Junior drag bike racing by Streetwerk Racing"
+    },
+    "locationEntryId": "brazzelarena"
+  },
+  {
+    "id": "event-2026-05-09-brazzelparcours-1400-brazzel-classics",
+    "date": "2026-05-09",
+    "time": "14:00",
+    "title": {
+      "de": "BRAZZEL-Klassiker",
+      "en": "BRAZZEL Classics"
+    },
+    "description": {
+      "de": "Urgesteine des Automobilbaus",
+      "en": "Milestones of automotive engineering"
+    },
+    "locationEntryId": "brazzelparcours"
+  },
+  {
+    "id": "event-2026-05-09-wasteland-1400-trial-taxi",
+    "date": "2026-05-09",
+    "time": "14:00",
+    "title": {
+      "de": "Trial Taxi",
+      "en": "Trial Taxi"
+    },
+    "description": {
+      "de": "Die Offroad-Crew laedt zum Mitfahren ein",
+      "en": "The off-road crew invites visitors to ride along"
+    },
+    "locationEntryId": "brazzel-wasteland"
+  },
+  {
+    "id": "event-2026-05-09-brazzelarena-1415-drift-carts",
+    "date": "2026-05-09",
+    "time": "14:15",
+    "title": {
+      "de": "Drift Carts",
+      "en": "Drift Carts"
+    },
+    "description": {
+      "de": "Male Karts praesentiert Drift Carts hautnah",
+      "en": "Male Karts presents drift carts up close"
+    },
+    "locationEntryId": "brazzelarena"
+  },
+  {
+    "id": "event-2026-05-09-brazzelparcours-1430-crazy-wheels",
+    "date": "2026-05-09",
+    "time": "14:30",
+    "title": {
+      "de": "Crazy Wheels",
+      "en": "Crazy Wheels"
+    },
+    "description": {
+      "de": "Kuriositaeten auf Raedern",
+      "en": "Oddities on wheels"
+    },
+    "locationEntryId": "brazzelparcours"
+  },
+  {
+    "id": "event-2026-05-09-brazzelarena-1445-racing-beetle",
+    "date": "2026-05-09",
+    "time": "14:45",
+    "title": {
+      "de": "Rennkaefer",
+      "en": "Racing Beetle"
+    },
+    "description": {
+      "de": "Blitzschneller Kaefer - VW Dragster von RollTec Engineering",
+      "en": "Lightning-fast Beetle - VW dragster by RollTec Engineering"
+    },
+    "locationEntryId": "brazzelarena"
+  },
+  {
+    "id": "event-2026-05-09-brazzelarena-1445-lanz-bulldog-rides",
+    "date": "2026-05-09",
+    "time": "14:45",
+    "title": {
+      "de": "LANZ-Bulldog-Rundfahrten",
+      "en": "LANZ Bulldog Rides"
+    },
+    "description": {
+      "de": "Rundfahrten mit dem LANZ-Bulldog fuer Gross und Klein",
+      "en": "Rides with the LANZ Bulldog for all ages"
+    },
+    "locationEntryId": "brazzelarena"
+  },
+  {
+    "id": "event-2026-05-09-brazzelparcours-1500-historic-rally-icons",
+    "date": "2026-05-09",
+    "time": "15:00",
+    "title": {
+      "de": "Historische Rallye-Ikonen",
+      "en": "Historic Rally Icons"
+    },
+    "description": {
+      "de": "Geschichte des Rallye-Sports von Slowly Sideways",
+      "en": "History of rally sport by Slowly Sideways"
+    },
+    "locationEntryId": "brazzelparcours"
+  },
+  {
+    "id": "event-2026-05-09-brazzelarena-1515-motorcycle-stunt-show",
+    "date": "2026-05-09",
+    "time": "15:15",
+    "title": {
+      "de": "Motorrad-Stunt-Show",
+      "en": "Motorcycle Stunt Show"
+    },
+    "description": {
+      "de": "... mit Chris Rid und anschliessender Autogrammstunde",
+      "en": "... with Chris Rid followed by an autograph session"
+    },
+    "locationEntryId": "brazzelarena"
+  },
+  {
+    "id": "event-2026-05-09-brazzelparcours-1530-streetfighter-burnout-crew",
+    "date": "2026-05-09",
+    "time": "15:30",
+    "title": {
+      "de": "Streetfighter Burnout-Crew",
+      "en": "Streetfighter Burnout Crew"
+    },
+    "description": {
+      "de": "... Rauch und Flammen",
+      "en": "... smoke and flames"
+    },
+    "locationEntryId": "burnout-crew"
+  },
+  {
+    "id": "event-2026-05-09-brazzelparcours-1600-the-patriot",
+    "date": "2026-05-09",
+    "time": "16:00",
+    "title": {
+      "de": "The PATRIOT",
+      "en": "The PATRIOT"
+    },
+    "description": {
+      "de": "Jet-Dragster-Show",
+      "en": "Jet dragster show"
+    },
+    "locationEntryId": "brazzelparcours"
+  },
+  {
+    "id": "event-2026-05-09-brazzelarena-1615-movie-vehicles",
+    "date": "2026-05-09",
+    "time": "16:15",
+    "title": {
+      "de": "Filmfahrzeuge",
+      "en": "Movie Vehicles"
+    },
+    "description": {
+      "de": "Hollywood zu Gast in Speyer",
+      "en": "Hollywood visits Speyer"
+    },
+    "locationEntryId": "brazzelarena"
+  },
+  {
+    "id": "event-2026-05-09-brazzelarena-1615-lanz-bulldog-rides",
+    "date": "2026-05-09",
+    "time": "16:15",
+    "title": {
+      "de": "LANZ-Bulldog-Rundfahrten",
+      "en": "LANZ Bulldog Rides"
+    },
+    "description": {
+      "de": "Rundfahrten mit dem LANZ-Bulldog fuer Gross und Klein",
+      "en": "Rides with the LANZ Bulldog for all ages"
+    },
+    "locationEntryId": "brazzelarena"
+  },
+  {
+    "id": "event-2026-05-09-brazzelparcours-1630-displacement-giants",
+    "date": "2026-05-09",
+    "time": "16:30",
+    "title": {
+      "de": "Hubraum-Giganten",
+      "en": "Displacement Giants"
+    },
+    "description": {
+      "de": "Giganten der Fahrzeuggeschichte",
+      "en": "Giants of vehicle history"
+    },
+    "locationEntryId": "brazzelparcours"
+  },
+  {
+    "id": "event-2026-05-09-brazzelarena-1645-porsche-cup-racing",
+    "date": "2026-05-09",
+    "time": "16:45",
+    "title": {
+      "de": "Rennsport-Porsche Cup",
+      "en": "Porsche Cup Racing"
+    },
+    "description": {
+      "de": "FOERCH Racing stellt sich vor (Stand Foerch)",
+      "en": "FOERCH Racing introduces itself (Foerch stand)"
+    },
+    "locationEntryId": "brazzelarena"
+  },
+  {
+    "id": "event-2026-05-09-brazzelparcours-1700-open-brazzling",
+    "date": "2026-05-09",
+    "time": "17:00",
+    "title": {
+      "de": "Freies Brazzeln",
+      "en": "Open Brazzling"
+    },
+    "description": {
+      "de": "Zusatzrunde zum Geburtstag der Museen",
+      "en": "Extra round for the museums birthday"
+    },
+    "locationEntryId": "brazzelparcours"
+  },
+  {
+    "id": "event-2026-05-09-brazzelarena-1700-transall",
+    "date": "2026-05-09",
+    "time": "17:00",
+    "title": {
+      "de": "Transall",
+      "en": "Transall"
+    },
+    "description": {
+      "de": "Start der Transall C 160",
+      "en": "Start of the Transall C 160"
+    },
+    "locationEntryId": "transall-c160"
+  },
+  {
+    "id": "event-2026-05-10-brazzelparcours-1000-opening-brazzle",
+    "date": "2026-05-10",
+    "time": "10:00",
+    "title": {
+      "de": "Anbrazzeln",
+      "en": "Opening Brazzle"
+    },
+    "description": {
+      "de": "BRAZZELTAG-Auftakt 2026: Fuer Fans von Fans!",
+      "en": "BRAZZELTAG opening 2026: by fans, for fans!"
+    },
+    "locationEntryId": "brazzelparcours"
+  },
+  {
+    "id": "event-2026-05-10-brazzelarena-1015-lanz-bulldog-rides",
+    "date": "2026-05-10",
+    "time": "10:15",
+    "title": {
+      "de": "LANZ-Bulldog-Rundfahrten",
+      "en": "LANZ Bulldog Rides"
+    },
+    "description": {
+      "de": "Rundfahrten mit dem LANZ-Bulldog fuer Gross und Klein",
+      "en": "Rides with the LANZ Bulldog for all ages"
+    },
+    "locationEntryId": "brazzelarena"
+  },
+  {
+    "id": "event-2026-05-10-brazzelparcours-1030-legends-on-wheels",
+    "date": "2026-05-10",
+    "time": "10:30",
+    "title": {
+      "de": "Legenden auf Raedern",
+      "en": "Legends on Wheels"
+    },
+    "description": {
+      "de": "Sonderausstellung in Fahrt",
+      "en": "Special exhibition in motion"
+    },
+    "locationEntryId": "brazzelparcours"
+  },
+  {
+    "id": "event-2026-05-10-wasteland-1030-trial-taxi",
+    "date": "2026-05-10",
+    "time": "10:30",
+    "title": {
+      "de": "Trial Taxi",
+      "en": "Trial Taxi"
+    },
+    "description": {
+      "de": "Die Offroad-Crew laedt zum Mitfahren ein",
+      "en": "The off-road crew invites visitors to ride along"
+    },
+    "locationEntryId": "brazzel-wasteland"
+  },
+  {
+    "id": "event-2026-05-10-brazzelarena-1045-movie-vehicles",
+    "date": "2026-05-10",
+    "time": "10:45",
+    "title": {
+      "de": "Filmfahrzeuge",
+      "en": "Movie Vehicles"
+    },
+    "description": {
+      "de": "Hollywood zu Gast in Speyer",
+      "en": "Hollywood visits Speyer"
+    },
+    "locationEntryId": "brazzelarena"
+  },
+  {
+    "id": "event-2026-05-10-brazzelparcours-1100-streetfighter-burnout-crew",
+    "date": "2026-05-10",
+    "time": "11:00",
+    "title": {
+      "de": "Streetfighter Burnout-Crew",
+      "en": "Streetfighter Burnout Crew"
+    },
+    "description": {
+      "de": "... Rauch und Flammen",
+      "en": "... smoke and flames"
+    },
+    "locationEntryId": "burnout-crew"
+  },
+  {
+    "id": "event-2026-05-10-brazzelarena-1115-1-20-mile-race",
+    "date": "2026-05-10",
+    "time": "11:15",
+    "title": {
+      "de": "1/20 Meilen Rennen",
+      "en": "1/20 Mile Race"
+    },
+    "description": {
+      "de": "50 ccm Mopeds gross in Fahrt",
+      "en": "50 cc mopeds in action"
+    },
+    "locationEntryId": "brazzelarena"
+  },
+  {
+    "id": "event-2026-05-10-brazzelparcours-1130-start-jet-schoolbus",
+    "date": "2026-05-10",
+    "time": "11:30",
+    "title": {
+      "de": "Start Jet Schoolbus",
+      "en": "Start Jet Schoolbus"
+    },
+    "description": {
+      "de": "Gerd Habermann Racing: Geburtstagsshow der Museen",
+      "en": "Gerd Habermann Racing: birthday show for the museums"
+    },
+    "locationEntryId": "start-jet-schoolbus"
+  },
+  {
+    "id": "event-2026-05-10-brazzelarena-1145-drift-carts",
+    "date": "2026-05-10",
+    "time": "11:45",
+    "title": {
+      "de": "Drift Carts",
+      "en": "Drift Carts"
+    },
+    "description": {
+      "de": "Male Karts praesentiert Drift Carts hautnah",
+      "en": "Male Karts presents drift carts up close"
+    },
+    "locationEntryId": "brazzelarena"
+  },
+  {
+    "id": "event-2026-05-10-brazzelparcours-1200-tuning-nippon-fascination",
+    "date": "2026-05-10",
+    "time": "12:00",
+    "title": {
+      "de": "Faszination Tuning & Nippon",
+      "en": "Tuning & Nippon Fascination"
+    },
+    "description": {
+      "de": "Die Sonderausstellung lebt",
+      "en": "The special exhibition comes alive"
+    },
+    "locationEntryId": "brazzelparcours"
+  },
+  {
+    "id": "event-2026-05-10-brazzelarena-1215-porsche-cup-racing",
+    "date": "2026-05-10",
+    "time": "12:15",
+    "title": {
+      "de": "Rennsport-Porsche Cup",
+      "en": "Porsche Cup Racing"
+    },
+    "description": {
+      "de": "FOERCH Racing stellt sich vor (Stand Foerch)",
+      "en": "FOERCH Racing introduces itself (Foerch stand)"
+    },
+    "locationEntryId": "brazzelarena"
+  },
+  {
+    "id": "event-2026-05-10-brazzelparcours-1230-historic-rally-icons",
+    "date": "2026-05-10",
+    "time": "12:30",
+    "title": {
+      "de": "Historische Rallye-Ikonen",
+      "en": "Historic Rally Icons"
+    },
+    "description": {
+      "de": "Geschichte des Rallye-Sports von Slowly Sideways",
+      "en": "History of rally sport by Slowly Sideways"
+    },
+    "locationEntryId": "brazzelparcours"
+  },
+  {
+    "id": "event-2026-05-10-brazzelarena-1245-lanz-bulldog-rides",
+    "date": "2026-05-10",
+    "time": "12:45",
+    "title": {
+      "de": "LANZ-Bulldog-Rundfahrten",
+      "en": "LANZ Bulldog Rides"
+    },
+    "description": {
+      "de": "Rundfahrten mit dem LANZ-Bulldog fuer Gross und Klein",
+      "en": "Rides with the LANZ Bulldog for all ages"
+    },
+    "locationEntryId": "brazzelarena"
+  },
+  {
+    "id": "event-2026-05-10-brazzelarena-1245-esk-mungo",
+    "date": "2026-05-10",
+    "time": "12:45",
+    "title": {
+      "de": "ESK Mungo",
+      "en": "ESK Mungo"
+    },
+    "description": {
+      "de": "Vorstellung Bundeswehr-Rettung",
+      "en": "Bundeswehr rescue presentation"
+    },
+    "locationEntryId": "brazzelarena"
+  },
+  {
+    "id": "event-2026-05-10-brazzelparcours-1300-museum-and-friends",
+    "date": "2026-05-10",
+    "time": "13:00",
+    "title": {
+      "de": "Museum und Friends",
+      "en": "Museum and Friends"
+    },
+    "description": {
+      "de": "45 Jahre Technik-Community: Fans praesentieren ihre Schaetze",
+      "en": "45 years of the Technik community: fans present their treasures"
+    },
+    "locationEntryId": "brazzelparcours"
+  },
+  {
+    "id": "event-2026-05-10-brazzelarena-1315-dragster-kid",
+    "date": "2026-05-10",
+    "time": "13:15",
+    "title": {
+      "de": "Dragster Kid",
+      "en": "Dragster Kid"
+    },
+    "description": {
+      "de": "Junior Drag Bike Racing by Streetwerk Racing",
+      "en": "Junior drag bike racing by Streetwerk Racing"
+    },
+    "locationEntryId": "brazzelarena"
+  },
+  {
+    "id": "event-2026-05-10-brazzelparcours-1330-historic-racing-cars",
+    "date": "2026-05-10",
+    "time": "13:30",
+    "title": {
+      "de": "Historische Rennwagen",
+      "en": "Historic Racing Cars"
+    },
+    "description": {
+      "de": "Mercedes, Bentley und Co.",
+      "en": "Mercedes, Bentley and Co."
+    },
+    "locationEntryId": "brazzelparcours"
+  },
+  {
+    "id": "event-2026-05-10-brazzelparcours-1400-crazy-wheels",
+    "date": "2026-05-10",
+    "time": "14:00",
+    "title": {
+      "de": "Crazy Wheels",
+      "en": "Crazy Wheels"
+    },
+    "description": {
+      "de": "Kuriositaeten auf Raedern",
+      "en": "Oddities on wheels"
+    },
+    "locationEntryId": "brazzelparcours"
+  },
+  {
+    "id": "event-2026-05-10-brazzelarena-1400-racing-beetle",
+    "date": "2026-05-10",
+    "time": "14:00",
+    "title": {
+      "de": "Rennkaefer",
+      "en": "Racing Beetle"
+    },
+    "description": {
+      "de": "Blitzschneller Kaefer - VW Dragster von RollTec Engineering",
+      "en": "Lightning-fast Beetle - VW dragster by RollTec Engineering"
+    },
+    "locationEntryId": "brazzelarena"
+  },
+  {
+    "id": "event-2026-05-10-brazzelparcours-1430-racing-icons",
+    "date": "2026-05-10",
+    "time": "14:30",
+    "title": {
+      "de": "Rennsport Ikonen",
+      "en": "Racing Icons"
+    },
+    "description": {
+      "de": "Motorisierte Legenden von Ken Miles und Co.",
+      "en": "Motorized legends from Ken Miles and Co."
+    },
+    "locationEntryId": "brazzelparcours"
+  },
+  {
+    "id": "event-2026-05-10-brazzelarena-1430-motorcycle-stunt-show",
+    "date": "2026-05-10",
+    "time": "14:30",
+    "title": {
+      "de": "Motorrad-Stunt-Show",
+      "en": "Motorcycle Stunt Show"
+    },
+    "description": {
+      "de": "... mit Chris Rid und anschliessender Autogrammstunde",
+      "en": "... with Chris Rid followed by an autograph session"
+    },
+    "locationEntryId": "brazzelarena"
+  },
+  {
+    "id": "event-2026-05-10-brazzelarena-1430-lanz-bulldog-rides",
+    "date": "2026-05-10",
+    "time": "14:30",
+    "title": {
+      "de": "LANZ-Bulldog-Rundfahrten",
+      "en": "LANZ Bulldog Rides"
+    },
+    "description": {
+      "de": "Rundfahrten mit dem LANZ-Bulldog fuer Gross und Klein",
+      "en": "Rides with the LANZ Bulldog for all ages"
+    },
+    "locationEntryId": "brazzelarena"
+  },
+  {
+    "id": "event-2026-05-10-brazzelparcours-1500-for-all-mothers-mothers-day-campaign",
+    "date": "2026-05-10",
+    "time": "15:00",
+    "title": {
+      "de": "Fuer alle Muetter: Muttertagsaktion",
+      "en": "For All Mothers: Mothers Day Campaign"
+    },
+    "description": {
+      "de": "Verlosung fuer Muetter zum Muttertag",
+      "en": "Raffle for mothers on Mothers Day"
+    },
+    "locationEntryId": "brazzelparcours"
+  },
+  {
+    "id": "event-2026-05-10-brazzelarena-1500-historic-rally-icons",
+    "date": "2026-05-10",
+    "time": "15:00",
+    "title": {
+      "de": "Historische Rallye-Ikonen",
+      "en": "Historic Rally Icons"
+    },
+    "description": {
+      "de": "Geschichte des Rallye-Sports von Slowly Sideways",
+      "en": "History of rally sport by Slowly Sideways"
+    },
+    "locationEntryId": "brazzelarena"
+  },
+  {
+    "id": "event-2026-05-10-brazzelparcours-1530-displacement-giants",
+    "date": "2026-05-10",
+    "time": "15:30",
+    "title": {
+      "de": "Hubraum-Giganten",
+      "en": "Displacement Giants"
+    },
+    "description": {
+      "de": "Giganten der Fahrzeuggeschichte",
+      "en": "Giants of vehicle history"
+    },
+    "locationEntryId": "brazzelparcours"
+  },
+  {
+    "id": "event-2026-05-10-wasteland-1530-trial-taxi",
+    "date": "2026-05-10",
+    "time": "15:30",
+    "title": {
+      "de": "Trial Taxi",
+      "en": "Trial Taxi"
+    },
+    "description": {
+      "de": "Die Offroad-Crew laedt zum Mitfahren ein",
+      "en": "The off-road crew invites visitors to ride along"
+    },
+    "locationEntryId": "brazzel-wasteland"
+  },
+  {
+    "id": "event-2026-05-10-brazzelparcours-1600-streetfighter-burnout-crew",
+    "date": "2026-05-10",
+    "time": "16:00",
+    "title": {
+      "de": "Streetfighter Burnout-Crew",
+      "en": "Streetfighter Burnout Crew"
+    },
+    "description": {
+      "de": "... Rauch und Flammen",
+      "en": "... smoke and flames"
+    },
+    "locationEntryId": "burnout-crew"
+  },
+  {
+    "id": "event-2026-05-10-brazzelarena-1600-movie-vehicles",
+    "date": "2026-05-10",
+    "time": "16:00",
+    "title": {
+      "de": "Filmfahrzeuge",
+      "en": "Movie Vehicles"
+    },
+    "description": {
+      "de": "Hollywood zu Gast in Speyer",
+      "en": "Hollywood visits Speyer"
+    },
+    "locationEntryId": "brazzelarena"
+  },
+  {
+    "id": "event-2026-05-10-brazzelarena-1615-lanz-bulldog-rides",
+    "date": "2026-05-10",
+    "time": "16:15",
+    "title": {
+      "de": "LANZ-Bulldog-Rundfahrten",
+      "en": "LANZ Bulldog Rides"
+    },
+    "description": {
+      "de": "Rundfahrten mit dem LANZ-Bulldog fuer Gross und Klein",
+      "en": "Rides with the LANZ Bulldog for all ages"
+    },
+    "locationEntryId": "brazzelarena"
+  },
+  {
+    "id": "event-2026-05-10-brazzelparcours-1630-the-patriot",
+    "date": "2026-05-10",
+    "time": "16:30",
+    "title": {
+      "de": "The PATRIOT",
+      "en": "The PATRIOT"
+    },
+    "description": {
+      "de": "Jet-Dragster-Show",
+      "en": "Jet dragster show"
+    },
+    "locationEntryId": "brazzelparcours"
+  },
+  {
+    "id": "event-2026-05-10-brazzelarena-1630-porsche-cup-racing",
+    "date": "2026-05-10",
+    "time": "16:30",
+    "title": {
+      "de": "Rennsport-Porsche Cup",
+      "en": "Porsche Cup Racing"
+    },
+    "description": {
+      "de": "FOERCH Racing stellt sich vor (Stand Foerch)",
+      "en": "FOERCH Racing introduces itself (Foerch stand)"
+    },
+    "locationEntryId": "brazzelarena"
+  },
+  {
+    "id": "event-2026-05-10-brazzelparcours-1700-open-brazzling",
+    "date": "2026-05-10",
+    "time": "17:00",
+    "title": {
+      "de": "Freies Brazzeln",
+      "en": "Open Brazzling"
+    },
+    "description": {
+      "de": "Zusatzrunde zum Geburtstag der Museen und zum Muttertag",
+      "en": "Extra round for the museums birthday and Mothers Day"
+    },
+    "locationEntryId": "brazzelparcours"
+  },
+  {
+    "id": "event-2026-05-10-brazzelarena-1700-transall",
+    "date": "2026-05-10",
+    "time": "17:00",
+    "title": {
+      "de": "Transall",
+      "en": "Transall"
+    },
+    "description": {
+      "de": "Start der Transall C 160",
+      "en": "Start of the Transall C 160"
+    },
+    "locationEntryId": "transall-c160"
+  }
+]

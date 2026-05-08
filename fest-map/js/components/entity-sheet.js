@@ -119,12 +119,17 @@ function eventMarkup(event, entities, labels) {
   `;
 }
 
+function eventDateLabel(events, date) {
+  return events.find((event) => event.date === date)?.dateLabel || date;
+}
+
 export class EntitySheet extends HTMLElement {
   constructor() {
     super();
     this._entities = [];
     this._selectedEntity = null;
     this._events = [];
+    this._eventDate = null;
     this._filter = "all";
     this._expanded = false;
     this._view = "places";
@@ -158,6 +163,12 @@ export class EntitySheet extends HTMLElement {
 
   set events(value) {
     this._events = Array.isArray(value) ? value : [];
+    const dates = this.eventDates;
+
+    if (dates.length && !dates.includes(this._eventDate)) {
+      this._eventDate = dates[0];
+    }
+
     this.update();
   }
 
@@ -185,6 +196,20 @@ export class EntitySheet extends HTMLElement {
     }
 
     return this._entities.filter(({ type }) => type === this._filter);
+  }
+
+  get eventDates() {
+    return [...new Set(this._events.map((event) => event.date).filter(Boolean))].sort();
+  }
+
+  get visibleEvents() {
+    const dates = this.eventDates;
+
+    if (dates.length <= 1) {
+      return this._events;
+    }
+
+    return this._events.filter((event) => event.date === this._eventDate);
   }
 
   renderShell() {
@@ -215,6 +240,7 @@ export class EntitySheet extends HTMLElement {
         <div class="sheet-view sheet-view--events" data-role="events-view" hidden>
           <div class="sheet-events__header">
             <h2>${escapeHtml(this._labels.program)}</h2>
+            <div class="event-day-tabs" data-role="event-date-tabs"></div>
           </div>
           <div class="event-list" data-role="events"></div>
         </div>
@@ -231,6 +257,7 @@ export class EntitySheet extends HTMLElement {
     this.detailsViewNode = this.querySelector('[data-role="details-view"]');
     this.eventsViewNode = this.querySelector('[data-role="events-view"]');
     this.eventsNode = this.querySelector('[data-role="events"]');
+    this.eventDateTabsNode = this.querySelector('[data-role="event-date-tabs"]');
     this.filtersNode = this.querySelector('[data-role="filters"]');
     this.listNode = this.querySelector('[data-role="list"]');
     this.browseTitleNode = this.querySelector('[data-role="browse-title"]');
@@ -241,6 +268,16 @@ export class EntitySheet extends HTMLElement {
 
   attachEvents() {
     this.addEventListener("click", (event) => {
+      const eventDateTrigger = event.target.closest("[data-event-date]");
+
+      if (eventDateTrigger) {
+        event.preventDefault();
+        event.stopPropagation();
+        this._eventDate = eventDateTrigger.dataset.eventDate;
+        this.update();
+        return;
+      }
+
       const toggleTrigger = event.target.closest('[data-action="toggle-sheet"]');
 
       if (toggleTrigger) {
@@ -257,6 +294,11 @@ export class EntitySheet extends HTMLElement {
 
       if (viewTrigger) {
         this._view = viewTrigger.dataset.view === "events" ? "events" : "places";
+        if (this._view === "events") {
+          this.setExpanded(true);
+          this.update();
+          return;
+        }
         this.update();
         return;
       }
@@ -264,6 +306,8 @@ export class EntitySheet extends HTMLElement {
       const filterTrigger = event.target.closest("[data-filter]");
 
       if (filterTrigger) {
+        event.preventDefault();
+        event.stopPropagation();
         this._filter = filterTrigger.dataset.filter ?? "all";
         this.update();
         return;
@@ -366,7 +410,11 @@ export class EntitySheet extends HTMLElement {
       return;
     }
 
-    const entityForCard = this._selectedEntity ?? this.filteredEntities[0] ?? this._entities[0] ?? null;
+    const selectedEntityMatchesFilter =
+      this._selectedEntity && (this._filter === "all" || this._selectedEntity.type === this._filter);
+    const entityForCard = selectedEntityMatchesFilter
+      ? this._selectedEntity
+      : this.filteredEntities[0] ?? this._entities[0] ?? null;
 
     this.dataset.view = this._view;
     this.previewNode.innerHTML = cardMarkup(entityForCard, this._labels, this._categories);
@@ -378,8 +426,31 @@ export class EntitySheet extends HTMLElement {
     this.querySelector('[data-view="events"]').classList.toggle("is-active", this._view === "events");
     this.querySelector('[data-view="places"]').classList.toggle("is-active", this._view === "places");
 
-    this.eventsNode.innerHTML = this._events.length
-      ? this._events.map((event) => eventMarkup(event, this._entities, this._labels)).join("")
+    const eventDates = this.eventDates;
+    this.eventDateTabsNode.hidden = eventDates.length <= 1;
+    this.eventDateTabsNode.innerHTML = eventDates
+      .map((date) => {
+        const isActive = date === this._eventDate;
+
+        return `
+          <button class="event-day-tab ${isActive ? "is-active" : ""}" type="button" data-event-date="${escapeHtml(date)}">
+            ${escapeHtml(eventDateLabel(this._events, date))}
+          </button>
+        `;
+      })
+      .join("");
+    this.eventDateTabsNode.querySelectorAll("[data-event-date]").forEach((button) => {
+      button.addEventListener("click", (event) => {
+        event.preventDefault();
+        event.stopPropagation();
+        this._eventDate = button.dataset.eventDate;
+        this.update();
+      });
+    });
+
+    const visibleEvents = this.visibleEvents;
+    this.eventsNode.innerHTML = visibleEvents.length
+      ? visibleEvents.map((event) => eventMarkup(event, this._entities, this._labels)).join("")
       : `<div class="event-list__empty">${escapeHtml(this._labels.emptyEvents)}</div>`;
     this.eventsNode
       .querySelectorAll("[data-event-entity-id]")
@@ -400,6 +471,14 @@ export class EntitySheet extends HTMLElement {
         `;
       })
       .join("");
+    this.filtersNode.querySelectorAll("[data-filter]").forEach((button) => {
+      button.addEventListener("click", (event) => {
+        event.preventDefault();
+        event.stopPropagation();
+        this._filter = button.dataset.filter ?? "all";
+        this.update();
+      });
+    });
 
     if (this.filteredEntities.length === 0) {
       this.listNode.innerHTML = `<div class="entity-list__empty">${escapeHtml(this._labels.emptyState)}</div>`;

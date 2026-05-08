@@ -10,6 +10,24 @@ export function normalizeLocale(value) {
   return String(value ?? "").toLowerCase().startsWith("en") ? "en" : "de";
 }
 
+function formatEventDate(value, locale) {
+  if (!value) {
+    return "";
+  }
+
+  const date = new Date(`${value}T12:00:00`);
+
+  if (Number.isNaN(date.getTime())) {
+    return String(value);
+  }
+
+  return new Intl.DateTimeFormat(locale === "en" ? "en-US" : "de-DE", {
+    weekday: "short",
+    day: "2-digit",
+    month: "2-digit",
+  }).format(date);
+}
+
 export const uiStrings = {
   de: {
     pageTitle: "Flugplatz Fest & Brazzeltag",
@@ -88,6 +106,8 @@ export function localizeEntities(entities, locale) {
     id: entity.id,
     type: entity.type,
     markerKind: entity.markerKind,
+    markerLabel: entity.markerLabel,
+    markerTone: entity.markerTone,
     coordinates: entity.coordinates,
     website: entity.website,
     phone: entity.phone,
@@ -107,10 +127,16 @@ export function localizeEvents(events, locale) {
   return events
     .map((event) => ({
       id: event.id,
+      date: event.date,
+      dateLabel: formatEventDate(event.date, normalizedLocale),
       time: event.time,
       locationEntryId: event.locationEntryId,
       title: localizeText(event.title, normalizedLocale),
       description: localizeText(event.description, normalizedLocale),
     }))
-    .sort((left, right) => String(left.time ?? "").localeCompare(String(right.time ?? "")));
+    .sort((left, right) => {
+      const leftKey = `${left.date ?? ""} ${left.time ?? ""}`;
+      const rightKey = `${right.date ?? ""} ${right.time ?? ""}`;
+      return leftKey.localeCompare(rightKey);
+    });
 }
