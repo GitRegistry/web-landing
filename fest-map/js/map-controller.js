@@ -1,4 +1,4 @@
-import { createEntityMarkerIcon } from "./map-icons.js";
+import { createEntityMarkerIcon } from "./map-icons.js?v=20260508-cache-refresh-1";
 
 const overlayPalette = {
   cyan: {

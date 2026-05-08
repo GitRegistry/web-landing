@@ -4,6 +4,8 @@ server {
 
   root /usr/share/nginx/html;
   index index.html;
+  etag off;
+  if_modified_since off;
 
   add_header Cache-Control "no-store, no-cache, must-revalidate, proxy-revalidate, max-age=0" always;
   add_header Pragma "no-cache" always;

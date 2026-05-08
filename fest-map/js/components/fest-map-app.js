@@ -1,7 +1,13 @@
-import { dataEndpoints, defaultMapView } from "../config.js";
-import { localizeEntities, localizeEvents, localizeText, normalizeLocale, uiStrings } from "../i18n.js";
-import { MapController } from "../map-controller.js";
-import "./entity-sheet.js";
+import { dataEndpoints, defaultMapView } from "../config.js?v=20260508-cache-refresh-1";
+import {
+  localizeEntities,
+  localizeEvents,
+  localizeText,
+  normalizeLocale,
+  uiStrings,
+} from "../i18n.js?v=20260508-cache-refresh-1";
+import { MapController } from "../map-controller.js?v=20260508-cache-refresh-1";
+import "./entity-sheet.js?v=20260508-cache-refresh-1";
 
 export class FestMapApp extends HTMLElement {
   constructor() {

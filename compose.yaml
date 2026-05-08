@@ -58,6 +58,9 @@ services:
       context: ./fest-map
     labels:
       caddy: "festmap.paluv.de"
+      caddy.header.Cache-Control: '"no-store, no-cache, must-revalidate, proxy-revalidate, max-age=0"'
+      caddy.header.Pragma: '"no-cache"'
+      caddy.header.Expires: '"0"'
       caddy.reverse_proxy: "{{upstreams 80}}"
       homepage.group: "Deployments"
       homepage.name: "Fest Map"

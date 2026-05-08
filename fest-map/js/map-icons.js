@@ -1,3 +1,5 @@
+import { withAssetVersion } from "./config.js?v=20260508-cache-refresh-1";
+
 const iconMarkup = {
   area: `
     <svg viewBox="0 0 24 24" aria-hidden="true">
@@ -363,7 +365,7 @@ export function createEntityMarkerIcon(input, { selected = false } = {}) {
     ? ` style="--pin-fill: ${toneStyle.fill}; --pin-fill-strong: ${toneStyle.fillStrong};"`
     : "";
   const markup = shouldUseLogo
-    ? `<img class="entity-pin__logo" src="${escapeAttribute(entity.image)}" alt="${escapeAttribute(entity.name ?? "")}">`
+    ? `<img class="entity-pin__logo" src="${escapeAttribute(withAssetVersion(entity.image))}" alt="${escapeAttribute(entity.name ?? "")}">`
     : shouldUseLabel
       ? `<span class="entity-pin__label">${escapeAttribute(markerLabel || iconKind)}</span>`
     : iconMarkup[kind] ?? iconMarkup.info;

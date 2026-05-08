@@ -1,3 +1,5 @@
+import { withAssetVersion } from "../config.js?v=20260508-cache-refresh-1";
+
 const defaultCategories = {
   company: { label: "Firmen" },
   point: { label: "Punkte" },
@@ -44,7 +46,7 @@ function cardMarkup(entity, labels, categories) {
   }
 
   const categoryLabel = categories[entity.type]?.label ?? entity.type;
-  const imagePath = entity.image || "/assets/logos/visitor-info.svg";
+  const imagePath = withAssetVersion(entity.image || "/assets/logos/visitor-info.svg");
   const actions = [
     entity.website
       ? `<a class="entity-card__action" href="${escapeHtml(entity.website)}" target="_blank" rel="noreferrer">${escapeHtml(labels.website)}</a>`
@@ -80,7 +82,7 @@ function cardMarkup(entity, labels, categories) {
 function listItemMarkup(entity, selectedId, categories) {
   const isActive = entity.id === selectedId;
   const categoryLabel = categories[entity.type]?.label ?? entity.type;
-  const imagePath = entity.image || "/assets/logos/visitor-info.svg";
+  const imagePath = withAssetVersion(entity.image || "/assets/logos/visitor-info.svg");
 
   return `
     <button class="entity-list__item ${isActive ? "is-active" : ""}" type="button" data-entity-id="${escapeHtml(entity.id)}">
