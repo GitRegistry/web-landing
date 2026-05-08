@@ -366,7 +366,30 @@ export class MapController {
     });
   }
 
-  focusEntity(entity, { flyTo = true } = {}) {
+  getFocusPadding({ sheetExpanded = false } = {}) {
+    const viewportHeight = this.container?.clientHeight || window.innerHeight || 720;
+    const bottomPadding = sheetExpanded
+      ? Math.min(520, Math.max(320, Math.round(viewportHeight * 0.52)))
+      : 240;
+
+    return {
+      paddingTopLeft: [28, 120],
+      paddingBottomRight: [28, bottomPadding],
+    };
+  }
+
+  getOffsetCenter(coordinates, zoom, { sheetExpanded = false } = {}) {
+    if (!sheetExpanded) {
+      return coordinates;
+    }
+
+    const viewportHeight = this.container?.clientHeight || window.innerHeight || 720;
+    const verticalOffset = Math.min(190, Math.max(100, Math.round(viewportHeight * 0.22)));
+    const projectedPoint = this.map.project(coordinates, zoom).add([0, verticalOffset]);
+    return this.map.unproject(projectedPoint, zoom);
+  }
+
+  focusEntity(entity, { flyTo = true, sheetExpanded = false } = {}) {
     if (!entity) {
       return;
     }
@@ -394,9 +417,10 @@ export class MapController {
 
     if (flyTo) {
       if (overlayEntry) {
+        const focusPadding = this.getFocusPadding({ sheetExpanded });
         this.map.flyToBounds(overlayEntry.bounds, {
-          paddingTopLeft: [28, 140],
-          paddingBottomRight: [28, 240],
+          paddingTopLeft: focusPadding.paddingTopLeft,
+          paddingBottomRight: focusPadding.paddingBottomRight,
           maxZoom: 17,
           duration: 0.9,
         });
@@ -404,7 +428,7 @@ export class MapController {
       }
 
       const nextZoom = Math.max(this.map.getZoom(), 18);
-      this.map.flyTo(entity.coordinates, nextZoom, { duration: 0.9 });
+      this.map.flyTo(this.getOffsetCenter(entity.coordinates, nextZoom, { sheetExpanded }), nextZoom, { duration: 0.9 });
     }
   }
 

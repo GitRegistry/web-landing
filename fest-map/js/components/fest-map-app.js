@@ -15,8 +15,10 @@ export class FestMapApp extends HTMLElement {
     this.locale = "de";
     this.selectedEntityId = null;
     this.selectedEntity = null;
+    this.sheetExpanded = false;
     this.status = "idle";
     this.handleEntitySelect = this.handleEntitySelect.bind(this);
+    this.handleSheetToggle = this.handleSheetToggle.bind(this);
     this.handleClick = this.handleClick.bind(this);
     this.handleViewportResize = this.handleViewportResize.bind(this);
   }
@@ -48,6 +50,7 @@ export class FestMapApp extends HTMLElement {
     this.syncViewportHeight();
 
     this.addEventListener("entity-select", this.handleEntitySelect);
+    this.addEventListener("sheet-toggle", this.handleSheetToggle);
     this.addEventListener("click", this.handleClick);
     window.addEventListener("resize", this.handleResize);
     window.visualViewport?.addEventListener("resize", this.handleViewportResize);
@@ -74,6 +77,7 @@ export class FestMapApp extends HTMLElement {
 
   disconnectedCallback() {
     this.removeEventListener("entity-select", this.handleEntitySelect);
+    this.removeEventListener("sheet-toggle", this.handleSheetToggle);
     this.removeEventListener("click", this.handleClick);
     window.removeEventListener("resize", this.handleResize);
     window.visualViewport?.removeEventListener("resize", this.handleViewportResize);
@@ -92,13 +96,14 @@ export class FestMapApp extends HTMLElement {
   }
 
   syncViewportHeight() {
-    const nextHeight = Math.max(window.innerHeight || 0, window.visualViewport?.height ?? 0);
+    const nextHeight =
+      window.visualViewport?.height || window.innerHeight || document.documentElement.clientHeight || 0;
 
     if (!nextHeight) {
       return;
     }
 
-    document.documentElement.style.setProperty("--app-height", `${nextHeight}px`);
+    document.documentElement.style.setProperty("--app-height", `${Math.round(nextHeight)}px`);
   }
 
   getInitialLocale() {
@@ -118,6 +123,10 @@ export class FestMapApp extends HTMLElement {
   handleEntitySelect(event) {
     const entityId = event.detail?.entityId;
     this.selectEntity(entityId, { flyTo: true });
+  }
+
+  handleSheetToggle(event) {
+    this.sheetExpanded = Boolean(event.detail?.expanded);
   }
 
   async loadData() {
@@ -208,7 +217,7 @@ export class FestMapApp extends HTMLElement {
     this.mapController.setEntities(this.entities, { fit: fitMap });
 
     if (this.selectedEntity) {
-      this.mapController.focusEntity(this.selectedEntity, { flyTo: false });
+      this.mapController.focusEntity(this.selectedEntity, { flyTo: false, sheetExpanded: this.sheetExpanded });
     }
   }
 
@@ -231,7 +240,7 @@ export class FestMapApp extends HTMLElement {
     this.selectedEntityId = entity.id;
     this.selectedEntity = entity;
     this.sheetElement.selectedEntity = entity;
-    this.mapController.focusEntity(entity, { flyTo });
+    this.mapController.focusEntity(entity, { flyTo, sheetExpanded: this.sheetElement?.expanded ?? this.sheetExpanded });
   }
 
   renderShell() {

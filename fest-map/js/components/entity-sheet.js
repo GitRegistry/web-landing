@@ -12,8 +12,8 @@ const defaultLabels = {
   expandedHint: "Tippe auf einen Eintrag, um ihn zu fokussieren und das Menue wieder zu schliessen.",
   openList: "Oeffnen",
   collapse: "Schliessen",
-  events: "Events",
-  places: "Places",
+  events: "Programm",
+  places: "Orte",
   call: "Anrufen",
   email: "E-Mail",
   website: "Website",
@@ -401,7 +401,6 @@ export class EntitySheet extends HTMLElement {
         detail: { entityId },
       }),
     );
-    this._view = "places";
     this.update();
   }
 
