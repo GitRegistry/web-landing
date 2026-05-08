@@ -248,6 +248,14 @@ export class FestMapApp extends HTMLElement {
   renderShell() {
     this.innerHTML = `
       <div class="app-shell">
+        <section class="seo-content" aria-label="Flugplatz Fest und Brazzeltag 2026">
+          <h1>Flugplatz Fest & Brazzeltag 2026 Karte in Speyer</h1>
+          <p>
+            Interaktive Karte fuer Flugplatz Fest und Brazzeltag am 9. und 10. Mai 2026 in Speyer
+            mit Programm, Technik Museum Bereichen, Parken, Services, Toiletten, Gastronomie,
+            Ein- und Ausgaengen sowie Rundfluegen.
+          </p>
+        </section>
         <div class="map-canvas" data-map></div>
         <div class="map-overlay"></div>
         <div class="app-language-float language-switch glass-panel" data-role="language-group" role="group" aria-label="Sprache wechseln">

@@ -30,8 +30,9 @@ function formatEventDate(value, locale) {
 
 export const uiStrings = {
   de: {
-    pageTitle: "Flugplatz Fest & Brazzeltag",
-    metaDescription: "Interaktive Karte fuer das Flugplatzfest und den Brazzeltag am 9. und 10. Mai 2026 in Speyer.",
+    pageTitle: "Flugplatz Fest & Brazzeltag 2026 Karte | Speyer",
+    metaDescription:
+      "Interaktive Karte fuer Flugplatz Fest und Brazzeltag am 9. und 10. Mai 2026 in Speyer mit Programm, Bereichen, Parken, Services und Rundfluegen.",
     languageSwitchLabel: "Sprache wechseln",
     footerCredit: "Powered by",
     categories: {
@@ -64,8 +65,9 @@ export const uiStrings = {
     },
   },
   en: {
-    pageTitle: "Flugplatz Fest & Brazzeltag",
-    metaDescription: "Interactive map for Flugplatzfest and Brazzeltag on May 9 and 10, 2026 in Speyer.",
+    pageTitle: "Flugplatz Fest & Brazzeltag 2026 Map | Speyer",
+    metaDescription:
+      "Interactive map for Flugplatz Fest and Brazzeltag on May 9 and 10, 2026 in Speyer with timetable, areas, parking, services and sightseeing flights.",
     languageSwitchLabel: "Change language",
     footerCredit: "Powered by",
     categories: {

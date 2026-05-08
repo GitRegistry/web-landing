@@ -5,6 +5,8 @@ LABEL group="paluv" name="fest-map"
 COPY docker/default.conf.template /etc/nginx/templates/default.conf.template
 
 COPY index.html /usr/share/nginx/html/
+COPY robots.txt /usr/share/nginx/html/
+COPY sitemap.xml /usr/share/nginx/html/
 COPY en /usr/share/nginx/html/en
 COPY de /usr/share/nginx/html/de
 COPY css /usr/share/nginx/html/css

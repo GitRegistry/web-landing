@@ -113,11 +113,11 @@
       "de": "Der Bereich der Flight Academy ist Teil der kompakten Veranstaltungsflaeche. In direkter Naehe liegt auch der geplante Getraenkestand der Flight Academy.",
       "en": "The Flight Academy zone is part of the compact festival layout. The planned Flight Academy drinks stand is also located close by."
     },
-    "website": "",
+    "website": "https://www.flightacademy-speyer.de",
     "phone": "",
     "email": "",
-    "image": "/assets/logos/hangar-court.svg",
-    "useLogoMarker": false
+    "image": "/assets/uploads/flight-academy-vector-1778202348405-d5e5aa2b.svg",
+    "useLogoMarker": true
   },
   {
     "id": "paluv",
@@ -143,11 +143,11 @@
       "de": "Engineering passion applied to aviation. Software Engineering and Operations Company.",
       "en": "Engineering passion applied to aviation. Software Engineering and Operations Company."
     },
-    "website": "",
+    "website": "https://paluv.de",
     "phone": "",
     "email": "",
-    "image": "/assets/logos/visitor-info.svg",
-    "useLogoMarker": false
+    "image": "/assets/uploads/paluvlogowhite-1778161709842-6f6e25cb.png",
+    "useLogoMarker": true
   },
   {
     "id": "flight-academy-hangar-2",
@@ -173,11 +173,11 @@
       "de": "Die Absperrung des Veranstaltungsgelaendes soll suedlich des neuen Flight-Academy-Hangars verlaufen, damit die Flaeche insgesamt kompakt bleibt.",
       "en": "The event barrier is planned to run south of the new Flight Academy hangar so the overall event footprint remains compact."
     },
-    "website": "",
+    "website": "https://www.flightacademy-speyer.de",
     "phone": "",
     "email": "",
-    "image": "/assets/logos/hangar-court.svg",
-    "useLogoMarker": false
+    "image": "/assets/uploads/flight-academy-vector-1778202348405-d5e5aa2b.svg",
+    "useLogoMarker": true
   },
   {
     "id": "otto-funk",
@@ -203,11 +203,11 @@
       "de": "Im Rahmen der kompakten Veranstaltungsplanung koennte die UL-Flugschule ihre Flugzeuge auf dem Vorfeld der Flight Academy abstellen.",
       "en": "As part of the compact event layout, the UL flight school may park its aircraft on the Flight Academy apron."
     },
-    "website": "",
+    "website": "https://www.ottofunk.de/",
     "phone": "",
     "email": "",
-    "image": "/assets/logos/hangar-court.svg",
-    "useLogoMarker": false
+    "image": "/assets/uploads/logo-3d-13-ge-ndertes-format-1778202873783-cf6a68f2.jpg",
+    "useLogoMarker": true
   },
   {
     "id": "flugschule-loeffler",
@@ -392,7 +392,7 @@
   {
     "id": "modellflugverein-oberhausen",
     "type": "company",
-    "markerKind": "club",
+    "markerKind": "info",
     "coordinates": [
       49.30895224113392,
       8.448553383350374
@@ -416,8 +416,8 @@
     "website": "",
     "phone": "",
     "email": "",
-    "image": "/assets/logos/visitor-info.svg",
-    "useLogoMarker": false
+    "image": "/assets/uploads/grafik-1778203011920-211bee68.png",
+    "useLogoMarker": true
   },
   {
     "id": "ul-heli",
@@ -451,11 +451,11 @@
   },
   {
     "id": "getraenke",
-    "type": "service",
+    "type": "company",
     "markerKind": "drink",
     "coordinates": [
-      49.30875113866392,
-      8.4485399723053
+      49.30874238795607,
+      8.44855070114136
     ],
     "name": {
       "de": "Getraenke bei Krone",
@@ -476,8 +476,8 @@
     "website": "",
     "phone": "",
     "email": "",
-    "image": "/assets/logos/museum-terrace.svg",
-    "useLogoMarker": false
+    "image": "/assets/uploads/whatsapp-image-2026-05-07-at-23-44-46-1778202460045-60e7179c.jpeg",
+    "useLogoMarker": true
   },
   {
     "id": "berufsschule-fh-worms",
@@ -512,7 +512,7 @@
   {
     "id": "infostand-zoll-bundespolizei",
     "type": "service",
-    "markerKind": "authority",
+    "markerKind": "club",
     "coordinates": [
       49.309357946122056,
       8.448894023895265
@@ -536,8 +536,8 @@
     "website": "",
     "phone": "",
     "email": "",
-    "image": "/assets/logos/visitor-info.svg",
-    "useLogoMarker": false
+    "image": "/assets/uploads/zoll-logo-1778203165840-70c90699.jpg",
+    "useLogoMarker": true
   },
   {
     "id": "oldtimer-segler-abstellflaeche",
@@ -1276,8 +1276,8 @@
     "website": "",
     "phone": "",
     "email": "",
-    "image": "/assets/logos/visitor-info.svg",
-    "useLogoMarker": false
+    "image": "/assets/uploads/logo-bpol-standard-jpg-1778203200573-997281eb.jpg",
+    "useLogoMarker": true
   },
   {
     "id": "entry-mow20fvb",
@@ -1342,10 +1342,10 @@
   {
     "id": "entry-mow2om2r",
     "type": "company",
-    "markerKind": "info",
+    "markerKind": "building",
     "coordinates": [
-      49.30878260927988,
-      8.448328077793123
+      49.30877561426941,
+      8.448311984539034
     ],
     "name": {
       "de": "AeroShinex",
@@ -2478,5 +2478,35 @@
     "email": "",
     "image": "/assets/logos/visitor-info.svg",
     "useLogoMarker": false
+  },
+  {
+    "id": "entry-mow7uyib",
+    "type": "company",
+    "markerKind": "info",
+    "coordinates": [
+      49.30832443399579,
+      8.448679447174074
+    ],
+    "name": {
+      "de": "Outdoor Kitchen OUK",
+      "en": "Outdoor Kitchen OUK"
+    },
+    "location": {
+      "de": "",
+      "en": ""
+    },
+    "summary": {
+      "de": "",
+      "en": ""
+    },
+    "description": {
+      "de": "",
+      "en": ""
+    },
+    "website": "",
+    "phone": "",
+    "email": "",
+    "image": "/assets/uploads/whatsapp-image-2026-05-06-at-21-04-29-1778202655328-4906d1db.jpeg",
+    "useLogoMarker": true
   }
 ]
