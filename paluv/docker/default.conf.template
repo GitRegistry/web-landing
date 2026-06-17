@@ -1,7 +1,7 @@
 log_format api '$remote_addr - $request_method $request_uri '
                'status=$status upstream=$upstream_status '
                'rt=$request_time urt=$upstream_response_time '
-               'cl=$content_length body="$request_body"';
+               'cl=$content_length';
 
 map $http_origin $allowed_origin {
   default 0;

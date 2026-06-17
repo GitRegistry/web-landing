@@ -16,26 +16,44 @@ const preloaderLoadingText =
 const preloaderErrorText =
   preloader?.dataset.errorText || "Model failed to load";
 
+function markModelFailed(error) {
+  console.error("Hero model unavailable", error);
+  if (preloader) {
+    preloader.setAttribute("aria-busy", "false");
+  }
+  if (preloaderLabel) {
+    preloaderLabel.textContent = preloaderErrorText;
+  }
+  document.body.classList.add("model-failed");
+}
+
 const container = document.getElementById("engine-background");
 
 if (!container) {
   console.warn("Engine background container not found.");
 } else {
   // Renderer + scene setup for the full-page background model.
-  const renderer = new THREE.WebGLRenderer({
-    antialias: true,
-    alpha: true,
-    powerPreference: "high-performance",
-  });
-  renderer.toneMapping = THREE.ACESFilmicToneMapping;
-  renderer.toneMappingExposure = 1.1;
-  renderer.physicallyCorrectLights = true;
-  renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
-  renderer.setSize(container.clientWidth, container.clientHeight);
-  renderer.setClearColor(0x000000, 0);
-  renderer.outputColorSpace = THREE.SRGBColorSpace;
-  container.appendChild(renderer.domElement);
+  let renderer = null;
 
+  try {
+    renderer = new THREE.WebGLRenderer({
+      antialias: true,
+      alpha: true,
+      powerPreference: "high-performance",
+    });
+    renderer.toneMapping = THREE.ACESFilmicToneMapping;
+    renderer.toneMappingExposure = 1.1;
+    renderer.physicallyCorrectLights = true;
+    renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
+    renderer.setSize(container.clientWidth, container.clientHeight);
+    renderer.setClearColor(0x000000, 0);
+    renderer.outputColorSpace = THREE.SRGBColorSpace;
+    container.appendChild(renderer.domElement);
+  } catch (error) {
+    markModelFailed(error);
+  }
+
+if (renderer) {
   const scene = new THREE.Scene();
   const camera = new THREE.PerspectiveCamera(
     42,
@@ -494,14 +512,7 @@ if (!container) {
       preloaderLabel.textContent = `${preloaderLoadingText} ${percent}%`;
     },
     (error) => {
-      console.error("Failed to load engine model", error);
-      if (preloader) {
-        preloader.setAttribute("aria-busy", "false");
-      }
-      if (preloaderLabel) {
-        preloaderLabel.textContent = preloaderErrorText;
-      }
-      document.body.classList.add("model-failed");
+      markModelFailed(error);
     }
   );
 
@@ -641,4 +652,5 @@ if (!container) {
   });
 
   animate();
+}
 }

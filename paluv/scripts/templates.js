@@ -275,6 +275,38 @@ ${items}
       </section>`;
 }
 
+function renderTrustLogo(item) {
+  return `              <span class="trust-logo">
+                <img src="${item.logo}" alt="${item.alt || item.name}" />
+              </span>`;
+}
+
+function renderTrustSection(localeContent) {
+  const groups = localeContent.trust.groups
+    .map((group) => {
+      const logos = group.items.map(renderTrustLogo).join("\n");
+
+      return `          <article class="trust-group reveal">
+            <p>${group.label}</p>
+            <div class="trust-logos">
+${logos}
+            </div>
+          </article>`;
+    })
+    .join("\n");
+
+  return `      <section class="section trust-section no-blend" id="trust" aria-labelledby="trust-title">
+        <div class="section-title section-title--wide">
+          <p class="eyebrow">${localeContent.trust.kicker}</p>
+          <h2 id="trust-title">${localeContent.trust.title}</h2>
+          <p>${localeContent.trust.subtitle}</p>
+        </div>
+        <div class="trust-grid">
+${groups}
+        </div>
+      </section>`;
+}
+
 function renderProductsSection(localeContent) {
   return `      <section class="section" id="products">
         <div class="section-title">
@@ -315,6 +347,8 @@ ${renderHero(localeContent)}
 
 ${renderPartnersSection(localeContent)}
 
+${renderTrustSection(localeContent)}
+
 ${renderProductsSection(localeContent)}
 
 ${renderServicesSection(localeContent)}
@@ -328,15 +362,15 @@ ${renderServicesSection(localeContent)}
         <form class="contact-form" id="contact-form">
           <label>
             <span>${localeContent.contact.fields.name}</span>
-            <input type="text" name="name" placeholder="${localeContent.contact.placeholders.name}" />
+            <input type="text" name="name" placeholder="${localeContent.contact.placeholders.name}" autocomplete="name" required />
           </label>
           <label>
             <span>${localeContent.contact.fields.email}</span>
-            <input type="email" name="email" placeholder="${localeContent.contact.placeholders.email}" />
+            <input type="email" name="email" placeholder="${localeContent.contact.placeholders.email}" autocomplete="email" required />
           </label>
           <label>
             <span>${localeContent.contact.fields.message}</span>
-            <textarea name="message" rows="4" placeholder="${localeContent.contact.placeholders.message}"></textarea>
+            <textarea name="message" rows="4" placeholder="${localeContent.contact.placeholders.message}" required></textarea>
           </label>
           <button class="button no-blend" type="submit">${localeContent.contact.submit}</button>
           <p class="form-status" id="form-status" role="status" aria-live="polite"></p>

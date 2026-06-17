@@ -11,7 +11,7 @@ const SHARED = {
     "https://www.openstreetmap.org/export/embed.html?bbox=8.44167%2C49.29472%2C8.46167%2C49.31472&amp;layer=mapnik&amp;marker=49.30472%2C8.45167",
   fontsHref:
     "https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;600;700&family=Sora:wght@300;400;500;600&display=swap",
-  assetVersion: "20260508-paluv-refresh",
+  assetVersion: "20260617-paluv-trust",
   year: "2026",
 };
 
@@ -38,9 +38,9 @@ const HOME_CONTENT = {
     },
     hero: {
       eyebrow: "Software. Operations. Innovation",
-      title: "Engineering passion applied to aviation",
+      title: "Aviation software for real operators",
       subtitle:
-        "We innovate aviation through software excellence, operational services, and pilot-first products. We build the ecosystem operators need.",
+        "Paluv builds pilot-first products, operator workflows, and aviation services for general aviation teams across Europe.",
       primaryCta: "Contact",
       secondaryCta: "View portfolio",
       meta: [
@@ -61,7 +61,7 @@ const HOME_CONTENT = {
       partners: {
         title: "Partners & Clients",
         subtitle:
-          "A curated flightline for collaborators, clients, and ecosystem partners. Logo slots and service profiles are ready to replace with confirmed public partners.",
+          "Aviation collaborators, service partners, and ecosystem teams working with Paluv products and operations.",
       },
     },
     products: [
@@ -116,69 +116,82 @@ const HOME_CONTENT = {
     ],
     partners: {
       kicker: "Portfolio runway",
-      summary: "Hover, focus, or tap a logo to preview the services behind each collaboration slot.",
+      summary: "Hover, focus, or tap a logo to preview the collaboration context.",
       detailLabel: "Provided services",
-      interactionHint: "View services",
+      interactionHint: "View context",
       items: [
         {
-          id: "training",
-          name: "Training Partner",
-          logoText: "TR",
-          category: "Flight schools",
-          status: "Logo placeholder",
+          id: "fas",
+          name: "FAS",
+          logo: "/assets/collaborators/fas-512.png",
+          logoAlt: "FAS logo",
+          category: "Flight academy",
+          status: "Collaboration",
           services:
             "Pilot onboarding journeys, training workflow software, student communication, and academy-facing digital services.",
-          note: "Replace this slot with a confirmed training partner logo and service summary.",
+          note: "Training and aviation education collaboration.",
         },
         {
-          id: "operations",
-          name: "Operations Client",
-          logoText: "OPS",
-          category: "Aerodrome & operator workflows",
-          status: "Client placeholder",
+          id: "fsl",
+          name: "FSL",
+          logo: "/assets/collaborators/fsl.jpeg",
+          logoAlt: "FSL logo",
+          category: "Flight services",
+          status: "Collaboration",
           services:
             "Operational tools, process automation, lightweight portals, and aviation-specific service design for daily workflows.",
-          note: "Prepared for a public client profile once approval and logo assets are available.",
+          note: "Operations and aviation service collaboration.",
         },
         {
-          id: "supply",
-          name: "Supply Partner",
-          logoText: "SUP",
-          category: "Shop & distribution",
-          status: "Partner placeholder",
+          id: "skymentor",
+          name: "Skymentor",
+          logo: "/assets/collaborators/skymentor.png",
+          logoAlt: "Skymentor logo",
+          category: "Pilot ecosystem",
+          status: "Collaboration",
           services:
-            "B2B distribution, aviation oils and parts supply, webshop integration, and procurement support.",
-          note: "Use this slot for a supplier or distribution partner.",
+            "Pilot-facing services, digital workflows, and aviation community support.",
+          note: "Pilot network and ecosystem collaboration.",
         },
         {
-          id: "pilot-services",
-          name: "Pilot Services",
-          logoText: "PIL",
-          category: "Insurance & assistance",
-          status: "Service placeholder",
+          id: "technim",
+          name: "Technim",
+          logo: "/assets/collaborators/technim.png",
+          logoAlt: "Technim logo",
+          category: "Technical partner",
+          status: "Collaboration",
           services:
-            "Pilot-first services such as insurance, assistance, support pathways, and member-facing service bundles.",
-          note: "Ready for a service partner profile or Paluv-powered offering.",
+            "Technical collaboration for aviation-adjacent systems, operations, and delivery support.",
+          note: "Technical ecosystem collaboration.",
+        },
+      ],
+    },
+    trust: {
+      kicker: "Trusted aviation network",
+      title: "In collaboration with",
+      subtitle:
+        "Paluv works with aviation collaborators, compliance frameworks, and insurance support partners to build services pilots can rely on.",
+      groups: [
+        {
+          label: "In collaboration with",
+          items: [
+            { name: "FAS", logo: "/assets/collaborators/fas-512.png", alt: "FAS logo" },
+            { name: "FSL", logo: "/assets/collaborators/fsl.jpeg", alt: "FSL logo" },
+            { name: "Skymentor", logo: "/assets/collaborators/skymentor.png", alt: "Skymentor logo" },
+            { name: "Technim", logo: "/assets/collaborators/technim.png", alt: "Technim logo" },
+          ],
         },
         {
-          id: "brand",
-          name: "Aviation Brand",
-          logoText: "BRD",
-          category: "Merch & customization",
-          status: "Brand placeholder",
-          services:
-            "Custom merchandise, event material, brand execution, and aviation community activation.",
-          note: "Replace with a club, school, event, or commercial aviation brand.",
+          label: "In compliance with",
+          items: [
+            { name: "EASA", logo: "/assets/collaborators/EASA_Logo.png", alt: "EASA logo" },
+          ],
         },
         {
-          id: "events",
-          name: "Event Partner",
-          logoText: "EVT",
-          category: "Festivals & community",
-          status: "Ecosystem placeholder",
-          services:
-            "Event landing pages, visitor maps, sponsor visibility, contributor tooling, and on-site digital support.",
-          note: "Prepared for aviation event and ecosystem collaborations.",
+          label: "Insured and supported by",
+          items: [
+            { name: "Allianz", logo: "/assets/collaborators/Allianz.svg.png", alt: "Allianz logo" },
+          ],
         },
       ],
     },
@@ -227,9 +240,9 @@ const HOME_CONTENT = {
     },
     hero: {
       eyebrow: "Software. Betrieb. Innovation",
-      title: "Engineering-Passion für die Luftfahrt",
+      title: "Luftfahrtsoftware für echte Betreiber",
       subtitle:
-        "Wir optimieren die Luftfahrt durch Software operative Services und Produkte für Piloten. Wir schaffen Mehrwert für jeden Piloten und Avionik-Begeisterten.",
+        "Paluv entwickelt pilotennahe Produkte, Betreiber-Workflows und Aviation Services für die General Aviation in Europa.",
       primaryCta: "Kontakt",
       secondaryCta: "Portfolio ansehen",
       meta: [
@@ -250,7 +263,7 @@ const HOME_CONTENT = {
       partners: {
         title: "Partner & Kunden",
         subtitle:
-          "Eine kuratierte Flightline für Kooperationspartner, Kunden und Ökosystem-Partner. Logo-Slots und Leistungsprofile sind vorbereitet und können später durch bestätigte Partner ersetzt werden.",
+          "Aviation-Kooperationen, Servicepartner und Ökosystem-Teams rund um Paluv Produkte und operative Services.",
       },
     },
     products: [
@@ -305,69 +318,82 @@ const HOME_CONTENT = {
     ],
     partners: {
       kicker: "Portfolio-Runway",
-      summary: "Hover, Fokus oder Tap auf ein Logo zeigt die Leistungen hinter dem jeweiligen Kooperations-Slot.",
+      summary: "Hover, Fokus oder Tap auf ein Logo zeigt den Kontext der jeweiligen Zusammenarbeit.",
       detailLabel: "Leistungen",
-      interactionHint: "Leistungen anzeigen",
+      interactionHint: "Kontext anzeigen",
       items: [
         {
-          id: "training",
-          name: "Training Partner",
-          logoText: "TR",
-          category: "Flugschulen",
-          status: "Logo-Platzhalter",
+          id: "fas",
+          name: "FAS",
+          logo: "/assets/collaborators/fas-512.png",
+          logoAlt: "FAS Logo",
+          category: "Flight Academy",
+          status: "Kooperation",
           services:
             "Pilot-Onboarding, Trainings-Workflows, Kommunikation mit Flugschülern und digitale Services für Flugschulen.",
-          note: "Diesen Slot später mit bestätigtem Logo und Leistungsprofil ersetzen.",
+          note: "Kooperation im Bereich Training und Aviation Education.",
         },
         {
-          id: "operations",
-          name: "Operations Client",
-          logoText: "OPS",
-          category: "Flugplatz- & Betreiberprozesse",
-          status: "Kunden-Platzhalter",
+          id: "fsl",
+          name: "FSL",
+          logo: "/assets/collaborators/fsl.jpeg",
+          logoAlt: "FSL Logo",
+          category: "Flight Services",
+          status: "Kooperation",
           services:
             "Operative Tools, Prozessautomatisierung, schlanke Portale und luftfahrtspezifisches Service Design für den Tagesbetrieb.",
-          note: "Vorbereitet für ein öffentlich freigegebenes Kundenprofil.",
+          note: "Kooperation im Bereich Operations und Aviation Services.",
         },
         {
-          id: "supply",
-          name: "Supply Partner",
-          logoText: "SUP",
-          category: "Shop & Distribution",
-          status: "Partner-Platzhalter",
+          id: "skymentor",
+          name: "Skymentor",
+          logo: "/assets/collaborators/skymentor.png",
+          logoAlt: "Skymentor Logo",
+          category: "Piloten-Ökosystem",
+          status: "Kooperation",
           services:
-            "B2B-Distribution, Luftfahrtöle und Teile, Webshop-Anbindung und Beschaffungsunterstützung.",
-          note: "Dieser Slot passt für Lieferanten oder Distributionspartner.",
+            "Pilotennahe Services, digitale Workflows und Unterstützung für Aviation Communities.",
+          note: "Kooperation im Piloten- und Aviation-Ökosystem.",
         },
         {
-          id: "pilot-services",
-          name: "Pilot Services",
-          logoText: "PIL",
-          category: "Versicherung & Assistance",
-          status: "Service-Platzhalter",
+          id: "technim",
+          name: "Technim",
+          logo: "/assets/collaborators/technim.png",
+          logoAlt: "Technim Logo",
+          category: "Technischer Partner",
+          status: "Kooperation",
           services:
-            "Pilotennahe Services wie Versicherung, Assistance, Support-Strecken und Service-Bundles für Mitglieder.",
-          note: "Bereit für Partnerprofile oder Paluv-betriebene Angebote.",
+            "Technische Zusammenarbeit für aviation-nahe Systeme, Operations und Delivery Support.",
+          note: "Technische Ökosystem-Kooperation.",
+        },
+      ],
+    },
+    trust: {
+      kicker: "Vertrauensnetzwerk",
+      title: "In Zusammenarbeit mit",
+      subtitle:
+        "Paluv arbeitet mit Aviation-Kooperationen, Compliance-Rahmenwerken und Versicherungspartnern, um belastbare Services für Piloten aufzubauen.",
+      groups: [
+        {
+          label: "In Zusammenarbeit mit",
+          items: [
+            { name: "FAS", logo: "/assets/collaborators/fas-512.png", alt: "FAS Logo" },
+            { name: "FSL", logo: "/assets/collaborators/fsl.jpeg", alt: "FSL Logo" },
+            { name: "Skymentor", logo: "/assets/collaborators/skymentor.png", alt: "Skymentor Logo" },
+            { name: "Technim", logo: "/assets/collaborators/technim.png", alt: "Technim Logo" },
+          ],
         },
         {
-          id: "brand",
-          name: "Aviation Brand",
-          logoText: "BRD",
-          category: "Merch & Customization",
-          status: "Brand-Platzhalter",
-          services:
-            "Individueller Merch, Eventmaterial, Markenauftritt und Aktivierung von Aviation Communities.",
-          note: "Später mit Club, Flugschule, Event oder Aviation Brand ersetzen.",
+          label: "In Compliance mit",
+          items: [
+            { name: "EASA", logo: "/assets/collaborators/EASA_Logo.png", alt: "EASA Logo" },
+          ],
         },
         {
-          id: "events",
-          name: "Event Partner",
-          logoText: "EVT",
-          category: "Events & Community",
-          status: "Ökosystem-Platzhalter",
-          services:
-            "Event-Landingpages, Besucherkarten, Sponsorensichtbarkeit, Contributor-Tools und digitale Unterstützung vor Ort.",
-          note: "Vorbereitet für Aviation Events und Ökosystem-Kooperationen.",
+          label: "Versichert und unterstützt durch",
+          items: [
+            { name: "Allianz", logo: "/assets/collaborators/Allianz.svg.png", alt: "Allianz Logo" },
+          ],
         },
       ],
     },
