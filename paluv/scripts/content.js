@@ -29,7 +29,7 @@ const HOME_CONTENT = {
     loadingAriaLabel: "Loading 3D model",
     nav: {
       home: "Home",
-      partners: "Partners & Clients",
+      partners: "Collaborators",
       products: "Products",
       services: "Services",
       contact: "Contact",
@@ -42,7 +42,7 @@ const HOME_CONTENT = {
       subtitle:
         "Paluv builds pilot-first products, operator workflows, and aviation services for general aviation teams across Europe.",
       primaryCta: "Contact",
-      secondaryCta: "View portfolio",
+      secondaryCta: "View collaborators",
       meta: [
         { label: "Focus", value: "Pilots · GA Operators · Flight Schools" },
         { label: "Domains", value: "IT-Software · Ops · Supply Chain" },
@@ -167,13 +167,12 @@ const HOME_CONTENT = {
       ],
     },
     trust: {
-      kicker: "Trusted aviation network",
-      title: "In collaboration with",
-      subtitle:
-        "Paluv works with aviation collaborators, compliance frameworks, and insurance support partners to build services pilots can rely on.",
+      kicker: "Aviation network",
+      title: "Collaborators / Supported by",
+      subtitle: "Paluv works with aviation teams and support partners across training, services, operations, and pilot communities.",
       groups: [
         {
-          label: "In collaboration with",
+          label: "Collaborators / Supported by",
           items: [
             { name: "FAS", logo: "/assets/collaborators/fas-512.png", alt: "FAS logo" },
             { name: "FSL", logo: "/assets/collaborators/fsl.jpeg", alt: "FSL logo" },
@@ -182,13 +181,13 @@ const HOME_CONTENT = {
           ],
         },
         {
-          label: "In compliance with",
+          label: "In Compliance with...",
           items: [
             { name: "EASA", logo: "/assets/collaborators/EASA_Logo.png", alt: "EASA logo" },
           ],
         },
         {
-          label: "Insured and supported by",
+          label: "Insured by",
           items: [
             { name: "Allianz", logo: "/assets/collaborators/Allianz.svg.png", alt: "Allianz logo" },
           ],
@@ -231,7 +230,7 @@ const HOME_CONTENT = {
     loadingAriaLabel: "3D Modell wird geladen",
     nav: {
       home: "Start",
-      partners: "Partner & Kunden",
+      partners: "Kooperationen",
       products: "Produkte",
       services: "Services",
       contact: "Kontakt",
@@ -244,7 +243,7 @@ const HOME_CONTENT = {
       subtitle:
         "Paluv entwickelt pilotennahe Produkte, Betreiber-Workflows und Aviation Services für die General Aviation in Europa.",
       primaryCta: "Kontakt",
-      secondaryCta: "Portfolio ansehen",
+      secondaryCta: "Kooperationen ansehen",
       meta: [
         { label: "Fokus", value: "Piloten · GA-Betreiber · Flugschulen" },
         { label: "Bereiche", value: "IT-Software · Betrieb · Lieferkette" },
@@ -369,13 +368,13 @@ const HOME_CONTENT = {
       ],
     },
     trust: {
-      kicker: "Vertrauensnetzwerk",
-      title: "In Zusammenarbeit mit",
+      kicker: "Aviation-Netzwerk",
+      title: "Kooperationen / Unterstützt durch",
       subtitle:
-        "Paluv arbeitet mit Aviation-Kooperationen, Compliance-Rahmenwerken und Versicherungspartnern, um belastbare Services für Piloten aufzubauen.",
+        "Paluv arbeitet mit Aviation-Teams und Support-Partnern aus Training, Services, Operations und Pilot Communities.",
       groups: [
         {
-          label: "In Zusammenarbeit mit",
+          label: "Kooperationen / Unterstützt durch",
           items: [
             { name: "FAS", logo: "/assets/collaborators/fas-512.png", alt: "FAS Logo" },
             { name: "FSL", logo: "/assets/collaborators/fsl.jpeg", alt: "FSL Logo" },
@@ -384,13 +383,13 @@ const HOME_CONTENT = {
           ],
         },
         {
-          label: "In Compliance mit",
+          label: "In Compliance mit...",
           items: [
             { name: "EASA", logo: "/assets/collaborators/EASA_Logo.png", alt: "EASA Logo" },
           ],
         },
         {
-          label: "Versichert und unterstützt durch",
+          label: "Versichert durch",
           items: [
             { name: "Allianz", logo: "/assets/collaborators/Allianz.svg.png", alt: "Allianz Logo" },
           ],

@@ -141,7 +141,7 @@ function renderHeader(localeKey, localeContent) {
       </a>
       <nav class="site-nav" id="site-nav">
         <a href="#top">${localeContent.nav.home}</a>
-        <a href="#partners">${localeContent.nav.partners}</a>
+        <a href="#collaborators">${localeContent.nav.partners}</a>
         <a href="#products">${localeContent.nav.products}</a>
         <a href="#services">${localeContent.nav.services}</a>
         <a href="#contact">${localeContent.nav.contact}</a>
@@ -181,7 +181,7 @@ function renderHero(localeContent) {
           </p>
           <div class="hero-actions">
             <a class="button no-blend" href="#contact" style="color: white;">${localeContent.hero.primaryCta}</a>
-            <a class="button ghost" href="#partners">${localeContent.hero.secondaryCta}</a>
+            <a class="button ghost" href="#collaborators">${localeContent.hero.secondaryCta}</a>
           </div>
           <dl class="hero-meta">
 ${metaMarkup}
@@ -295,7 +295,7 @@ ${logos}
     })
     .join("\n");
 
-  return `      <section class="section trust-section no-blend" id="trust" aria-labelledby="trust-title">
+  return `      <section class="section trust-section no-blend" id="collaborators" aria-labelledby="trust-title">
         <div class="section-title section-title--wide">
           <p class="eyebrow">${localeContent.trust.kicker}</p>
           <h2 id="trust-title">${localeContent.trust.title}</h2>
@@ -344,8 +344,6 @@ ${renderHeader(localeKey, localeContent)}
 
     <main>
 ${renderHero(localeContent)}
-
-${renderPartnersSection(localeContent)}
 
 ${renderTrustSection(localeContent)}
 

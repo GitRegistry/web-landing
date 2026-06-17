@@ -775,16 +775,16 @@ a {
 
 .trust-grid {
   display: grid;
-  grid-template-columns: minmax(0, 1.35fr) minmax(0, 0.82fr) minmax(0, 0.82fr);
-  gap: 1rem;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 1.25rem;
 }
 
 .trust-group {
-  min-height: 180px;
+  min-height: 170px;
   display: grid;
   align-content: space-between;
-  gap: 1.25rem;
-  padding: 1.2rem;
+  gap: 1.5rem;
+  padding: 1.35rem;
   border: 1px solid rgba(17, 17, 17, 0.1);
   border-radius: 1.2rem;
   background:
@@ -797,6 +797,15 @@ a {
   -webkit-backdrop-filter: blur(16px) saturate(130%);
 }
 
+.trust-group:first-child {
+  grid-column: 1 / -1;
+  min-height: 240px;
+}
+
+.trust-group:first-child > p {
+  display: none;
+}
+
 .trust-group p {
   color: var(--muted);
   font-size: 0.72rem;
@@ -806,13 +815,25 @@ a {
 
 .trust-logos {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(112px, 1fr));
-  gap: 0.8rem;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 1rem;
+}
+
+.trust-group:first-child .trust-logos {
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+}
+
+.trust-group:first-child .trust-logo {
+  height: 168px;
+}
+
+.trust-group:first-child .trust-logo img {
+  max-height: 118px;
 }
 
 .trust-logo {
   width: 100%;
-  height: 76px;
+  height: 128px;
   display: grid;
   place-items: center;
   padding: 0.75rem;
@@ -827,8 +848,16 @@ a {
   width: auto;
   height: auto;
   max-width: 100%;
-  max-height: 52px;
+  max-height: 92px;
   object-fit: contain;
+}
+
+.trust-group:not(:first-child) .trust-logo {
+  height: 112px;
+}
+
+.trust-group:not(:first-child) .trust-logo img {
+  max-height: 78px;
 }
 
 .steps {
@@ -1153,7 +1182,8 @@ a {
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 
-  .trust-group {
+  .trust-group,
+  .trust-group:first-child {
     min-height: auto;
   }
 
@@ -1282,8 +1312,25 @@ a {
     grid-template-columns: 1fr;
   }
 
+  .trust-group:first-child .trust-logos,
   .trust-logos {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
+    grid-template-columns: 1fr;
+  }
+
+  .trust-logo {
+    height: 112px;
+  }
+
+  .trust-logo img {
+    max-height: 78px;
+  }
+
+  .trust-group:first-child .trust-logo {
+    height: 128px;
+  }
+
+  .trust-group:first-child .trust-logo img {
+    max-height: 92px;
   }
 
   .partner-card__button {
