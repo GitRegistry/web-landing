@@ -38,9 +38,9 @@ const HOME_CONTENT = {
     },
     hero: {
       eyebrow: "Software. Operations. Innovation",
-      title: "Aviation software for real operators",
+      title: "Innovating aviation Software re-Engineering",
       subtitle:
-        "Paluv builds pilot-first products, operator workflows, and aviation services for general aviation teams across Europe.",
+        "At Paluv, we build from concept to production. Driven by passion. Made in Germany.",
       primaryCta: "Contact",
       secondaryCta: "View collaborators",
       meta: [
@@ -239,9 +239,9 @@ const HOME_CONTENT = {
     },
     hero: {
       eyebrow: "Software. Betrieb. Innovation",
-      title: "Luftfahrtsoftware für echte Betreiber",
+      title: "Aviation Software re-Engineering",
       subtitle:
-        "Paluv entwickelt pilotennahe Produkte, Betreiber-Workflows und Aviation Services für die General Aviation in Europa.",
+        "Bei Paluv bauen wir von der Idee bis zur Produktion. Aus Leidenschaft. Made in Germany.",
       primaryCta: "Kontakt",
       secondaryCta: "Kooperationen ansehen",
       meta: [
