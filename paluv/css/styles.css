@@ -758,6 +758,15 @@ a {
   padding-top: clamp(2.5rem, 5vw, 4rem);
 }
 
+.trust-section .section-title {
+  justify-items: center;
+  text-align: center;
+}
+
+.trust-section .section-title p {
+  max-width: 48rem;
+}
+
 .trust-section::before {
   content: "";
   position: absolute;
@@ -780,11 +789,12 @@ a {
 }
 
 .trust-group {
-  min-height: 170px;
+  min-height: 220px;
   display: grid;
-  align-content: space-between;
+  align-content: center;
+  justify-items: center;
   gap: 1.5rem;
-  padding: 1.35rem;
+  padding: 1.5rem;
   border: 1px solid rgba(17, 17, 17, 0.1);
   border-radius: 1.2rem;
   background:
@@ -799,7 +809,7 @@ a {
 
 .trust-group:first-child {
   grid-column: 1 / -1;
-  min-height: 240px;
+  min-height: 300px;
 }
 
 .trust-group:first-child > p {
@@ -811,12 +821,16 @@ a {
   font-size: 0.72rem;
   letter-spacing: 0.18em;
   text-transform: uppercase;
+  text-align: center;
 }
 
 .trust-logos {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
   gap: 1rem;
+  width: 100%;
+  align-items: center;
+  justify-items: center;
 }
 
 .trust-group:first-child .trust-logos {
@@ -824,19 +838,19 @@ a {
 }
 
 .trust-group:first-child .trust-logo {
-  height: 168px;
+  height: 220px;
 }
 
 .trust-group:first-child .trust-logo img {
-  max-height: 118px;
+  max-height: 170px;
 }
 
 .trust-logo {
   width: 100%;
-  height: 128px;
+  height: 180px;
   display: grid;
   place-items: center;
-  padding: 0.75rem;
+  padding: 1rem;
   border: 1px solid rgba(17, 17, 17, 0.08);
   border-radius: 0.9rem;
   background: rgba(255, 255, 255, 0.7);
@@ -848,16 +862,16 @@ a {
   width: auto;
   height: auto;
   max-width: 100%;
-  max-height: 92px;
+  max-height: 140px;
   object-fit: contain;
 }
 
 .trust-group:not(:first-child) .trust-logo {
-  height: 112px;
+  height: 160px;
 }
 
 .trust-group:not(:first-child) .trust-logo img {
-  max-height: 78px;
+  max-height: 120px;
 }
 
 .steps {
@@ -1185,6 +1199,7 @@ a {
   .trust-group,
   .trust-group:first-child {
     min-height: auto;
+    padding: 1.4rem;
   }
 
   .partner-detail {
@@ -1318,19 +1333,20 @@ a {
   }
 
   .trust-logo {
-    height: 112px;
+    height: 190px;
   }
 
   .trust-logo img {
-    max-height: 78px;
+    max-width: 92%;
+    max-height: 150px;
   }
 
   .trust-group:first-child .trust-logo {
-    height: 128px;
+    height: 210px;
   }
 
   .trust-group:first-child .trust-logo img {
-    max-height: 92px;
+    max-height: 170px;
   }
 
   .partner-card__button {
