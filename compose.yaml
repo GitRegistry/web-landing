@@ -19,7 +19,7 @@ services:
       homepage.href: "https://kopi.paluv.de"
       homepage.description: "Kopi landing page"
     networks:
-      - public
+      - frontdoor
 
   web-pilotary:
     build:
@@ -35,7 +35,7 @@ services:
       homepage.href: "https://pilotary.com"
       homepage.description: "Pilotary landing page"
     networks:
-      - public
+      - frontdoor
 
   web-paluv:
     build:
@@ -51,7 +51,7 @@ services:
       homepage.href: "https://paluv.de"
       homepage.description: "Paluv landing page"
     networks:
-      - public
+      - frontdoor
 
   web-fest-map:
     build:
@@ -68,7 +68,7 @@ services:
       homepage.href: "https://festmap.paluv.de"
       homepage.description: "Fest Platz Map"
     networks:
-      - public
+      - frontdoor
 
   web-ul-diplom:
     build:
@@ -82,8 +82,8 @@ services:
       homepage.href: "https://diplom.paluv.de"
       homepage.description: "UL diploma GPX print generator"
     networks:
-      - public
+      - frontdoor
 
 networks:
-  public:
+  frontdoor:
     external: true
