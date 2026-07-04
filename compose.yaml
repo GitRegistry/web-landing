@@ -9,7 +9,7 @@ services:
     build:
       context: ./kopi
     environment:
-      MESSAGE_API_KEY: ${MESSAGE_API_KEY:-changeme}
+      MESSAGE_API_KEY: "{&mailer_api_key!}"
     labels:
       caddy: "kopi.paluv.de"
       caddy.reverse_proxy: "{{upstreams 80}}"
@@ -25,7 +25,7 @@ services:
     build:
       context: ./pilotary
     environment:
-      MESSAGE_API_KEY: ${MESSAGE_API_KEY:-changeme}
+      MESSAGE_API_KEY: "{&mailer_api_key!}"
     labels:
       caddy: "pilotary.com, pilotary.de, pilotary.paluv.de"
       caddy.reverse_proxy: "{{upstreams 80}}"
@@ -41,7 +41,7 @@ services:
     build:
       context: ./paluv
     environment:
-      MESSAGE_API_KEY: ${MESSAGE_API_KEY:-changeme}
+      MESSAGE_API_KEY: "{&mailer_api_key!}"
     labels:
       caddy: "paluv.de, www.paluv.de"
       caddy.reverse_proxy: "{{upstreams 80}}"
