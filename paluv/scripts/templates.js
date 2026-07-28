@@ -112,6 +112,9 @@ function renderHomepageHead(localeContent, localeKey) {
       email: SHARED.generalEmail,
       areaServed: "Europe",
       knowsAbout: [
+        "Software engineering",
+        "Enterprise resource planning",
+        "IT systems and automation",
         "General aviation",
         "Aviation software",
         "Pilot services",
@@ -160,8 +163,8 @@ function renderHomepageHead(localeContent, localeKey) {
       "@type": "Product",
       name: product.title,
       description: product.description,
-      image: `${SHARED.siteUrl}${product.image}`,
-      url: product.href,
+      ...(product.image ? { image: `${SHARED.siteUrl}${product.image}` } : {}),
+      url: product.href.startsWith("#") ? `${canonical}${product.href}` : product.href,
       brand: { "@id": `${SHARED.siteUrl}/#organization` },
       category: product.tag,
     })),
@@ -293,18 +296,75 @@ ${points}
       </section>`;
 }
 
-function renderProductCards(items) {
+function renderAirSapVisual(label) {
+  return `<span class="airsap-visual" role="img" aria-label="${label}">
+                <span class="airsap-window">
+                  <span class="airsap-toolbar">
+                    <span class="airsap-toolbar__dots" aria-hidden="true"><i></i><i></i><i></i></span>
+                    <strong>AirSAP</strong>
+                    <small>Fleet operations</small>
+                  </span>
+                  <span class="airsap-app">
+                    <span class="airsap-sidebar" aria-hidden="true">
+                      <strong>AS</strong>
+                      <i class="is-active"></i><i></i><i></i><i></i>
+                    </span>
+                    <span class="airsap-dashboard">
+                      <span class="airsap-dashboard__head">
+                        <span><small>Monday, 28 July</small><strong>Fleet overview</strong></span>
+                        <i aria-hidden="true"></i>
+                      </span>
+                      <span class="airsap-stats">
+                        <span><small>Aircraft</small><strong>12</strong></span>
+                        <span><small>Ready</small><strong>09</strong></span>
+                        <span><small>Service</small><strong>02</strong></span>
+                        <span><small>Review</small><strong>01</strong></span>
+                      </span>
+                      <span class="airsap-panels">
+                        <span class="airsap-chart">
+                          <span class="airsap-panel-label"><strong>Utilisation</strong><small>Last 7 days</small></span>
+                          <span class="airsap-bars" aria-hidden="true">
+                            <i style="--bar: 36%"></i><i style="--bar: 58%"></i><i style="--bar: 45%"></i>
+                            <i style="--bar: 76%"></i><i style="--bar: 62%"></i><i style="--bar: 88%"></i>
+                            <i style="--bar: 70%"></i>
+                          </span>
+                        </span>
+                        <span class="airsap-fleet">
+                          <span class="airsap-panel-label"><strong>Aircraft status</strong><small>Live</small></span>
+                          <span><b>D-ECHO</b><small>Ready</small><i></i></span>
+                          <span><b>D-EFOX</b><small>Service</small><i></i></span>
+                          <span><b>D-ELTA</b><small>Ready</small><i></i></span>
+                        </span>
+                      </span>
+                    </span>
+                  </span>
+                </span>
+              </span>`;
+}
+
+function renderProductMedia(item) {
+  if (item.visual === "airsap") {
+    return `<a class="product-card__media product-card__media--airsap" href="${item.href}" aria-label="${item.cta}">
+              ${renderAirSapVisual(item.imageAlt)}
+              <span class="product-card__tag">${item.tag}</span>
+            </a>`;
+  }
+
+  return `<a class="product-card__media" href="${item.href}" aria-label="${item.cta}">
+              <img src="${item.image}" alt="${item.imageAlt}" loading="lazy" decoding="async"
+                width="${item.width}" height="${item.height}" />
+              <span class="product-card__tag">${item.tag}</span>
+            </a>`;
+}
+
+function renderProductCards(items, itemLabel) {
   return items
     .map(
-      (item, index) => `          <article class="product-card reveal">
-            <a class="product-card__media" href="${item.href}" aria-label="${item.cta}">
-              <img src="${item.image}" alt="${item.imageAlt}" loading="lazy" decoding="async"
-                width="${index === 0 ? "1248" : "5976"}" height="${index === 0 ? "832" : "3984"}" />
-              <span>${item.tag}</span>
-            </a>
+      (item, index) => `          <article class="product-card${item.visual === "airsap" ? " product-card--airsap" : ""} reveal">
+            ${renderProductMedia(item)}
             <div class="product-card__body">
               <div>
-                <p class="product-card__index">0${index + 1} · Paluv product</p>
+                <p class="product-card__index">0${index + 1} · ${itemLabel}</p>
                 <h3>${item.title}</h3>
                 <p>${item.description}</p>
               </div>
@@ -325,9 +385,24 @@ function renderProductsSection(localeContent) {
           <p>${localeContent.promise.text}</p>
         </div>
         <div class="products-grid">
-${renderProductCards(localeContent.products)}
+${renderProductCards(localeContent.products, localeContent.sections.products.itemLabel)}
         </div>
       </section>`;
+}
+
+function renderServiceIcon(icon) {
+  const icons = {
+    software: `<path d="M4 5.5h16v13H4z"/><path d="M4 9h16M8.5 13l-2 2 2 2m7-4 2 2-2 2m-4.5.5 2-5"/>`,
+    automation: `<circle cx="6" cy="7" r="2.5"/><circle cx="18" cy="7" r="2.5"/><circle cx="12" cy="18" r="2.5"/><path d="M8.5 7h7M7.5 9l3.2 6.7M16.5 9l-3.2 6.7"/>`,
+    aviation: `<path d="M3.5 13.5 20.5 6l-5 12-3.5-4-3.5 2.5 1-4.5z"/><path d="m12 14 3.5 4M9.5 12 20.5 6"/>`,
+    product: `<path d="m12 3 8 4.5-8 4.5-8-4.5z"/><path d="m4 12 8 4.5 8-4.5M4 16.5 12 21l8-4.5"/>`,
+  };
+
+  return `<span class="service-card__icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                ${icons[icon] || icons.software}
+              </svg>
+            </span>`;
 }
 
 function renderServiceCards(items) {
@@ -338,6 +413,7 @@ function renderServiceCards(items) {
               <span>${item.index}</span>
               <span aria-hidden="true">↘</span>
             </div>
+            ${renderServiceIcon(item.icon)}
             <h3>${item.title}</h3>
             <p>${item.description}</p>
             <small>${item.tag}</small>
@@ -362,38 +438,32 @@ ${renderServiceCards(localeContent.services)}
 }
 
 function renderPartnerIdentity(item) {
-  if (item.logo) {
-    return `<span class="partner-logo partner-logo--image">
+  return `<span class="partner-logo">
               <img src="${item.logo}" alt="${item.logoAlt || item.name}" loading="lazy" decoding="async" />
             </span>`;
-  }
+}
 
-  return `<span class="partner-logo partner-logo--word" aria-label="${item.name}">${item.logoText}</span>`;
+function renderPartnerCards(items, tier, localeKey) {
+  const websiteLabel = localeKey === "de" ? "Website öffnen" : "Open website";
+
+  return items
+    .map((item) => {
+      return `          <a class="partner-card partner-card--${tier} reveal" data-partner="${item.id}"
+            href="${item.href}" rel="external noopener" aria-label="${websiteLabel}: ${item.name}">
+            <div class="partner-card__top">
+              <span>${item.category}</span>
+              <span>${item.status}</span>
+            </div>
+            ${renderPartnerIdentity(item)}
+            <p class="partner-card__statement">${item.statement}</p>
+            <span class="partner-card__action">${websiteLabel}<span aria-hidden="true">↗</span></span>
+          </a>`;
+    })
+    .join("\n");
 }
 
 function renderPartnersSection(localeContent) {
-  const items = localeContent.partners.items
-    .map((item) => {
-      const cardStart = item.href
-        ? `<a class="partner-card reveal" href="${item.href}" rel="external">`
-        : `<article class="partner-card reveal">`;
-      const cardEnd = item.href ? "</a>" : "</article>";
-
-      return `          ${cardStart}
-            <div class="partner-card__top">
-              <span>${item.status}</span>
-              <span aria-hidden="true">${item.href ? "↗" : "•"}</span>
-            </div>
-            ${renderPartnerIdentity(item)}
-            <div class="partner-card__copy">
-              <p>${item.category}</p>
-              <h3>${item.name}</h3>
-              <p>${item.services}</p>
-              <small>${item.note}</small>
-            </div>
-          ${cardEnd}`;
-    })
-    .join("\n");
+  const localeKey = localeKeyFromContent(localeContent);
 
   return `      <section class="section section--spacious partners-section" id="partners" aria-labelledby="partners-title">
         <div class="partners-intro">
@@ -404,8 +474,23 @@ function renderPartnersSection(localeContent) {
           </div>
           <p>${localeContent.partners.summary}</p>
         </div>
-        <div class="partners-grid">
-${items}
+        <div class="partner-tier partner-tier--premium">
+          <div class="partner-tier__heading">
+            <p class="eyebrow">${localeContent.partners.premiumLabel}</p>
+            <h3>${localeContent.partners.premiumTitle}</h3>
+          </div>
+          <div class="partners-premium-grid">
+${renderPartnerCards(localeContent.partners.premium, "premium", localeKey)}
+          </div>
+        </div>
+        <div class="partner-tier partner-tier--network">
+          <div class="partner-tier__heading">
+            <p class="eyebrow">${localeContent.partners.networkLabel}</p>
+            <h3>${localeContent.partners.networkTitle}</h3>
+          </div>
+          <div class="partners-network-grid">
+${renderPartnerCards(localeContent.partners.network, "network", localeKey)}
+          </div>
         </div>
       </section>`;
 }

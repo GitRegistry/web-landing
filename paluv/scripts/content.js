@@ -9,7 +9,7 @@ const SHARED = {
   analyticsScript: "https://analytics.misei.dev/script.js",
   fontsHref:
     "https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&display=swap",
-  assetVersion: "20260728-paluv-v2",
+  assetVersion: "20260728-paluv-v3",
   year: "2026",
 };
 
@@ -18,9 +18,9 @@ const HOME_CONTENT = {
     htmlLang: "en",
     locale: "en_US",
     alternateLocale: "de_DE",
-    title: "Paluv | Aviation Software, Pilot Products & Operations",
+    title: "Paluv | Software, IT Systems & Aviation Technology",
     description:
-      "Paluv builds aviation software, pilot products and operational services for general aviation, flight schools and aviation partners across Europe.",
+      "Paluv is a technology company building software, IT systems and digital products, with a current focus on aviation, ATOs, aeroclubs and operators.",
     ogImageAlt: "General aviation aircraft on the apron at sunrise",
     nav: {
       home: "Home",
@@ -32,43 +32,46 @@ const HOME_CONTENT = {
       languageSwitch: "Language selector",
     },
     hero: {
-      eyebrow: "Aviation · Software · Operations",
-      title: "Built for people who fly.",
+      eyebrow: "Technology · Software · Aviation",
+      title: "Technology for real operations.",
       subtitle:
-        "Paluv turns real general-aviation experience into focused software, connected products and dependable operational services.",
+        "Paluv is a technology company focused on software and IT. Today, we apply that expertise to aviation, building systems and products for the organizations that keep aircraft moving.",
       primaryCta: "Start a project",
       secondaryCta: "Explore our work",
       meta: [
-        { label: "Home base", value: "Speyer · Germany" },
-        { label: "For", value: "Pilots · Operators · Academies" },
-        { label: "Working across", value: "Software · Products · Services" },
+        { label: "Core", value: "Software · IT · Digital products" },
+        { label: "Current focus", value: "Aviation" },
+        { label: "Built for", value: "ATOs · Aeroclubs · Operators" },
       ],
     },
     promise: {
-      eyebrow: "From the cockpit out",
-      title: "Technology should make aviation feel simpler — not more complicated.",
+      eyebrow: "Our point of view",
+      title: "We build technology first. Aviation is where we put it to work today.",
       text:
-        "We combine product thinking, engineering and operational perspective to create tools that earn their place in everyday flying.",
-      points: ["Pilot-first", "General aviation", "Built in Germany"],
+        "From software platforms and ERP systems to connected products, we combine engineering with operational understanding to make complex work simpler.",
+      points: ["Software & IT", "Operational systems", "Aviation focus"],
     },
     sections: {
       products: {
         title: "Products",
+        itemLabel: "Paluv product",
       },
       services: {
-        title: "One aviation partner. Four capabilities.",
+        title: "Technology that solves operational problems.",
         subtitle:
-          "From the first workflow sketch to delivery in the field, Paluv connects digital work with the operational reality around it.",
+          "We design, build and operate focused software systems. Aviation is our current domain, but solid technology is the foundation of every engagement.",
       },
       partners: {
-        title: "Better aviation is collaborative.",
+        title: "Technology is a partnership.",
         subtitle:
-          "We work with flight schools, service teams, technical specialists and selected regional partners around Speyer.",
+          "We work closely with organizations that lead in pilot training, qualification and hospitality, supported by a strong regional aviation network.",
       },
     },
     products: [
       {
         image: "/assets/kopi/heroSection.png",
+        width: "1248",
+        height: "832",
         imageAlt: "Kopi portable avionics companion hardware in use",
         title: "Kopi",
         description:
@@ -79,6 +82,8 @@ const HOME_CONTENT = {
       },
       {
         image: "/assets/pilotary/mockup.jpeg",
+        width: "5976",
+        height: "3984",
         imageAlt: "Pilotary shared-flight marketplace shown on a phone during a flight",
         title: "Pilotary",
         description:
@@ -87,103 +92,123 @@ const HOME_CONTENT = {
         cta: "Discover Pilotary",
         href: "https://pilotary.de",
       },
+      {
+        visual: "airsap",
+        imageAlt: "AirSAP aircraft ERP fleet management dashboard",
+        title: "AirSAP",
+        description:
+          "An aircraft ERP for ATOs and aeroclubs, unifying fleet availability, maintenance, documents, scheduling and daily operations.",
+        tag: "ERP · Fleet management",
+        cta: "Talk to us about AirSAP",
+        href: "#contact",
+      },
     ],
     services: [
       {
         index: "01",
-        title: "Aviation software",
+        icon: "software",
+        title: "Software engineering",
         description:
-          "Focused portals, workflow tools and custom systems for operators, flight schools and pilot communities.",
-        tag: "Product design · Engineering",
+          "Custom web platforms, applications, ERP systems and portals built around the way your organization actually works.",
+        tag: "Applications · Platforms · ERP",
       },
       {
         index: "02",
-        title: "Supply & commerce",
+        icon: "automation",
+        title: "IT & automation",
         description:
-          "Pilot retail and B2B distribution for oils, parts and practical aviation supply-chain support.",
-        tag: "Retail · Distribution",
+          "Integrations, cloud infrastructure and automated workflows that connect data, teams and operational processes.",
+        tag: "Integrations · Cloud · Workflows",
       },
       {
         index: "03",
-        title: "Pilot services",
+        icon: "aviation",
+        title: "Aviation systems",
         description:
-          "Insurance, assistance and pilot support designed around real operations and real flying.",
-        tag: "Insurance · Assistance",
+          "Purpose-built digital tools for aircraft, training records, academy operations, aeroclubs and pilot services.",
+        tag: "Aircraft · Training · Operations",
       },
       {
         index: "04",
-        title: "Brand & merchandise",
+        icon: "product",
+        title: "Digital products",
         description:
-          "Thoughtful merchandise, customization and brand delivery for clubs, academies, events and partners.",
-        tag: "Brand systems · Production",
+          "Product strategy, interface design and connected experiences taken from a clear idea to a dependable release.",
+        tag: "Strategy · UX · Delivery",
       },
     ],
     partners: {
-      kicker: "Our network",
-      summary: "A growing network rooted at Speyer Airport and connected across general aviation.",
-      items: [
+      kicker: "Technology partnerships",
+      summary: "Paluv works as a technology partner, not simply a supplier.",
+      premiumLabel: "Technology partners",
+      premiumTitle: "We are the technology partner for organizations that set the standard.",
+      networkLabel: "Regional network",
+      networkTitle: "Connected by technology, aviation and Speyer.",
+      premium: [
         {
           id: "fas",
           name: "Flight Academy Speyer",
           logo: "/assets/collaborators/fas-512.png",
-          logoAlt: "FAS logo",
-          category: "Flight academy",
-          status: "Collaboration",
-          services:
-            "Pilot onboarding journeys, training workflow software, student communication, and academy-facing digital services.",
-          note: "Training and aviation education collaboration.",
-        },
-        {
-          id: "fsl",
-          name: "FSL",
-          logo: "/assets/collaborators/fsl.jpeg",
-          logoAlt: "FSL logo",
-          category: "Flight services",
-          status: "Collaboration",
-          services:
-            "Operational tools, process automation, lightweight portals, and aviation-specific service design for daily workflows.",
-          note: "Operations and aviation service collaboration.",
+          logoAlt: "Flight Academy Speyer",
+          category: "Pilot training",
+          status: "Technology partner",
+          statement:
+            "An officially authorised training organisation with more than 200 pilot students, guiding careers from ground school and first licences through commercial and airline pilot training.",
+          href: "https://www.flightacademy-speyer.de/",
         },
         {
           id: "skymentor",
-          name: "Skymentor",
+          name: "SkyMentor Aviation",
           logo: "/assets/collaborators/skymentor.png",
-          logoAlt: "Skymentor logo",
-          category: "Pilot ecosystem",
-          status: "Collaboration",
-          services:
-            "Pilot-facing services, digital workflows, and aviation community support.",
-          note: "Pilot network and ecosystem collaboration.",
-        },
-        {
-          id: "technim",
-          name: "Technim",
-          logo: "/assets/collaborators/technim.png",
-          logoAlt: "Technim logo",
-          category: "Technical partner",
-          status: "Collaboration",
-          services:
-            "Technical collaboration for aviation-adjacent systems, operations, and delivery support.",
-          note: "Technical ecosystem collaboration.",
+          logoAlt: "SkyMentor Aviation",
+          category: "Pilot qualification",
+          status: "Technology partner",
+          statement:
+            "A recognised aviation training provider for BZF and AZF radio licences plus ICAO language proficiency examinations accepted throughout EASA states.",
+          href: "https://skymentor.de/",
         },
         {
           id: "donello",
           name: "Donello",
-          logoText: "donello",
-          category: "Regional hospitality partner",
-          status: "Speyer partner",
-          services:
-            "A selected hospitality partner for the Paluv and Flight Academy Speyer network, located directly at Speyer marina.",
-          note: "Italian and mediterranean cuisine by the water, a few minutes from Speyer Cathedral.",
-          href: "https://donello-speyer.de",
+          logo: "/assets/collaborators/donello.svg",
+          logoAlt: "Donello am Yachthafen",
+          category: "Hospitality",
+          status: "Technology partner",
+          statement:
+            "A highly regarded Italian restaurant at Speyer marina, combining Mediterranean cuisine, wine, events and waterfront hospitality.",
+          href: "https://donello-speyer.de/",
+        },
+      ],
+      network: [
+        {
+          id: "fsl",
+          name: "Flugplatz Speyer/Ludwigshafen",
+          logo: "/assets/collaborators/fsl.jpeg",
+          logoAlt: "Flugplatz Speyer Ludwigshafen",
+          category: "Aviation infrastructure",
+          status: "Regional network",
+          statement:
+            "A modern regional airfield for business and private aviation in the Rhine-Neckar metropolitan region, and the operational home of our aviation network.",
+          href: "https://flugplatz-speyer.de/",
+        },
+        {
+          id: "technik-museum",
+          name: "Technik Museum Speyer",
+          logo: "/assets/collaborators/technik-museum-speyer.png",
+          logoAlt: "Technik Museum Speyer",
+          category: "Technology & aviation culture",
+          status: "Regional network",
+          statement:
+            "A major technology museum bringing aviation and spaceflight history to life through more than 70 aircraft and helicopters, the Boeing 747 and Space Shuttle Buran.",
+          href: "https://www.technik-museum.de/en/",
         },
       ],
     },
     contact: {
       eyebrow: "Let’s build",
-      title: "Have an aviation challenge in mind?",
+      title: "Have a technology challenge in mind?",
       subtitle:
-        "Tell us what you are working on. We will respond with a practical next step — usually within two working days.",
+        "Tell us what you are working on. We will respond with a practical next step, usually within two working days.",
       directLabel: "Prefer email?",
       directCta: "Write to hello@paluv.de",
       fields: {
@@ -198,7 +223,7 @@ const HOME_CONTENT = {
       },
       submit: "Send inquiry",
       sending: "Sending your inquiry…",
-      success: "Thank you — your message is on its way. We will reply soon.",
+      success: "Thank you. Your message is on its way. We will reply soon.",
       error: "That did not work. Please try again or email us directly.",
     },
     map: {
@@ -211,16 +236,16 @@ const HOME_CONTENT = {
     footer: {
       privacy: "Privacy (GDPR)",
       imprint: "Imprint",
-      statement: "Aviation products and services, built from the cockpit out.",
+      statement: "Software and IT systems, currently focused on aviation.",
     },
   },
   de: {
     htmlLang: "de",
     locale: "de_DE",
     alternateLocale: "en_US",
-    title: "Paluv | Luftfahrtsoftware, Piloten-Produkte & Services",
+    title: "Paluv | Software, IT-Systeme & Aviation Technology",
     description:
-      "Paluv entwickelt Luftfahrtsoftware, Piloten-Produkte und operative Services für General Aviation, Flugschulen und Aviation-Partner in Europa.",
+      "Paluv ist ein Technologieunternehmen für Software, IT-Systeme und digitale Produkte, mit aktuellem Fokus auf Aviation, ATOs, Aeroclubs und Betreiber.",
     ogImageAlt: "General-Aviation-Flugzeug auf dem Vorfeld bei Sonnenaufgang",
     nav: {
       home: "Start",
@@ -232,43 +257,46 @@ const HOME_CONTENT = {
       languageSwitch: "Sprachauswahl",
     },
     hero: {
-      eyebrow: "Aviation · Software · Operations",
-      title: "Für Menschen, die fliegen.",
+      eyebrow: "Technologie · Software · Aviation",
+      title: "Technologie für echte Abläufe.",
       subtitle:
-        "Paluv übersetzt echte Erfahrung aus der General Aviation in fokussierte Software, vernetzte Produkte und verlässliche operative Services.",
+        "Paluv ist ein Technologieunternehmen mit Fokus auf Software und IT. Heute bringen wir diese Expertise in die Aviation und entwickeln Systeme und Produkte für Organisationen, die Flugzeuge in Bewegung halten.",
       primaryCta: "Projekt starten",
       secondaryCta: "Unsere Arbeit",
       meta: [
-        { label: "Homebase", value: "Speyer · Deutschland" },
-        { label: "Für", value: "Piloten · Betreiber · Flugschulen" },
-        { label: "Bereiche", value: "Software · Produkte · Services" },
+        { label: "Kern", value: "Software · IT · Digitale Produkte" },
+        { label: "Aktueller Fokus", value: "Aviation" },
+        { label: "Für", value: "ATOs · Aeroclubs · Betreiber" },
       ],
     },
     promise: {
-      eyebrow: "Aus dem Cockpit gedacht",
-      title: "Technologie sollte Luftfahrt einfacher machen — nicht komplizierter.",
+      eyebrow: "Unsere Perspektive",
+      title: "Wir bauen zuerst Technologie. Aviation ist heute unser Einsatzgebiet.",
       text:
-        "Wir verbinden Produktdenken, Engineering und operative Perspektive zu Werkzeugen, die sich ihren Platz im fliegerischen Alltag verdienen.",
-      points: ["Pilotenfokus", "General Aviation", "Entwickelt in Deutschland"],
+        "Von Software-Plattformen und ERP-Systemen bis zu vernetzten Produkten verbinden wir Engineering mit operativem Verständnis und machen komplexe Arbeit einfacher.",
+      points: ["Software & IT", "Operative Systeme", "Aviation-Fokus"],
     },
     sections: {
       products: {
         title: "Produkte",
+        itemLabel: "Paluv Produkt",
       },
       services: {
-        title: "Ein Aviation-Partner. Vier Kompetenzen.",
+        title: "Technologie, die operative Probleme löst.",
         subtitle:
-          "Vom ersten Workflow bis zur Umsetzung im Feld verbindet Paluv digitale Arbeit mit der operativen Realität.",
+          "Wir konzipieren, bauen und betreiben fokussierte Softwaresysteme. Aviation ist unser aktuelles Einsatzgebiet, solide Technologie bildet immer die Grundlage.",
       },
       partners: {
-        title: "Bessere Luftfahrt entsteht gemeinsam.",
+        title: "Technologie ist Partnerschaft.",
         subtitle:
-          "Wir arbeiten mit Flugschulen, Service-Teams, technischen Spezialisten und ausgewählten regionalen Partnern rund um Speyer.",
+          "Wir arbeiten eng mit Organisationen zusammen, die in Pilotenausbildung, Qualifikation und Hospitality Maßstäbe setzen, getragen von einem starken regionalen Aviation-Netzwerk.",
       },
     },
     products: [
       {
         image: "/assets/kopi/heroSection.png",
+        width: "1248",
+        height: "832",
         imageAlt: "Tragbarer Kopi-Avionikbegleiter im Einsatz",
         title: "Kopi",
         description:
@@ -279,6 +307,8 @@ const HOME_CONTENT = {
       },
       {
         image: "/assets/pilotary/mockup.jpeg",
+        width: "5976",
+        height: "3984",
         imageAlt: "Pilotary-Marktplatz für gemeinsame Flüge auf einem Smartphone während eines Flugs",
         title: "Pilotary",
         description:
@@ -287,103 +317,123 @@ const HOME_CONTENT = {
         cta: "Pilotary entdecken",
         href: "https://pilotary.de",
       },
+      {
+        visual: "airsap",
+        imageAlt: "AirSAP ERP-Dashboard für das Management einer Flugzeugflotte",
+        title: "AirSAP",
+        description:
+          "Ein Aircraft-ERP für ATOs und Aeroclubs, das Flottenverfügbarkeit, Wartung, Dokumente, Planung und Tagesbetrieb in einem System vereint.",
+        tag: "ERP · Flottenmanagement",
+        cta: "Über AirSAP sprechen",
+        href: "#contact",
+      },
     ],
     services: [
       {
         index: "01",
-        title: "Aviation Software",
+        icon: "software",
+        title: "Software Engineering",
         description:
-          "Fokussierte Portale, Workflow-Tools und individuelle Systeme für Betreiber, Flugschulen und Pilot-Communities.",
-        tag: "Product Design · Engineering",
+          "Individuelle Web-Plattformen, Anwendungen, ERP-Systeme und Portale, aufgebaut für die tatsächlichen Abläufe Ihrer Organisation.",
+        tag: "Anwendungen · Plattformen · ERP",
       },
       {
         index: "02",
-        title: "Supply & Commerce",
+        icon: "automation",
+        title: "IT & Automation",
         description:
-          "Pilotenshop und B2B-Distribution für Öle, Teile und praxisnahen Supply-Chain-Support in der Luftfahrt.",
-        tag: "Handel · Distribution",
+          "Integrationen, Cloud-Infrastruktur und automatisierte Workflows, die Daten, Teams und operative Prozesse verbinden.",
+        tag: "Integrationen · Cloud · Workflows",
       },
       {
         index: "03",
-        title: "Pilot Services",
+        icon: "aviation",
+        title: "Aviation-Systeme",
         description:
-          "Versicherung, Assistance und Pilotensupport für den echten Betrieb und echte Fliegerei.",
-        tag: "Versicherung · Support",
+          "Passgenaue digitale Werkzeuge für Flugzeuge, Trainingsakten, Flugschulbetrieb, Aeroclubs und Pilotenservices.",
+        tag: "Flugzeuge · Training · Betrieb",
       },
       {
         index: "04",
-        title: "Brand & Merchandise",
+        icon: "product",
+        title: "Digitale Produkte",
         description:
-          "Durchdachtes Merchandise, Individualisierung und Markenrealisierung für Clubs, Flugschulen, Events und Partner.",
-        tag: "Markensysteme · Produktion",
+          "Produktstrategie, Interface Design und vernetzte Erlebnisse, von einer klaren Idee bis zum verlässlichen Release.",
+        tag: "Strategie · UX · Delivery",
       },
     ],
     partners: {
-      kicker: "Unser Netzwerk",
-      summary: "Ein wachsendes Netzwerk mit Wurzeln am Flugplatz Speyer und Verbindungen in die General Aviation.",
-      items: [
+      kicker: "Technologiepartnerschaften",
+      summary: "Paluv arbeitet als Technologiepartner, nicht nur als Lieferant.",
+      premiumLabel: "Technologiepartner",
+      premiumTitle: "Wir sind der Technologiepartner für Organisationen, die Maßstäbe setzen.",
+      networkLabel: "Regionales Netzwerk",
+      networkTitle: "Verbunden durch Technologie, Aviation und Speyer.",
+      premium: [
         {
           id: "fas",
           name: "Flight Academy Speyer",
           logo: "/assets/collaborators/fas-512.png",
-          logoAlt: "FAS Logo",
-          category: "Flight Academy",
-          status: "Kooperation",
-          services:
-            "Pilot-Onboarding, Trainings-Workflows, Kommunikation mit Flugschülern und digitale Services für Flugschulen.",
-          note: "Kooperation im Bereich Training und Aviation Education.",
-        },
-        {
-          id: "fsl",
-          name: "FSL",
-          logo: "/assets/collaborators/fsl.jpeg",
-          logoAlt: "FSL Logo",
-          category: "Flight Services",
-          status: "Kooperation",
-          services:
-            "Operative Tools, Prozessautomatisierung, schlanke Portale und luftfahrtspezifisches Service Design für den Tagesbetrieb.",
-          note: "Kooperation im Bereich Operations und Aviation Services.",
+          logoAlt: "Flight Academy Speyer",
+          category: "Pilotenausbildung",
+          status: "Technologiepartner",
+          statement:
+            "Eine offiziell genehmigte Ausbildungsorganisation mit mehr als 200 Flugschülern, von der Theorie und ersten Lizenz bis zur Berufs- und Verkehrspilotenausbildung.",
+          href: "https://www.flightacademy-speyer.de/",
         },
         {
           id: "skymentor",
-          name: "Skymentor",
+          name: "SkyMentor Aviation",
           logo: "/assets/collaborators/skymentor.png",
-          logoAlt: "Skymentor Logo",
-          category: "Piloten-Ökosystem",
-          status: "Kooperation",
-          services:
-            "Pilotennahe Services, digitale Workflows und Unterstützung für Aviation Communities.",
-          note: "Kooperation im Piloten- und Aviation-Ökosystem.",
-        },
-        {
-          id: "technim",
-          name: "Technim",
-          logo: "/assets/collaborators/technim.png",
-          logoAlt: "Technim Logo",
-          category: "Technischer Partner",
-          status: "Kooperation",
-          services:
-            "Technische Zusammenarbeit für aviation-nahe Systeme, Operations und Delivery Support.",
-          note: "Technische Ökosystem-Kooperation.",
+          logoAlt: "SkyMentor Aviation",
+          category: "Pilotenqualifikation",
+          status: "Technologiepartner",
+          statement:
+            "Ein anerkannter Aviation-Ausbildungsanbieter für BZF- und AZF-Funklizenzen sowie ICAO-Sprachprüfungen, deren Zertifikate in allen EASA-Staaten anerkannt sind.",
+          href: "https://skymentor.de/",
         },
         {
           id: "donello",
           name: "Donello",
-          logoText: "donello",
-          category: "Regionaler Hospitality-Partner",
-          status: "Partner in Speyer",
-          services:
-            "Ausgewählter Hospitality-Partner im Netzwerk von Paluv und der Flight Academy Speyer, direkt am Yachthafen Speyer.",
-          note: "Italienisch-mediterrane Küche am Wasser, nur wenige Minuten vom Speyerer Dom.",
-          href: "https://donello-speyer.de",
+          logo: "/assets/collaborators/donello.svg",
+          logoAlt: "Donello am Yachthafen",
+          category: "Hospitality",
+          status: "Technologiepartner",
+          statement:
+            "Ein hoch angesehenes italienisches Restaurant am Yachthafen Speyer, das mediterrane Küche, Wein, Events und Gastlichkeit direkt am Wasser verbindet.",
+          href: "https://donello-speyer.de/",
+        },
+      ],
+      network: [
+        {
+          id: "fsl",
+          name: "Flugplatz Speyer/Ludwigshafen",
+          logo: "/assets/collaborators/fsl.jpeg",
+          logoAlt: "Flugplatz Speyer Ludwigshafen",
+          category: "Aviation-Infrastruktur",
+          status: "Regionales Netzwerk",
+          statement:
+            "Ein moderner regionaler Verkehrslandeplatz für Geschäfts- und Privatfliegerei in der Metropolregion Rhein-Neckar und die operative Heimat unseres Aviation-Netzwerks.",
+          href: "https://flugplatz-speyer.de/",
+        },
+        {
+          id: "technik-museum",
+          name: "Technik Museum Speyer",
+          logo: "/assets/collaborators/technik-museum-speyer.png",
+          logoAlt: "Technik Museum Speyer",
+          category: "Technik- und Aviation-Kultur",
+          status: "Regionales Netzwerk",
+          statement:
+            "Ein bedeutendes Technikmuseum, das Luft- und Raumfahrtgeschichte mit mehr als 70 Flugzeugen und Hubschraubern, der Boeing 747 und dem Space Shuttle Buran erlebbar macht.",
+          href: "https://www.technik-museum.de/de/",
         },
       ],
     },
     contact: {
       eyebrow: "Gemeinsam starten",
-      title: "Eine Aviation-Herausforderung im Kopf?",
+      title: "Eine Technologie-Herausforderung im Kopf?",
       subtitle:
-        "Erzählen Sie uns, woran Sie arbeiten. Wir antworten mit einem pragmatischen nächsten Schritt — in der Regel innerhalb von zwei Werktagen.",
+        "Erzählen Sie uns, woran Sie arbeiten. Wir antworten mit einem pragmatischen nächsten Schritt, in der Regel innerhalb von zwei Werktagen.",
       directLabel: "Lieber per E-Mail?",
       directCta: "An hello@paluv.de schreiben",
       fields: {
@@ -398,7 +448,7 @@ const HOME_CONTENT = {
       },
       submit: "Anfrage senden",
       sending: "Ihre Anfrage wird gesendet…",
-      success: "Vielen Dank — Ihre Nachricht ist unterwegs. Wir melden uns bald.",
+      success: "Vielen Dank. Ihre Nachricht ist unterwegs. Wir melden uns bald.",
       error: "Das hat nicht funktioniert. Bitte versuchen Sie es erneut oder schreiben Sie uns direkt.",
     },
     map: {
@@ -411,7 +461,7 @@ const HOME_CONTENT = {
     footer: {
       privacy: "Datenschutz",
       imprint: "Impressum",
-      statement: "Aviation-Produkte und Services, aus dem Cockpit gedacht.",
+      statement: "Software und IT-Systeme, aktuell mit Fokus auf Aviation.",
     },
   },
 };
