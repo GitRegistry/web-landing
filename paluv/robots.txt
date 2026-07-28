@@ -1,4 +1,5 @@
 User-agent: *
 Allow: /
 
+Host: paluv.de
 Sitemap: https://paluv.de/sitemap.xml

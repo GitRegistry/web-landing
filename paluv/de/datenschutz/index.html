@@ -7,42 +7,49 @@
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
   <meta name="description" content="Gemeinsame Datenschutzhinweise für Paluv UG sowie die Websites von Paluv, Kopi und Pilotary." />
   <meta name="robots" content="index, follow" />
-  <meta name="theme-color" content="#f7f7f5" />
+  <meta name="theme-color" content="#f5f7fa" />
+  <meta name="color-scheme" content="light" />
   <title>Datenschutz | Paluv UG</title>
   <link rel="canonical" href="https://paluv.de/de/datenschutz/" />
   <link rel="alternate" hreflang="de" href="https://paluv.de/de/datenschutz/" />
   <link rel="alternate" hreflang="en" href="https://paluv.de/en/privacy/" />
   <link rel="alternate" hreflang="x-default" href="https://paluv.de/en/privacy/" />
-  <link rel="icon" href="/assets/paluvico.ico" type="image/x-icon" />
+  <meta property="og:title" content="Datenschutz | Paluv UG" />
+  <meta property="og:description" content="Gemeinsame Datenschutzhinweise für Paluv UG sowie die Websites von Paluv, Kopi und Pilotary." />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://paluv.de/de/datenschutz/" />
+  <meta property="og:site_name" content="Paluv" />
+  <link rel="icon" href="/assets/paluvico.ico" sizes="any" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;600;700&family=Sora:wght@300;400;500;600&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="/css/styles.css?v=20260617-paluv-trust" />
+  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="/css/styles.css?v=20260728-paluv-v2" />
+  <script src="/js/scripts.js?v=20260728-paluv-v2" defer></script>
 </head>
 
 <body>
-  <div class="page legal-page">
-    <header class="site-header legal-header no-blend">
+  <div class="legal-page">
+    <header class="site-header legal-header">
       <a class="brand" href="/de/">
-        <img class="brand-logo" src="/assets/paluvlogo.png" alt="Paluv" />
+        <img class="brand-logo" src="/assets/paluvlogo.png" width="420" height="196" alt="Paluv" />
       </a>
-      <nav class="site-nav legal-nav">
+      <nav class="legal-nav" aria-label="Rechtliche Seiten">
         <a href="/de/">Start</a>
         <a href="/de/impressum/">Impressum</a>
         <a href="/de/datenschutz/" aria-current="page">Datenschutz</a>
       </nav>
-      <div class="header-actions">
-        <div class="language-switch" aria-label="Sprachauswahl">
-          <a href="/en/privacy/" lang="en" hreflang="en">EN</a>
-          <span aria-hidden="true">/</span>
-          <a href="/de/datenschutz/" lang="de" hreflang="de" aria-current="page">DE</a>
-        </div>
-      </div>
+      <a class="language-switch" href="/en/privacy/" data-language-link lang="en"
+        hreflang="en" aria-label="Sprachauswahl">
+        <span>DE</span><span aria-hidden="true">→</span><strong>EN</strong>
+      </a>
     </header>
+    <div class="legal-context"><a href="/de/">Paluv</a><span>/</span><span>Datenschutz</span></div>
 
     <main class="legal-content">
-      <h1>Datenschutzhinweis</h1>
-      <p class="legal-updated">Stand: 9. April 2026</p>
+      <div class="legal-title">
+        <h1>Datenschutzhinweis</h1>
+        <p class="legal-updated">Stand: 28. Juli 2026</p>
+      </div>
 
       <section>
         <h2>Verantwortlicher</h2>
@@ -84,19 +91,15 @@
       </section>
 
       <section>
-        <h2>Eingebettete Karte auf Paluv</h2>
-        <p>Auf der Paluv-Website ist eine Karte von OpenStreetMap eingebettet. Beim Laden der Karte können IP-Adresse, Browser-Metadaten und die aufrufende Seite an OpenStreetMap übertragen werden.</p>
-      </section>
-
-      <section>
-        <h2>Sprachspeicherung auf Kopi</h2>
+        <h2>Sprachpräferenzen</h2>
+        <p>Paluv speichert die gewählte Sprache im <code>localStorage</code> unter <code>paluv-language</code> und für bis zu ein Jahr im funktionalen Cookie <code>paluv_language</code>. Mit dem Cookie kann der Server die Website wieder in der gewählten Sprache öffnen.</p>
         <p>Kopi speichert die gewählte Sprache im <code>localStorage</code> unter dem Schlüssel <code>langChoice</code>, damit die Website beim nächsten Besuch direkt in der gewünschten Sprache geöffnet werden kann.</p>
-        <p>Der Wert bleibt im Browser gespeichert, bis du den lokalen Speicher löschst oder die Einstellung überschreibst.</p>
+        <p>Die Local-Storage-Werte bleiben im Browser gespeichert, bis du den lokalen Speicher löschst oder die Einstellung überschreibst.</p>
       </section>
 
       <section>
         <h2>Empfänger</h2>
-        <p>Je nach genutzter Seite können personenbezogene Daten an die technischen Anbieter hinter <code>mailer.misei.dev</code>, <code>analytics.misei.dev</code>, <code>cloud.umami.is</code> und OpenStreetMap übermittelt werden.</p>
+        <p>Je nach genutzter Seite können personenbezogene Daten an die technischen Anbieter hinter <code>mailer.misei.dev</code>, <code>analytics.misei.dev</code> und <code>cloud.umami.is</code> übermittelt werden.</p>
       </section>
 
       <section>

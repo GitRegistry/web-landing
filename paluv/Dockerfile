@@ -10,3 +10,4 @@ COPY de /usr/share/nginx/html/de
 COPY css /usr/share/nginx/html/css
 COPY js /usr/share/nginx/html/js
 COPY assets /usr/share/nginx/html/assets
+COPY robots.txt sitemap.xml /usr/share/nginx/html/

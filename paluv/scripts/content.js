@@ -1,17 +1,15 @@
 const SHARED = {
   organizationName: "Paluv UG",
   siteUrl: "https://paluv.de",
-  logoUrl: "https://paluv.de/assets/PaluvLogoBlack.png",
-  logoAltEn: "Paluv UG logo",
-  logoAltDe: "Paluv UG Logo",
+  logoUrl: "https://paluv.de/assets/paluvlogo.png",
+  socialImageUrl: "https://paluv.de/assets/paluv-og-v2.jpg",
+  heroImage: "/assets/paluv-hero-v2.webp",
   generalEmail: "hello@paluv.de",
   businessEmail: "partner@paluv.de",
   analyticsScript: "https://analytics.misei.dev/script.js",
-  mapEmbedSrc:
-    "https://www.openstreetmap.org/export/embed.html?bbox=8.44167%2C49.29472%2C8.46167%2C49.31472&amp;layer=mapnik&amp;marker=49.30472%2C8.45167",
   fontsHref:
-    "https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;600;700&family=Sora:wght@300;400;500;600&display=swap",
-  assetVersion: "20260617-paluv-trust",
+    "https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&display=swap",
+  assetVersion: "20260728-paluv-v2",
   year: "2026",
 };
 
@@ -20,13 +18,10 @@ const HOME_CONTENT = {
     htmlLang: "en",
     locale: "en_US",
     alternateLocale: "de_DE",
-    title: "Paluv UG | Aviation Software, Operations Services & Pilot Products",
+    title: "Paluv | Aviation Software, Pilot Products & Operations",
     description:
-      "Paluv UG builds aviation software, operations services, and pilot-first products like Kopi and Pilotary for GA operators, pilots, and flight schools.",
-    ogImageAlt: SHARED.logoAltEn,
-    loadingText: "Loading model",
-    loadingErrorText: "Model failed to load",
-    loadingAriaLabel: "Loading 3D model",
+      "Paluv builds aviation software, pilot products and operational services for general aviation, flight schools and aviation partners across Europe.",
+    ogImageAlt: "General aviation aircraft on the apron at sunrise",
     nav: {
       home: "Home",
       partners: "Collaborators",
@@ -37,92 +32,99 @@ const HOME_CONTENT = {
       languageSwitch: "Language selector",
     },
     hero: {
-      eyebrow: "Software. Operations. Innovation",
-      title: "Aviation software, re-engineered",
+      eyebrow: "Aviation · Software · Operations",
+      title: "Built for people who fly.",
       subtitle:
-        "From concept to production, Paluv builds aviation products with engineering depth, pilot focus, and German precision.",
-      primaryCta: "Contact",
-      secondaryCta: "View collaborators",
+        "Paluv turns real general-aviation experience into focused software, connected products and dependable operational services.",
+      primaryCta: "Start a project",
+      secondaryCta: "Explore our work",
       meta: [
-        { label: "Focus", value: "Pilots · GA Operators · Flight Schools" },
-        { label: "Domains", value: "IT-Software · Ops · Supply Chain" },
-        { label: "Based", value: "Germany · Europe" },
+        { label: "Home base", value: "Speyer · Germany" },
+        { label: "For", value: "Pilots · Operators · Academies" },
+        { label: "Working across", value: "Software · Products · Services" },
       ],
+    },
+    promise: {
+      eyebrow: "From the cockpit out",
+      title: "Technology should make aviation feel simpler — not more complicated.",
+      text:
+        "We combine product thinking, engineering and operational perspective to create tools that earn their place in everyday flying.",
+      points: ["Pilot-first", "General aviation", "Built in Germany"],
     },
     sections: {
       products: {
         title: "Products",
       },
       services: {
-        title: "Services",
+        title: "One aviation partner. Four capabilities.",
         subtitle:
-          "Four commercial lanes built for pilots, operators, schools, and aviation-facing brands.",
+          "From the first workflow sketch to delivery in the field, Paluv connects digital work with the operational reality around it.",
       },
       partners: {
-        title: "Partners & Clients",
+        title: "Better aviation is collaborative.",
         subtitle:
-          "Aviation collaborators, service partners, and ecosystem teams working with Paluv products and operations.",
+          "We work with flight schools, service teams, technical specialists and selected regional partners around Speyer.",
       },
     },
     products: [
       {
         image: "/assets/kopi/heroSection.png",
-        imageAlt: "Kopi hero section",
+        imageAlt: "Kopi portable avionics companion hardware in use",
         title: "Kopi",
-        description: "Portable all-in-one avionics copilot. ADS-B & ADS-L",
-        tag: "Product · Crowdfunding",
-        cta: "Visit Kopi",
+        description:
+          "A portable all-in-one avionics companion for traffic awareness with ADS-B and ADS-L.",
+        tag: "Hardware · Avionics",
+        cta: "Discover Kopi",
         href: "https://kopi.paluv.de",
       },
       {
         image: "/assets/pilotary/mockup.jpeg",
-        imageAlt: "Pilotary hero section",
+        imageAlt: "Pilotary shared-flight marketplace shown on a phone during a flight",
         title: "Pilotary",
-        description: "The first pilot digital wallet community.",
-        tag: "App · Ecosystem",
-        cta: "Visit Pilotary",
+        description:
+          "A German-first marketplace for discovering and coordinating shared private flights.",
+        tag: "Platform · Community",
+        cta: "Discover Pilotary",
         href: "https://pilotary.de",
       },
     ],
     services: [
       {
-        index: "01 · Digital",
-        title: "Digital Services",
+        index: "01",
+        title: "Aviation software",
         description:
-          "Custom software, workflow tools, portals, and aviation-first digital systems for operators, flight schools, and pilot communities.",
-        tag: "Software · Workflow",
+          "Focused portals, workflow tools and custom systems for operators, flight schools and pilot communities.",
+        tag: "Product design · Engineering",
       },
       {
-        index: "02 · Commerce",
-        title: "Supply & Shop",
+        index: "02",
+        title: "Supply & commerce",
         description:
-          "B2C pilot webshop and B2B distribution for oils, parts, and aviation supply-chain support.",
-        tag: "B2C Shop · B2B Supply",
+          "Pilot retail and B2B distribution for oils, parts and practical aviation supply-chain support.",
+        tag: "Retail · Distribution",
       },
       {
-        index: "03 · Pilots",
-        title: "Pilot Services",
+        index: "03",
+        title: "Pilot services",
         description:
-          "Insurance, breakdown assistance, and pilot support services designed around real operations and real flying.",
+          "Insurance, assistance and pilot support designed around real operations and real flying.",
         tag: "Insurance · Assistance",
       },
       {
-        index: "04 · Brand",
-        title: "Branding & Merch",
+        index: "04",
+        title: "Brand & merchandise",
         description:
-          "Merchandising, customization, and aviation brand execution for clubs, schools, events, and commercial partners.",
-        tag: "Merch · Customization",
+          "Thoughtful merchandise, customization and brand delivery for clubs, academies, events and partners.",
+        tag: "Brand systems · Production",
       },
     ],
     partners: {
-      kicker: "Portfolio runway",
-      summary: "Hover, focus, or tap a logo to preview the collaboration context.",
-      detailLabel: "Provided services",
-      interactionHint: "View context",
+      kicker: "Our network",
+      summary: "A growing network rooted at Speyer Airport and connected across general aviation.",
       items: [
         {
           id: "fas",
-          name: "FAS",
+          name: "Flight Academy Speyer",
           logo: "/assets/collaborators/fas-512.png",
           logoAlt: "FAS logo",
           category: "Flight academy",
@@ -164,38 +166,26 @@ const HOME_CONTENT = {
             "Technical collaboration for aviation-adjacent systems, operations, and delivery support.",
           note: "Technical ecosystem collaboration.",
         },
-      ],
-    },
-    trust: {
-      kicker: "Aviation network",
-      title: "Collaborators / Supported by",
-      subtitle: "Paluv works with aviation teams and support partners across training, services, operations, and pilot communities.",
-      groups: [
         {
-          label: "Collaborators / Supported by",
-          items: [
-            { name: "FAS", logo: "/assets/collaborators/fas-512.png", alt: "FAS logo" },
-            { name: "FSL", logo: "/assets/collaborators/fsl.jpeg", alt: "FSL logo" },
-            { name: "Skymentor", logo: "/assets/collaborators/skymentor.png", alt: "Skymentor logo" },
-            { name: "Technim", logo: "/assets/collaborators/technim.png", alt: "Technim logo" },
-          ],
-        },
-        {
-          label: "In Compliance with...",
-          items: [
-            { name: "EASA", logo: "/assets/collaborators/EASA_Logo.png", alt: "EASA logo" },
-          ],
-        },
-        {
-          label: "Insured by",
-          items: [
-            { name: "Allianz", logo: "/assets/collaborators/Allianz.svg.png", alt: "Allianz logo" },
-          ],
+          id: "donello",
+          name: "Donello",
+          logoText: "donello",
+          category: "Regional hospitality partner",
+          status: "Speyer partner",
+          services:
+            "A selected hospitality partner for the Paluv and Flight Academy Speyer network, located directly at Speyer marina.",
+          note: "Italian and mediterranean cuisine by the water, a few minutes from Speyer Cathedral.",
+          href: "https://donello-speyer.de",
         },
       ],
     },
     contact: {
-      title: "Contact",
+      eyebrow: "Let’s build",
+      title: "Have an aviation challenge in mind?",
+      subtitle:
+        "Tell us what you are working on. We will respond with a practical next step — usually within two working days.",
+      directLabel: "Prefer email?",
+      directCta: "Write to hello@paluv.de",
       fields: {
         name: "Name",
         email: "Email",
@@ -204,126 +194,137 @@ const HOME_CONTENT = {
       placeholders: {
         name: "Your name",
         email: "you@email.com",
-        message: "Tell us about the project",
+        message: "What should we solve together?",
       },
-      submit: "Send message",
+      submit: "Send inquiry",
+      sending: "Sending your inquiry…",
+      success: "Thank you — your message is on its way. We will reply soon.",
+      error: "That did not work. Please try again or email us directly.",
     },
     map: {
-      title: "Speyer Airport",
-      caption: "Speyer Airport (EDRY) · Speyer, Germany",
+      eyebrow: "Where aviation meets",
+      title: "Rooted in Speyer.",
+      caption:
+        "Our network starts at Speyer Airport (EDRY) and reaches pilots, operators and partners throughout Europe.",
+      link: "Open Speyer Airport on OpenStreetMap",
     },
     footer: {
       privacy: "Privacy (GDPR)",
       imprint: "Imprint",
+      statement: "Aviation products and services, built from the cockpit out.",
     },
   },
   de: {
     htmlLang: "de",
     locale: "de_DE",
     alternateLocale: "en_US",
-    title: "Paluv UG | Luftfahrtsoftware, operative Services & Pilot-Produkte",
+    title: "Paluv | Luftfahrtsoftware, Piloten-Produkte & Services",
     description:
-      "Paluv UG entwickelt Luftfahrtsoftware, operative Services und pilotenzentrierte Produkte wie Kopi und Pilotary für GA-Betreiber, Piloten und Flugschulen.",
-    ogImageAlt: SHARED.logoAltDe,
-    loadingText: "Modell wird geladen",
-    loadingErrorText: "Modell konnte nicht geladen werden",
-    loadingAriaLabel: "3D Modell wird geladen",
+      "Paluv entwickelt Luftfahrtsoftware, Piloten-Produkte und operative Services für General Aviation, Flugschulen und Aviation-Partner in Europa.",
+    ogImageAlt: "General-Aviation-Flugzeug auf dem Vorfeld bei Sonnenaufgang",
     nav: {
       home: "Start",
       partners: "Kooperationen",
       products: "Produkte",
       services: "Services",
       contact: "Kontakt",
-      menu: "Menu",
+      menu: "Menü",
       languageSwitch: "Sprachauswahl",
     },
     hero: {
-      eyebrow: "Software. Betrieb. Innovation",
-      title: "Aviation Software, neu gedacht",
+      eyebrow: "Aviation · Software · Operations",
+      title: "Für Menschen, die fliegen.",
       subtitle:
-        "Von der Idee bis zur Produktion baut Paluv Aviation-Produkte mit Engineering-Tiefe, Pilotenfokus und deutscher Präzision.",
-      primaryCta: "Kontakt",
-      secondaryCta: "Kooperationen ansehen",
+        "Paluv übersetzt echte Erfahrung aus der General Aviation in fokussierte Software, vernetzte Produkte und verlässliche operative Services.",
+      primaryCta: "Projekt starten",
+      secondaryCta: "Unsere Arbeit",
       meta: [
-        { label: "Fokus", value: "Piloten · GA-Betreiber · Flugschulen" },
-        { label: "Bereiche", value: "IT-Software · Betrieb · Lieferkette" },
-        { label: "Standort", value: "Deutschland · Europa" },
+        { label: "Homebase", value: "Speyer · Deutschland" },
+        { label: "Für", value: "Piloten · Betreiber · Flugschulen" },
+        { label: "Bereiche", value: "Software · Produkte · Services" },
       ],
+    },
+    promise: {
+      eyebrow: "Aus dem Cockpit gedacht",
+      title: "Technologie sollte Luftfahrt einfacher machen — nicht komplizierter.",
+      text:
+        "Wir verbinden Produktdenken, Engineering und operative Perspektive zu Werkzeugen, die sich ihren Platz im fliegerischen Alltag verdienen.",
+      points: ["Pilotenfokus", "General Aviation", "Entwickelt in Deutschland"],
     },
     sections: {
       products: {
         title: "Produkte",
       },
       services: {
-        title: "Services",
+        title: "Ein Aviation-Partner. Vier Kompetenzen.",
         subtitle:
-          "Vier kommerzielle Bereiche für Piloten, Betreiber, Flugschulen und luftfahrtaffine Marken.",
+          "Vom ersten Workflow bis zur Umsetzung im Feld verbindet Paluv digitale Arbeit mit der operativen Realität.",
       },
       partners: {
-        title: "Partner & Kunden",
+        title: "Bessere Luftfahrt entsteht gemeinsam.",
         subtitle:
-          "Aviation-Kooperationen, Servicepartner und Ökosystem-Teams rund um Paluv Produkte und operative Services.",
+          "Wir arbeiten mit Flugschulen, Service-Teams, technischen Spezialisten und ausgewählten regionalen Partnern rund um Speyer.",
       },
     },
     products: [
       {
         image: "/assets/kopi/heroSection.png",
-        imageAlt: "Kopi Hero-Bereich",
+        imageAlt: "Tragbarer Kopi-Avionikbegleiter im Einsatz",
         title: "Kopi",
-        description: "Tragbarer All-in-One Avionik-Copilot. ADS-B & ADS-L",
-        tag: "Produkt · Crowdfunding",
-        cta: "Zu Kopi",
+        description:
+          "Ein tragbarer All-in-One-Avionikbegleiter für mehr Verkehrsbewusstsein mit ADS-B und ADS-L.",
+        tag: "Hardware · Avionik",
+        cta: "Kopi entdecken",
         href: "https://kopi.paluv.de",
       },
       {
         image: "/assets/pilotary/mockup.jpeg",
-        imageAlt: "Pilotary Hero-Bereich",
+        imageAlt: "Pilotary-Marktplatz für gemeinsame Flüge auf einem Smartphone während eines Flugs",
         title: "Pilotary",
-        description: "Die erste digitale Pilot-Wallet-Community.",
-        tag: "App · Ökosystem",
-        cta: "Zu Pilotary",
+        description:
+          "Ein deutschsprachiger Marktplatz zum Entdecken und Koordinieren gemeinsamer privater Flüge.",
+        tag: "Plattform · Community",
+        cta: "Pilotary entdecken",
         href: "https://pilotary.de",
       },
     ],
     services: [
       {
-        index: "01 · Digital",
-        title: "Digital Services",
+        index: "01",
+        title: "Aviation Software",
         description:
-          "Individuelle Software, Workflow-Tools, Portale und luftfahrttaugliche Digitalsysteme für Betreiber, Flugschulen und Pilot-Communities.",
-        tag: "Software · Workflow",
+          "Fokussierte Portale, Workflow-Tools und individuelle Systeme für Betreiber, Flugschulen und Pilot-Communities.",
+        tag: "Product Design · Engineering",
       },
       {
-        index: "02 · Handel",
-        title: "Supply & Shop",
+        index: "02",
+        title: "Supply & Commerce",
         description:
-          "B2C-Pilotenshop und B2B-Distribution für Öl, Teile und belastbaren Supply-Chain-Support in der Luftfahrt.",
-        tag: "Shop · Distribution",
+          "Pilotenshop und B2B-Distribution für Öle, Teile und praxisnahen Supply-Chain-Support in der Luftfahrt.",
+        tag: "Handel · Distribution",
       },
       {
-        index: "03 · Piloten",
+        index: "03",
         title: "Pilot Services",
         description:
-          "Versicherungen, Pannenhilfe und pilotennahe Services, aufgebaut für den echten Betrieb und echte Fliegerei.",
+          "Versicherung, Assistance und Pilotensupport für den echten Betrieb und echte Fliegerei.",
         tag: "Versicherung · Support",
       },
       {
-        index: "04 · Marke",
-        title: "Branding & Merch",
+        index: "04",
+        title: "Brand & Merchandise",
         description:
-          "Merchandising, Customization und Markenauftritte für Clubs, Flugschulen, Events und kommerzielle Partner.",
-        tag: "Merch · Branding",
+          "Durchdachtes Merchandise, Individualisierung und Markenrealisierung für Clubs, Flugschulen, Events und Partner.",
+        tag: "Markensysteme · Produktion",
       },
     ],
     partners: {
-      kicker: "Portfolio-Runway",
-      summary: "Hover, Fokus oder Tap auf ein Logo zeigt den Kontext der jeweiligen Zusammenarbeit.",
-      detailLabel: "Leistungen",
-      interactionHint: "Kontext anzeigen",
+      kicker: "Unser Netzwerk",
+      summary: "Ein wachsendes Netzwerk mit Wurzeln am Flugplatz Speyer und Verbindungen in die General Aviation.",
       items: [
         {
           id: "fas",
-          name: "FAS",
+          name: "Flight Academy Speyer",
           logo: "/assets/collaborators/fas-512.png",
           logoAlt: "FAS Logo",
           category: "Flight Academy",
@@ -365,39 +366,26 @@ const HOME_CONTENT = {
             "Technische Zusammenarbeit für aviation-nahe Systeme, Operations und Delivery Support.",
           note: "Technische Ökosystem-Kooperation.",
         },
-      ],
-    },
-    trust: {
-      kicker: "Aviation-Netzwerk",
-      title: "Kooperationen / Unterstützt durch",
-      subtitle:
-        "Paluv arbeitet mit Aviation-Teams und Support-Partnern aus Training, Services, Operations und Pilot Communities.",
-      groups: [
         {
-          label: "Kooperationen / Unterstützt durch",
-          items: [
-            { name: "FAS", logo: "/assets/collaborators/fas-512.png", alt: "FAS Logo" },
-            { name: "FSL", logo: "/assets/collaborators/fsl.jpeg", alt: "FSL Logo" },
-            { name: "Skymentor", logo: "/assets/collaborators/skymentor.png", alt: "Skymentor Logo" },
-            { name: "Technim", logo: "/assets/collaborators/technim.png", alt: "Technim Logo" },
-          ],
-        },
-        {
-          label: "In Compliance mit...",
-          items: [
-            { name: "EASA", logo: "/assets/collaborators/EASA_Logo.png", alt: "EASA Logo" },
-          ],
-        },
-        {
-          label: "Versichert durch",
-          items: [
-            { name: "Allianz", logo: "/assets/collaborators/Allianz.svg.png", alt: "Allianz Logo" },
-          ],
+          id: "donello",
+          name: "Donello",
+          logoText: "donello",
+          category: "Regionaler Hospitality-Partner",
+          status: "Partner in Speyer",
+          services:
+            "Ausgewählter Hospitality-Partner im Netzwerk von Paluv und der Flight Academy Speyer, direkt am Yachthafen Speyer.",
+          note: "Italienisch-mediterrane Küche am Wasser, nur wenige Minuten vom Speyerer Dom.",
+          href: "https://donello-speyer.de",
         },
       ],
     },
     contact: {
-      title: "Kontakt",
+      eyebrow: "Gemeinsam starten",
+      title: "Eine Aviation-Herausforderung im Kopf?",
+      subtitle:
+        "Erzählen Sie uns, woran Sie arbeiten. Wir antworten mit einem pragmatischen nächsten Schritt — in der Regel innerhalb von zwei Werktagen.",
+      directLabel: "Lieber per E-Mail?",
+      directCta: "An hello@paluv.de schreiben",
       fields: {
         name: "Name",
         email: "E-Mail",
@@ -406,17 +394,24 @@ const HOME_CONTENT = {
       placeholders: {
         name: "Ihr Name",
         email: "you@email.com",
-        message: "Erzählen Sie uns vom Projekt",
+        message: "Was dürfen wir gemeinsam lösen?",
       },
-      submit: "Nachricht senden",
+      submit: "Anfrage senden",
+      sending: "Ihre Anfrage wird gesendet…",
+      success: "Vielen Dank — Ihre Nachricht ist unterwegs. Wir melden uns bald.",
+      error: "Das hat nicht funktioniert. Bitte versuchen Sie es erneut oder schreiben Sie uns direkt.",
     },
     map: {
-      title: "Flugplatz Speyer",
-      caption: "Flugplatz Speyer (EDRY) · Speyer, Deutschland",
+      eyebrow: "Wo Aviation zusammenkommt",
+      title: "Verwurzelt in Speyer.",
+      caption:
+        "Unser Netzwerk beginnt am Flugplatz Speyer (EDRY) und verbindet Piloten, Betreiber und Partner in ganz Europa.",
+      link: "Flugplatz Speyer auf OpenStreetMap öffnen",
     },
     footer: {
       privacy: "Datenschutz",
       imprint: "Impressum",
+      statement: "Aviation-Produkte und Services, aus dem Cockpit gedacht.",
     },
   },
 };
@@ -485,7 +480,7 @@ const LEGAL_CONTENT = {
           "Shared privacy notice for Paluv UG and the Paluv, Kopi, and Pilotary marketing sites.",
         path: "/en/privacy/",
         alternatePath: "/de/datenschutz/",
-        updatedLabel: "Last updated: April 9, 2026",
+        updatedLabel: "Last updated: July 28, 2026",
         heading: "Privacy Notice (GDPR)",
         note: "",
         sections: [
@@ -535,22 +530,17 @@ const LEGAL_CONTENT = {
             ],
           },
           {
-            title: "Embedded map on Paluv",
+            title: "Language preferences",
             paragraphs: [
-              "The Paluv website embeds map content from OpenStreetMap. When the map loads, OpenStreetMap can receive your IP address, browser metadata, and the page from which the request originated.",
-            ],
-          },
-          {
-            title: "Language preference on Kopi",
-            paragraphs: [
+              "Paluv stores the selected language in <code>localStorage</code> under <code>paluv-language</code> and in the functional cookie <code>paluv_language</code> for up to one year. The cookie lets the server reopen the site in the chosen language.",
               "Kopi stores your selected language in <code>localStorage</code> under the key <code>langChoice</code> so the site can reopen in your preferred language.",
-              "This value stays in your browser until you clear local storage or overwrite the preference.",
+              "Local-storage values stay in your browser until you clear local storage or overwrite the preference.",
             ],
           },
           {
             title: "Recipients",
             paragraphs: [
-              "Depending on the page you use, personal data can be disclosed to the technical providers operating <code>mailer.misei.dev</code>, <code>analytics.misei.dev</code>, <code>cloud.umami.is</code>, and OpenStreetMap.",
+              "Depending on the page you use, personal data can be disclosed to the technical providers operating <code>mailer.misei.dev</code>, <code>analytics.misei.dev</code>, and <code>cloud.umami.is</code>.",
             ],
           },
           {
@@ -633,7 +623,7 @@ const LEGAL_CONTENT = {
           "Gemeinsame Datenschutzhinweise für Paluv UG sowie die Websites von Paluv, Kopi und Pilotary.",
         path: "/de/datenschutz/",
         alternatePath: "/en/privacy/",
-        updatedLabel: "Stand: 9. April 2026",
+        updatedLabel: "Stand: 28. Juli 2026",
         heading: "Datenschutzhinweis",
         note: "",
         sections: [
@@ -683,22 +673,17 @@ const LEGAL_CONTENT = {
             ],
           },
           {
-            title: "Eingebettete Karte auf Paluv",
+            title: "Sprachpräferenzen",
             paragraphs: [
-              "Auf der Paluv-Website ist eine Karte von OpenStreetMap eingebettet. Beim Laden der Karte können IP-Adresse, Browser-Metadaten und die aufrufende Seite an OpenStreetMap übertragen werden.",
-            ],
-          },
-          {
-            title: "Sprachspeicherung auf Kopi",
-            paragraphs: [
+              "Paluv speichert die gewählte Sprache im <code>localStorage</code> unter <code>paluv-language</code> und für bis zu ein Jahr im funktionalen Cookie <code>paluv_language</code>. Mit dem Cookie kann der Server die Website wieder in der gewählten Sprache öffnen.",
               "Kopi speichert die gewählte Sprache im <code>localStorage</code> unter dem Schlüssel <code>langChoice</code>, damit die Website beim nächsten Besuch direkt in der gewünschten Sprache geöffnet werden kann.",
-              "Der Wert bleibt im Browser gespeichert, bis du den lokalen Speicher löschst oder die Einstellung überschreibst.",
+              "Die Local-Storage-Werte bleiben im Browser gespeichert, bis du den lokalen Speicher löschst oder die Einstellung überschreibst.",
             ],
           },
           {
             title: "Empfänger",
             paragraphs: [
-              "Je nach genutzter Seite können personenbezogene Daten an die technischen Anbieter hinter <code>mailer.misei.dev</code>, <code>analytics.misei.dev</code>, <code>cloud.umami.is</code> und OpenStreetMap übermittelt werden.",
+              "Je nach genutzter Seite können personenbezogene Daten an die technischen Anbieter hinter <code>mailer.misei.dev</code>, <code>analytics.misei.dev</code> und <code>cloud.umami.is</code> übermittelt werden.",
             ],
           },
           {

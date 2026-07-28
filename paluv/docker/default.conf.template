@@ -9,9 +9,15 @@ map $http_origin $allowed_origin {
   "https://www.paluv.de" 1;
 }
 
-map $http_accept_language $preferred_lang {
+map $http_accept_language $browser_lang {
   default en;
   ~*de de;
+}
+
+map $cookie_paluv_language $preferred_lang {
+  default $browser_lang;
+  de de;
+  en en;
 }
 
 server {
@@ -21,6 +27,16 @@ server {
   root /usr/share/nginx/html;
   index index.html;
   error_log /dev/stderr info;
+  charset utf-8;
+
+  add_header X-Content-Type-Options "nosniff" always;
+  add_header Referrer-Policy "strict-origin-when-cross-origin" always;
+  add_header Permissions-Policy "camera=(), microphone=(), geolocation=()" always;
+
+  gzip on;
+  gzip_vary on;
+  gzip_min_length 1024;
+  gzip_types text/css application/javascript application/json application/xml image/svg+xml;
 
   location = /send {
     if ($request_method != "POST") { return 405; }
@@ -45,6 +61,16 @@ server {
     return 302 /$preferred_lang/;
   }
 
+  location = /robots.txt {
+    try_files $uri =404;
+    expires 1h;
+  }
+
+  location = /sitemap.xml {
+    try_files $uri =404;
+    expires 1h;
+  }
+
   location = /en {
     return 302 /en/;
   }
@@ -61,12 +87,29 @@ server {
     return 302 /de/datenschutz/;
   }
 
+  location ^~ /assets/ {
+    try_files $uri =404;
+    expires 30d;
+  }
+
+  location ^~ /css/ {
+    try_files $uri =404;
+    expires 7d;
+  }
+
+  location ^~ /js/ {
+    try_files $uri =404;
+    expires 7d;
+  }
+
   location ^~ /en/ {
     try_files $uri $uri/ /en/index.html;
+    expires -1;
   }
 
   location ^~ /de/ {
     try_files $uri $uri/ /de/index.html;
+    expires -1;
   }
 
   location / {

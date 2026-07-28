@@ -5,35 +5,47 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
-  <meta name="description" content="Paluv UG entwickelt Luftfahrtsoftware, operative Services und pilotenzentrierte Produkte wie Kopi und Pilotary für GA-Betreiber, Piloten und Flugschulen." />
+  <meta name="description" content="Paluv entwickelt Luftfahrtsoftware, Piloten-Produkte und operative Services für General Aviation, Flugschulen und Aviation-Partner in Europa." />
   <meta name="author" content="Paluv UG" />
-  <meta name="robots" content="index, follow" />
-  <meta name="theme-color" content="#f7f7f5" />
+  <meta name="robots" content="index, follow, max-image-preview:large" />
+  <meta name="theme-color" content="#f5f7fa" />
   <meta name="color-scheme" content="light" />
-  <title>Paluv UG | Luftfahrtsoftware, operative Services & Pilot-Produkte</title>
+  <meta name="format-detection" content="telephone=no" />
+  <title>Paluv | Luftfahrtsoftware, Piloten-Produkte &amp; Services</title>
   <link rel="canonical" href="https://paluv.de/de/" />
   <link rel="alternate" hreflang="en" href="https://paluv.de/en/" />
   <link rel="alternate" hreflang="de" href="https://paluv.de/de/" />
-  <link rel="alternate" hreflang="x-default" href="https://paluv.de/en/" />
-  <meta property="og:title" content="Paluv UG | Luftfahrtsoftware, operative Services & Pilot-Produkte" />
-  <meta property="og:description" content="Paluv UG entwickelt Luftfahrtsoftware, operative Services und pilotenzentrierte Produkte wie Kopi und Pilotary für GA-Betreiber, Piloten und Flugschulen." />
+  <link rel="alternate" hreflang="x-default" href="https://paluv.de/" />
+  <meta property="og:title" content="Paluv | Luftfahrtsoftware, Piloten-Produkte &amp; Services" />
+  <meta property="og:description" content="Paluv entwickelt Luftfahrtsoftware, Piloten-Produkte und operative Services für General Aviation, Flugschulen und Aviation-Partner in Europa." />
   <meta property="og:type" content="website" />
   <meta property="og:url" content="https://paluv.de/de/" />
-  <meta property="og:image" content="https://paluv.de/assets/PaluvLogoBlack.png" />
-  <meta property="og:image:alt" content="Paluv UG Logo" />
+  <meta property="og:image" content="https://paluv.de/assets/paluv-og-v2.jpg" />
+  <meta property="og:image:secure_url" content="https://paluv.de/assets/paluv-og-v2.jpg" />
+  <meta property="og:image:type" content="image/jpeg" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+  <meta property="og:image:alt" content="General-Aviation-Flugzeug auf dem Vorfeld bei Sonnenaufgang" />
   <meta property="og:site_name" content="Paluv" />
   <meta property="og:locale" content="de_DE" />
   <meta property="og:locale:alternate" content="en_US" />
   <meta name="twitter:card" content="summary_large_image" />
-  <meta name="twitter:title" content="Paluv UG | Luftfahrtsoftware, operative Services & Pilot-Produkte" />
-  <meta name="twitter:description" content="Paluv UG entwickelt Luftfahrtsoftware, operative Services und pilotenzentrierte Produkte wie Kopi und Pilotary für GA-Betreiber, Piloten und Flugschulen." />
-  <meta name="twitter:image" content="https://paluv.de/assets/PaluvLogoBlack.png" />
-  <meta name="twitter:image:alt" content="Paluv UG Logo" />
-  <link rel="icon" href="/assets/paluvico.ico" type="image/x-icon" />
+  <meta name="twitter:title" content="Paluv | Luftfahrtsoftware, Piloten-Produkte &amp; Services" />
+  <meta name="twitter:description" content="Paluv entwickelt Luftfahrtsoftware, Piloten-Produkte und operative Services für General Aviation, Flugschulen und Aviation-Partner in Europa." />
+  <meta name="twitter:image" content="https://paluv.de/assets/paluv-og-v2.jpg" />
+  <meta name="twitter:image:alt" content="General-Aviation-Flugzeug auf dem Vorfeld bei Sonnenaufgang" />
+  <link rel="icon" href="/assets/paluvico.ico" sizes="any" />
+  <link rel="preload" href="/assets/paluv-hero-v2.webp" as="image" type="image/webp" fetchpriority="high" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;600;700&family=Sora:wght@300;400;500;600&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="/css/styles.css?v=20260617-paluv-trust" />
+  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="/css/styles.css?v=20260728-paluv-v2" />
+  <script>
+    document.documentElement.classList.add("js-enabled");
+    window.__paluvRevealFallback = window.setTimeout(function () {
+      document.documentElement.classList.add("reveal-fallback");
+    }, 2500);
+  </script>
   <script defer src="https://analytics.misei.dev/script.js"></script>
   <script type="application/ld+json">
     {
@@ -41,36 +53,101 @@
       "@graph": [
         {
           "@type": "Organization",
-          "@id": "https://paluv.de/#org",
+          "@id": "https://paluv.de/#organization",
           "name": "Paluv UG",
+          "alternateName": "Paluv",
           "url": "https://paluv.de/",
-          "logo": "https://paluv.de/assets/PaluvLogoBlack.png",
-          "email": [
-            "hello@paluv.de",
-            "partner@paluv.de"
+          "logo": {
+            "@type": "ImageObject",
+            "url": "https://paluv.de/assets/paluvlogo.png",
+            "width": 420,
+            "height": 196
+          },
+          "image": "https://paluv.de/assets/paluv-og-v2.jpg",
+          "description": "Paluv entwickelt Luftfahrtsoftware, Piloten-Produkte und operative Services für General Aviation, Flugschulen und Aviation-Partner in Europa.",
+          "email": "hello@paluv.de",
+          "areaServed": "Europe",
+          "knowsAbout": [
+            "General aviation",
+            "Aviation software",
+            "Pilot services",
+            "Flight school workflows"
           ],
           "contactPoint": [
             {
               "@type": "ContactPoint",
               "email": "hello@paluv.de",
-              "contactType": "general"
+              "contactType": "customer support",
+              "availableLanguage": [
+                "German",
+                "English"
+              ]
             },
             {
               "@type": "ContactPoint",
               "email": "partner@paluv.de",
-              "contactType": "business"
+              "contactType": "business inquiries",
+              "availableLanguage": [
+                "German",
+                "English"
+              ]
             }
           ]
         },
         {
           "@type": "WebSite",
           "@id": "https://paluv.de/#website",
-          "url": "https://paluv.de/de/",
-          "name": "Paluv UG",
+          "url": "https://paluv.de/",
+          "name": "Paluv",
           "publisher": {
-            "@id": "https://paluv.de/#org"
+            "@id": "https://paluv.de/#organization"
+          },
+          "inLanguage": [
+            "de",
+            "en"
+          ]
+        },
+        {
+          "@type": "WebPage",
+          "@id": "https://paluv.de/de/#webpage",
+          "url": "https://paluv.de/de/",
+          "name": "Paluv | Luftfahrtsoftware, Piloten-Produkte & Services",
+          "description": "Paluv entwickelt Luftfahrtsoftware, Piloten-Produkte und operative Services für General Aviation, Flugschulen und Aviation-Partner in Europa.",
+          "isPartOf": {
+            "@id": "https://paluv.de/#website"
+          },
+          "about": {
+            "@id": "https://paluv.de/#organization"
+          },
+          "primaryImageOfPage": {
+            "@type": "ImageObject",
+            "url": "https://paluv.de/assets/paluv-og-v2.jpg",
+            "width": 1200,
+            "height": 630
           },
           "inLanguage": "de"
+        },
+        {
+          "@type": "Product",
+          "name": "Kopi",
+          "description": "Ein tragbarer All-in-One-Avionikbegleiter für mehr Verkehrsbewusstsein mit ADS-B und ADS-L.",
+          "image": "https://paluv.de/assets/kopi/heroSection.png",
+          "url": "https://kopi.paluv.de",
+          "brand": {
+            "@id": "https://paluv.de/#organization"
+          },
+          "category": "Hardware · Avionik"
+        },
+        {
+          "@type": "Product",
+          "name": "Pilotary",
+          "description": "Ein deutschsprachiger Marktplatz zum Entdecken und Koordinieren gemeinsamer privater Flüge.",
+          "image": "https://paluv.de/assets/pilotary/mockup.jpeg",
+          "url": "https://pilotary.de",
+          "brand": {
+            "@id": "https://paluv.de/#organization"
+          },
+          "category": "Plattform · Community"
         }
       ]
     }
@@ -78,179 +155,280 @@
 </head>
 
 <body>
-  <div class="viewport-shell" aria-hidden="true">
-    <div id="engine-background"></div>
-  </div>
-  <div id="model-preloader" class="model-preloader no-blend" aria-live="polite" aria-busy="true"
-    data-loading-text="Modell wird geladen" data-error-text="Modell konnte nicht geladen werden">
-    <div class="model-preloader__spinner" role="img" aria-label="3D Modell wird geladen"></div>
-    <span class="model-preloader__label">Modell wird geladen</span>
-  </div>
-  <div class="page blend-text">
-  <header class="site-header" data-no-blend-mobile>
-      <a class="brand" href="#top">
-        <img class="brand-logo" src="/assets/paluvlogo.png" alt="Paluv" />
+  <a class="skip-link" href="#main">Zum Inhalt springen</a>
+  <div class="site-shell">
+    <header class="site-header" data-site-header>
+      <a class="brand" href="/de/" aria-label="Paluv home">
+        <img class="brand-logo" src="/assets/paluvlogo.png" width="420" height="196" alt="Paluv" />
       </a>
-      <nav class="site-nav" id="site-nav">
-        <a href="#top">Start</a>
-        <a href="#collaborators">Kooperationen</a>
+      <nav class="site-nav" id="site-nav" aria-label="Hauptnavigation">
         <a href="#products">Produkte</a>
         <a href="#services">Services</a>
+        <a href="#partners">Kooperationen</a>
         <a href="#contact">Kontakt</a>
       </nav>
       <div class="header-actions">
-        <div class="language-switch" aria-label="Sprachauswahl">
-          <a href="/en/" lang="en" hreflang="en">EN</a>
-          <span aria-hidden="true">/</span>
-          <a href="/de/" lang="de" hreflang="de" aria-current="page">DE</a>
-        </div>
-        <button class="nav-toggle" type="button" aria-controls="site-nav" aria-expanded="false">
-          Menu
+        <a class="language-switch" href="/en/" data-language-link
+          lang="en" hreflang="en"
+          aria-label="Sprachauswahl">
+          <span>DE</span>
+          <span aria-hidden="true">→</span>
+          <strong>EN</strong>
+        </a>
+        <a class="button button--small header-cta" href="#contact">Projekt starten</a>
+        <button class="nav-toggle" type="button" aria-controls="site-nav" aria-expanded="false"
+          aria-label="Menü">
+          <span></span><span></span>
         </button>
       </div>
     </header>
 
-    <main>
-      <section class="hero" id="top">
-        <div class="hero-frame" aria-hidden="true">
-          <div class="hero-model" id="hero-model"></div>
-        </div>
-        <div class="hero-copy no-blend">
-          <p class="eyebrow">Software. Betrieb. Innovation</p>
-          <h1 class="hero-title contrast-split">Aviation Software, neu gedacht</h1>
-          <p class="hero-subtitle">
-            Von der Idee bis zur Produktion baut Paluv Aviation-Produkte mit Engineering-Tiefe, Pilotenfokus und deutscher Präzision.
-          </p>
+    <main id="main">
+      <section class="hero" id="top" aria-labelledby="hero-title">
+        <div class="hero-copy">
+          <p class="eyebrow">Aviation · Software · Operations</p>
+          <h1 id="hero-title">Für Menschen, die fliegen.</h1>
+          <p class="hero-subtitle">Paluv übersetzt echte Erfahrung aus der General Aviation in fokussierte Software, vernetzte Produkte und verlässliche operative Services.</p>
           <div class="hero-actions">
-            <a class="button no-blend" href="#contact" style="color: white;">Kontakt</a>
-            <a class="button ghost" href="#collaborators">Kooperationen ansehen</a>
+            <a class="button" href="#contact">Projekt starten<span aria-hidden="true">↗</span></a>
+            <a class="text-link" href="#products">Unsere Arbeit<span aria-hidden="true">↓</span></a>
           </div>
-          <dl class="hero-meta">
-            <div>
-              <dt>Fokus</dt>
-              <dd>Piloten · GA-Betreiber · Flugschulen</dd>
-            </div>
-            <div>
-              <dt>Bereiche</dt>
-              <dd>IT-Software · Betrieb · Lieferkette</dd>
-            </div>
-            <div>
-              <dt>Standort</dt>
-              <dd>Deutschland · Europa</dd>
-            </div>
-          </dl>
+        </div>
+        <div class="hero-visual is-visible">
+          <img src="/assets/paluv-hero-v2.webp" width="1693" height="929"
+            alt="General-Aviation-Flugzeug auf dem Vorfeld bei Sonnenaufgang" fetchpriority="high" decoding="async" />
+          <div class="hero-visual__wash" aria-hidden="true"></div>
+          <div class="hero-visual__label">
+            <span>EDRY</span>
+            <strong>Verwurzelt in Speyer.</strong>
+          </div>
+          <div class="hero-visual__mark" aria-hidden="true">49°18′N<br />08°27′E</div>
+        </div>
+        <dl class="hero-meta">
+          <div>
+            <dt>Homebase</dt>
+            <dd>Speyer · Deutschland</dd>
+          </div>
+          <div>
+            <dt>Für</dt>
+            <dd>Piloten · Betreiber · Flugschulen</dd>
+          </div>
+          <div>
+            <dt>Bereiche</dt>
+            <dd>Software · Produkte · Services</dd>
+          </div>
+        </dl>
+      </section>
+
+      <section class="promise section reveal" aria-labelledby="promise-title">
+        <div>
+          <p class="eyebrow eyebrow--light">Aus dem Cockpit gedacht</p>
+          <h2 id="promise-title">Technologie sollte Luftfahrt einfacher machen — nicht komplizierter.</h2>
+        </div>
+        <div class="promise-copy">
+          <p>Wir verbinden Produktdenken, Engineering und operative Perspektive zu Werkzeugen, die sich ihren Platz im fliegerischen Alltag verdienen.</p>
+          <ul>
+            <li>Pilotenfokus</li>
+            <li>General Aviation</li>
+            <li>Entwickelt in Deutschland</li>
+          </ul>
         </div>
       </section>
 
-      <section class="section trust-section no-blend" id="collaborators" aria-labelledby="trust-title">
-        <div class="section-title section-title--wide">
-          <p class="eyebrow">Aviation-Netzwerk</p>
-          <h2 id="trust-title">Kooperationen / Unterstützt durch</h2>
-          <p>Paluv arbeitet mit Aviation-Teams und Support-Partnern aus Training, Services, Operations und Pilot Communities.</p>
+      <section class="section section--spacious" id="products" aria-labelledby="products-title">
+        <div class="section-heading">
+          <p class="eyebrow">Paluv lab</p>
+          <h2 id="products-title">Produkte</h2>
+          <p>Wir verbinden Produktdenken, Engineering und operative Perspektive zu Werkzeugen, die sich ihren Platz im fliegerischen Alltag verdienen.</p>
         </div>
-        <div class="trust-grid">
-          <article class="trust-group reveal">
-            <p>Kooperationen / Unterstützt durch</p>
-            <div class="trust-logos">
-              <span class="trust-logo">
-                <img src="/assets/collaborators/fas-512.png" alt="FAS Logo" />
-              </span>
-              <span class="trust-logo">
-                <img src="/assets/collaborators/fsl.jpeg" alt="FSL Logo" />
-              </span>
-              <span class="trust-logo">
-                <img src="/assets/collaborators/skymentor.png" alt="Skymentor Logo" />
-              </span>
-              <span class="trust-logo">
-                <img src="/assets/collaborators/technim.png" alt="Technim Logo" />
-              </span>
+        <div class="products-grid">
+          <article class="product-card reveal">
+            <a class="product-card__media" href="https://kopi.paluv.de" aria-label="Kopi entdecken">
+              <img src="/assets/kopi/heroSection.png" alt="Tragbarer Kopi-Avionikbegleiter im Einsatz" loading="lazy" decoding="async"
+                width="1248" height="832" />
+              <span>Hardware · Avionik</span>
+            </a>
+            <div class="product-card__body">
+              <div>
+                <p class="product-card__index">01 · Paluv product</p>
+                <h3>Kopi</h3>
+                <p>Ein tragbarer All-in-One-Avionikbegleiter für mehr Verkehrsbewusstsein mit ADS-B und ADS-L.</p>
+              </div>
+              <a class="circle-link" href="https://kopi.paluv.de" aria-label="Kopi entdecken" title="Kopi entdecken">
+                <span aria-hidden="true">↗</span>
+              </a>
             </div>
           </article>
-          <article class="trust-group reveal">
-            <p>In Compliance mit...</p>
-            <div class="trust-logos">
-              <span class="trust-logo">
-                <img src="/assets/collaborators/EASA_Logo.png" alt="EASA Logo" />
-              </span>
+          <article class="product-card reveal">
+            <a class="product-card__media" href="https://pilotary.de" aria-label="Pilotary entdecken">
+              <img src="/assets/pilotary/mockup.jpeg" alt="Pilotary-Marktplatz für gemeinsame Flüge auf einem Smartphone während eines Flugs" loading="lazy" decoding="async"
+                width="5976" height="3984" />
+              <span>Plattform · Community</span>
+            </a>
+            <div class="product-card__body">
+              <div>
+                <p class="product-card__index">02 · Paluv product</p>
+                <h3>Pilotary</h3>
+                <p>Ein deutschsprachiger Marktplatz zum Entdecken und Koordinieren gemeinsamer privater Flüge.</p>
+              </div>
+              <a class="circle-link" href="https://pilotary.de" aria-label="Pilotary entdecken" title="Pilotary entdecken">
+                <span aria-hidden="true">↗</span>
+              </a>
             </div>
-          </article>
-          <article class="trust-group reveal">
-            <p>Versichert durch</p>
-            <div class="trust-logos">
-              <span class="trust-logo">
-                <img src="/assets/collaborators/Allianz.svg.png" alt="Allianz Logo" />
-              </span>
-            </div>
-          </article>
-        </div>
-      </section>
-
-      <section class="section" id="products">
-        <div class="section-title">
-          <h2>Produkte</h2>
-        </div>
-        <div class="grid products-grid">
-          <article class="card reveal">
-            <div class="card-media">
-              <img src="/assets/kopi/heroSection.png" alt="Kopi Hero-Bereich" />
-            </div>
-            <h3>Kopi</h3>
-            <p>Tragbarer All-in-One Avionik-Copilot. ADS-B & ADS-L</p>
-            <span class="card-tag">Produkt · Crowdfunding</span>
-            <a class="button ghost card-cta" href="https://kopi.paluv.de">Zu Kopi</a>
-          </article>
-          <article class="card reveal">
-            <div class="card-media">
-              <img src="/assets/pilotary/mockup.jpeg" alt="Pilotary Hero-Bereich" />
-            </div>
-            <h3>Pilotary</h3>
-            <p>Die erste digitale Pilot-Wallet-Community.</p>
-            <span class="card-tag">App · Ökosystem</span>
-            <a class="button ghost card-cta" href="https://pilotary.de">Zu Pilotary</a>
           </article>
         </div>
       </section>
 
-      <section class="section" id="services">
-        <div class="section-title">
-          <h2>Services</h2>
-          <p>Vier kommerzielle Bereiche für Piloten, Betreiber, Flugschulen und luftfahrtaffine Marken.</p>
+      <section class="section section--spacious services-section" id="services" aria-labelledby="services-title">
+        <div class="section-heading section-heading--split">
+          <div>
+            <p class="eyebrow">Was wir umsetzen</p>
+            <h2 id="services-title">Ein Aviation-Partner. Vier Kompetenzen.</h2>
+          </div>
+          <p>Vom ersten Workflow bis zur Umsetzung im Feld verbindet Paluv digitale Arbeit mit der operativen Realität.</p>
         </div>
-        <div class="grid services-grid">
-          <article class="card reveal">
-            <span class="card-index">01 · Digital</span>
-            <h3>Digital Services</h3>
-            <p>Individuelle Software, Workflow-Tools, Portale und luftfahrttaugliche Digitalsysteme für Betreiber, Flugschulen und Pilot-Communities.</p>
-            <span class="card-tag">Software · Workflow</span>
+        <div class="services-grid">
+          <article class="service-card reveal">
+            <div class="service-card__top">
+              <span>01</span>
+              <span aria-hidden="true">↘</span>
+            </div>
+            <h3>Aviation Software</h3>
+            <p>Fokussierte Portale, Workflow-Tools und individuelle Systeme für Betreiber, Flugschulen und Pilot-Communities.</p>
+            <small>Product Design · Engineering</small>
           </article>
-          <article class="card reveal">
-            <span class="card-index">02 · Handel</span>
-            <h3>Supply & Shop</h3>
-            <p>B2C-Pilotenshop und B2B-Distribution für Öl, Teile und belastbaren Supply-Chain-Support in der Luftfahrt.</p>
-            <span class="card-tag">Shop · Distribution</span>
+          <article class="service-card reveal">
+            <div class="service-card__top">
+              <span>02</span>
+              <span aria-hidden="true">↘</span>
+            </div>
+            <h3>Supply &amp; Commerce</h3>
+            <p>Pilotenshop und B2B-Distribution für Öle, Teile und praxisnahen Supply-Chain-Support in der Luftfahrt.</p>
+            <small>Handel · Distribution</small>
           </article>
-          <article class="card reveal">
-            <span class="card-index">03 · Piloten</span>
+          <article class="service-card reveal">
+            <div class="service-card__top">
+              <span>03</span>
+              <span aria-hidden="true">↘</span>
+            </div>
             <h3>Pilot Services</h3>
-            <p>Versicherungen, Pannenhilfe und pilotennahe Services, aufgebaut für den echten Betrieb und echte Fliegerei.</p>
-            <span class="card-tag">Versicherung · Support</span>
+            <p>Versicherung, Assistance und Pilotensupport für den echten Betrieb und echte Fliegerei.</p>
+            <small>Versicherung · Support</small>
           </article>
-          <article class="card reveal">
-            <span class="card-index">04 · Marke</span>
-            <h3>Branding & Merch</h3>
-            <p>Merchandising, Customization und Markenauftritte für Clubs, Flugschulen, Events und kommerzielle Partner.</p>
-            <span class="card-tag">Merch · Branding</span>
+          <article class="service-card reveal">
+            <div class="service-card__top">
+              <span>04</span>
+              <span aria-hidden="true">↘</span>
+            </div>
+            <h3>Brand &amp; Merchandise</h3>
+            <p>Durchdachtes Merchandise, Individualisierung und Markenrealisierung für Clubs, Flugschulen, Events und Partner.</p>
+            <small>Markensysteme · Produktion</small>
           </article>
+        </div>
+      </section>
+
+      <section class="section section--spacious partners-section" id="partners" aria-labelledby="partners-title">
+        <div class="partners-intro">
+          <div class="section-heading">
+            <p class="eyebrow">Unser Netzwerk</p>
+            <h2 id="partners-title">Bessere Luftfahrt entsteht gemeinsam.</h2>
+            <p>Wir arbeiten mit Flugschulen, Service-Teams, technischen Spezialisten und ausgewählten regionalen Partnern rund um Speyer.</p>
+          </div>
+          <p>Ein wachsendes Netzwerk mit Wurzeln am Flugplatz Speyer und Verbindungen in die General Aviation.</p>
+        </div>
+        <div class="partners-grid">
+          <article class="partner-card reveal">
+            <div class="partner-card__top">
+              <span>Kooperation</span>
+              <span aria-hidden="true">•</span>
+            </div>
+            <span class="partner-logo partner-logo--image">
+              <img src="/assets/collaborators/fas-512.png" alt="FAS Logo" loading="lazy" decoding="async" />
+            </span>
+            <div class="partner-card__copy">
+              <p>Flight Academy</p>
+              <h3>Flight Academy Speyer</h3>
+              <p>Pilot-Onboarding, Trainings-Workflows, Kommunikation mit Flugschülern und digitale Services für Flugschulen.</p>
+              <small>Kooperation im Bereich Training und Aviation Education.</small>
+            </div>
+          </article>
+          <article class="partner-card reveal">
+            <div class="partner-card__top">
+              <span>Kooperation</span>
+              <span aria-hidden="true">•</span>
+            </div>
+            <span class="partner-logo partner-logo--image">
+              <img src="/assets/collaborators/fsl.jpeg" alt="FSL Logo" loading="lazy" decoding="async" />
+            </span>
+            <div class="partner-card__copy">
+              <p>Flight Services</p>
+              <h3>FSL</h3>
+              <p>Operative Tools, Prozessautomatisierung, schlanke Portale und luftfahrtspezifisches Service Design für den Tagesbetrieb.</p>
+              <small>Kooperation im Bereich Operations und Aviation Services.</small>
+            </div>
+          </article>
+          <article class="partner-card reveal">
+            <div class="partner-card__top">
+              <span>Kooperation</span>
+              <span aria-hidden="true">•</span>
+            </div>
+            <span class="partner-logo partner-logo--image">
+              <img src="/assets/collaborators/skymentor.png" alt="Skymentor Logo" loading="lazy" decoding="async" />
+            </span>
+            <div class="partner-card__copy">
+              <p>Piloten-Ökosystem</p>
+              <h3>Skymentor</h3>
+              <p>Pilotennahe Services, digitale Workflows und Unterstützung für Aviation Communities.</p>
+              <small>Kooperation im Piloten- und Aviation-Ökosystem.</small>
+            </div>
+          </article>
+          <article class="partner-card reveal">
+            <div class="partner-card__top">
+              <span>Kooperation</span>
+              <span aria-hidden="true">•</span>
+            </div>
+            <span class="partner-logo partner-logo--image">
+              <img src="/assets/collaborators/technim.png" alt="Technim Logo" loading="lazy" decoding="async" />
+            </span>
+            <div class="partner-card__copy">
+              <p>Technischer Partner</p>
+              <h3>Technim</h3>
+              <p>Technische Zusammenarbeit für aviation-nahe Systeme, Operations und Delivery Support.</p>
+              <small>Technische Ökosystem-Kooperation.</small>
+            </div>
+          </article>
+          <a class="partner-card reveal" href="https://donello-speyer.de" rel="external">
+            <div class="partner-card__top">
+              <span>Partner in Speyer</span>
+              <span aria-hidden="true">↗</span>
+            </div>
+            <span class="partner-logo partner-logo--word" aria-label="Donello">donello</span>
+            <div class="partner-card__copy">
+              <p>Regionaler Hospitality-Partner</p>
+              <h3>Donello</h3>
+              <p>Ausgewählter Hospitality-Partner im Netzwerk von Paluv und der Flight Academy Speyer, direkt am Yachthafen Speyer.</p>
+              <small>Italienisch-mediterrane Küche am Wasser, nur wenige Minuten vom Speyerer Dom.</small>
+            </div>
+          </a>
         </div>
       </section>
     </main>
 
-    <footer class="site-footer" id="contact">
-      <div class="contact-header">
-        <h2>Kontakt</h2>
+    <section class="contact-section" id="contact" aria-labelledby="contact-title">
+      <div class="contact-intro">
+        <p class="eyebrow eyebrow--light">Gemeinsam starten</p>
+        <h2 id="contact-title">Eine Aviation-Herausforderung im Kopf?</h2>
+        <p>Erzählen Sie uns, woran Sie arbeiten. Wir antworten mit einem pragmatischen nächsten Schritt — in der Regel innerhalb von zwei Werktagen.</p>
+        <div class="contact-direct">
+          <span>Lieber per E-Mail?</span>
+          <a href="mailto:hello@paluv.de">An hello@paluv.de schreiben<span aria-hidden="true">↗</span></a>
+        </div>
       </div>
-      <div class="contact-grid">
-        <form class="contact-form" id="contact-form">
+      <form class="contact-form" id="contact-form"
+        data-sending="Ihre Anfrage wird gesendet…"
+        data-success="Vielen Dank — Ihre Nachricht ist unterwegs. Wir melden uns bald."
+        data-error="Das hat nicht funktioniert. Bitte versuchen Sie es erneut oder schreiben Sie uns direkt.">
+        <div class="form-row">
           <label>
             <span>Name</span>
             <input type="text" name="name" placeholder="Ihr Name" autocomplete="name" required />
@@ -259,24 +437,35 @@
             <span>E-Mail</span>
             <input type="email" name="email" placeholder="you@email.com" autocomplete="email" required />
           </label>
-          <label>
-            <span>Nachricht</span>
-            <textarea name="message" rows="4" placeholder="Erzählen Sie uns vom Projekt" required></textarea>
-          </label>
-          <button class="button no-blend" type="submit">Nachricht senden</button>
-          <p class="form-status" id="form-status" role="status" aria-live="polite"></p>
-        </form>
-        <div class="contact-map">
-          <iframe class="map-embed" title="Flugplatz Speyer" loading="lazy"
-            src="https://www.openstreetmap.org/export/embed.html?bbox=8.44167%2C49.29472%2C8.46167%2C49.31472&amp;layer=mapnik&amp;marker=49.30472%2C8.45167"></iframe>
-          <p class="map-caption">
-            Flugplatz Speyer (EDRY) · Speyer, Deutschland
-          </p>
         </div>
+        <label>
+          <span>Nachricht</span>
+          <textarea name="message" rows="4" placeholder="Was dürfen wir gemeinsam lösen?" required></textarea>
+        </label>
+        <div class="form-submit">
+          <button class="button button--light" type="submit">Anfrage senden<span aria-hidden="true">↗</span></button>
+          <p class="form-status" id="form-status" role="status" aria-live="polite"></p>
+        </div>
+      </form>
+    </section>
+
+    <section class="location-strip" aria-labelledby="location-title">
+      <div>
+        <p class="eyebrow">Wo Aviation zusammenkommt</p>
+        <h2 id="location-title">Verwurzelt in Speyer.</h2>
       </div>
+      <p>Unser Netzwerk beginnt am Flugplatz Speyer (EDRY) und verbindet Piloten, Betreiber und Partner in ganz Europa.</p>
+      <a class="text-link" href="https://www.openstreetmap.org/?mlat=49.30472&amp;mlon=8.45167#map=15/49.30472/8.45167"
+        rel="external">Flugplatz Speyer auf OpenStreetMap öffnen<span aria-hidden="true">↗</span></a>
+    </section>
+
+    <footer class="site-footer">
+      <a class="footer-brand" href="/de/">
+        <img src="/assets/paluvlogo.png" width="420" height="196" alt="Paluv" />
+      </a>
+      <p>Aviation-Produkte und Services, aus dem Cockpit gedacht.</p>
       <div class="footer-meta">
-        <span>Paluv UG</span>
-        <span>© 2026</span>
+        <span>© <span id="year">2026</span> Paluv UG</span>
         <span>hello@paluv.de · partner@paluv.de</span>
         <span class="footer-links">
           <a href="/de/impressum/">Impressum</a>
@@ -286,17 +475,7 @@
     </footer>
   </div>
 
-  <script src="/js/hero-loader.js" defer></script>
-  <script type="importmap">
-      {
-        "imports": {
-          "three": "https://cdn.jsdelivr.net/npm/three@0.160.0/build/three.module.js",
-          "three/addons/": "https://cdn.jsdelivr.net/npm/three@0.160.0/examples/jsm/"
-        }
-      }
-    </script>
-  <script type="module" src="/js/hero-main.js"></script>
-  <script src="/js/scripts.js?v=20260617-paluv-trust" defer></script>
+  <script src="/js/scripts.js?v=20260728-paluv-v2" defer></script>
 </body>
 
 </html>

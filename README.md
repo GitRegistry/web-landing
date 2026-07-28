@@ -17,6 +17,20 @@ It includes the Fest Map site and the UL Diplom print generator.
 2. Ensure the external Docker network `public` exists, for example with `docker network create public`.
 3. Start everything with `docker compose up --build`.
 
+## Paluv Landing Page
+
+The Paluv homepage and legal pages are generated from shared German and English
+content. Edit `paluv/scripts/content.js`, `paluv/scripts/templates.js`, or the
+shared styles and scripts, then regenerate the deployable HTML:
+
+```sh
+node paluv/scripts/generate.js
+```
+
+The root route chooses German or English from the saved language preference and
+the browser language. The localized `/de/` and `/en/` routes remain stable,
+indexable URLs.
+
 ## Fest Map Manager
 
 The Fest Map now uses JSON data files in `fest-map/data/`:
