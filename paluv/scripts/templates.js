@@ -296,41 +296,41 @@ ${points}
       </section>`;
 }
 
-function renderAirSapVisual(label) {
-  return `<span class="airsap-visual" role="img" aria-label="${label}">
-                <span class="airsap-window">
-                  <span class="airsap-toolbar">
-                    <span class="airsap-toolbar__dots" aria-hidden="true"><i></i><i></i><i></i></span>
-                    <strong>AirSAP</strong>
+function renderAireVorVisual(label) {
+  return `<span class="airevor-visual" role="img" aria-label="${label}">
+                <span class="airevor-window">
+                  <span class="airevor-toolbar">
+                    <span class="airevor-toolbar__dots" aria-hidden="true"><i></i><i></i><i></i></span>
+                    <strong>AireVOR</strong>
                     <small>Fleet operations</small>
                   </span>
-                  <span class="airsap-app">
-                    <span class="airsap-sidebar" aria-hidden="true">
+                  <span class="airevor-app">
+                    <span class="airevor-sidebar" aria-hidden="true">
                       <strong>AS</strong>
                       <i class="is-active"></i><i></i><i></i><i></i>
                     </span>
-                    <span class="airsap-dashboard">
-                      <span class="airsap-dashboard__head">
+                    <span class="airevor-dashboard">
+                      <span class="airevor-dashboard__head">
                         <span><small>Monday, 28 July</small><strong>Fleet overview</strong></span>
                         <i aria-hidden="true"></i>
                       </span>
-                      <span class="airsap-stats">
+                      <span class="airevor-stats">
                         <span><small>Aircraft</small><strong>12</strong></span>
                         <span><small>Ready</small><strong>09</strong></span>
                         <span><small>Service</small><strong>02</strong></span>
                         <span><small>Review</small><strong>01</strong></span>
                       </span>
-                      <span class="airsap-panels">
-                        <span class="airsap-chart">
-                          <span class="airsap-panel-label"><strong>Utilisation</strong><small>Last 7 days</small></span>
-                          <span class="airsap-bars" aria-hidden="true">
+                      <span class="airevor-panels">
+                        <span class="airevor-chart">
+                          <span class="airevor-panel-label"><strong>Utilisation</strong><small>Last 7 days</small></span>
+                          <span class="airevor-bars" aria-hidden="true">
                             <i style="--bar: 36%"></i><i style="--bar: 58%"></i><i style="--bar: 45%"></i>
                             <i style="--bar: 76%"></i><i style="--bar: 62%"></i><i style="--bar: 88%"></i>
                             <i style="--bar: 70%"></i>
                           </span>
                         </span>
-                        <span class="airsap-fleet">
-                          <span class="airsap-panel-label"><strong>Aircraft status</strong><small>Live</small></span>
+                        <span class="airevor-fleet">
+                          <span class="airevor-panel-label"><strong>Aircraft status</strong><small>Live</small></span>
                           <span><b>D-ECHO</b><small>Ready</small><i></i></span>
                           <span><b>D-EFOX</b><small>Service</small><i></i></span>
                           <span><b>D-ELTA</b><small>Ready</small><i></i></span>
@@ -343,9 +343,9 @@ function renderAirSapVisual(label) {
 }
 
 function renderProductMedia(item) {
-  if (item.visual === "airsap") {
-    return `<a class="product-card__media product-card__media--airsap" href="${item.href}" aria-label="${item.cta}">
-              ${renderAirSapVisual(item.imageAlt)}
+  if (item.visual === "airevor") {
+    return `<a class="product-card__media product-card__media--airevor" href="${item.href}" aria-label="${item.cta}">
+              ${renderAireVorVisual(item.imageAlt)}
               <span class="product-card__tag">${item.tag}</span>
             </a>`;
   }
@@ -360,7 +360,7 @@ function renderProductMedia(item) {
 function renderProductCards(items, itemLabel) {
   return items
     .map(
-      (item, index) => `          <article class="product-card${item.visual === "airsap" ? " product-card--airsap" : ""} reveal">
+      (item, index) => `          <article class="product-card${item.visual === "airevor" ? " product-card--airevor" : ""} reveal">
             ${renderProductMedia(item)}
             <div class="product-card__body">
               <div>
