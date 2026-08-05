@@ -27,7 +27,7 @@ services:
     environment:
       MESSAGE_API_KEY: "{&mailer_api_key!}"
     labels:
-      caddy: "pilotary.com, pilotary.de, pilotary.paluv.de"
+      caddy: "old.pilotary.paluv.de"
       caddy.reverse_proxy: "{{upstreams 80}}"
       homepage.group: "Deployments"
       homepage.name: "Pilotary"
