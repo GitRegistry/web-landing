@@ -547,7 +547,7 @@ const LEGAL_CONTENT = {
           {
             title: "Scope of this notice",
             paragraphs: [
-              "This privacy notice applies to the websites <code>paluv.de</code>, <code>kopi.paluv.de</code>, <code>pilotary.paluv.de</code>, <code>pilotary.com</code>, and <code>pilotary.de</code>.",
+              "This privacy notice applies to the websites <code>paluv.de</code>, <code>kopi.paluv.de</code>, <code>old.pilotary.paluv.de</code>, <code>pilotary.com</code>, and <code>pilotary.de</code>.",
               "It covers the informational pages, forms, analytics integrations, language preference storage, and embedded content currently implemented on those sites.",
             ],
           },
@@ -690,7 +690,7 @@ const LEGAL_CONTENT = {
           {
             title: "Geltungsbereich",
             paragraphs: [
-              "Dieser Datenschutzhinweis gilt für die Websites <code>paluv.de</code>, <code>kopi.paluv.de</code>, <code>pilotary.paluv.de</code>, <code>pilotary.com</code> und <code>pilotary.de</code>.",
+              "Dieser Datenschutzhinweis gilt für die Websites <code>paluv.de</code>, <code>kopi.paluv.de</code>, <code>old.pilotary.paluv.de</code>, <code>pilotary.com</code> und <code>pilotary.de</code>.",
               "Er erfasst die aktuell implementierten Informationsseiten, Formulare, Analyse-Skripte, lokale Spracheinstellungen und eingebetteten Inhalte dieser Websites.",
             ],
           },

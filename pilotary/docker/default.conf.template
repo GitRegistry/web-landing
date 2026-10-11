@@ -7,7 +7,7 @@ map $http_origin $allowed_origin {
   default 0;
   "https://pilotary.com" 1;
   "https://pilotary.de" 1;
-  "https://pilotary.paluv.de" 1;
+  "https://old.pilotary.paluv.de" 1;
 }
 
 map $http_accept_language $preferred_lang {
