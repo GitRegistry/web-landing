@@ -81,16 +81,16 @@ const HOME_CONTENT = {
         href: "https://kopi.paluv.de",
       },
       {
-        image: "/assets/pilotary/mockup.jpeg",
-        width: "5976",
-        height: "3984",
-        imageAlt: "Pilotary shared-flight marketplace shown on a phone during a flight",
-        title: "Pilotary",
+        image: "/assets/flieg/hero.webp",
+        width: "1920",
+        height: "1280",
+        imageAlt: "A light aircraft above Bavarian lakes and the Alps",
+        title: "Flieg",
         description:
           "A German-first marketplace for discovering and coordinating shared private flights.",
         tag: "Platform · Community",
-        cta: "Discover Pilotary",
-        href: "https://pilotary.de",
+        cta: "Discover Flieg",
+        href: "https://flieg.paluv.de",
       },
       {
         visual: "airevor",
@@ -306,16 +306,16 @@ const HOME_CONTENT = {
         href: "https://kopi.paluv.de",
       },
       {
-        image: "/assets/pilotary/mockup.jpeg",
-        width: "5976",
-        height: "3984",
-        imageAlt: "Pilotary-Marktplatz für gemeinsame Flüge auf einem Smartphone während eines Flugs",
-        title: "Pilotary",
+        image: "/assets/flieg/hero.webp",
+        width: "1920",
+        height: "1280",
+        imageAlt: "Ein Leichtflugzeug über bayerischen Seen und den Alpen",
+        title: "Flieg",
         description:
           "Ein deutschsprachiger Marktplatz zum Entdecken und Koordinieren gemeinsamer privater Flüge.",
         tag: "Plattform · Community",
-        cta: "Pilotary entdecken",
-        href: "https://pilotary.de",
+        cta: "Flieg entdecken",
+        href: "https://flieg.paluv.de",
       },
       {
         visual: "airevor",
@@ -527,10 +527,10 @@ const LEGAL_CONTENT = {
       privacy: {
         pageTitle: "Privacy (GDPR) | Paluv UG",
         metaDescription:
-          "Shared privacy notice for Paluv UG and the Paluv, Kopi, and Pilotary marketing sites.",
+          "Privacy notice for the Paluv and Kopi marketing sites operated by Paluv UG.",
         path: "/en/privacy/",
         alternatePath: "/de/datenschutz/",
-        updatedLabel: "Last updated: July 28, 2026",
+        updatedLabel: "Last updated: October 18, 2026",
         heading: "Privacy Notice (GDPR)",
         note: "",
         sections: [
@@ -547,7 +547,7 @@ const LEGAL_CONTENT = {
           {
             title: "Scope of this notice",
             paragraphs: [
-              "This privacy notice applies to the websites <code>paluv.de</code>, <code>kopi.paluv.de</code>, <code>old.pilotary.paluv.de</code>, <code>pilotary.com</code>, and <code>pilotary.de</code>.",
+              "This privacy notice applies to the websites <code>paluv.de</code> and <code>kopi.paluv.de</code>.",
               "It covers the informational pages, forms, analytics integrations, language preference storage, and embedded content currently implemented on those sites.",
             ],
           },
@@ -561,7 +561,7 @@ const LEGAL_CONTENT = {
           {
             title: "Contact, waitlist, and newsletter forms",
             paragraphs: [
-              "Paluv, Kopi, and Pilotary provide forms that process the data you actively submit, in particular your name, email address, message, and technical transmission metadata.",
+              "Paluv and Kopi provide forms that process the data you actively submit, in particular your name, email address, message, and technical transmission metadata.",
               "These forms are used to respond to inquiries, handle pre-contractual communication, and manage product or newsletter interest.",
               "Legal basis: Art. 6(1)(b) GDPR where your request relates to a contract or pre-contractual communication, otherwise Art. 6(1)(f) GDPR.",
             ],
@@ -575,7 +575,7 @@ const LEGAL_CONTENT = {
           {
             title: "Analytics",
             paragraphs: [
-              "All three websites load the script <code>analytics.misei.dev</code>. Pilotary additionally loads the analytics service <code>cloud.umami.is</code>.",
+              "Both websites load the script <code>analytics.misei.dev</code>.",
               "When those scripts run, the respective analytics provider may process technical usage data such as IP-derived information, page views, browser characteristics, referrer, and interaction events.",
             ],
           },
@@ -590,7 +590,7 @@ const LEGAL_CONTENT = {
           {
             title: "Recipients",
             paragraphs: [
-              "Depending on the page you use, personal data can be disclosed to the technical providers operating <code>mailer.misei.dev</code>, <code>analytics.misei.dev</code>, and <code>cloud.umami.is</code>.",
+              "Depending on the page you use, personal data can be disclosed to the technical providers operating <code>mailer.misei.dev</code> and <code>analytics.misei.dev</code>.",
             ],
           },
           {
@@ -670,10 +670,10 @@ const LEGAL_CONTENT = {
       privacy: {
         pageTitle: "Datenschutz | Paluv UG",
         metaDescription:
-          "Gemeinsame Datenschutzhinweise für Paluv UG sowie die Websites von Paluv, Kopi und Pilotary.",
+          "Gemeinsame Datenschutzhinweise für Paluv UG sowie die Websites von Paluv und Kopi.",
         path: "/de/datenschutz/",
         alternatePath: "/en/privacy/",
-        updatedLabel: "Stand: 28. Juli 2026",
+        updatedLabel: "Stand: 18. Oktober 2026",
         heading: "Datenschutzhinweis",
         note: "",
         sections: [
@@ -690,7 +690,7 @@ const LEGAL_CONTENT = {
           {
             title: "Geltungsbereich",
             paragraphs: [
-              "Dieser Datenschutzhinweis gilt für die Websites <code>paluv.de</code>, <code>kopi.paluv.de</code>, <code>old.pilotary.paluv.de</code>, <code>pilotary.com</code> und <code>pilotary.de</code>.",
+              "Dieser Datenschutzhinweis gilt für die Websites <code>paluv.de</code> und <code>kopi.paluv.de</code>.",
               "Er erfasst die aktuell implementierten Informationsseiten, Formulare, Analyse-Skripte, lokale Spracheinstellungen und eingebetteten Inhalte dieser Websites.",
             ],
           },
@@ -704,7 +704,7 @@ const LEGAL_CONTENT = {
           {
             title: "Kontakt-, Waitlist- und Newsletter-Formulare",
             paragraphs: [
-              "Auf Paluv, Kopi und Pilotary werden die von dir aktiv eingegebenen Daten verarbeitet, insbesondere Name, E-Mail-Adresse, Nachricht sowie technische Übermittlungsdaten.",
+              "Auf Paluv und Kopi werden die von dir aktiv eingegebenen Daten verarbeitet, insbesondere Name, E-Mail-Adresse, Nachricht sowie technische Übermittlungsdaten.",
               "Diese Daten werden genutzt, um Anfragen zu beantworten, vorvertragliche Kommunikation zu bearbeiten und Produkt- oder Newsletter-Interesse zu verwalten.",
               "Rechtsgrundlage: Art. 6 Abs. 1 lit. b DSGVO bei vertragsbezogenen oder vorvertraglichen Anfragen, im Übrigen Art. 6 Abs. 1 lit. f DSGVO.",
             ],
@@ -718,7 +718,7 @@ const LEGAL_CONTENT = {
           {
             title: "Analyse-Dienste",
             paragraphs: [
-              "Alle drei Websites laden das Skript <code>analytics.misei.dev</code>. Auf Pilotary wird zusätzlich der Dienst <code>cloud.umami.is</code> eingebunden.",
+              "Beide Websites laden das Skript <code>analytics.misei.dev</code>.",
               "Wenn diese Skripte ausgeführt werden, können die jeweiligen Anbieter technische Nutzungsdaten wie IP-bezogene Informationen, Seitenaufrufe, Browsermerkmale, Referrer und Interaktionen verarbeiten.",
             ],
           },
@@ -733,7 +733,7 @@ const LEGAL_CONTENT = {
           {
             title: "Empfänger",
             paragraphs: [
-              "Je nach genutzter Seite können personenbezogene Daten an die technischen Anbieter hinter <code>mailer.misei.dev</code>, <code>analytics.misei.dev</code> und <code>cloud.umami.is</code> übermittelt werden.",
+              "Je nach genutzter Seite können personenbezogene Daten an die technischen Anbieter hinter <code>mailer.misei.dev</code> und <code>analytics.misei.dev</code> übermittelt werden.",
             ],
           },
           {
