@@ -1,12 +1,11 @@
 # web-landing
 
-Monorepo for the Kopi, Pilotary, and Paluv landing pages.
+Monorepo for the Kopi and Paluv landing pages.
 It includes the Fest Map site and the UL Diplom print generator.
 
 ## Structure
 
 - `kopi/`
-- `pilotary/`
 - `paluv/`
 - `fest-map/`
 - `ul-diplom/`

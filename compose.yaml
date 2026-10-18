@@ -21,22 +21,6 @@ services:
     networks:
       - frontdoor
 
-  web-pilotary:
-    build:
-      context: ./pilotary
-    environment:
-      MESSAGE_API_KEY: "{&mailer_api_key!}"
-    labels:
-      caddy: "old.pilotary.paluv.de"
-      caddy.reverse_proxy: "{{upstreams 80}}"
-      homepage.group: "Deployments"
-      homepage.name: "Pilotary"
-      homepage.icon: "airplane"
-      homepage.href: "https://pilotary.com"
-      homepage.description: "Pilotary landing page"
-    networks:
-      - frontdoor
-
   web-paluv:
     build:
       context: ./paluv
